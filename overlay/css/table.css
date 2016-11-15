@@ -1,0 +1,156 @@
+
+/* Column width defines */
+.flex-column-i-icon           {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.flex-column-i-name           { width: calc(1rem * var(--_i-name)); }
+.flex-column-deal-total       { width: calc(1rem * var(--_deal-total)); }
+.flex-column-deal-per-second  { width: calc(1rem * var(--_deal-per_second)); }
+.flex-column-deal-pct         { width: calc(1rem * var(--_deal-pct)); }
+.flex-column-deal-accuracy    { width: calc(1rem * var(--_deal-accuracy)); }
+.flex-column-deal-swing       { width: calc(1rem * var(--_deal-swing)); }
+.flex-column-deal-miss        { width: calc(1rem * var(--_deal-miss)); }
+.flex-column-deal-hitfail     { width: calc(1rem * var(--_deal-hitfail)); }
+.flex-column-deal-critical    { width: calc(1rem * var(--_deal-critical)); }
+.flex-column-heal-critical    { width: calc(1rem * var(--_heal-critical)); }
+.flex-column-tank-damage      { width: calc(1rem * var(--_tank-damage)); }
+.flex-column-tank-parry       { width: calc(1rem * var(--_tank-parry)); }
+.flex-column-tank-heal        { width: calc(1rem * var(--_tank-heal)); }
+.flex-column-tank-block       { width: calc(1rem * var(--_tank-block)); }
+.flex-column-heal-per-second  { width: calc(1rem * var(--_heal-per_second)); }
+.flex-column-heal-pct         { width: calc(1rem * var(--_heal-pct)); }
+.flex-column-heal-total       { width: calc(1rem * var(--_heal-total)); }
+.flex-column-heal-swing       { width: calc(1rem * var(--_heal-swing)); }
+.flex-column-heal-over        { width: calc(1rem * var(--_heal-over)); }
+.flex-column-heal-cure        { width: calc(1rem * var(--_heal-cure)); }
+.flex-column-etc-powerdrain   { width: calc(1rem * var(--_etc-powerdrain)); }
+.flex-column-etc-death        { width: calc(1rem * var(--_etc-death)); }
+.flex-column-etc-powerheal    { width: calc(1rem * var(--_etc-powerheal)); }
+
+/* Position Helpers */
+.job-gld .guage, .job-pld .guage, .job-mrd .guage, .job-war .guage,
+.job-drk .guage { /* tank: blue 500 */
+  box-shadow: 0.25rem 0 0 #2196f3 inset;
+}
+.job-pgl .guage, .job-mnk .guage, .job-lnc .guage, .job-drg .guage,
+.job-arc .guage, .job-brd .guage, .job-rog .guage, .job-nin .guage,
+.job-acn .guage, .job-smn .guage, .job-thm .guage, .job-blm .guage,
+.job-mch .guage { /* deal: red 500 */
+  box-shadow: 0.25rem 0 0 #f44336 inset;
+}
+.job-cnj .guage, .job-whm .guage, .job-sch .guage, .job-ast .guage {
+  /* heal: light green 500 */
+  box-shadow: 0.25rem 0 0 #8bc34a inset;
+}
+
+/* Colors */
+.job-gld .guage, .job-pld .guage {
+  background: #7b9aa2;
+}
+.job-mrd .guage, .job-war .guage {
+  background: #a91a16;
+}
+.job-drk .guage {
+  background: #682531;
+}
+
+.job-pgl .guage, .job-mnk .guage {
+  background: #b38915;
+}
+.job-lnc .guage, .job-drg .guage {
+  background: #3752d8;
+}
+.job-arc .guage, .job-brd .guage {
+  background: #adc551;
+}
+.job-rog .guage, .job-nin .guage {
+  background: #ee2e48;
+}
+.job-acn .guage, .job-smn .guage {
+  background: #32670b;
+}
+.job-thm .guage, .job-blm .guage {
+  background: #674598;
+}
+.job-mch .guage {
+  background: #148aa9;
+}
+
+.job-cnj .guage, .job-whm .guage {
+  background: #eaeaea;
+}
+.job-sch .guage {
+  background: #32307b;
+}
+.job-ast .guage {
+  background: #b1561c;
+}
+
+main {
+  font-size: var(--font-size-small);
+
+  height: calc(100% - var(--body-margin));
+  margin: 0 calc(var(--body-margin) * 1);
+
+  position: relative;
+  box-shadow: var(--shadow-card);
+}
+
+#header {
+  width: 100%;
+
+  color: #eee;
+  background: rgba(0, 0, 0, 0.5);
+  text-shadow: var(--shadow-text);
+
+  display: flex;
+}
+main > ul {
+  height: 100%;
+
+  background: var(--content-bg);
+  color: var(--content-fg);
+  fill: var(--content-fg);
+}
+
+#table > li {
+  display: flex;
+  flex-direction: row;
+  z-index: 2;
+  position: relative;
+}
+.collapsed li {
+  height: var(--graph-height);
+  line-height: var(--graph-height);
+  overflow: hidden;
+}
+
+.clsicon {
+  max-width: 100%;
+  max-height: 100%;
+}
+.guage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+}
+section > div + div {
+  opacity: 0.5;
+}
+
+main section {
+  flex-grow: 1;
+}
+main section > div {
+  display: flex;
+}
+main section > div > span {
+  flex-grow: 1;
+}
+
+[class^='flex-column'] {
+  display: inline-block;
+}

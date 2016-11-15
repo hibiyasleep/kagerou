@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title> kagerou overlay </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" href="css/reset.css" />
+    <script src="https://raw.githubusercontent.com/github/fetch/master/fetch.js"></script>
+    <script src="lib/lib.js"></script>
+    <script src="lib/config.js"></script>
+    <script src="lib/locale.js"></script>
+    <script src="lib/render.js"></script>
+    <script src="lib/listen.js"></script>
+    <script src="lib/ui.js" async></script>
+    <script>
+'use strict'
+
+
+    </script>
+  </head>
+  <body>
+    <nav class="shadow">
+      <div class="history">
+        <span class="icon-container" id="history-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="46"
+               viewBox="0 0 24 46" class="icon icon-w24">
+            <path d="M15,1H9v2h6V1z M11,14h2V8h-2V14z M19,7.4L20.4,6
+            C20,5.5,19.5,5,19,4.6L17.6,6c-1.5-1.2-3.5-2-5.6-2c-5,0-9,4-9,9
+            s4,9,9,9s9-4,9-9C21,10.9,20.3,8.9,19,7.4z M12,20c-3.9,0-7-3.1-7-7
+            s3.1-7,7-7s7,3.1,7,7S15.9,20,12,20z"/>
+            <path d="M13,25c-5,0-9,4-9,9H1l3.9,3.9L5,38l4-4H6c0-3.9,3.1-7,7-7
+            s7,3.1,7,7s-3.1,7-7,7c-1.9,0-3.7-0.8-4.9-2.1l-1.4,1.4
+            C8.3,42,10.5,43,13,43c5,0,9-4,9-9S18,25,13,25z M12,30v5l4.3,2.5
+            l0.7-1.2l-3.5-2.1V30H12z"/>
+          </svg>
+        </span><div class="history-label">
+          <span id="history-time">00:05</span>
+          <br />
+          <mark id="history-id">1</mark>
+          <span id="history-name">Encounter</span>
+        </div>
+      </div>
+      <ul class="buttons">
+        <li class="button button-text"
+            onclick="location.reload()">
+          새로고침
+        </li>
+        <li>
+          <ul class="tabs">
+            <li class="label text-right">
+              tab<br />
+              loading
+            </li>
+          </ul>
+        </li><!--
+     --><li class="seperator"> </li><!--
+     --><li>
+          <ul class="menu">
+            <li class="button enabled" data-button="toggle-detail"
+                data-active-by="image">
+              <span class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="35"
+                     viewBox="0 0 16 35" class="icon icon-transition icon-w16"
+                     style="top: -0.6875rem">
+                  <path d="M8,29.2L4.8,26l-1.4,1.4L8,32l4.6-4.6L11.2,26
+                  L8,29.2z M8,16.8l3.2,3.2l1.4-1.4L8,14l-4.6,4.6L4.8,20
+                  L8,16.8z M8,7.2L4.8,4 L3.4,5.4L8,10l4.6-4.6L11.2,4L8,7.2z"
+                   />
+                </svg>
+              </span>
+            </li><!--
+         --><li class="button dropdown-wrapper dropdown-trigger"
+                data-dropdown="more">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="24"
+                   viewBox="4 0 16 24" class="icon icon-w16">
+                <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2
+                c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2
+                s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+              </svg>
+              <ul class="dropdown right" id="dropdown-more">
+                <li data-button="merge-pet" data-active-by="label">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                       viewBox="0 0 24 24" class="icon icon-w24">
+                    <g class="when-enabled">
+                      <path d="M17,20.4l1.4-1.4L15,15.6L13.6,17L17,20.4z M7.5,8
+                      H11v5.6L5.6,19L7,20.4l6-6V8h3.5L12,3.5L7.5,8z"/>
+                    </g>
+                    <g class="when-disabled">
+                      <path d="M14 4l2.29 2.29-2.88 2.88 1.42 1.42 2.88-2.88
+                      L20 10V4zm-4 0H4v6l2.29-2.29 4.71 4.7V20h2v-8.41
+                      l-5.29-5.3z"/>
+                    </g>
+                  </svg>
+                  <label class="when-enabled"> 펫 합산 끄기 </label>
+                  <label class="when-disabled"> 펫 합산 켜기 </label>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="collapsed">
+      <ul>
+        <li id="header">
+          ..
+        </li>
+        <ul id="table">
+          <br />
+          <center>데이터를 기다리는 중</center>
+        </ul>
+      </ul>
+    </main>
+  </body>
+</html>

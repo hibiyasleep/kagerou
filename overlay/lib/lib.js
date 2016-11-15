@@ -1,0 +1,77 @@
+'use strict'
+
+const $ = function $(selector, index) {
+  'This is not actually jQuery, just shortcut for `document.querySelectorAll`.'
+  if(/^#[0-9a-z_\-]+?$/.test(selector))
+    return document.getElementById(selector.slice(1))
+  else if(index != undefined)
+    if(index == 0)
+      return document.querySelector(selector)
+    else
+      return document.querySelectorAll(selector)[index]
+  else
+    return document.querySelectorAll(selector)
+}
+
+const parseSvg = function parseSvg(text) {
+  let parser = new DOMParser()
+  return parser.parseFromString(text, 'image/svg+xml')
+}
+
+const loadSvg = function loadSvg(src, callback) {
+  let xhr = new XMLHttpRequest()
+  xhr.open('GET', src, true)
+
+  xhr.onreadystatechange = (e) => {
+    if(xhr.readyState === 4)
+      if(xhr.status === 200)
+        callback(null, parseSvg(xhr.responseText))
+      else
+        callback({
+          xhr: xhr,
+          event: e
+        }, null)
+  }
+
+  xhr.send(null)
+}
+
+const loadSvgSync = function loadSvgSync(src) {
+  let xhr = new XMLHttpRequest()
+  xhr.open('GET', src, false)
+  xhr.send(null)
+
+  if(req.status === 200)
+    return parseSvg(xhr.responseText)
+  else return null
+}
+
+const updateObject = function updateObject(obj/*, ... */) {
+  for(let i=1; i<arguments.length; i++) {
+    for(let prop in arguments[i]) {
+      let val = arguments[i][prop]
+      if(typeof val == 'object')
+        update(obj[prop], val)
+      else
+        obj[prop] = val
+    }
+  }
+  return obj
+}
+
+const resolveDotIndex = function resolveDotIndex(o, p) {
+  // Example:
+  //   o: {a: {b: {c: 1}}}
+  //   p: 'a.b.c'
+  //   returns: 1
+  const path = p.split('.')
+  let tmp = o
+  try {
+    for(let i of path) {
+      tmp = tmp[i]
+    }
+  } catch(e) {
+    return null
+  }
+  return tmp
+}

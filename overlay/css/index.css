@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+body {
+  font-family: var(--body-font);
+  margin: var(--body-margin) !important; /* for shadow */
+  height: calc(100% - var(--body-margin) * 2);
+  padding-top: 2em !important; /* from: Navigation */
+}
+/* Resize handle */
+body::after {
+  display: block;
+  content: '';
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 0;
+
+  border: 8px solid; /* Resize handle size is controlled by plugin; no control */
+  border-color: transparent rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.3) transparent;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Shared classes */
+
+.text-right {
+  text-align: right;
+}
+
+mark {
+  background: none;
+  color: var(--color-accent);
+}

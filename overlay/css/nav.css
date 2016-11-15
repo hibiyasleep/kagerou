@@ -1,0 +1,139 @@
+nav {
+  width: 100%;
+  height: 2rem;
+
+  line-height: 0.9375rem;
+
+  position: fixed;
+  top: var(--body-margin);
+  left: var(--body-margin);
+
+  width: calc(100% - var(--body-margin) * 2);
+
+  background: var(--header-bg);
+  box-shadow: var(--shadow-card);
+
+  color: var(--header-fg);
+  fill: var(--header-fg);
+
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.history {
+  display: inline-block;
+  float: left;
+  font-size: var(--font-size-small);
+
+  height: 100%;
+}
+
+#history-icon {
+  vertical-align: top;
+  margin: 0.25rem;
+  height: calc(100% - 0.5rem);
+}
+.history-label {
+  display: inline-block
+}
+
+.buttons {
+  display: inline-block;
+  float: right;
+
+  height: 100%;
+}
+.buttons * {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.buttons > li, .buttons > li > ul {
+  height: 100%;
+}
+.buttons li.label {
+  font-size: var(--font-size-small);
+}
+.buttons li.seperator {
+  width: 0;
+  height: 75%;
+  margin: 0.25rem;
+  border-left: 0.1rem solid rgba(127, 127, 127, 0.5);
+}
+.buttons li.button {
+  height: 100%;
+  padding: 0.25rem;
+
+  line-height: 0;
+
+  background: transparent;
+  transition: background-color 200ms ease;
+}
+.buttons li.button:hover, .buttons li.button.hover {
+  background: rgba(127, 127, 127, 0.25);
+}
+.buttons li.button.button-text {
+  line-height: 1.5em;
+  padding: 0.25rem 0.5rem;
+}
+.buttons li.button.button-text.active {
+  color: var(--color-accent);
+}
+
+/* Icon transitions */
+.icon-container {
+  display: inline-block;
+  height: 100%;
+  overflow: hidden;
+}
+.icon {
+  position: relative;
+  transition: top 200ms ease;
+}
+.icon-w16 { width: 1rem }
+.icon-w24 { width: 1.5rem }
+.icon-h24 { height: 1.5rem }
+li:not(.enabled) > .icon-container > .icon-transition {
+  top: 0 !important; /* (unfollow inline style) */
+}
+.enabled .when-disabled {
+  display: none;
+}
+:not(.enabled) .when-enabled {
+  display: none;
+}
+
+/* Dropdown */
+.dropdown-wrapper {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+
+  width: 10rem;
+
+  background: var(--header-bg);
+  box-shadow: var(--shadow-card);
+
+  color: var(--header-fg);
+  fill: var(--header-fg);
+}
+.dropdown.opened {
+  display: block;
+}
+.dropdown.left {
+  left: 0;
+}
+.dropdown.right {
+  right: 0;
+}
+.dropdown > li {
+  display: block;
+  padding: 0.25rem;
+}
+.dropdown label {
+  line-height: 1.5rem;
+}
