@@ -28,15 +28,14 @@ const CONFIG_DEFAULT = {
         'i.name',
         [
           ['deal.pct', 'deal.per_second', 'deal.total'],
-          ['deal.accuracy', 'deal.swing', 'deal.miss', 'deal.hitfail']
-        ], [
-          ['deal.critical'],
-          ['heal.critical'],
+          ['deal.accuracy', 'deal.swing', 'deal.miss']
         ], [
           ['tank.heal'],
           ['tank.damage']
-        ],
-        'etc.death'
+        ], [
+          ['deal.critical'],
+          ['etc.death'],
+        ]
       ]
     }, {
       label: '힐',
