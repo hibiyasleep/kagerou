@@ -43,7 +43,6 @@
         this.update()
     }
 
-
     browseHistory(id) {
       if(id === 'current')
         this.currentHistory = false
@@ -65,7 +64,6 @@
     render(data) {
       let d
       let table = $('#table')
-      console.log(this.template.tab.sort)
       data.sort(this.template.tab.sort)
       d = data.data
 
@@ -111,7 +109,7 @@
       let title = window.l.get(`col.${col.split('.')[0]}._`)
       let content = window.l.get(`col.${col}`)
       if(!content) {
-        console.error(`No such tab: ${col}`)
+        console.error(`Cannot find localized string for col.${col}`)
       }
       return `<span title="${title}: ${content[1]}">${content[0]}</span>`
     }
