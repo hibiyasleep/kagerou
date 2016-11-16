@@ -1,10 +1,17 @@
 
 /* Column width defines */
-.flex-column-i-icon           {
+.flex-column-i-icon {
   flex-grow: 0;
   flex-shrink: 0;
 }
-.flex-column-i-name           { width: calc(1rem * var(--_i-name)); }
+.flex-column-i-name {
+  width: calc(1rem * var(--_i-name));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  flex-grow: 10;
+}
 .flex-column-deal-total       { width: calc(1rem * var(--_deal-total)); }
 .flex-column-deal-per-second  { width: calc(1rem * var(--_deal-per_second)); }
 .flex-column-deal-pct         { width: calc(1rem * var(--_deal-pct)); }
@@ -29,61 +36,62 @@
 .flex-column-etc-powerheal    { width: calc(1rem * var(--_etc-powerheal)); }
 
 /* Position Helpers */
-.job-gld .guage, .job-pld .guage, .job-mrd .guage, .job-war .guage,
-.job-drk .guage { /* tank: blue 500 */
+.class-gld .guage, .class-pld .guage, .class-mrd .guage,
+.class-war .guage, .class-drk .guage { /* tank: blue 500 */
   box-shadow: 0.25rem 0 0 #2196f3 inset;
 }
-.job-pgl .guage, .job-mnk .guage, .job-lnc .guage, .job-drg .guage,
-.job-arc .guage, .job-brd .guage, .job-rog .guage, .job-nin .guage,
-.job-acn .guage, .job-smn .guage, .job-thm .guage, .job-blm .guage,
-.job-mch .guage { /* deal: red 500 */
+.class-pgl .guage, .class-mnk .guage, .class-lnc .guage,
+.class-drg .guage, .class-arc .guage, .class-brd .guage,
+.class-rog .guage, .class-nin .guage, .class-acn .guage,
+.class-smn .guage, .class-thm .guage, .class-blm .guage,
+.class-mch .guage { /* deal: red 500 */
   box-shadow: 0.25rem 0 0 #f44336 inset;
 }
-.job-cnj .guage, .job-whm .guage, .job-sch .guage, .job-ast .guage {
-  /* heal: light green 500 */
+.class-cnj .guage, .class-whm .guage, .class-sch .guage,
+.class-ast .guage { /* heal: light green 500 */
   box-shadow: 0.25rem 0 0 #8bc34a inset;
 }
 
 /* Colors */
-.job-gld .guage, .job-pld .guage {
+.class-gld .guage, .class-pld .guage {
   background: #7b9aa2;
 }
-.job-mrd .guage, .job-war .guage {
+.class-mrd .guage, .class-war .guage {
   background: #a91a16;
 }
-.job-drk .guage {
+.class-drk .guage {
   background: #682531;
 }
 
-.job-pgl .guage, .job-mnk .guage {
+.class-pgl .guage, .class-mnk .guage {
   background: #b38915;
 }
-.job-lnc .guage, .job-drg .guage {
+.class-lnc .guage, .class-drg .guage {
   background: #3752d8;
 }
-.job-arc .guage, .job-brd .guage {
+.class-arc .guage, .class-brd .guage {
   background: #adc551;
 }
-.job-rog .guage, .job-nin .guage {
+.class-rog .guage, .class-nin .guage {
   background: #ee2e48;
 }
-.job-acn .guage, .job-smn .guage {
+.class-acn .guage, .class-smn .guage {
   background: #32670b;
 }
-.job-thm .guage, .job-blm .guage {
+.class-thm .guage, .class-blm .guage {
   background: #674598;
 }
-.job-mch .guage {
+.class-mch .guage {
   background: #148aa9;
 }
 
-.job-cnj .guage, .job-whm .guage {
-  background: #eaeaea;
+.class-cnj .guage, .class-whm .guage {
+  background: #aaaaaa;
 }
-.job-sch .guage {
+.class-sch .guage {
   background: #32307b;
 }
-.job-ast .guage {
+.class-ast .guage {
   background: #b1561c;
 }
 
@@ -95,6 +103,7 @@ main {
 
   position: relative;
   box-shadow: var(--shadow-card);
+  text-shadow: var(--shadow-text);
 }
 
 #header {

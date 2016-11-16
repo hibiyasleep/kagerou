@@ -123,8 +123,8 @@
         r = `<li id="header">`
         part = this.getTitle
       } else {
-        r = `<li class="job-${sanitize(data.Job || data.name)}">`
         part = this.part
+        r = `<li class="class-${sanitize(part('i.class', data))}">`
 
         let width = part(this.tab.gauge, data) /
                     max[this.tab.gauge] * 100
