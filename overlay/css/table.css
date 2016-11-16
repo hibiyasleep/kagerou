@@ -4,7 +4,7 @@
   flex-grow: 0;
   flex-shrink: 0;
 }
-.flex-column-i-name {
+.flex-column-i-name, .flex-column-i-owner {
   width: calc(1rem * var(--_i-name));
   white-space: nowrap;
   overflow: hidden;
@@ -53,6 +53,9 @@
 }
 
 /* Colors */
+.guage {
+  background: #333;
+}
 .class-gld .guage, .class-pld .guage {
   background: #7b9aa2;
 }
@@ -100,10 +103,13 @@ main {
 
   height: calc(100% - var(--body-margin));
   margin: 0 calc(var(--body-margin) * 1);
+  background: var(--content-bg);
 
   position: relative;
   box-shadow: var(--shadow-card);
   text-shadow: var(--shadow-text);
+
+  overflow-y: scroll;
 }
 
 #header {
@@ -118,7 +124,6 @@ main {
 main > ul {
   height: 100%;
 
-  background: var(--content-bg);
   color: var(--content-fg);
   fill: var(--content-fg);
 }
@@ -133,6 +138,10 @@ main > ul {
   height: var(--graph-height);
   line-height: var(--graph-height);
   overflow: hidden;
+}
+.collapsed .clsicon { /* workaround */
+  width: var(--graph-height);
+  height: var(--graph-height);
 }
 
 .clsicon {

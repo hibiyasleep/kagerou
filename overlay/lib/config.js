@@ -13,7 +13,7 @@ const CONFIG_DEFAULT = {
     'content-fg': '#eee',
     'color-accent': '#FF6F00',
     'shadow-card': '0 0.05rem 0.25rem rgba(0, 0, 0, 0.5)',
-    'shadow-text': '0 0       0.125em rgba(0, 0, 0, 0.5)',
+    'shadow-text': '0 0       0.125em rgba(0, 0, 0, 1)',
     'font-size-small': '0.75rem',
     'graph-height': '1.5rem'
   },
@@ -25,8 +25,10 @@ const CONFIG_DEFAULT = {
       subgauge: false,
       col: [
         'i.icon',
-        'i.name',
         [
+          ['i.name'],
+          ['i.owner']
+        ], [
           ['deal.pct', 'deal.per_second', 'deal.total'],
           ['deal.accuracy', 'deal.swing', 'deal.miss']
         ], [
@@ -44,8 +46,10 @@ const CONFIG_DEFAULT = {
       subgauge: false,
       col: [
         'i.icon',
-        'i.name',
         [
+          ['i.name'],
+          ['i.owner']
+        ], [
           ['heal.pct', 'heal.per_second', 'heal.total'],
           ['heal.over', 'heal.swing', 'heal.critical']
         ],
@@ -61,7 +65,7 @@ const CONFIG_DEFAULT = {
         'i.icon',
         [
           ['i.name'],
-          ['deal.total']
+          ['deal.total', 'i.owner']
         ], [
           ['deal.per_second', 'deal.pct', 'deal.accuracy'],
           ['deal.swing', 'deal.miss', 'deal.hitfail']
@@ -83,8 +87,8 @@ const CONFIG_DEFAULT = {
   ],
   colwidth: {
     '_i-name': 7,
-    '_deal-total': 4,
-    '_deal-per_second': 3,
+    '_deal-total': 4.5,
+    '_deal-per_second': 3.5,
     '_deal-pct': 3,
     '_deal-accuracy': 3,
     '_deal-swing': 3,
@@ -123,14 +127,32 @@ const COLUMN_SORTABLE = [
   'heal.total'
 ]
 
+const PET_MAPPING = {
+  '요정 에오스': 'eos',
+  '가루다 에기': 'garuda',
+  '타이탄 에기': 'titan',
+  '이프리트 에기': 'ifrit',
+  '요정 셀레네': 'selene',
+  '카벙클 에메랄드': 'emerald',
+  '카벙클 토파즈': 'topaz',
+  '자동포탑 룩': 'look',
+  '자동포탑 비숍': 'bishop'
+}
+
 const COLUMN_INDEX = {
   i: {
     icon: {
-      v: _ => _.Job || _.name,
+      v: _ => resolveClass(_.Job, _.name)[0],
       f: _ => `<img src="img/class/${_.toLowerCase()}.png" class="clsicon" />`
     },
+    class: {
+      v: _ => resolveClass(_.Job, _.name)[0]
+    },
+    owner: {
+      v: _ => resolveClass(_.Job, _.name)[2]
+    },
     name: {
-      v: 'name',
+      v: _ => resolveClass(_.Job, _.name)[1],
       f: _ => _ == 'YOU'? `<span class="name-you">${_}</span>` : _
     }
   },
