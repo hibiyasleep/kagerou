@@ -75,3 +75,27 @@ const resolveDotIndex = function resolveDotIndex(o, p) {
   }
   return tmp
 }
+
+const _in = (key, array) => array.indexOf(key) > -1
+
+const resolveClass = function resolveJobFromName(_job, _name) {
+  let o = /^(.+?) \((.+?)\)$/.exec(_name)
+  if(!o) {
+    if(_name === 'Limit Break' || _name === '리미트 브레이크') {
+      return ['limit break', 'Limit Break', '']
+    } else {
+      return [_job, _name, ''] // <- TODO: localized classname at [2]
+    }
+  }
+
+  let name = o[1]
+  let owner = o[2]
+
+  // TODO: make this localizable again
+  return [PET_MAPPING[name] || 'chocobo', name, owner]
+}
+
+const resolveMergeTarget = function resolveMergeTarget(_) {
+  let o = /^.+? \((.+?)\)$/.exec(_name)
+  return o && o[1]
+}
