@@ -38,3 +38,23 @@ mark {
   background: none;
   color: var(--color-accent);
 }
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+  background: none;
+
+  margin-right: calc(var(--body-margin) * -1);
+}
+::-webkit-scrollbar-track {
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+}
+::-webkit-scrollbar-corner {
+  background: none;
+}
