@@ -19,6 +19,19 @@ const CONFIG_DEFAULT = {
   },
   tabs: [
     {
+      label: 'DPS',
+      gauge: 'deal.total',
+      sort: '+damage',
+      subgauge: false,
+      col: [
+        'i.icon',
+        'i.name',
+        [
+          ['deal.pct', 'deal.per_second', 'deal.total', 'etc.death'],
+          ['deal.accuracy', 'tank.damage', 'deal.critical']
+        ]
+      ]
+    }, {
       label: '딜',
       gauge: 'deal.total',
       sort: '+damage',
