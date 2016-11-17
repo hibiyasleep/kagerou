@@ -21,25 +21,68 @@
     update(data) {
       this.header = data.Encounter
       this.data = toArray(data.Combatant)
-      this.recalculateMax(data.Combatant)
+      this.calculateMax(data.Combatant)
     }
 
-    sort(key) {
+    get(sort, merged) {
+      let r = this.data.slice(0)
+
+      if(merged) {
+        let players = {}
+
+        for(let o of r) {
+          let name = o.name
+          let owner = resolveOwner(name)
+          let isUser = !owner
+          owner = owner || name
+
+          if(players[owner]) {
+            for(let k of COLUMN_MERGEABLE) {
+              players[owner][k] = parseFloat(o[k])
+                + parseFloat(players[owner][k])
+            }
+            // if player: override metadata
+            if(isUser) {
+              players[owner].name = o.name
+              players[owner].Job = o.Job
+            }
+
+          } else {
+            players[owner] = Object.assign({}, o)
+          }
+        }
+        console.log(players)
+        r = toArray(players)
+      }
+
+      console.log(r)
+      r = this.sort(sort, r)
+      console.log(r)
+
+      return [r, this.calculateMax(r)]
+    }
+
+    sort(key, target) {
       let d = (('+-'.indexOf(key[0]))+1 || 1) * 2 - 3
       let k = key.slice(1)
 
-      this.data.sort((a, b) => (parseFloat(a[k]) - parseFloat(b[k])) * d)
+      ;(target || this.data).sort((a, b) =>
+        (parseFloat(a[k]) - parseFloat(b[k])) * d)
+
+      if(target) return target
     }
 
-    recalculateMax(combatant) {
-      this.max = {}
+    calculateMax(combatant) {
+      let max = {}
 
       for(let k in SORTABLE) {
         let v = SORTABLE[k]
-        this.max[v] = Math.max.apply(
+        max[v] = Math.max.apply(
           Math, Object.keys(combatant).map(_ => combatant[_][k])
         )
       }
+
+      return max
     }
 
     finalize() {

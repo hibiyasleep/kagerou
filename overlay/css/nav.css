@@ -18,6 +18,7 @@ nav {
 
   user-select: none;
   -webkit-user-select: none;
+  z-index: 3;
 }
 
 .history {
@@ -99,7 +100,7 @@ li:not(.enabled) > .icon-container > .icon-transition {
 .enabled .when-disabled {
   display: none;
 }
-:not(.enabled) .when-enabled {
+[data-active-by]:not(.enabled) .when-enabled {
   display: none;
 }
 

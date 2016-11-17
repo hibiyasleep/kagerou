@@ -59,21 +59,19 @@ const updateObject = function updateObject(obj/*, ... */) {
   return obj
 }
 
-const resolveDotIndex = function resolveDotIndex(o, p) {
+const resolveDotIndex = function resolveDotIndex(o, p, v) {
   // Example:
   //   o: {a: {b: {c: 1}}}
   //   p: 'a.b.c'
   //   returns: 1
-  const path = p.split('.')
-  let tmp = o
-  try {
-    for(let i of path) {
-      tmp = tmp[i]
-    }
-  } catch(e) {
-    return null
-  }
-  return tmp
+  if (typeof p === 'string')
+    return resolveDotIndex(o, p.split('.'), v);
+  else if (p.length === 1 && v !== undefined)
+    return o[p[0]] = v;
+  else if (p.length==0)
+    return o
+  else
+    return resolveDotIndex(o[p[0]], p.slice(1), v);
 }
 
 const _in = (key, array) => array.indexOf(key) > -1
@@ -95,7 +93,7 @@ const resolveClass = function resolveJobFromName(_job, _name) {
   return [PET_MAPPING[name] || 'chocobo', name, owner]
 }
 
-const resolveMergeTarget = function resolveMergeTarget(_) {
-  let o = /^.+? \((.+?)\)$/.exec(_name)
-  return o && o[1]
+const resolveOwner = function resolveOwner(_) {
+  let o = /^.+? \((.+?)\)$/.exec(_)
+  return o && o[1] || undefined
 }

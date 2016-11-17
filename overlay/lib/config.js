@@ -115,7 +115,8 @@ const CONFIG_DEFAULT = {
       dps: 2,
       accuracy: 2,
       hps: 2
-    }
+    },
+    mergePet: true
   }
 }
 
@@ -125,6 +126,14 @@ const COLUMN_SORTABLE = [
   'tank.damage',
   'heal.per_second',
   'heal.total'
+]
+const COLUMN_MERGEABLE = [
+  'encdps', 'damage', 'damage%',
+  'swings', 'misses', 'hitfailed',
+  'crithit', 'maxhit', 'damagetaken',
+  'healstaken', 'enchps', 'healed',
+  'healed%', 'heals', 'critheal',
+  'cures', 'powerdrain', 'powerheal'
 ]
 
 const PET_MAPPING = {
@@ -160,13 +169,16 @@ const COLUMN_INDEX = {
   deal: {
     per_second: {
       v: 'encdps',
-      f: (_, conf) => parseFloat(_).toFixed(conf.format.significant_digit.dps)
+      f: (_, conf) => parseFloat(_).toFixed(conf.format.significant_digit.dps) || '-'
     },
-    pct: 'damage%',
+    pct: {
+      v: 'damage%',
+      f: _ => parseInt(_) + '%'
+    },
     total: 'damage',
     accuracy: { // '정확도'
-      v: _ => _.swings > 0? _.misses/_.swings : -1,
-      f: (_, conf) => _ < 0? '-' : _.toFixed(conf.format.significant_digit.accuracy)
+      v: _ => _.swings > 0? _.misses/_.swings * 100 : -1,
+      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy)
     },
     swing: 'swings',
     miss: 'misses',
@@ -191,7 +203,7 @@ const COLUMN_INDEX = {
   heal: {
     per_second: {
       v: 'enchps',
-      f: (_, conf) => parseFloat(_).toFixed(conf.format.significant_digit.hps)
+      f: (_, conf) => parseFloat(_).toFixed(conf.format.significant_digit.hps) || '-'
     },
     pct: 'healed%',
     total: 'healed',
@@ -284,6 +296,16 @@ const COLUMN_INDEX = {
       if(!this.config) return false
       if(k) return resolveDotIndex(this.config, k)
       else return this.config
+    }
+
+    set(k, v) {
+      return resolveDotIndex(this.config, k, v)
+    }
+
+    toggle(k) {
+      if(!this.config) return false
+      if(typeof this.get(k) !== 'boolean') return false
+      this.set(k, !this.get(k))
     }
 
     reset() {

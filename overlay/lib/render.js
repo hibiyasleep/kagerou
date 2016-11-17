@@ -8,7 +8,6 @@
 
   const sanitize = _ => _.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
 
-
   class Renderer {
 
     constructor(config) {
@@ -62,16 +61,18 @@
     }
 
     render(data) {
-      let d
+      let got = data.get(
+        this.template.tab.sort,
+        window.config.get('format.mergePet')
+      )
+      let d = got[0], max = got[1]
       let table = $('#table')
-      data.sort(this.template.tab.sort)
-      d = data.data
 
       table.innerHTML = ''
       for(let i of d) {
         table.insertAdjacentHTML(
           'beforeend',
-          this.template.render(i, data.max)
+          this.template.render(i, max)
         )
       }
     }

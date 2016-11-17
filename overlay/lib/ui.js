@@ -29,7 +29,19 @@
 
       $('.tabs li', 0).classList.add('active')
     }
+  }
 
+  class HistoryUI {
+
+    constructor() { }
+
+    update(index, time) { }
+
+    updateList() {
+      for(let tab in window.hist) {
+        //
+      }
+    }
   }
 
   window.addEventListener('load', () => {
@@ -48,6 +60,12 @@
     $('[data-button=toggle-detail]', 0).addEventListener('click', function(e) {
       this.classList.toggle('enabled')
       $('main', 0).classList.toggle('collapsed')
+    })
+
+    $('[data-button="merge-pet"]', 0).addEventListener('click', function(e) {
+      this.classList.toggle('enabled')
+      window.config.toggle('format.mergePet')
+      window.renderer.update()
     })
 
     window.tabdisplay = new TabDisplay()
