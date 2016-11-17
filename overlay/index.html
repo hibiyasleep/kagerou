@@ -34,17 +34,13 @@
             l0.7-1.2l-3.5-2.1V30H12z"/>
           </svg>
         </span><div class="history-label">
-          <span id="history-time">00:05</span>
-          <br />
           <mark id="history-id">1</mark>
-          <span id="history-name">Encounter</span>
+          <span id="history-time">--:--</span>
+          <br />
+          <span id="history-name">-</span>
         </div>
       </div>
       <ul class="buttons">
-        <li class="button button-text"
-            onclick="location.reload()">
-          새로고침
-        </li>
         <li>
           <ul class="tabs">
             <li class="label text-right">
@@ -94,6 +90,32 @@
                   <label class="when-enabled"> 펫 합산 끄기 </label>
                   <label class="when-disabled"> 펫 합산 켜기 </label>
                 </li>
+                <li data-button="nameblur" data-active-by="label">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                       viewBox="0 0 24 24" class="icon icon-w24">
+                    <g class="when-enabled">
+                      <path d="M3 17h18v-2H3v2zm0 3h18v-1H3v1zm0-7h18v-3H3v3z
+                      m0-9v4h18V4H3z"/>
+                    </g>
+                    <g class="when-disabled">
+                      <path d="M3 16h5v-2H3v2zm6.5 0h5v-2h-5v2zm6.5 0
+                      h5v-2h-5v2zM3 20h2v-2H3v2zm4 0h2v-2H7v2z
+                      m4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2z
+                      M3 12h8v-2H3v2zm10 0h8v-2h-8v2zM3 4v4h18V4H3z"/>
+                    </g>
+                  </svg>
+                  <label class="when-enabled"> 이름 보이기 </label>
+                  <label class="when-disabled"> 이름 가리기 </label>
+                </li>
+                <li class="seperator"></li>
+                <li class="button button-text"
+                    onclick="hist.push(JSON.parse(prompt('JSON:')))">
+                  엔카운터 읽기
+                </li>
+                <li class="button button-text"
+                    onclick="location.reload()">
+                  새로고침
+                </li>
               </ul>
             </li>
           </ul>
@@ -107,6 +129,10 @@
           ..
         </li>
         <ul id="table">
+          <br />
+          <center><b>kagerou 0.0.2</b></center>
+          <br />
+          <center>개발 중 버전</center>
           <br />
           <center>데이터를 기다리는 중</center>
         </ul>

@@ -7,7 +7,7 @@ const CONFIG_DEFAULT = {
     'body-margin': '0.25rem',
     'body-font': "'Roboto Mono', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', sans-serif",
     // header / ui
-    'header-bg': 'rgba(223, 223, 223, 0.8)',
+    'header-bg': 'rgba(223, 223, 223, 0.9)',
     'header-fg': '#111',
     'content-bg': 'rgba(0, 0, 0, 0.5)',
     'content-fg': '#eee',
@@ -87,6 +87,7 @@ const CONFIG_DEFAULT = {
   ],
   colwidth: {
     '_i-name': 7,
+    '_i-owner': 5,
     '_deal-total': 4.5,
     '_deal-per_second': 3.5,
     '_deal-pct': 3,
@@ -158,11 +159,12 @@ const COLUMN_INDEX = {
       v: _ => resolveClass(_.Job, _.name)[0]
     },
     owner: {
-      v: _ => resolveClass(_.Job, _.name)[2]
+      v: _ => resolveClass(_.Job, _.name)[2],
+      f: _ => `<span>${_}</span>`
     },
     name: {
       v: _ => resolveClass(_.Job, _.name)[1],
-      f: _ => _ == 'YOU'? `<span class="name-you">${_}</span>` : _
+      f: _ => `<span class="${_ === 'YOU'? 'name-you' : ''}">${_}</span>`
     }
   },
   // deal
