@@ -109,7 +109,7 @@ main {
   box-shadow: var(--shadow-card);
   text-shadow: var(--shadow-text);
 
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #header {
