@@ -55,9 +55,7 @@
         r = toArray(players)
       }
 
-      console.log(r)
       r = this.sort(sort, r)
-      console.log(r)
 
       return [r, this.calculateMax(r)]
     }
