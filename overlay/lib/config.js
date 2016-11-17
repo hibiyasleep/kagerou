@@ -5,7 +5,7 @@ const CONFIG_DEFAULT = {
   style: {
     // body
     'body-margin': '0.25rem',
-    'body-font': "'Roboto Mono', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', sans-serif",
+    'body-font': "'Roboto', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', sans-serif",
     // header / ui
     'header-bg': 'rgba(223, 223, 223, 0.9)',
     'header-fg': '#111',

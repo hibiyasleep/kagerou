@@ -136,6 +136,8 @@ main > ul {
 
   color: var(--content-fg);
   fill: var(--content-fg);
+
+  line-height: 1.125rem;
 }
 
 #table > li {
