@@ -66,8 +66,10 @@ const CONFIG_DEFAULT = {
           ['heal.pct', 'heal.per_second', 'heal.total'],
           ['heal.over', 'heal.swing', 'heal.critical']
         ],
-        'heal.cure',
-        'etc.death'
+        [
+          ['heal.cure'],
+          ['etc.death']
+        ]
       ]
     }, {
       label: '모두',
