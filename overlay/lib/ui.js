@@ -62,11 +62,24 @@
       $('main', 0).classList.toggle('collapsed')
     })
 
+    // pet merge
+
     $('[data-button="merge-pet"]', 0).addEventListener('click', function(e) {
       this.classList.toggle('enabled')
       window.config.toggle('format.mergePet')
       window.renderer.update()
     })
+
+    if(config.get('format.mergePet')) {
+      $('[data-button="merge-pet"]', 0).classList.add('enabled')
+    }
+
+    // nameblur
+    $('[data-button="nameblur"]', 0).addEventListener('click', function(e) {
+      this.classList.toggle('enabled')
+      $('main', 0).classList.toggle('nameblur')
+    })
+
 
     window.tabdisplay = new TabDisplay()
     tabdisplay.render()

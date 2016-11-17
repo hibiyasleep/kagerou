@@ -5,13 +5,14 @@
   flex-shrink: 0;
 }
 .flex-column-i-name, .flex-column-i-owner {
-  width: calc(1rem * var(--_i-name));
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
   flex-grow: 10;
 }
+.flex-column-i-name           { width: calc(1rem * var(--_i-name)); }
+.flex-column-i-owner          { width: calc(1rem * var(--_i-owner)); }
 .flex-column-deal-total       { width: calc(1rem * var(--_deal-total)); }
 .flex-column-deal-per-second  { width: calc(1rem * var(--_deal-per_second)); }
 .flex-column-deal-pct         { width: calc(1rem * var(--_deal-pct)); }
@@ -34,6 +35,15 @@
 .flex-column-etc-powerdrain   { width: calc(1rem * var(--_etc-powerdrain)); }
 .flex-column-etc-death        { width: calc(1rem * var(--_etc-death)); }
 .flex-column-etc-powerheal    { width: calc(1rem * var(--_etc-powerheal)); }
+
+.pet-merged .flex-column-i-owner {
+  display: none !important;
+}
+.nameblur .flex-column-i-name > span:not(.name-you),
+.nameblur .flex-column-i-owner > span:not(.name-you) {
+  filter: blur(0.125rem) -webkit-blur(0.125rem);
+  -webkit-filter: blur(0.125rem);
+}
 
 /* Position Helpers */
 .class-gld .guage, .class-pld .guage, .class-mrd .guage,
@@ -161,6 +171,9 @@ section > div + div {
 
 main section {
   flex-grow: 1;
+}
+main section:first-of-type {
+  flex-grow: 10;
 }
 main section > div {
   display: flex;
