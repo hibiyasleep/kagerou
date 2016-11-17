@@ -70,7 +70,7 @@ nav {
   background: transparent;
   transition: background-color 200ms ease;
 }
-.buttons li.button:hover, .buttons li.button.hover {
+.buttons li.button:hover {
   background: rgba(127, 127, 127, 0.25);
 }
 .buttons li.button.button-text {
@@ -134,7 +134,20 @@ li:not(.enabled) > .icon-container > .icon-transition {
 .dropdown > li {
   display: block;
   padding: 0.25rem;
+  transition: background-color 200ms ease;
 }
+.dropdown > li:hover {
+  background: rgba(127, 127, 127, 0.25);
+}
+
 .dropdown label {
   line-height: 1.5rem;
+}
+.dropdown .seperator.seperator {
+  width: calc(100% - 0.5rem);
+  height: 0;
+
+  border-left: none;
+  border-top: 0.1rem solid rgba(127, 127, 127, 0.5);
+  padding: 0;
 }
