@@ -34,6 +34,10 @@
           let name = o.name
           let owner = resolveOwner(name)
           let isUser = !owner
+
+          if(window.config.get('format.myname').indexOf(owner) != -1) {
+            owner = 'YOU'
+          }
           owner = owner || name
 
           if(players[owner]) {

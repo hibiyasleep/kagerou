@@ -132,7 +132,8 @@ const CONFIG_DEFAULT = {
       accuracy: 2,
       hps: 2
     },
-    mergePet: true
+    merge_pet: true,
+    myname: []
   }
 }
 
