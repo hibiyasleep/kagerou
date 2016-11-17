@@ -111,7 +111,7 @@
 main {
   font-size: var(--font-size-small);
 
-  height: calc(100% - var(--body-margin));
+  height: calc(100% - var(--body-margin) - 2rem);
   margin: 0 calc(var(--body-margin) * 1);
   background: var(--content-bg);
 
@@ -120,6 +120,7 @@ main {
   text-shadow: var(--shadow-text);
 
   overflow-y: auto;
+  z-index: 0;
 }
 
 #header {

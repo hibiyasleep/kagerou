@@ -4,11 +4,7 @@ nav {
 
   line-height: 0.9375rem;
 
-  position: fixed;
-  top: var(--body-margin);
-  left: var(--body-margin);
-
-  width: calc(100% - var(--body-margin) * 2);
+  width: 100%;
 
   background: var(--header-bg);
   box-shadow: var(--shadow-card);
