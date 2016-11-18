@@ -61,35 +61,36 @@
       button.addEventListener('click', listener)
     })
 
-    $('[data-button=toggle-detail]', 0).addEventListener('click', function(e) {
-      this.classList.toggle('enabled')
-      $('main', 0).classList.toggle('collapsed')
-    })
-
-    // pet merge
-
-    $('[data-button="merge-pet"]', 0).addEventListener('click', function(e) {
-      this.classList.toggle('enabled')
-      window.config.toggle('format.mergePet')
-      window.renderer.update()
-    })
-
-    if(config.get('format.mergePet')) {
-      $('[data-button="merge-pet"]', 0).classList.add('enabled')
+    // load configs
+    if(config.get('format.merge_pet')) {
+      $('[data-button=merge-pet]', 0).classList.add('enabled')
     }
 
-    // nameblur
-    $('[data-button="nameblur"]', 0).addEventListener('click', function(e) {
-      this.classList.toggle('enabled')
-      $('main', 0).classList.toggle('nameblur')
+    // Button handlers
+    [{
+      name: 'toggle-detail',
+      toggle: 'collapsed'
+    }, {
+      name: 'nameblur',
+      toggle: 'nameblur'
+    }, {
+      name: 'merge-pet',
+      toggle: 'per-merged',
+      callback: _ => {
+        window.config.toggle('format.merge_pet')
+        window.renderer.update()
+      }
+    }].forEach(_ => {
+      $(`[data-button=${_.name}]`, 0).addEventListener('click', function(e) {
+        this.classList.toggle('enabled')
+        $('main', 0).classList.toggle(_.toggle)
+        if(_.callback) _.callback()
+      })
     })
-
 
     window.tabdisplay = new TabDisplay()
     tabdisplay.render()
 
   })
-
-
 
 })()
