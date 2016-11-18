@@ -119,20 +119,9 @@ main {
   box-shadow: var(--shadow-card);
   text-shadow: var(--shadow-text);
 
-  padding-bottom: 1.5rem;
-
   z-index: 0;
 }
 
-#header, footer {
-  width: 100%;
-
-  color: #eee;
-  background: rgba(0, 0, 0, 0.5);
-  text-shadow: var(--shadow-text);
-
-  display: flex;
-}
 main > ul {
   height: 100%;
 
@@ -141,6 +130,21 @@ main > ul {
 
   line-height: 1.125rem;
   overflow-y: auto;
+}
+#header, footer {
+display: flex;
+  width: 100%;
+
+  color: #eee;
+  background: rgba(0, 0, 0, 0.5);
+  text-shadow: var(--shadow-text);
+
+  position: absolute;
+  z-index: 5;
+}
+#table {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 #table > li {
   display: flex;
@@ -153,15 +157,15 @@ main > ul {
   line-height: var(--graph-height);
   overflow: hidden;
 }
+.clsicon {
+  max-width: 100%;
+  max-height: 100%;
+}
 .collapsed .clsicon { /* workaround */
   width: var(--graph-height);
   height: var(--graph-height);
 }
 
-.clsicon {
-  max-width: 100%;
-  max-height: 100%;
-}
 .guage {
   position: absolute;
   top: 0;
@@ -196,10 +200,7 @@ footer {
   height: 1.5rem;
   line-height: 1.5rem;
 
-  position: absolute;
-  left: 0;
   bottom: 0;
-  z-index: 3;
 }
 .tabs {
   padding: 0 !important;
@@ -214,6 +215,7 @@ footer {
 .tabs span.active {
   color: var(--color-accent);
 }
+
 .footer-stat {
   padding: 0 0.25rem;
   flex-grow: 1;
