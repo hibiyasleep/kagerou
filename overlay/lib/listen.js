@@ -16,6 +16,7 @@
     constructor(data) {
       // reconstruct
       this.update(data)
+      this.isCurrent = true
     }
 
     update(data) {
@@ -55,7 +56,6 @@
             players[owner] = Object.assign({}, o)
           }
         }
-        console.log(players)
         r = toArray(players)
       }
 
@@ -91,6 +91,7 @@
       let saveid = `kagerou_save_${Date.now()}` +
           sanitize(this.header.CurrentZoneName)
 
+      this.isCurrent = false
       return saveid
     }
 
@@ -112,6 +113,7 @@
           this.history[id] = {
             id: id,
             title: this.currentData.header.title,
+            region: this.currentData.header.CurrentZoneName,
             dps: this.currentData.header.damage /
                  this.currentData.header.DURATION,
             data: this.currentData
