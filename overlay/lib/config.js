@@ -7,7 +7,7 @@ const CONFIG_DEFAULT = {
     'body-margin': '0.25rem',
     'body-font': "'Roboto', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', sans-serif",
     // header / ui
-    'header-bg': 'rgba(223, 223, 223, 0.9)',
+    'header-bg': 'rgba(230, 230, 230, 0.95)',
     'header-fg': '#111',
     'content-bg': 'rgba(0, 0, 0, 0.5)',
     'content-fg': '#eee',
@@ -28,7 +28,7 @@ const CONFIG_DEFAULT = {
         'i.name',
         [
           ['deal.pct', 'deal.per_second', 'deal.total', 'etc.death'],
-          ['deal.accuracy', 'tank.damage', 'deal.critical']
+          ['deal.swing', 'deal.miss', 'tank.damage', 'deal.critical']
         ]
       ]
     }, {
