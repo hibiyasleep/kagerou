@@ -15,15 +15,15 @@
     <script>
 'use strict'
 
-
     </script>
   </head>
   <body>
     <nav class="shadow">
-      <div class="history">
+      <div class="history dropdown-trigger" data-dropdown="history">
         <span class="icon-container" id="history-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="46"
-               viewBox="0 0 24 46" class="icon icon-w24">
+               viewBox="0 0 24 46" class="icon icon-w24 icon-transition"
+               style="top: -1.375rem">
             <path d="M15,1H9v2h6V1z M11,14h2V8h-2V14z M19,7.4L20.4,6
             C20,5.5,19.5,5,19,4.6L17.6,6c-1.5-1.2-3.5-2-5.6-2c-5,0-9,4-9,9
             s4,9,9,9s9-4,9-9C21,10.9,20.3,8.9,19,7.4z M12,20c-3.9,0-7-3.1-7-7
@@ -34,22 +34,17 @@
             l0.7-1.2l-3.5-2.1V30H12z"/>
           </svg>
         </span><div class="history-label">
-          <mark id="history-id">1</mark>
-          <span id="history-time">--:--</span>
+          <mark id="history-time">00:00</mark>
+          <span id="history-mob"> </span>
           <br />
-          <span id="history-name">-</span>
+          <span id="history-zone"> </span>
         </div>
       </div>
+      <ul class="dropdown dropdown-history" id="dropdown-history">
+        //
+      </ul>
       <ul class="buttons">
-        <li>
-          <ul class="tabs">
-            <li class="label text-right">
-              tab<br />
-              loading
-            </li>
-          </ul>
-        </li><!--
-     --><li class="seperator"> </li><!--
+        <li class="seperator"> </li><!--
      --><li>
           <ul class="menu">
             <li class="button enabled" data-button="toggle-detail"
@@ -78,13 +73,13 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                        viewBox="0 0 24 24" class="icon icon-w24">
                     <g class="when-enabled">
-                      <path d="M17,20.4l1.4-1.4L15,15.6L13.6,17L17,20.4z M7.5,8
-                      H11v5.6L5.6,19L7,20.4l6-6V8h3.5L12,3.5L7.5,8z"/>
-                    </g>
-                    <g class="when-disabled">
                       <path d="M14 4l2.29 2.29-2.88 2.88 1.42 1.42 2.88-2.88
                       L20 10V4zm-4 0H4v6l2.29-2.29 4.71 4.7V20h2v-8.41
                       l-5.29-5.3z"/>
+                    </g>
+                    <g class="when-disabled">
+                      <path d="M17,20.4l1.4-1.4L15,15.6L13.6,17L17,20.4z M7.5,8
+                      H11v5.6L5.6,19L7,20.4l6-6V8h3.5L12,3.5L7.5,8z"/>
                     </g>
                   </svg>
                   <label class="when-enabled"> 펫 합산 끄기 </label>
@@ -108,6 +103,9 @@
                   <label class="when-disabled"> 이름 가리기 </label>
                 </li>
                 <li class="seperator"></li>
+                <li class="title">
+                  개발자 옵션
+                </li>
                 <li class="button button-text"
                     onclick="hist.push(JSON.parse(prompt('JSON:')))">
                   엔카운터 읽기
@@ -130,13 +128,22 @@
         </li>
         <ul id="table">
           <br />
-          <center><b>kagerou 0.0.2</b></center>
+          <center><b>kagerou 0.0.3</b></center>
           <br />
           <center>개발 중 버전</center>
           <br />
           <center>데이터를 기다리는 중</center>
         </ul>
       </ul>
+      <footer>
+        <div class="tabs">
+          탭 불러오는 중
+        </div>
+        <span class="footer-stat">
+          rdps <span id="rdps">0.00</span>
+          rhps <span id="rhps">0.00</span>
+        </span>
+      </footer>
     </main>
   </body>
 </html>
