@@ -61,9 +61,18 @@
     }
 
     render(data) {
+      // damn chromium 48
+
+      // history header
+      $('.history', 0).classList.toggle('enabled', !data.isCurrent)
+      $('#history-time').textContent = data.header.duration
+      $('#history-mob').textContent = data.header.title
+      $('#history-zone').textContent = data.header.CurrentZoneName
+
+      // columns
       let got = data.get(
         this.template.tab.sort,
-        window.config.get('format.mergePet')
+        window.config.get('format.merge_pet')
       )
       let d = got[0], max = got[1]
       let table = $('#table')
@@ -75,6 +84,11 @@
           this.template.render(i, max)
         )
       }
+
+      // footer (rdps etc)
+
+      $('#rdps').textContent = data.header.encdps
+      $('#rhps').textContent = data.header.enchps
     }
 
   }

@@ -13,13 +13,12 @@
       this.dom.innerHTML = ''
 
       window.renderer.tabs.forEach((v, k) => {
-        let element = document.createElement('li')
+        let element = document.createElement('span')
 
-        element.className = 'button button-text'
         element.textContent = v.tab.label
 
         element.addEventListener('click', e => {
-          [].forEach.call($('.tabs li'), vv => vv.classList.remove('active'))
+          [].forEach.call($('.tabs span'), vv => vv.classList.remove('active'))
           element.classList.add('active')
           renderer.switchTab(k)
         })
@@ -27,7 +26,7 @@
         this.dom.insertAdjacentElement('beforeend', element)
       })
 
-      $('.tabs li', 0).classList.add('active')
+      $('.tabs span', 0).classList.add('active')
     }
   }
 
@@ -38,6 +37,8 @@
     update(index, time) { }
 
     updateList() {
+      let dom = $('.dropdown-history')
+      dom.innerHTML = ''
       for(let tab in window.hist) {
         //
       }
@@ -45,6 +46,9 @@
   }
 
   window.addEventListener('load', () => {
+
+    // Dropdown
+
     let dropdowns = $('.dropdown-trigger')
 
     ;[].forEach.call(dropdowns, button => {
