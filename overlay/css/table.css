@@ -132,18 +132,14 @@ main > ul {
   overflow-y: auto;
 }
 #header, footer {
-display: flex;
+  display: flex;
   width: 100%;
 
   color: #eee;
   background: rgba(0, 0, 0, 0.5);
   text-shadow: var(--shadow-text);
-
-  position: absolute;
-  z-index: 5;
 }
 #table {
-  padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
 #table > li {
@@ -200,7 +196,9 @@ footer {
   height: 1.5rem;
   line-height: 1.5rem;
 
+  position: absolute;
   bottom: 0;
+  z-index: 5;
 }
 .tabs {
   padding: 0 !important;

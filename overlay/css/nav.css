@@ -119,6 +119,7 @@ nav {
 
   color: var(--header-fg);
   fill: var(--header-fg);
+  z-index: 10;
 }
 .dropdown.opened {
   display: block;
