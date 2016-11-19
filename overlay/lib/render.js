@@ -57,6 +57,8 @@
     update() {
       if(!this.currentHistory) {
         this.render(window.hist.current)
+      } else {
+        this.render(window.hist.browse(this.currentHistory).data)
       }
     }
 
@@ -67,7 +69,7 @@
       $('.history', 0).classList.toggle('enabled', !data.isCurrent)
       $('#history-time').textContent = data.header.duration
       $('#history-mob').textContent = data.header.title
-      $('#history-zone').textContent = data.header.CurrentZoneName
+      $('#history-region').textContent = data.header.CurrentZoneName
 
       // columns
       let got = data.get(

@@ -34,14 +34,55 @@
 
     constructor() { }
 
-    update(index, time) { }
-
     updateList() {
-      let dom = $('.dropdown-history')
+      let dom = $('.dropdown-history', 0)
+      let current = window.hist.current
+      let active = window.renderer.currentHistory || 'current'
+      let r = []
+
       dom.innerHTML = ''
-      for(let tab in window.hist) {
-        //
+
+      if(!current) {
+        dom.innerHTML = `<li>
+          아직 데이터가 없습니다.
+          <br/>전투를 진행 후 다시 확인해주세요.
+        </li>`
+        return
       }
+
+      r.push(this._render({
+        id: 'current',
+        dps: current.header.encdps,
+        title: current.header.title,
+        duration: current.header.duration,
+        region: current.header.CurrentZoneName
+      }, active))
+
+      for(let k in window.hist.list) {
+        let v = window.hist.browse(k)
+        r.push(this._render(v, active))
+      }
+
+      if(r.length !== 0)
+        r.map(_ => dom.insertAdjacentElement('beforeend', _))
+    }
+
+    _render(histdata, active) {
+      let elem = document.createElement('li')
+
+      elem.className = histdata.id === active? 'history-current' : ''
+      elem.innerHTML = `
+        <mark class="history-time">${histdata.duration}</mark>
+        <span class="history-mob">${histdata.title}</span>
+        <span class="history-dps">${parseFloat(histdata.dps).toFixed(2)}</span>
+        <br />
+        <span class="history-region">${histdata.region}</span>
+      `.trim()
+      elem.addEventListener('click', e => {
+        window.renderer.browseHistory(histdata.id)
+        window.renderer.update()
+      })
+      return elem
     }
   }
 
@@ -90,6 +131,12 @@
 
     window.tabdisplay = new TabDisplay()
     tabdisplay.render()
+
+    window.historyUI = new HistoryUI()
+
+    $('.history', 0).addEventListener('click', e => {
+      window.historyUI.updateList()
+    })
 
   })
 

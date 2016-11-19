@@ -17,6 +17,8 @@
       // reconstruct
       this.update(data)
       this.isCurrent = true
+      this.saveid = `kagerou_save_${Date.now()}` +
+          sanitize(this.header.CurrentZoneName)
     }
 
     update(data) {
@@ -88,11 +90,8 @@
     }
 
     finalize() {
-      let saveid = `kagerou_save_${Date.now()}` +
-          sanitize(this.header.CurrentZoneName)
-
       this.isCurrent = false
-      return saveid
+      return this.saveid
     }
 
   }
@@ -114,6 +113,7 @@
             id: id,
             title: this.currentData.header.title,
             region: this.currentData.header.CurrentZoneName,
+            duration: this.currentData.header.duration,
             dps: this.currentData.header.damage /
                  this.currentData.header.DURATION,
             data: this.currentData
@@ -132,17 +132,21 @@
 
     updateLastEncounter(encounter) {
       this.lastEncounter = {
-        title: encounter.title,
+        hits: encounter.hits,
+        region: encounter.CurrentZoneName,
         damage: encounter.damage,
         duration: parseInt(encounter.DURATION)
       }
     }
 
     isNewEncounter(encounter) {
+      // TODO: it may not work
       if(!this.lastEncounter
-      || this.lastEncounter.title !== encounter.title
+      || this.lastEncounter.region !== encounter.CurrentZoneName
+      || this.lastEncounter.duration > encounter.DURATION
       || this.lastEncounter.damage > encounter.damage
-      || this.lastEncounter.duration > encounter.duration) {
+      || this.lastEncounter.hits > encounter.hits
+      ) {
         this.updateLastEncounter(encounter)
         return true
       }
