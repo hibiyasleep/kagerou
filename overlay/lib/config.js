@@ -1,9 +1,12 @@
 'use strict'
 
+const VERSION = '0.0.3'
+
 const CONFIG_DEFAULT = {
   lang: 'ko',
   style: {
     // body
+    'resize-factor': 1,
     'body-margin': '0.25rem',
     'body-font': "'Roboto', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', sans-serif",
     // header / ui
@@ -287,6 +290,10 @@ const COLUMN_INDEX = {
           }
         })
       }
+    }
+
+    setResizeFactor() {
+      $('html', 0).style.fontSize = this.get('style.resize-factor') + 'em'
     }
 
     get(k) {
