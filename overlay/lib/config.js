@@ -314,6 +314,10 @@ const COLUMN_INDEX = {
       localStorage.setItem('kagerou_config', '')
     }
 
+    save() {
+      localStorage.setItem('kagerou_config', JSON.stringify(this.config))
+    }
+
   }
 
   window.Config = Config
