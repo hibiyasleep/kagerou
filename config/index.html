@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title> kagerou - Settings </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%20Mono">
+    <link rel="stylesheet" href="../overlay/css/reset.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="../overlay/lib/lib.js"> </script>
+    <script src="../overlay/lib/config.js"> </script>
+    <script>
+'use strict'
+
+window.config = new Config()
+
+config.load()
+config.setResizeFactor()
+
+localStorage.setItem('kagerou_config', '{"style":{"resize-factor":1.25}}')
+    </script>
+  </head>
+  <body>
+    <aside>
+      <h1> 설정 </h1>
+      <ul class="menu">
+        <li data-page="general">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+            <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" />
+          </svg>
+          <label> 일반 </label>
+        </li>
+        <li data-page="tab">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+            <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h10v4h8v10z" />
+          </svg>
+          <label> 탭 </label>
+        </li>
+        <li data-page="format">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+            <path d="M11 3L5.5 17h2.25l1.12-3h6.25l1.12 3h2.25L13 3h-2zm-1.38 9L12 5.67 14.38 12H9.62z" />
+            <path d="M0 20h24v4H0z" fill-opacity=".36"/>
+          </svg>
+          <label> 형식 </label>
+        </li>
+        <li data-page="integration">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+            <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h.71C7.37 7.69 9.48 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3s-1.34 3-3 3z" />
+          </svg>
+          <label> 서비스 연동 </label>
+        </li>
+        <li data-page="info">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+            <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z" />
+          </svg>
+          <label> 정보 </label>
+        </li>
+        <li onclick="location.reload()"> 새로고침 </li>
+      </ul>
+    </aside>
+    <header>
+      <h2> 일반 </h2>
+      <ul class="buttons">
+        <li class="button"> 닫기 </li>
+        <li class="button button-primary"> 저장 </li>
+      </ul>
+    </header>
+    <main>
+      <section data-page="general">
+        <h3> 내용 </h3>
+      </section>
+      <section data-page="info" class="active">
+        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128"
+             viewBox="0 0 128 128" class="clock">
+          <circle fill="#fff" cx="64" cy="64" r="64" />
+          <line stroke="#000" stroke-width="6" x1="64" y1="64" x2="74.4" y2="25.4" />
+          <line stroke="#000" stroke-width="2" x1="64" y1="112" x2="64" y2="64" />
+        </svg>
+        <h3>
+          project<mark>kagerou</mark>
+        </h3>
+        <p>
+          version <span class="version"> ... </span>
+        </p>
+        <p>
+          © 2016, kuriyama hibiya
+        </p>
+        <p>
+          이 프로그램은 GNU Public License Version 3에 의거하여 배포됩니다.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

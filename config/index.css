@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+  background: none;
+
+  margin-right: calc(var(--body-margin) * -1);
+}
+::-webkit-scrollbar-track {
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(31, 31, 31, 0.5);
+  border-radius: 0;
+}
+::-webkit-scrollbar-corner {
+  background: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Roboto', 'Segoe UI', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', sans-serif;
+
+  -webkit-user-select: none;
+  overflow: hidden;
+}
+
+h1, h2, h3 {
+  font-size: 2rem;
+  font-weight: lighter;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+aside {
+  float: left;
+  width: 16rem;
+  height: 100vh;
+
+  margin: 0;
+  padding: 1rem;
+
+  background: #006064;
+  color: #fff;
+  fill: #fff;
+}
+aside ::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+aside > h1 {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+aside > .menu {
+  overflow-y: auto;
+  height: calc(100vh - 6.75rem);
+}
+.menu > li {
+  height: 3rem;
+  padding: 0.75rem;
+  transition: 200ms background ease;
+}
+.menu > li:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+.menu > li > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.menu > li > label {
+  margin-left: 1rem;
+  vertical-align: 0.375rem;
+}
+
+header {
+  display: flex;
+  float: left;
+  width: calc(100vw - 16rem);
+  height: 6rem;
+
+  background: #fff;
+}
+header > h2 {
+  padding: 1.5rem;
+  flex-grow: 100;
+}
+header > ul {
+  list-style: none;
+  display: flex;
+
+  padding: 1.5rem;
+}
+header > ul > li {
+  padding: 0.75rem 1rem;
+  transition: 200ms background ease;
+}
+.button-primary {
+  color: #0097A7; /* cyan 700 */
+}
+header > ul > li:hover {
+  background: rgba(0, 0, 0, 0.125);
+}
+
+main {
+  float: left;
+  width: calc(100vw - 16rem);
+  height: calc(100vh - 6rem);
+
+  box-shadow: 0.125rem 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.5) inset;
+}
+main h3 {
+  font-size: 1rem;
+  letter-spacing: 0.125rem;
+  color: #0097A7; /* cyan 700 */
+
+  margin: 1rem 0;
+}
+main > section {
+  display: none;
+  height: 100%;
+
+  padding: 0.5rem 1.5rem 3rem 1.5rem;
+  overflow-y: auto;
+}
+section.active {
+  display: block;
+}
+
+section[data-page=info] {
+  font-family: 'Roboto Mono', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', monospace;
+  font-weight: lighter;
+  text-align: center;
+
+  background: black;
+  color: white;
+}
+.clock {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+
+  margin: 4rem auto;
+}
+section[data-page=info] h3 {
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  color: white;
+}
+section[data-page=info] h3 > mark {
+  color: #2196f3; /* blue 500 */
+  background: none;
+}
+section[data-page=info] p {
+  margin: 1rem 0;
+}
