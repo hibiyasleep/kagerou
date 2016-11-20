@@ -124,10 +124,12 @@
     }, {
       name: 'settings',
       callback: _ => {
+        let resize = window.config.get('style.resize-factor')
+        $('.settings-waiting', 0).classList.remove('hidden')
         window.open(
           '../config/index.html',
           'kagerou - Settings',
-          'width=800,height=600'
+          `width=${800 * resize},height=${600 * resize}`
         )
       }
     }].forEach(_ => {
