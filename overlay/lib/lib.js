@@ -97,3 +97,11 @@ const resolveOwner = function resolveOwner(_) {
   let o = /^.+? \((.+?)\)$/.exec(_)
   return o && o[1] || undefined
 }
+
+const displayVersionNumber = function displayVersionNumber(dom) {
+  [].map.call(dom, _ => _.textContent = VERSION)
+}
+
+document.addEventListener('DOMContentLoaded', function(e) {
+  displayVersionNumber($('.version'))
+})
