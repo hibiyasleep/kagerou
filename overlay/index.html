@@ -35,6 +35,11 @@ window.renderer = new Renderer(window.config.get())
 
 document.addEventListener('DOMContentLoaded', e => {
   window.renderer.updateHeader()
+
+  ;[].map.call($('svg'), _ => {
+    _.style.width = parseInt(_.getAttribute('width')) / 16 + 'rem'
+    _.style.height = parseInt(_.getAttribute('height')) / 16 + 'rem'
+  })
 })
 
 // listen
@@ -79,8 +84,8 @@ window.hist = new History()
       <div class="history dropdown-trigger" data-dropdown="history">
         <span class="icon-container" id="history-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="46"
-               viewBox="0 0 24 46" class="icon icon-w24 icon-transition"
-               style="top: -1.375rem">
+               viewBox="0 0 24 46" class="icon icon-transition"
+               style="top: -1.375rem;">
             <path d="M15,1H9v2h6V1z M11,14h2V8h-2V14z M19,7.4L20.4,6
             C20,5.5,19.5,5,19,4.6L17.6,6c-1.5-1.2-3.5-2-5.6-2c-5,0-9,4-9,9
             s4,9,9,9s9-4,9-9C21,10.9,20.3,8.9,19,7.4z M12,20c-3.9,0-7-3.1-7-7
@@ -128,7 +133,7 @@ window.hist = new History()
               <ul class="dropdown right" id="dropdown-more">
                 <li data-button="merge-pet" data-active-by="label">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                       viewBox="0 0 24 24" class="icon icon-w24">
+                       viewBox="0 0 24 24" class="icon">
                     <g class="when-enabled">
                       <path d="M14 4l2.29 2.29-2.88 2.88 1.42 1.42 2.88-2.88
                       L20 10V4zm-4 0H4v6l2.29-2.29 4.71 4.7V20h2v-8.41
@@ -144,7 +149,7 @@ window.hist = new History()
                 </li>
                 <li data-button="nameblur" data-active-by="label">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                       viewBox="0 0 24 24" class="icon icon-w24">
+                       viewBox="0 0 24 24" class="icon">
                     <g class="when-enabled">
                       <!-- Don't panic, it's just big icon -->
                       <path d="M14 7c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm-.2 4.48l.2.02c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5-1.5.67-1.5 1.5l.02.2c.09.67.61 1.19 1.28 1.28zM14 3.5c.28 0 .5-.22.5-.5s-.22-.5-.5-.5-.5.22-.5.5.22.5.5.5zm-4 0c.28 0 .5-.22.5-.5s-.22-.5-.5-.5-.5.22-.5.5.22.5.5.5zm11 7c.28 0 .5-.22.5-.5s-.22-.5-.5-.5-.5.22-.5.5.22.5.5.5zM10 7c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm8 8c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm0-4c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm0-4c.55 0 1-.45 1-1s-.45-1-1-1-1 .45-1 1 .45 1 1 1zm-4 13.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM2.5 5.27l3.78 3.78L6 9c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1c0-.1-.03-.19-.06-.28l2.81 2.81c-.71.11-1.25.73-1.25 1.47 0 .83.67 1.5 1.5 1.5.74 0 1.36-.54 1.47-1.25l2.81 2.81c-.09-.03-.18-.06-.28-.06-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1c0-.1-.03-.19-.06-.28l3.78 3.78L20 20.23 3.77 4 2.5 5.27zM10 17c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm11-3.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM6 13c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zM3 9.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm7 11c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zM6 17c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm-3-3.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5z"/>
@@ -159,7 +164,7 @@ window.hist = new History()
                 <li class="seperator"></li>
                   <li data-button="settings">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                         viewBox="0 0 24 24" class="icon icon-w24">
+                         viewBox="0 0 24 24" class="icon">
                       <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
                     </svg>
                     <label> 설정 </label>

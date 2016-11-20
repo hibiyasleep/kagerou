@@ -88,9 +88,6 @@ nav {
   position: relative;
   transition: top 200ms ease;
 }
-.icon-w16 { width: 1rem }
-.icon-w24 { width: 1.5rem }
-.icon-h24 { height: 1.5rem }
 
 :not(.enabled) > .icon-container > .icon-transition {
   top: 0 !important; /* (unfollow inline style) */
