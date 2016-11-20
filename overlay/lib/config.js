@@ -227,9 +227,7 @@ const COLUMN_INDEX = {
 
   class Config {
 
-    constructor() {
-      this.load()
-    }
+    constructor() { }
 
     load() {
       let localConfig = copy(CONFIG_DEFAULT)
@@ -237,7 +235,7 @@ const COLUMN_INDEX = {
       let o
 
       try {
-        o = JSON.parse(o)
+        o = JSON.parse(rawJson)
       } catch(e) { // broken!
         o = null
       }
@@ -319,5 +317,6 @@ const COLUMN_INDEX = {
   }
 
   window.Config = Config
+  localStorage.getItem('kagerou_config')
 
 })()

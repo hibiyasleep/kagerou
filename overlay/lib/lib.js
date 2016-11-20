@@ -51,7 +51,7 @@ const updateObject = function updateObject(obj/*, ... */) {
     for(let prop in arguments[i]) {
       let val = arguments[i][prop]
       if(typeof val == 'object')
-        update(obj[prop], val)
+        updateObject(obj[prop], val)
       else
         obj[prop] = val
     }
