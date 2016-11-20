@@ -121,11 +121,23 @@
         window.config.toggle('format.merge_pet')
         window.renderer.update()
       }
+    }, {
+      name: 'settings',
+      callback: _ => {
+        window.open(
+          '../config/index.html',
+          'kagerou - Settings',
+          'width=800,height=600'
+        )
+      }
     }].forEach(_ => {
       $(`[data-button=${_.name}]`, 0).addEventListener('click', function(e) {
-        this.classList.toggle('enabled')
-        $('main', 0).classList.toggle(_.toggle)
-        if(_.callback) _.callback()
+        if(_.toggle) {
+          this.classList.toggle('enabled')
+          $('main', 0).classList.toggle(_.toggle)
+        }
+        if(_.callback)
+          _.callback()
       })
     })
 

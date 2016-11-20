@@ -173,11 +173,6 @@
   }
 
   window.Renderer = Renderer
-
-  window.renderer = new Renderer(window.config.get())
-
-  document.addEventListener('DOMContentLoaded', e => {
-    window.renderer.updateHeader()
-  })
+  window.Row = Row
 
 })()

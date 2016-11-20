@@ -92,6 +92,5 @@
   }
 
   window.Locale = Locale
-  window.l = new Locale()
 
 })()

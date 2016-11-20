@@ -15,6 +15,42 @@
     <script>
 'use strict'
 
+// config
+window.config = new Config()
+config.reset()
+
+config.load()
+config.attachCSS([
+  'css/index.css',
+  'css/nav.css'
+], 'style')
+
+config.attachCSS('css/table.css', ['style', 'colwidth'])
+
+// locale
+window.l = new Locale()
+
+// render
+window.renderer = new Renderer(window.config.get())
+
+document.addEventListener('DOMContentLoaded', e => {
+  window.renderer.updateHeader()
+})
+
+// listen
+const listener = e => {
+  window.hist.push(e.detail)
+}
+
+document.addEventListener('onOverlayDataUpdate', listener)
+document.addEventListener('message', e => {
+  if(e.data.type == 'onOverlayDataUpdate') {
+    listener(e)
+  }
+})
+
+window.hist = new History()
+
     </script>
   </head>
   <body style="overflow:hidden">

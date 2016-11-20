@@ -162,19 +162,8 @@
     }
   }
 
-  const listener = e => {
-    window.hist.push(e.detail)
-  }
-
-  document.addEventListener('onOverlayDataUpdate', listener)
-  document.addEventListener('message', e => {
-    if(e.data.type == 'onOverlayDataUpdate') {
-      listener(e)
-    }
-  })
-
   window.Data = Data
+  window.History = History
 
-  window.hist = new History()
 
 })()

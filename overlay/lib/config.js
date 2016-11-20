@@ -311,16 +311,6 @@ const COLUMN_INDEX = {
 
   }
 
-  window.config = new Config()
-  config.reset()
-
-  config.load()
-  config.attachCSS([
-    'css/index.css',
-    'css/nav.css'
-  ], 'style')
-
-  config.attachCSS('css/table.css', ['style', 'colwidth'])
-
+  window.Config = Config
 
 })()
