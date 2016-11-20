@@ -10,8 +10,8 @@ const CONFIG_DEFAULT = {
     'body-margin': '0.25rem',
     'body-font': "'Roboto', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', sans-serif",
     // header / ui
-    'header-bg': 'rgba(230, 230, 230, 0.95)',
-    'header-fg': '#111',
+    'nav-bg': 'rgba(230, 230, 230, 0.95)',
+    'nav-fg': '#111',
     'content-bg': 'rgba(0, 0, 0, 0.5)',
     'content-fg': '#eee',
     'color-accent': '#FF6F00',

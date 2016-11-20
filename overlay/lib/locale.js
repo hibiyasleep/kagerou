@@ -7,7 +7,7 @@
       style: {
         'body-margin': '바깥쪽 여백',
         'body-font': '글꼴',
-        'header-bg-translucent': '상단 바 배경',
+        'nav-bg-translucent': '상단 바 배경',
         'ui-bg': 'UI 배경',
         'ui-fg': 'UI 전경',
         'color-accent': '강조색',
