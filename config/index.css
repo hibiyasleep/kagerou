@@ -6,8 +6,6 @@
   width: 0.25rem;
   height: 0.25rem;
   background: none;
-
-  margin-right: calc(var(--body-margin) * -1);
 }
 ::-webkit-scrollbar-track {
   background: none;
@@ -40,6 +38,29 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+input[type=text] {
+  text-align: right;
+  background: none;
+  border-bottom: 0.1rem solid #006064;
+
+  transition: 100ms border-bottom-color ease;
+}
+input[type=text]:focus {
+  border-bottom-color: #0097A7;
+}
+input[type=range] {
+  vertical-align: middle;
+}
+button {
+  padding: 0.25rem 0.5rem;
+  background: none;
+
+  transition: 200ms background ease;
+}
+button:hover {
+  background: rgba(0, 0, 0, 0.25);
 }
 
 aside {
@@ -120,7 +141,7 @@ main {
   box-shadow: 0.125rem 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.5) inset;
 }
 main h3 {
-  font-size: 1rem;
+  font-size: 0.75rem;
   letter-spacing: 0.125rem;
   color: #0097A7; /* cyan 700 */
 
@@ -130,27 +151,46 @@ main > section {
   display: none;
   height: 100%;
 
-  padding: 0.5rem 1.5rem 3rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   overflow-y: auto;
 }
 section.active {
   display: block;
 }
+article {
+  margin-bottom: 2rem;
+}
+section p {
+  margin: 1rem 0;
+}
+
+.control {
+  display: flex;
+}
+.control > label {
+  flex-grow: 100;
+}
+.input-value-color {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
 
 section[data-page=info] {
   font-family: 'Roboto Mono', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', monospace;
   font-weight: lighter;
+  font-size: 0.75rem;
   text-align: center;
 
   background: black;
   color: white;
 }
 .clock {
-  display: block;
-  width: 8rem;
+  width: 26rem;
   height: 8rem;
 
   margin: 4rem auto;
+  overflow: hidden;
 }
 section[data-page=info] h3 {
   font-size: 2rem;
