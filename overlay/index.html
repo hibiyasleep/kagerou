@@ -55,15 +55,24 @@ window.hist = new History()
   </head>
   <body style="overflow:hidden">
     <!-- temp splash -->
-    <div class="hidden"
-      style="width:100vw;height:100vh;background:rgba(0,0,0,0.5);color:white;position:relative;font-family:'Malgun Gothic';-webkit-user-select:none;">
-      <div style="position:absolute;top:0;bottom:0;margin:auto;text-align:center;width:100%;height:2rem;">
+    <div class="splash hidden">
+      <div>
         불러오는 중..
         <br/><br/>
-        <span onclick="location.reload()"
-              style="background:rgba(255,255,255,0.25);margin:0.5rem;padding:0.5rem;">
+        <button onclick="location.reload()">
           재시도
-        </span>
+        </button>
+      </div>
+    </div>
+    <div class="settings-waiting hidden">
+      <div>
+        <p> 설정을 완료한 후 </p>
+        <p> ACT &gt; Plugins &gt; OverlayPlugin.dll 아래의 </p>
+        <p> 오버레이 설정에 가서 (아마도 kagerou) </p>
+        <p> Reload Overlay를 눌러주세요 </p>
+        <p> </p>
+        <p> 설정 창이 뜨지 않았다면 </p>
+        <p> 작업 표시줄을 확인하세요 </p>
       </div>
     </div>
     <nav>
