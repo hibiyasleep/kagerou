@@ -125,7 +125,11 @@
       name: 'settings',
       callback: _ => {
         let resize = window.config.get('style.resize-factor')
-        $('.settings-waiting', 0).classList.remove('hidden')
+        _.preventDefault()
+
+        ;[].map.call($('style'), _ => _.remove())
+        $('body', 0).innerHTML = ''
+
         window.open(
           '../config/index.html',
           'kagerou - Settings',
@@ -139,7 +143,7 @@
           $('main', 0).classList.toggle(_.toggle)
         }
         if(_.callback)
-          _.callback()
+          _.callback(e)
       })
     })
 
