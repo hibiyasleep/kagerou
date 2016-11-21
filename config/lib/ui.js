@@ -1,14 +1,20 @@
 'use strict'
 
+const switchTab = function switchTab(target) {
+  $('section.active', 0).classList.remove('active')
+  $(`section[data-page='${target}']`, 0).classList.add('active')
+
+  $('header h2', 0).textContent = $(`li[data-page='${target}']`, 0).textContent
+
+  $('body', 0).classList.toggle('hide-header', target === 'info')
+}
+
 window.addEventListener('load', function(e) {
 
   [].map.call($('.menu li[data-page]'), _ => {
     let target = _.getAttribute('data-page')
     _.addEventListener('click', function() {
-      $('section.active', 0).classList.remove('active')
-      $(`section[data-page='${target}']`, 0).classList.add('active')
-
-      $('header h2', 0).textContent = _.textContent
+      switchTab(target)
     })
   })
 
