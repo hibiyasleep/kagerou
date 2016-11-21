@@ -52,6 +52,13 @@ config.setResizeFactor()
           </svg>
           <label> 서비스 연동 </label>
         </li-->
+        <li data-page="reload">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+              <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+          </svg>
+          <label> 돌아가기 </label>
+        </lib>
         <li data-page="info">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
@@ -59,13 +66,15 @@ config.setResizeFactor()
           </svg>
           <label> 정보 </label>
         </li>
-        <!--li onclick="location.reload()"> 새로고침 </li-->
+        <li onclick="location.reload()"> 새로고침 </li>
       </ul>
     </aside>
     <header>
       <h2> 일반 </h2>
       <ul class="buttons">
-        <li class="button"> 닫기 </li>
+        <!--li class="button">
+          오버레이를 리로드해야 합니다.
+        </li-->
         <li class="button button-primary" id="save"> 저장 </li>
       </ul>
     </header>
@@ -166,6 +175,27 @@ config.setResizeFactor()
       <section data-page="tab"> </section>
       <section data-page="format"> </section>
       <section data-page="integration"> </section>
+      <section data-page="reload">
+        <h3> 이유 </h3>
+        <p>
+          OverlayPlugin이 같은 오버레이가 두 개 이상의 창을 띄우는 것을
+          허용하지 않아서, 직접 오버레이를 다시 실행해줘야 합니다.
+        </p>
+        <p>
+          설정을 변경하지 않았어도, 위의 이유로 오버레이를 다시 사용하려면
+          아래의 단계를 따라야 합니다.
+        <h3> 방법 </h3>
+        <ol class="list">
+          <li> ACT 메인 창으로 갑니다. </li>
+          <li>
+            <b>Plugins</b> &gt;
+            <b>OverlayPlugin.dll</b> &gt;
+            <b>kagerou</b>
+          </li>
+          <li> 오른쪽 아래의 <b> Reload overlay </b> 버튼을 누릅니다. </li>
+          <li> 설정 창이 자동으로 닫히고, 오버레이가 다시 나타납니다. </li>
+        </ol>
+      </section>
       <section data-page="info">
         <svg xmlns="http://www.w3.org/2000/svg" width="416" height="128"
              viewBox="0 0 416 128" class="clock">

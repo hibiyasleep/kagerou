@@ -40,6 +40,14 @@ ul {
   padding: 0;
 }
 
+b {
+  font-weight: bold;
+}
+
+.text-muted {
+  opacity: 0.5;
+}
+
 input[type=text] {
   text-align: right;
   background: none;
@@ -174,6 +182,18 @@ section p {
   display: inline-block;
   width: 1rem;
   height: 1rem;
+}
+
+
+.list {
+  line-height: 1.5rem;
+  margin-left: 2rem;
+}
+ul.list {
+  list-style: disc;
+}
+ol.list {
+  list-style: decimal;
 }
 
 section[data-page=info] {

@@ -44,5 +44,6 @@ window.addEventListener('load', function(e) {
     })
 
     config.save()
+    switchTab('reload')
   })
 })
