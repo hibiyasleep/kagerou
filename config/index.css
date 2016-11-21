@@ -11,7 +11,7 @@
   background: none;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(31, 31, 31, 0.5);
+  background: rgba(127, 127, 127, 0.5);
   border-radius: 0;
 }
 ::-webkit-scrollbar-corner {
@@ -68,7 +68,7 @@ button {
   transition: 200ms background ease;
 }
 button:hover {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.125);
 }
 
 aside {
@@ -98,6 +98,7 @@ aside > .menu {
 .menu > li {
   height: 3rem;
   padding: 0.75rem;
+  cursor: pointer;
   transition: 200ms background ease;
 }
 .menu > li:hover {
@@ -134,10 +135,13 @@ header > ul > li {
   padding: 0.75rem 1rem;
   transition: 200ms background ease;
 }
+header > ul > .button {
+  cursor: pointer;
+}
 .button-primary {
   color: #0097A7; /* cyan 700 */
 }
-header > ul > li:hover {
+header > ul > .button:hover {
   background: rgba(0, 0, 0, 0.125);
 }
 
@@ -212,15 +216,24 @@ section[data-page=info] {
   margin: 4rem auto;
   overflow: hidden;
 }
-section[data-page=info] h3 {
+#kagerou {
   font-size: 2rem;
   letter-spacing: 0.5rem;
   color: white;
 }
-section[data-page=info] h3 > mark {
+#kagerou > mark {
   color: #2196f3; /* blue 500 */
   background: none;
 }
 section[data-page=info] p {
   margin: 1rem 0;
+}
+header, main {
+  transition: 200ms height ease;
+}
+.hide-header header {
+  height: 0;
+}
+.hide-header main {
+  height: 100vh;
 }
