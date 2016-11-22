@@ -301,7 +301,10 @@ const COLUMN_INDEX = {
     }
 
     set(k, v) {
-      return resolveDotIndex(this.config, k, v)
+      if(k)
+        return resolveDotIndex(this.config, k, v)
+      else
+        this.config = v
     }
 
     toggle(k) {

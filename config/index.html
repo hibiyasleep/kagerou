@@ -6,8 +6,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%20Mono">
     <link rel="stylesheet" href="../overlay/css/reset.css" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="dialog.css" />
+    <script src="https://raw.githubusercontent.com/github/fetch/master/fetch.js"></script>
     <script src="../overlay/lib/lib.js"> </script>
     <script src="../overlay/lib/config.js"> </script>
+    <script src="lib/dialog.js"> </script>
+    <script src="lib/integration.js"> </script>
     <script src="lib/ui.js"> </script>
     <script>
 'use strict'
@@ -44,14 +48,15 @@ config.setResizeFactor()
             <path d="M0 20h24v4H0z" fill-opacity=".36"/>
           </svg>
           <label> 형식 </label>
-        </li>
+        </li-->
         <li data-page="integration">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
             <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4s1.79-4 4-4h.71C7.37 7.69 9.48 6 12 6c3.04 0 5.5 2.46 5.5 5.5v.5H19c1.66 0 3 1.34 3 3s-1.34 3-3 3z" />
           </svg>
           <label> 서비스 연동 </label>
-        </li-->
+        </li>
+        <li class="splitter"> </li>
         <li data-page="reload">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
@@ -175,16 +180,79 @@ config.setResizeFactor()
       </section>
       <section data-page="tab"> </section>
       <section data-page="format"> </section>
-      <section data-page="integration"> </section>
+      <section data-page="integration">
+        <article>
+          <h3> 트위터 </h3>
+          <p class="control">
+            <label id="current-account">
+              로그인되지 않음
+            </label>
+            <button data-button="log-in-out"> 로그인 </button>
+          </p>
+          <p>
+            현재 사용 중인 설정은
+            <span class="hidden label-save-type" data-where="nowhere">
+              저장되어 있지 않습니다.
+            </span>
+            <span class="hidden label-save-type" data-where="twitter">
+              설정 ID <b>undefined</b>의 설정입니다.
+            </span>
+            <span class="hidden label-save-type" data-where="id">
+              <b>undefined</b>의 설정입니다.
+            </span>
+          </p>
+          <p>
+            설정을 바꾸고 저장해도 자동으로 백업되지 않고,
+            다른 설정으로 덮어쓰면 이전의 설정은 사라집니다.
+          </p>
+        </article>
+        <article>
+          <h3> 설정 내보내기 </h3>
+          <p>
+            트위터 계정을 사용하지 않거나, 설정을 공유하고 싶다면 익명 ID를
+            사용해서 설정을 저장할 수 있습니다.
+          </p>
+          <p class="control text-right">
+            <label class="text-left" class="hidden">
+              저장된 ID: <b data-label="saved-id">asdf</b>
+            </label>
+            <button data-button="save-to-twitter" class="disabled">
+              트위터 계정으로 저장
+            </button>
+            <button data-button="save-to-id">
+              익명으로 저장
+            </button>
+          </p>
+        </article>
+        <article>
+          <h3> 설정 가져오기 </h3>
+          <p> 저장된 설정으로 현재 설정을 덮어쓸 수 있습니다. </p>
+          <p class="control text-right">
+            <label class="text-left">
+              가져올 ID:
+              <input type="text" class="text-left"
+                     id="load-id" style="width: 4rem;" />
+            </label>
+            <button data-button="load-from-twitter" class="disabled">
+              트위터 계정에서 가져오기
+            </button>
+            <button data-button="load-from-id">
+              익명 ID를 가져오기
+            </button>
+          </p>
+        </article>
+      </section>
+
       <section data-page="reload">
         <h3> 이유 </h3>
         <p>
-          OverlayPlugin이 같은 오버레이가 두 개 이상의 창을 띄우는 것을
-          허용하지 않아서, 직접 오버레이를 다시 실행해줘야 합니다.
+          OverlayPlugin이 오버레이가 다른 창을 띄우는 것을 허용하지 않아서,
+          직접 오버레이를 다시 실행해줘야 설정이 돌아오고 오버레이가 작동합니다.
         </p>
         <p>
-          설정을 변경하지 않았어도, 위의 이유로 오버레이를 다시 사용하려면
-          아래의 단계를 따라야 합니다.
+          설정을 변경하지 않았어도, 오버레이를 다시 사용하려면 아래의 단계를
+          따라야 합니다.
+        </p>
         <h3> 방법 </h3>
         <ol class="list">
           <li> ACT 메인 창으로 갑니다. </li>

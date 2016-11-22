@@ -1,0 +1,12 @@
+{
+  "secret": "COOKIE SECRET HERE",
+  "twitter": {
+    "token": "API ACCESS_TOKEN HERE",
+    "secret": "API ACCESS_TOKEN_SECRET"
+  },
+  "root": {
+    "api": "/api",
+    "domain": "http://mari.local:8080",
+    "callback": "/config/save"
+  }
+}

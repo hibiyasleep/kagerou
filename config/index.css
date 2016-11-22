@@ -44,8 +44,17 @@ b {
   font-weight: bold;
 }
 
+.hidden {
+  display: none;
+}
 .text-muted {
   opacity: 0.5;
+}
+.text-left.text-left {
+  text-align: left;
+}
+.text-right.text-right {
+  text-align: right;
 }
 
 input[type=text] {
@@ -66,6 +75,7 @@ button {
   background: none;
 
   transition: 200ms background ease;
+  background: #E0F7FA; /* cyan 50 */
 }
 button:hover {
   background: rgba(0, 0, 0, 0.125);
@@ -103,6 +113,13 @@ aside > .menu {
 }
 .menu > li:hover {
   background: rgba(0, 0, 0, 0.25);
+}
+.menu > li.splitter {
+  height: 0;
+
+  margin: 0.5rem 1rem;
+  padding: 0;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.25);
 }
 .menu > li > svg {
   width: 1.5rem;
@@ -179,8 +196,18 @@ section p {
 .control {
   display: flex;
 }
+.control.text-right {
+  justify-content: flex-end;
+}
 .control > label {
   flex-grow: 100;
+}
+.control button + button {
+  margin-left: 0.5rem;
+}
+.input-value {
+  font-size: 0.75rem;
+  opacity: 0.5;
 }
 .input-value-color {
   display: inline-block;

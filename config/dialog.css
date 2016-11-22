@@ -1,0 +1,55 @@
+.dialog {
+  width: 24rem;
+  max-width: 100%;
+
+  font-size: 0.875rem;
+
+  margin: auto;
+  padding: 0.5rem;
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  z-index: 1000;
+
+  transition: bottom 300ms ease;
+
+  box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
+}
+
+.dialog h4 {
+  font-size: 1em; /* force to current inherited font-size */
+  font-weight: 600;
+}
+.dialog.removing {
+  bottom: -4rem;
+}
+.dialog.error {
+  background: #FF9800; /* orange 500 */
+}
+.dialog.confirm {
+  background: #81C784; /* green 300 */
+}
+.dialog .buttons {
+  float: right;
+}
+.dialog-button {
+  background: none;
+}
+.dialog-button:hover {
+  background: rgba(0, 0, 0, 0.125);
+}
+.dialog-button.close:before {
+  content: '×';
+  display: inline;
+}
+.dialog-button.yes:before {
+  content: '예';
+  display: inline;
+}
+.dialog-button.no:before {
+  content: '아니오';
+  display: inline;
+}
