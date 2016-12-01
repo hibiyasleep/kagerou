@@ -75,9 +75,9 @@
       elem.innerHTML = `
         <mark class="history-time">${histdata.duration}</mark>
         <span class="history-mob">${histdata.title}</span>
-        <br />
+        <span class="history-region">${histdata.region}</span>
+        |
         <span class="history-dps">${parseFloat(histdata.dps).toFixed(2)}</span>
-        | <span class="history-region">${histdata.region}</span>
       `.trim()
 
       elem.addEventListener('click', e => {
