@@ -140,17 +140,16 @@
     }
 
     isNewEncounter(encounter) {
-      // TODO: it may not work
-      if(!this.lastEncounter
+      let really = (
+        !this.lastEncounter
       || this.lastEncounter.region !== encounter.CurrentZoneName
-      || this.lastEncounter.duration > encounter.DURATION
-      || this.lastEncounter.damage > encounter.damage
-      || this.lastEncounter.hits > encounter.hits
-      ) {
-        this.updateLastEncounter(encounter)
-        return true
-      }
-      return false
+      || this.lastEncounter.duration > parseInt(encounter.DURATION)
+      // ACT-side bug (scrambling data) making this invalid!
+      // || this.lastEncounter.damage > encounter.damage
+      // || this.lastEncounter.hits > encounter.hits
+      )
+      this.updateLastEncounter(encounter)
+      return really
     }
 
     get list() { return this.history }
