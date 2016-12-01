@@ -67,7 +67,7 @@ const switchTab = function switchTab(target) {
         if(type === 'array') {
           value = value.split(o.getAttribute('data-splitter')).map(_ => _.trim())
         } else if(type === 'boolean') {
-          value = o.checked
+          value = o.checked == 'true'
         }
         config.set(o.getAttribute('data-config-key'), value)
       })
