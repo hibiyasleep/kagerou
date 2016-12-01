@@ -1,4 +1,5 @@
 nav {
+  display: flex;
   width: 100%;
   height: 2rem;
 
@@ -19,10 +20,13 @@ nav {
 
 .history {
   display: inline-block;
-  float: left;
   font-size: var(--font-size-small);
 
   height: 100%;
+
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0%;
 }
 
 #history-icon {
@@ -33,6 +37,17 @@ nav {
 .history-label {
   display: inline-block;
   margin-top: 0.0625rem;
+  width: calc(100% - 2rem);
+}
+.history-label > span {
+  width: 100%;
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+#history-region {
+  margin-top: -0.5rem;
 }
 
 .buttons {
@@ -40,6 +55,9 @@ nav {
   float: right;
 
   height: 100%;
+
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 .buttons * {
   display: inline-block;
