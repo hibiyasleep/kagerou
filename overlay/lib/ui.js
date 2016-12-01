@@ -116,7 +116,7 @@
       toggle: 'nameblur'
     }, {
       name: 'merge-pet',
-      toggle: 'per-merged',
+      toggle: 'pet-merged',
       callback: _ => {
         window.config.toggle('format.merge_pet')
         window.renderer.update()
