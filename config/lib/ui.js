@@ -116,4 +116,4 @@ const switchTab = function switchTab(target) {
 
   })
 
-})
+})()

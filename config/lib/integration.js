@@ -32,12 +32,13 @@ class Integration {
     let save = localStorage.getItem('kagerou_save')
 
     try {
-      this.token = JSON.parse(token)
+      this.token = JSON.parse(token || '!')
     } catch(e) {
+      this.token = {}
       localStorage.setItem('kagerou_token', '{}')
     }
     try {
-      this.connected = JSON.parse(save)
+      this.connected = JSON.parse(save || '!')
     } catch(e) {
       this.connected = {
         to: 'nowhere',

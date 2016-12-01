@@ -63,7 +63,7 @@
     }
 
     render(data) {
-      // damn chromium 48
+      // damn chromium 45
 
       // history header
       $('.history', 0).classList.toggle('enabled', !data.isCurrent)
