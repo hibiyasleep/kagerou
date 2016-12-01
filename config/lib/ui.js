@@ -89,14 +89,13 @@ const switchTab = function switchTab(target) {
       })
 
       config.save()
-      switchTab('reload')
+      OverlayPluginApi.broadcastMessage('reload')
     })
 
     // integration
 
     window.integration = new Integration()
     updateIL(integration.read())
-
 
     $('[data-button=log-in-out]', 0).addEventListener('click', function(e) {
       let loggedIn = this.textContent.trim() != '로그인'

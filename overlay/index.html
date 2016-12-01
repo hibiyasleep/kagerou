@@ -20,11 +20,11 @@ window.config = new Config()
 
 config.load()
 config.setResizeFactor()
+
 config.attachCSS([
   'css/index.css',
   'css/nav.css'
 ], 'style')
-
 config.attachCSS('css/table.css', ['style', 'colwidth'])
 
 // locale
@@ -34,6 +34,7 @@ window.l = new Locale()
 window.renderer = new Renderer(window.config.get())
 
 document.addEventListener('DOMContentLoaded', e => {
+
   window.renderer.updateHeader()
 
   ;[].map.call($('svg'), _ => {
@@ -67,17 +68,6 @@ window.hist = new History()
         <button onclick="location.reload()">
           재시도
         </button>
-      </div>
-    </div>
-    <div class="settings-waiting hidden">
-      <div>
-        <p> 설정을 완료한 후 </p>
-        <p> ACT &gt; Plugins &gt; OverlayPlugin.dll 아래의 </p>
-        <p> 오버레이 설정에 가서 (아마도 kagerou) </p>
-        <p> Reload Overlay를 눌러주세요 </p>
-        <p> </p>
-        <p> 설정 창이 뜨지 않았다면 </p>
-        <p> 작업 표시줄을 확인하세요 </p>
       </div>
     </div>
     <nav>

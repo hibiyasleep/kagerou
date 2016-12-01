@@ -125,10 +125,6 @@
       name: 'settings',
       callback: _ => {
         let resize = window.config.get('style.resize-factor')
-        _.preventDefault()
-
-        ;[].map.call($('style'), _ => _.remove())
-        $('body', 0).innerHTML = ''
 
         window.open(
           '../config/index.html',
@@ -156,6 +152,22 @@
       window.historyUI.updateList()
     })
 
+  })
+
+
+  document.addEventListener('onBroadcastMessageReceive', e => {
+    let message
+
+    try {
+      message = e.detail.message
+    } catch(e) {
+      return
+    }
+
+    switch(message) {
+      case 'reload':
+        location.reload()
+    }
   })
 
 })()

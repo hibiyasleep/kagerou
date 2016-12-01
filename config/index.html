@@ -57,13 +57,6 @@ config.setResizeFactor()
           <label> 서비스 연동 </label>
         </li>
         <li class="splitter"> </li>
-        <li data-page="reload">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-               viewBox="0 0 24 24" class="icon">
-              <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
-          </svg>
-          <label> 돌아가기 </label>
-        </lib>
         <li data-page="info">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
@@ -233,38 +226,16 @@ config.setResizeFactor()
               <input type="text" class="text-left"
                      id="load-id" style="width: 4rem;" />
             </label>
-            <button data-button="load-from-twitter" class="disabled">
-              트위터 계정에서 가져오기
+            <button data-button="load-from-twitter" class="from-twitter disabled">
+              트위터 계정에서
             </button>
             <button data-button="load-from-id">
-              익명 ID를 가져오기
+              익명 ID에서
             </button>
           </p>
         </article>
       </section>
 
-      <section data-page="reload">
-        <h3> 이유 </h3>
-        <p>
-          OverlayPlugin이 오버레이가 다른 창을 띄우는 것을 허용하지 않아서,
-          직접 오버레이를 다시 실행해줘야 설정이 돌아오고 오버레이가 작동합니다.
-        </p>
-        <p>
-          설정을 변경하지 않았어도, 오버레이를 다시 사용하려면 아래의 단계를
-          따라야 합니다.
-        </p>
-        <h3> 방법 </h3>
-        <ol class="list">
-          <li> ACT 메인 창으로 갑니다. </li>
-          <li>
-            <b>Plugins</b> &gt;
-            <b>OverlayPlugin.dll</b> &gt;
-            <b>kagerou</b>
-          </li>
-          <li> 오른쪽 아래의 <b> Reload overlay </b> 버튼을 누릅니다. </li>
-          <li> 설정 창이 자동으로 닫히고, 오버레이가 다시 나타납니다. </li>
-        </ol>
-      </section>
       <section data-page="info">
         <svg xmlns="http://www.w3.org/2000/svg" width="416" height="128"
              viewBox="0 0 416 128" class="clock">
