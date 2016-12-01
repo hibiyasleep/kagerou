@@ -9,23 +9,7 @@ const switchTab = function switchTab(target) {
   $('body', 0).classList.toggle('hide-header', target === 'info')
 }
 
-(function() {
-
-  const updateIL = function updateIntegrationLabels(token, connected) {
-
-    $('#current-account').textContent = `로그인됨: ${this.token.name} (${this.token.uid})`
-    $('[data-button=log-in-out]', 0).textContent = '로그아웃'
-
-
-    [].map.call($('.label-save-type'), _ => _.classList.toggle('hidden', 1))
-    let c = $(`.label-save-type[data-where=${this.serv.connected.to}]`, 0)
-    let c_id = c.getElementsByTagName('b')[0]
-
-    c.classList.remove('hidden')
-    if(c_id)
-      c_id.innerText = serv.connected.id
-
-  }
+;(function() {
 
   window.addEventListener('load', function(e) {
 
@@ -90,28 +74,6 @@ const switchTab = function switchTab(target) {
 
       config.save()
       OverlayPluginApi.broadcastMessage('reload')
-    })
-
-    // integration
-
-    window.integration = new Integration()
-    updateIL(integration.read())
-
-    $('[data-button=log-in-out]', 0).addEventListener('click', function(e) {
-      let loggedIn = this.textContent.trim() != '로그인'
-      if(!loggedIn)
-        integration.login()
-      else
-        new dialog('error', {
-          title: '로그아웃하시겠습니까?',
-          content: '서버에 저장된 모든 설정이 삭제됩니다.',
-          callback: _ => {
-            integration.logout()
-            this.textContent = '로그인'
-            $('#current-account').textContent = '로그인되지 않음'
-            new dialog('confirm', {content: '로그아웃되었습니다.'})
-          }
-        })
     })
 
   })
