@@ -177,14 +177,3 @@ nav {
 .history-current {
   box-shadow: 0.125rem 0 0 var(--color-accent) inset;
 }
-.history-dps {
-  opacity: 0.5;
-}
-.history-dps:before {
-  display: inline;
-  content: '(';
-}
-.history-dps:after {
-  display: inline;
-  content: ')';
-}

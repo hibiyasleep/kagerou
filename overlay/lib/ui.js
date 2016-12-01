@@ -50,6 +50,11 @@
         return
       }
 
+      for(let k in window.hist.list) {
+        let v = window.hist.browse(k)
+        r.push(this._render(v, active))
+      }
+
       r.push(this._render({
         id: 'current',
         dps: current.header.encdps,
@@ -58,11 +63,7 @@
         region: current.header.CurrentZoneName
       }, active))
 
-      for(let k in window.hist.list) {
-        let v = window.hist.browse(k)
-        r.push(this._render(v, active))
-      }
-
+      r.reverse()
       if(r.length !== 0)
         r.map(_ => dom.insertAdjacentElement('beforeend', _))
     }
@@ -74,10 +75,11 @@
       elem.innerHTML = `
         <mark class="history-time">${histdata.duration}</mark>
         <span class="history-mob">${histdata.title}</span>
-        <span class="history-dps">${parseFloat(histdata.dps).toFixed(2)}</span>
         <br />
-        <span class="history-region">${histdata.region}</span>
+        <span class="history-dps">${parseFloat(histdata.dps).toFixed(2)}</span>
+        | <span class="history-region">${histdata.region}</span>
       `.trim()
+
       elem.addEventListener('click', e => {
         window.renderer.browseHistory(histdata.id)
         window.renderer.update()
