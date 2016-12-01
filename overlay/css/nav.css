@@ -128,6 +128,7 @@ nav {
   top: 100%;
 
   width: 10rem;
+  max-width: calc(100vw - 2rem);
   max-height: calc(100vh - 3rem);
 
   background: var(--nav-bg);
@@ -136,6 +137,8 @@ nav {
   color: var(--nav-fg);
   fill: var(--nav-fg);
   z-index: 10;
+
+  overflow-y: auto;
 }
 .dropdown.opened {
   display: block;
