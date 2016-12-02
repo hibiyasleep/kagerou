@@ -1,6 +1,6 @@
 'use strict'
 
-const VERSION = '0.1.0-pre'
+const VERSION = '0.1.1'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
@@ -28,8 +28,10 @@ const CONFIG_DEFAULT = {
       subgauge: false,
       col: [
         'i.icon',
-        'i.name',
         [
+          ['i.name'],
+          ['i.owner']
+        ], [
           ['deal.pct', 'deal.per_second', 'deal.total', 'etc.death'],
           ['deal.swing', 'deal.miss', 'tank.damage', 'deal.critical']
         ]
@@ -315,6 +317,7 @@ const COLUMN_INDEX = {
 
     reset() {
       localStorage.setItem('kagerou_config', '')
+      this.load()
     }
 
     save() {

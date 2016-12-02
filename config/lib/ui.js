@@ -58,7 +58,20 @@ const switchTab = function switchTab(target) {
       })
     })
 
-    // self-explationary
+    // re-zero
+    $('#button-reset').addEventListener('click', _ => {
+      let d = new dialog('confirm', {
+        title: '이 작업은 되돌릴 수 없습니다.',
+        content: '설정을 전부 초기화시키겠습니까?',
+        callback: _ => {
+          this.config.reset()
+          OverlayPluginApi.broadcastMessage('reload')
+          location.reload()
+        }
+      })
+    })
+
+    // save
     $('#save').addEventListener('click', _ => {
       [].map.call($('input[data-config-key]'), o => {
         let value = o.value

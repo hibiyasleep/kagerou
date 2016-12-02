@@ -178,6 +178,8 @@ main section {
 }
 main section:first-of-type {
   flex-grow: 10;
+  flex-shrink: 10;
+  flex-basis: 0;
 }
 main section > div {
   display: flex;

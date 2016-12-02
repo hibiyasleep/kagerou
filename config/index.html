@@ -34,14 +34,14 @@ config.setResizeFactor()
           </svg>
           <label> 일반 </label>
         </li>
-        <!--li data-page="tab">
+        <li data-page="tab">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
             <path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h10v4h8v10z" />
           </svg>
           <label> 탭 </label>
         </li>
-        <li data-page="format">
+        <!--li data-page="format">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
             <path d="M11 3L5.5 17h2.25l1.12-3h6.25l1.12 3h2.25L13 3h-2zm-1.38 9L12 5.67 14.38 12H9.62z" />
@@ -90,7 +90,7 @@ config.setResizeFactor()
               </label>
               <input type="range" id="input-style-resize-factor"
                      data-config-key="style.resize-factor"
-                     min="0.5" step="0.125" max="2" />
+                     min="0.75" step="0.125" max="2" />
             </span>
           </p>
           <p class="control">
@@ -161,7 +161,11 @@ config.setResizeFactor()
           </p>
         </article>
       </section>
-      <section data-page="tab"> </section>
+      <section data-page="tab">
+        <p style="text-align: center; margin-top: 4rem; opacity: 0.5">
+          나중에
+        </p>
+      </section>
       <section data-page="format"> </section>
 
       <section data-page="info">
