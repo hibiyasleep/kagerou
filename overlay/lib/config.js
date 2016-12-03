@@ -10,13 +10,13 @@ const CONFIG_DEFAULT = {
     'body-margin': '0.25rem',
     'body-font': "'Roboto', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', sans-serif",
     // header / ui
-    'nav-bg': 'rgba(230, 230, 230, 0.95)',
-    'nav-fg': '#111',
+    'nav-bg': 'rgba(31, 31, 31, 0.9)',
+    'nav-fg': '#ddd',
     'content-bg': 'rgba(0, 0, 0, 0.5)',
     'content-fg': '#eee',
     'color-accent': '#FF6F00',
     'shadow-card': '0 0.05rem 0.25rem rgba(0, 0, 0, 0.5)',
-    'shadow-text': '0 0       0.125em rgba(0, 0, 0, 1)',
+    'shadow-text': '0 0 0.125em rgba(0, 0, 0, 1)',
     'font-size-small': '0.75rem',
     'graph-height': '1.5rem'
   },
