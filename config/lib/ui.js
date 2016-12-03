@@ -26,18 +26,19 @@ const switchTab = function switchTab(target) {
       let placeholder = _.getAttribute('placeholder')
       let value = config.get(_.getAttribute('data-config-key'))
       let type = _.getAttribute('data-type')
+      let unit = _.getAttribute('data-unit') || ''
 
       if(type === 'array') {
         _.value = value.join(', ')
       } else if(type === 'boolean') {
         _.checked = value
       } else {
-        _.value = value || ''
+        _.value = ((value || '') + '').replace(new RegExp(unit, 'g'), '')
       }
 
       // placeholder glitch workaround
       _.setAttribute('placeholder', '')
-      _.setAttribute('placeholder', placeholder)
+      _.setAttribute('placeholder', placeholder || '')
     })
 
     // listen on input changes, and show the value
@@ -49,12 +50,15 @@ const switchTab = function switchTab(target) {
         _.textContent = this.value
       })
     })
-    ;[].map.call($('.input-value-color'), _ => {
+    ;[].map.call($('.input-value-style'), _ => {
       let target = $('#' + _.getAttribute('for'))
-      _.style.backgroundColor = config.get(target.getAttribute('data-config-key'))
+      let key = target.getAttribute('data-style')
+      let unit = target.getAttribute('data-unit') || ''
+
+      _.style[key] = config.get(target.getAttribute('data-config-key'))
 
       target.addEventListener('input', function(e) {
-        _.style.backgroundColor = this.value
+        _.style[key] = this.value + unit
       })
     })
 
@@ -76,11 +80,14 @@ const switchTab = function switchTab(target) {
       [].map.call($('input[data-config-key]'), o => {
         let value = o.value
         let type = o.getAttribute('data-type')
+        let unit = o.getAttribute('data-unit') || ''
 
         if(type === 'array') {
           value = value.split(o.getAttribute('data-splitter')).map(_ => _.trim())
         } else if(type === 'boolean') {
           value = o.checked == 'true'
+        } else {
+          value += unit
         }
         config.set(o.getAttribute('data-config-key'), value)
       })

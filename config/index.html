@@ -99,14 +99,99 @@ config.setResizeFactor()
                    data-config-key="style.body-font"
                    style="flex-grow: 50;"/>
           </p>
+          <blockquote>
+            1칸 이하로 설정하면 그림자가 제대로 표시되지 않습니다.
+          </blockquote>
           <p class="control">
-            <label for="input-style-color-accent"> 강조색 </label>
+            <label for="input-style-body-margin">
+              헤더와 테이블 사이의 여백
+            </label>
             <span class="input-group">
-              <label class="input-value-color" for="input-style-accent-color">
+              <label class="input-value-style" for="input-style-body-margin"
+                     style="background: #333; vertical-align: -0.25rem;">
+              </label>
+              <input type="range" id="input-style-body-margin"
+                     data-config-key="style.body-margin"
+                     data-style="width"
+                     data-unit="rem"
+                     min="0" step="0.125" max="0.5" />
+            </span>
+          </p>
+        </article>
+        <article>
+          <h3> 색상 </h3>
+          <blockquote>
+            CSS 값을 사용합니다.
+          </blockquote>
+          <p class="control">
+            <label for="input-style-nav-bg"> 헤더 배경 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-nav-bg">
+              </label>
+              <input type="text" id="input-style-nav-bg"
+                     data-config-key="style.nav-bg"
+                     data-style="backgroundColor"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-nav-fg"> 헤더 글자 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-nav-fg">
+              </label>
+              <input type="text" id="input-style-nav-fg"
+                     data-config-key="style.nav-fg"
+                     data-style="backgroundColor"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-accent-color"> 강조색 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-accent-color">
               </label>
               <input type="text" id="input-style-accent-color"
                      data-config-key="style.color-accent"
-                     style="width: 6.5rem" />
+                     data-style="backgroundColor"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-content-bg"> 표 배경 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-content-bg">
+              </label>
+              <input type="text" id="input-style-content-bg"
+                     data-config-key="style.content-bg"
+                     data-style="backgroundColor"
+                     style="width: 10rem" />
+            </span>
+          </p>
+        </article>
+        <article>
+          <h3> 그림자 </h3>
+          <p class="control">
+            <label for="input-style-shadow-card"> 오버레이 창 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-shadow-card">
+              </label>
+              <input type="text" id="input-style-shadow-card"
+                     data-config-key="style.shadow-card"
+                     data-style="boxShadow"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-shadow-text"> 텍스트 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-shadow-text"
+                     style="color: white; width: 2rem; background: #7986cb">
+                1a%
+              </label>
+              <input type="text" id="input-style-shadow-text"
+                     data-config-key="style.shadow-text"
+                     data-style="textShadow"
+                     style="width: 10rem" />
             </span>
           </p>
         </article>

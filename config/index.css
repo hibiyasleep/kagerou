@@ -171,6 +171,7 @@ main {
 }
 main h3 {
   font-size: 0.75rem;
+  font-weight: 600;
   letter-spacing: 0.125rem;
   color: #0097A7; /* cyan 700 */
 
@@ -187,10 +188,15 @@ section.active {
   display: block;
 }
 article {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 section p {
   margin: 1rem 0;
+}
+section blockquote {
+  padding: 0.25rem 0;
+  font-size: 0.875rem;
+  color: #999;
 }
 
 .control {
@@ -209,10 +215,16 @@ section p {
   font-size: 0.75rem;
   opacity: 0.5;
 }
-.input-value-color {
+.input-value-style {
   display: inline-block;
   width: 1rem;
   height: 1rem;
+
+  margin-right: 0.25rem;
+
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-align: center;
 }
 
 

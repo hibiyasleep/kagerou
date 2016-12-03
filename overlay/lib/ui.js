@@ -170,6 +170,10 @@
     switch(message) {
       case 'reload':
         location.reload()
+        break
+      case 'restyle':
+        config.attachOverlayStyle()
+        return
     }
   })
 
