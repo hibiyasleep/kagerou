@@ -296,6 +296,14 @@ const COLUMN_INDEX = {
       $('html', 0).style.fontSize = this.get('style.resize-factor') + 'em'
     }
 
+    attachOverlayStyle() {
+      this.attachCSS([
+        'css/index.css',
+        'css/nav.css'
+      ], 'style')
+      this.attachCSS('css/table.css', ['style', 'colwidth'])
+    }
+
     get(k) {
       if(!this.config) return false
       if(k) return resolveDotIndex(this.config, k)

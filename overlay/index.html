@@ -21,11 +21,7 @@ window.config = new Config()
 config.load()
 config.setResizeFactor()
 
-config.attachCSS([
-  'css/index.css',
-  'css/nav.css'
-], 'style')
-config.attachCSS('css/table.css', ['style', 'colwidth'])
+config.attachOverlayStyle('overlay')
 
 // locale
 window.l = new Locale()
