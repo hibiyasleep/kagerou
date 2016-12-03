@@ -64,48 +64,48 @@
 
 /* Colors */
 .guage {
-  background: #333;
+  background: #444444;
 }
 .class-gld .guage, .class-pld .guage {
-  background: #7b9aa2;
+  background: #151c64; /* Indigo 900 (B -10%) */
 }
 .class-mrd .guage, .class-war .guage {
-  background: #a91a16;
+  background: #991717; /* Red 900 (B -10%) */
 }
 .class-drk .guage {
-  background: #682531;
+  background: #880E4F; /* Pink 900 */
 }
 
 .class-pgl .guage, .class-mnk .guage {
-  background: #b38915;
+  background: #FF9800; /* Orange 500 */
 }
 .class-lnc .guage, .class-drg .guage {
-  background: #3752d8;
+  background: #3F51B5; /* Indigo 500 */
 }
 .class-arc .guage, .class-brd .guage {
-  background: #adc551;
+  background: #9E9D24; /* Lime 800 */
 }
 .class-rog .guage, .class-nin .guage {
-  background: #ee2e48;
+  background: #D32F2F; /* Red 700 */
 }
 .class-acn .guage, .class-smn .guage {
-  background: #32670b;
+  background: #2E7D32; /* Green 800 */
 }
 .class-thm .guage, .class-blm .guage {
-  background: #674598;
+  background: #7E57C2; /* Deep Purple 400 */
 }
 .class-mch .guage {
-  background: #148aa9;
+  background: #0097A7; /* Cyan 700 */
 }
 
 .class-cnj .guage, .class-whm .guage {
-  background: #aaaaaa;
+  background: #757575; /* Gray 600 */
 }
 .class-sch .guage {
-  background: #32307b;
+  background: #7986CB; /* Indigo 300 */
 }
 .class-ast .guage {
-  background: #b1561c;
+  background: #795548; /* Brown 500 */
 }
 
 main {
@@ -168,6 +168,8 @@ main > ul {
   left: 0;
   height: 100%;
   z-index: -1;
+
+  -webkit-filter: blur(0.02rem);
 }
 section > div + div {
   opacity: 0.5;
