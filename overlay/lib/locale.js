@@ -91,6 +91,7 @@
 
   }
 
+  window.L = L
   window.Locale = Locale
 
 })()

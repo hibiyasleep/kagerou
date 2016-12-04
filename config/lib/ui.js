@@ -21,6 +21,38 @@ const switchTab = function switchTab(target) {
       })
     })
 
+    // colwidth
+
+    const columns = window.locale.get('col')
+    const _container = $('section[data-page=width]', 0)
+
+    for(let k1 in columns) {
+      let article = '<article>'
+
+      article += '<h3>' + locale.get(`col.${k1}._`) + '</h3>'
+
+      for(let k2 in columns[k1]) {
+        if(k2 === '_' || k2 === 'icon') continue
+        let id = `input-colwidth-_${k1}-${k2}`
+
+        article += `
+<p class="control">
+  <label for="${id}">
+    ${locale.get(`col.${k1}.${k2}`)[1]}
+  </label>
+  <span class="input-group">
+    <label class="input-value" for="${id}">
+    </label>
+    <input type="range" id="${id}" min="1.5" step="0.5" max="9"
+           data-config-key="colwidth._${k1}-${k2}" />
+  </span>
+</p>`
+      }
+      article += '</article>'
+
+      _container.insertAdjacentHTML('beforeend', article)
+    }
+
     // load config & fill all inputs
     $map('input[data-config-key]', _ => {
       let placeholder = _.getAttribute('placeholder')
