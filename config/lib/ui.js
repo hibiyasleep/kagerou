@@ -14,7 +14,7 @@ const switchTab = function switchTab(target) {
   window.addEventListener('load', function(e) {
 
     // menu switcher
-    [].map.call($('.menu li[data-page]'), _ => {
+    $map('.menu li[data-page]', _ => {
       let target = _.getAttribute('data-page')
       _.addEventListener('click', function() {
         switchTab(target)
@@ -22,7 +22,7 @@ const switchTab = function switchTab(target) {
     })
 
     // load config & fill all inputs
-    ;[].map.call($('input[data-config-key]'), _ => {
+    $map('input[data-config-key]', _ => {
       let placeholder = _.getAttribute('placeholder')
       let value = config.get(_.getAttribute('data-config-key'))
       let type = _.getAttribute('data-type')
@@ -42,7 +42,7 @@ const switchTab = function switchTab(target) {
     })
 
     // listen on input changes, and show the value
-    ;[].map.call($('.input-value'), _ => {
+    $map('.input-value', _ => {
       let target = $('#' + _.getAttribute('for'))
       _.textContent = config.get(target.getAttribute('data-config-key'))
 
@@ -50,7 +50,8 @@ const switchTab = function switchTab(target) {
         _.textContent = this.value
       })
     })
-    ;[].map.call($('.input-value-style'), _ => {
+
+    $map('.input-value-style', _ => {
       let target = $('#' + _.getAttribute('for'))
       let key = target.getAttribute('data-style')
       let unit = target.getAttribute('data-unit') || ''
@@ -70,7 +71,7 @@ const switchTab = function switchTab(target) {
           title: '이 작업은 되돌릴 수 없습니다.',
           content: '해당 설정을 초기화시키겠습니까?',
           callback: _ => {
-            this.config.reset(key)
+            config.reset(key)
             OverlayPluginApi.broadcastMessage('reload')
             location.reload()
           }

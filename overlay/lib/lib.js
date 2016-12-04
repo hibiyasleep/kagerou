@@ -13,6 +13,14 @@ const $ = function $(selector, index) {
     return document.querySelectorAll(selector)
 }
 
+const $map = function $map(selector, index, callback) {
+  if(index !== undefined && callback == undefined) {
+    callback = index
+    index = undefined
+  }
+  return [].map.call($(selector, index), callback)
+}
+
 const parseSvg = function parseSvg(text) {
   let parser = new DOMParser()
   return parser.parseFromString(text, 'image/svg+xml')
