@@ -53,16 +53,20 @@ document.addEventListener('message', e => {
 
 window.hist = new History()
 
+window.addEventListener('load', _ => $('.splash', 0).classList.add('hidden') )
+
     </script>
   </head>
   <body style="overflow:hidden">
-    <!-- temp splash -->
-    <div class="splash hidden">
+    <div class="splash">
       <div>
-        불러오는 중..
+        문제가 있다면 설정을 초기화해보세요.
         <br/><br/>
         <button onclick="location.reload()">
           재시도
+        </button>
+        <button onclick="localStorage.setItem('kagerou_config','');location.reload()">
+          설정 초기화
         </button>
       </div>
     </div>
