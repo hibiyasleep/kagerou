@@ -28,13 +28,26 @@ const CONFIG_DEFAULT = {
       subgauge: false,
       col: [
         'i.icon',
-        [
-          ['i.name'],
-          ['i.owner']
-        ], [
-          ['deal.pct', 'deal.per_second', 'deal.total', 'etc.death'],
-          ['deal.swing', 'deal.miss', 'tank.damage', 'deal.critical']
-        ]
+        'i.name',
+        'deal.pct',
+        'deal.per_second',
+        'deal.total',
+        'deal.critical',
+        'deal.swing'
+      ]
+    }, {
+      label: '탱',
+      gauge: 'tank.damage',
+      sort: '+damagetaken',
+      subgauge: false,
+      col: [
+        'i.icon',
+        'i.name',
+        'deal.per_second',
+        'tank.damage',
+        'tank.heal',
+        'tank.parry',
+        'etc.death'
       ]
     }, {
       label: '힐',
@@ -43,57 +56,25 @@ const CONFIG_DEFAULT = {
       subgauge: false,
       col: [
         'i.icon',
-        [
-          ['i.name'],
-          ['i.owner']
-        ], [
-          ['heal.pct', 'heal.per_second', 'heal.total'],
-          ['heal.over', 'heal.swing', 'heal.critical']
-        ],
-        [
-          ['heal.cure'],
-          ['etc.death']
-        ]
-      ]
-    }, {
-      label: '모두',
-      gauge: 'deal.total',
-      sort: '+damage',
-      subgauge: false,
-      col: [
-        'i.icon',
-        [
-          ['i.name'],
-          ['deal.total', 'i.owner']
-        ], [
-          ['deal.per_second', 'deal.pct', 'deal.accuracy'],
-          ['deal.swing', 'deal.miss', 'deal.hitfail']
-        ], [
-          ['deal.critical'],
-          ['heal.critical'],
-        ], [
-          ['tank.damage', 'tank.parry'],
-          ['tank.heal', 'tank.block']
-        ], [
-          ['heal.total', 'heal.pct'],
-          ['heal.per_second', 'heal.swing', 'heal.over']
-        ], [
-          ['etc.death'],
-          ['heal.cure']
-        ]
+        'i.name',
+        'heal.pct',
+        'heal.per_second',
+        'heal.total',
+        'heal.over',
+        'heal.swing'
       ]
     }
   ],
   colwidth: {
-    '_i-name': 7,
-    '_i-owner': 5,
+    '_i-name': 6,
+    '_i-owner': 6,
     '_deal-total': 4.5,
     '_deal-per_second': 3.5,
-    '_deal-pct': 3,
+    '_deal-pct': 2,
     '_deal-accuracy': 3,
-    '_deal-swing': 3,
-    '_deal-miss': 3,
-    '_deal-hitfail': 3,
+    '_deal-swing': 2.5,
+    '_deal-miss': 2.5,
+    '_deal-hitfail': 2.5,
     '_deal-critical': 2,
     '_heal-critical': 2,
     '_tank-damage': 3.5,
@@ -101,7 +82,7 @@ const CONFIG_DEFAULT = {
     '_tank-parry': 2,
     '_tank-block': 2,
     '_heal-per_second': 3,
-    '_heal-pct': 3,
+    '_heal-pct': 2,
     '_heal-total': 4,
     '_heal-swing': 2,
     '_heal-over': 2,
@@ -113,8 +94,8 @@ const CONFIG_DEFAULT = {
   format: {
     significant_digit: {
       dps: 2,
-      accuracy: 2,
-      hps: 2
+      hps: 2,
+      accuracy: 2
     },
     merge_pet: true,
     myname: []
@@ -207,7 +188,10 @@ const COLUMN_INDEX = {
       v: 'enchps',
       f: (_, conf) => parseFloat(_).toFixed(conf.format.significant_digit.hps) || '-'
     },
-    pct: 'healed%',
+    pct: {
+      v: 'healed%',
+      f: _ => parseInt(_) + '%'
+    },
     total: 'healed',
     over: 'OverHealPct',
     swing: 'heals',

@@ -102,18 +102,20 @@
       this.header = this.render(null)
     }
 
+    _value(v, data) {
+      if(typeof v === 'string')
+        return data[v]
+      else if(typeof v === 'function')
+        return v(data)
+    }
+
     part(c, data) {
       const col = resolveDotIndex(COLUMN_INDEX, c)
 
       if(typeof col === 'string') {
         return data[col]
       } else {
-        let val
-
-        if(typeof col.v === 'string')
-          val = data[col.v]
-        else if(typeof col.v === 'function')
-          val = col.v(data)
+        let val = this._value(col.v, data)
 
         if(typeof col.f === 'function')
           return col.f(val, window.config.get())
@@ -133,36 +135,25 @@
 
     render(data, max) {
       let r, part
+      let gaugeBy = resolveDotIndex(COLUMN_INDEX, this.tab.gauge)
+
+      if(gaugeBy.v) {
+        gaugeBy = gaugeBy.v
+      }
 
       if(data === null) {
         r = `<li id="header">`
-        part = this.getTitle
+        part = 'getTitle'
       } else {
-        part = this.part
-        r = `<li class="class-${sanitize(part('i.class', data))}">`
+        part = 'part'
+        r = `<li class="class-${sanitize(this[part]('i.class', data)) || 'empty'}">`
 
-        let width = part(this.tab.gauge, data) /
-                    max[this.tab.gauge] * 100
+        let width = this._value(gaugeBy, data) / max[this.tab.gauge] * 100
         r += `<span class="guage" style="width:${width}%"></span>`
       }
 
       for(let section of this.tab.col) {
-
-        if(typeof section === 'string') { // single-value cell
-          r += cell(section, part(section, data))
-        } else {
-          r += '<section>\n'
-
-          for(let line of section) {
-            r += '<div>\n'
-            for(let c of line) {
-              r += cell(c, part(c, data))
-            }
-            r += '</div>\n'
-          }
-
-          r += '</section>\n'
-        }
+        r += cell(section, this[part](section, data))
       }
 
       r += '</li>'
