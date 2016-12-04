@@ -323,9 +323,14 @@ const COLUMN_INDEX = {
       this.set(k, !this.get(k))
     }
 
-    reset() {
-      localStorage.setItem('kagerou_config', '')
-      this.load()
+    reset(key) {
+      if(key) {
+        this.set(key, resolveDotIndex(CONFIG_DEFAULT, key))
+        this.save()
+      } else {
+        localStorage.setItem('kagerou_config', '')
+        this.load()
+      }
     }
 
     save() {

@@ -63,15 +63,18 @@ const switchTab = function switchTab(target) {
     })
 
     // re-zero
-    $('#button-reset').addEventListener('click', _ => {
-      let d = new dialog('confirm', {
-        title: '이 작업은 되돌릴 수 없습니다.',
-        content: '설정을 전부 초기화시키겠습니까?',
-        callback: _ => {
-          this.config.reset()
-          OverlayPluginApi.broadcastMessage('reload')
-          location.reload()
-        }
+    $map('[data-reset]', _ => {
+      _.addEventListener('click', function(e) {
+        let key = this.getAttribute('data-reset') || false
+        new dialog('confirm', {
+          title: '이 작업은 되돌릴 수 없습니다.',
+          content: '해당 설정을 초기화시키겠습니까?',
+          callback: _ => {
+            this.config.reset(key)
+            OverlayPluginApi.broadcastMessage('reload')
+            location.reload()
+          }
+        })
       })
     })
 
