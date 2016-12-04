@@ -106,12 +106,27 @@
     })
 
     // load configs
-    if(config.get('format.merge_pet')) {
-      $('[data-button=merge-pet]', 0).classList.add('enabled')
-    }
+    ;[{
+      value: 'format.merge_pet',
+      callback: _ => {
+        if(_){
+          $('[data-button=merge-pet]', 0).classList.add('enabled')
+          $('body', 0).classList.add('pet-merged')
+        }
+      }
+    }, {
+      value: 'format.nameblur',
+      callback: _ => {
+        if(_){
+          $('[data-button=nameblur]', 0).classList.add('enabled')
+          $('body', 0).classList.add('nameblur')
+        }
+      }
+    }].forEach( _ => _.callback(config.get(_.value)) )
+
 
     // Button handlers
-    [{
+    ;[{
       name: 'toggle-detail',
       toggle: 'collapsed'
     }, {
