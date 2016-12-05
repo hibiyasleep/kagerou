@@ -7,6 +7,7 @@ nav {
 
   width: 100%;
 
+  background-size: cover;
   background: var(--nav-bg);
   box-shadow: var(--shadow-card);
 
@@ -131,11 +132,12 @@ nav {
   max-width: calc(100vw - 2rem);
   max-height: calc(100vh - 3rem);
 
-  background: var(--nav-bg);
+  background-size: cover;
+  background: var(--dropdown-bg);
   box-shadow: var(--shadow-card);
 
-  color: var(--nav-fg);
-  fill: var(--nav-fg);
+  color: var(--dropdown-fg);
+  fill: var(--dropdown-fg);
   z-index: 10;
 
   overflow-y: auto;

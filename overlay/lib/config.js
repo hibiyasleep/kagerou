@@ -12,6 +12,8 @@ const CONFIG_DEFAULT = {
     // header / ui
     'nav-bg': 'rgba(31, 31, 31, 0.9)',
     'nav-fg': '#ddd',
+    'dropdown-bg': 'rgba(31, 31, 31, 0.95)',
+    'dropdown-fg': '#ddd',
     'content-bg': 'rgba(0, 0, 0, 0.5)',
     'content-fg': '#eee',
     'color-accent': '#FF6F00',
