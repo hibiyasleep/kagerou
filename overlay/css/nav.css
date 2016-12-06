@@ -202,14 +202,11 @@ nav:hover > .container {
   font-size: 0.75rem;
   width: 14rem;
 
-  top: 0.1875rem;
+  top: calc(var(--body-margin) - 0.1875rem);
   left: calc(var(--body-margin) + 1.5rem);
 }
 .dropdown-history li {
   padding: 0.25rem 0.5rem;
-}
-.dropdown-history li:first-of-type {
-  padding-top: 0.125rem;
 }
 .history-current {
   box-shadow: 0.125rem 0 0 var(--color-accent) inset;
