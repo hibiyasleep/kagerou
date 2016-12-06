@@ -10,6 +10,7 @@ const CONFIG_DEFAULT = {
     'body-margin': '0.25rem',
     'body-font': "'Roboto', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', sans-serif",
     // header / ui
+    'nav-opacity': 1,
     'nav-bg': 'rgba(31, 31, 31, 0.9)',
     'nav-fg': '#ddd',
     'dropdown-bg': 'rgba(31, 31, 31, 0.95)',

@@ -98,11 +98,13 @@
     ;[].forEach.call(dropdowns, button => {
       let target = button.getAttribute('data-dropdown')
 
-      const listener = function(e) {
+      button.addEventListener('click', function(e) {
         $(`#dropdown-${target}`).classList.toggle('opened')
-      }
+      })
 
-      button.addEventListener('click', listener)
+      $(`#dropdown-${target}`).addEventListener('click', function(e) {
+        this.classList.remove('opened')
+      })
     })
 
     // load configs

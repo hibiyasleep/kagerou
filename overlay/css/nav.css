@@ -1,11 +1,20 @@
 nav {
-  display: flex;
   width: 100%;
   height: 2rem;
 
   line-height: 0.9375rem;
 
   width: 100%;
+
+  user-select: none;
+  -webkit-user-select: none;
+  z-index: 3;
+
+}
+nav > .container {
+  display: flex;
+  width: 100%;
+  height: 100%;
 
   background-size: cover;
   background: var(--nav-bg);
@@ -14,9 +23,11 @@ nav {
   color: var(--nav-fg);
   fill: var(--nav-fg);
 
-  user-select: none;
-  -webkit-user-select: none;
-  z-index: 3;
+  opacity: var(--nav-opacity);
+  transition: opacity 200ms ease;
+}
+nav:hover > .container {
+  opacity: 1;
 }
 
 .history {
@@ -89,7 +100,7 @@ nav {
 .buttons li.button:hover {
   background: rgba(127, 127, 127, 0.25);
 }
-.buttons li.button.button-text {
+.buttons li.button.button-text, .dropdown li.button.button-text {
   line-height: 1.5em;
   padding: 0.25rem 0.5rem;
 }
@@ -126,7 +137,7 @@ nav {
 .dropdown {
   display: none;
   position: absolute;
-  top: 100%;
+  top: calc(var(--body-margin) + 2rem);
 
   width: 10rem;
   max-width: calc(100vw - 2rem);
@@ -146,10 +157,10 @@ nav {
   display: block;
 }
 .dropdown.left {
-  left: 0;
+  left: var(--body-margin);
 }
 .dropdown.right {
-  right: 0;
+  right: var(--body-margin);
 }
 .dropdown > li {
   display: block;
@@ -165,7 +176,7 @@ nav {
 
 .dropdown .title {
   font-size: 0.75rem;
-  padding: 0.75rem 0.5rem;
+  padding: 0.25rem 0.5rem;
   opacity: 0.5;
 }
 .dropdown .title:hover {
@@ -173,6 +184,8 @@ nav {
 }
 
 .dropdown label {
+  display: inline-block;
+  vertical-align: top;
   line-height: 1.5rem;
 }
 .dropdown .seperator.seperator {
@@ -181,6 +194,7 @@ nav {
 
   border-left: none;
   border-top: 0.1rem solid rgba(127, 127, 127, 0.5);
+  margin: 0.25rem;
   padding: 0;
 }
 
