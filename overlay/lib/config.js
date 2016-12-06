@@ -18,7 +18,7 @@ const CONFIG_DEFAULT = {
     'dropdown-fg': '#ddd',
     'content-bg': 'rgba(0, 0, 0, 0.5)',
     'content-fg': '#eee',
-    'color-accent': '#FF6F00',
+    'color-accent': '#26c6da',
     'shadow-card': '0 0.05rem 0.25rem rgba(0, 0, 0, 0.5)',
     'shadow-text': '0 0 0.125em rgba(0, 0, 0, 1)',
     'font-size-small': '0.75rem',
