@@ -9,6 +9,9 @@ body {
   font-family: var(--body-font);
   margin: var(--body-margin) !important; /* for shadow */
   height: calc(100% - var(--body-margin) * 2);
+
+  user-select: none;
+  -webkit-user-select: none;
 }
 /* Resize handle */
 body::after {
