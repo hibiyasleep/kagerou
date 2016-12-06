@@ -189,6 +189,8 @@
         location.reload()
         break
       case 'restyle':
+        config.load()
+        config.setResizeFactor()
         config.attachOverlayStyle()
         return
     }

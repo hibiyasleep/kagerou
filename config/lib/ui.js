@@ -129,7 +129,7 @@ const switchTab = function switchTab(target) {
       })
 
       config.save()
-      OverlayPluginApi.broadcastMessage('reload')
+      OverlayPluginApi.broadcastMessage('restyle')
     })
 
   })

@@ -37,6 +37,13 @@ window.locale = new Locale()
           </svg>
           <label> 일반 </label>
         </li>
+        <li data-page="style">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+            <path d="M2.53 19.65l1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61zm19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6zM7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34v6.34z" />
+          </svg>
+          <label> 스타일 </label>
+        </li>
         <li data-page="tab">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
@@ -83,24 +90,6 @@ window.locale = new Locale()
         </article>
         <article>
           <h3> 레이아웃 </h3>
-          <p class="control">
-            <label for="input-style-resize-factor"> UI 크기 조절 </label>
-            <span class="input-group">
-              <label class="input-value"
-                     for="input-style-resize-factor">
-                1.0
-              </label>
-              <input type="range" id="input-style-resize-factor"
-                     data-config-key="style.resize-factor"
-                     min="0.75" step="0.125" max="2" />
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-body-font"> 본문 폰트 </label>
-            <input type="text" id="input-style-body-font"
-                   data-config-key="style.body-font"
-                   style="flex-grow: 50;"/>
-          </p>
           <blockquote>
             1칸 이하로 설정하면 그림자가 제대로 표시되지 않습니다.
           </blockquote>
@@ -119,117 +108,23 @@ window.locale = new Locale()
                      min="0" step="0.125" max="0.5" />
             </span>
           </p>
-        </article>
-        <article>
-          <h3> 색상 </h3>
-          <blockquote>
-            CSS 값을 사용합니다.
-          </blockquote>
           <p class="control">
-            <label for="input-style-nav-bg"> 헤더 배경 </label>
+            <label for="input-style-resize-factor"> UI 크기 조절 </label>
             <span class="input-group">
-              <label class="input-value-style" for="input-style-nav-bg">
+              <label class="input-value"
+                     for="input-style-resize-factor">
+                1.0
               </label>
-              <input type="text" id="input-style-nav-bg"
-                     data-config-key="style.nav-bg"
-                     data-style="backgroundColor"
-                     style="width: 10rem" />
+              <input type="range" id="input-style-resize-factor"
+                     data-config-key="style.resize-factor"
+                     min="0.75" step="0.125" max="2" />
             </span>
           </p>
           <p class="control">
-            <label for="input-style-nav-fg"> 헤더 글자 </label>
-            <span class="input-group">
-              <label class="input-value-style" for="input-style-nav-fg">
-              </label>
-              <input type="text" id="input-style-nav-fg"
-                     data-config-key="style.nav-fg"
-                     data-style="backgroundColor"
-                     style="width: 10rem" />
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-nav-opacity"> 비활성 시 헤더 투명도 </label>
-            <span class="input-group">
-              <label class="input-value-style" for="input-style-nav-opacity"
-                     style="background: #111">
-              </label>
-              <input type="range" id="input-style-nav-opacity"
-                     data-config-key="style.nav-opacity"
-                     data-style="opacity"
-                     style="width: 10rem;"
-                     min="0" max="1" step="0.05" />
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-dropdown-bg"> 드롭다운 배경 </label>
-            <span class="input-group">
-              <label class="input-value-style" for="input-style-dropdown-bg">
-              </label>
-              <input type="text" id="input-style-dropdown-bg"
-                     data-config-key="style.dropdown-bg"
-                     data-style="backgroundColor"
-                     style="width: 10rem" />
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-dropdown-fg"> 드롭다운 글자 </label>
-            <span class="input-group">
-              <label class="input-value-style" for="input-style-dropdown-fg">
-              </label>
-              <input type="text" id="input-style-dropdown-fg"
-                     data-config-key="style.dropdown-fg"
-                     data-style="backgroundColor"
-                     style="width: 10rem" />
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-accent-color"> 강조색 </label>
-            <span class="input-group">
-              <label class="input-value-style" for="input-style-accent-color">
-              </label>
-              <input type="text" id="input-style-accent-color"
-                     data-config-key="style.color-accent"
-                     data-style="backgroundColor"
-                     style="width: 10rem" />
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-content-bg"> 표 배경 </label>
-            <span class="input-group">
-              <label class="input-value-style" for="input-style-content-bg">
-              </label>
-              <input type="text" id="input-style-content-bg"
-                     data-config-key="style.content-bg"
-                     data-style="backgroundColor"
-                     style="width: 10rem" />
-            </span>
-          </p>
-        </article>
-        <article>
-          <h3> 그림자 </h3>
-          <p class="control">
-            <label for="input-style-shadow-card"> 오버레이 창 </label>
-            <span class="input-group">
-              <label class="input-value-style" for="input-style-shadow-card">
-              </label>
-              <input type="text" id="input-style-shadow-card"
-                     data-config-key="style.shadow-card"
-                     data-style="boxShadow"
-                     style="width: 10rem" />
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-shadow-text"> 텍스트 </label>
-            <span class="input-group">
-              <label class="input-value-style" for="input-style-shadow-text"
-                     style="color: white; width: 2rem; background: #7986cb">
-                1a%
-              </label>
-              <input type="text" id="input-style-shadow-text"
-                     data-config-key="style.shadow-text"
-                     data-style="textShadow"
-                     style="width: 10rem" />
-            </span>
+            <label for="input-style-body-font"> 본문 폰트 </label>
+            <input type="text" id="input-style-body-font"
+                   data-config-key="style.body-font"
+                   style="flex-grow: 50;"/>
           </p>
         </article>
         <article>
@@ -276,6 +171,19 @@ window.locale = new Locale()
         <article>
           <h3> Re:제로 </h3>
           <p class="control">
+            <label for="button-reset-all">
+              전부 초기화하기
+            </label>
+            <button id="button-reset-all"
+                    data-reset="">
+              실행
+            </button>
+          </p>
+        </article>
+      </section>
+      <section data-page="style">
+        <article>
+          <p class="control">
             <label for="button-reset-style">
               스타일 초기화
             </label>
@@ -284,14 +192,138 @@ window.locale = new Locale()
               실행
             </button>
           </p>
+          <blockquote>
+            모두 CSS 값을 사용합니다.
+            <br />
+            세미콜론을 붙이고 다른 속성을 추가로 사용할 수 있습니다.
+            <br />
+            <code>rgba(빨강, 초록, 파랑, 투명도)</code>로 반투명한 색을 사용할
+            수 있습니다. 투명도는 0에서 1입니다.
+          </blockquote>
+        </article>
+        <article>
+          <h3> 배경 </h3>
           <p class="control">
-            <label for="button-reset-all">
-              전부 초기화하기
+            <label for="input-style-nav-bg"> 상단 바 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-nav-bg">
+              </label>
+              <input type="text" id="input-style-nav-bg"
+                     data-config-key="style.nav-bg"
+                     data-style="backgroundColor"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-nav-opacity">
+              비활성 시 상단 바 투명도
             </label>
-            <button id="button-reset-all"
-                    data-reset="">
-              실행
-            </button>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-nav-opacity"
+                     style="background: #111">
+              </label>
+              <input type="range" id="input-style-nav-opacity"
+                     data-config-key="style.nav-opacity"
+                     data-style="opacity"
+                     style="width: 10rem;"
+                     min="0" max="1" step="0.05" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-dropdown-bg"> 드롭다운 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-dropdown-bg">
+              </label>
+              <input type="text" id="input-style-dropdown-bg"
+                     data-config-key="style.dropdown-bg"
+                     data-style="backgroundColor"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-header-bg"> 표 헤더 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-header-bg">
+              </label>
+              <input type="text" id="input-style-header-bg"
+                     data-config-key="style.header-bg"
+                     data-style="backgroundColor"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-content-bg"> 표 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-content-bg">
+              </label>
+              <input type="text" id="input-style-content-bg"
+                     data-config-key="style.content-bg"
+                     data-style="backgroundColor"
+                     style="width: 10rem" />
+            </span>
+          </p>
+        </article>
+        <article>
+          <h3> 글자 색 </h3>
+          <p class="control">
+            <label for="input-style-nav-fg"> 상단 바 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-nav-fg">
+              </label>
+              <input type="text" id="input-style-nav-fg"
+                     data-config-key="style.nav-fg"
+                     data-style="backgroundColor"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-dropdown-fg"> 드롭다운 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-dropdown-fg">
+              </label>
+              <input type="text" id="input-style-dropdown-fg"
+                     data-config-key="style.dropdown-fg"
+                     data-style="backgroundColor"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-accent-color"> 강조 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-accent-color">
+              </label>
+              <input type="text" id="input-style-accent-color"
+                     data-config-key="style.color-accent"
+                     data-style="backgroundColor"
+                     style="width: 10rem" />
+            </span>
+          </p>
+        </article>
+        <article>
+          <h3> 그림자 </h3>
+          <p class="control">
+            <label for="input-style-shadow-card"> 오버레이 창 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-shadow-card">
+              </label>
+              <input type="text" id="input-style-shadow-card"
+                     data-config-key="style.shadow-card"
+                     data-style="boxShadow"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-shadow-text"> 텍스트 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-shadow-text"
+                     style="color: white; width: 2rem; background: #7986cb">
+                1a%
+              </label>
+              <input type="text" id="input-style-shadow-text"
+                     data-config-key="style.shadow-text"
+                     data-style="textShadow"
+                     style="width: 10rem" />
+            </span>
           </p>
         </article>
       </section>
