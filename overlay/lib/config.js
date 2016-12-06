@@ -13,6 +13,7 @@ const CONFIG_DEFAULT = {
     'nav-opacity': 1,
     'nav-bg': 'rgba(31, 31, 31, 0.9)',
     'nav-fg': '#ddd',
+    'header-bg': 'rgba(0, 0, 0, 0.5)',
     'dropdown-bg': 'rgba(31, 31, 31, 0.95)',
     'dropdown-fg': '#ddd',
     'content-bg': 'rgba(0, 0, 0, 0.5)',
