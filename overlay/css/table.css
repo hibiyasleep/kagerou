@@ -113,12 +113,16 @@ main {
   font-size: var(--font-size-small);
 
   position: relative;
-  height: calc(100% - var(--body-margin) - 2rem);
+  height: 100%;
+  max-height: calc(100% - var(--body-margin) - 2rem);
+
   margin: 0 calc(var(--body-margin) * 1);
   background: var(--content-bg);
 
   box-shadow: var(--shadow-card);
   text-shadow: var(--shadow-text);
+
+  transition: height 200ms ease;
 
   z-index: 0;
 }
@@ -153,6 +157,8 @@ main li {
   height: var(--graph-height);
   line-height: var(--graph-height);
   overflow: hidden;
+
+  transition: height 200ms ease;
 }
 .clsicon {
   max-width: 100%;
@@ -206,4 +212,11 @@ footer {
   flex-grow: 1;
   flex-shrink: 0;
   text-align: right;
+}
+
+.collapsed {
+  height: calc(var(--graph-height) * 2);
+}
+.collapsed #header, .collapsed #table > li:not(.me) {
+  height: 0;
 }

@@ -134,19 +134,17 @@
     }
 
     render(data, max) {
-      let r, part
+      let r = data == null? '<li id="header">' : ''
+      let part = data == null? 'getTitle' : 'part'
       let gaugeBy = resolveDotIndex(COLUMN_INDEX, this.tab.gauge)
 
       if(gaugeBy.v) {
         gaugeBy = gaugeBy.v
       }
 
-      if(data === null) {
-        r = `<li id="header">`
-        part = 'getTitle'
-      } else {
-        part = 'part'
-        r = `<li class="class-${sanitize(this[part]('i.class', data)) || 'empty'}">`
+      if(data !== null) {
+        let cls = sanitize(this[part]('i.class', data)) || 'unknown'
+        r = `<li class="class-${cls} ${data.name === 'YOU'? 'me' : ''}">`
 
         let width = this._value(gaugeBy, data) / max[this.tab.gauge] * 100
         r += `<span class="guage" style="width:${width}%"></span>`
