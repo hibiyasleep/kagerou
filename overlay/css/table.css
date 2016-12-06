@@ -48,18 +48,18 @@
 
 /* Position Helpers */
 .class-gld .guage, .class-pld .guage, .class-mrd .guage,
-.class-war .guage, .class-drk .guage { /* tank: blue 500 */
+.class-war .guage, .class-drk .guage { /* tank; blue 500 */
   box-shadow: 0.25rem 0 0 #2196f3 inset;
 }
 .class-pgl .guage, .class-mnk .guage, .class-lnc .guage,
 .class-drg .guage, .class-arc .guage, .class-brd .guage,
 .class-rog .guage, .class-nin .guage, .class-acn .guage,
 .class-smn .guage, .class-thm .guage, .class-blm .guage,
-.class-mch .guage { /* deal: red 500 */
+.class-mch .guage { /* deal; red 500 */
   box-shadow: 0.25rem 0 0 #f44336 inset;
 }
 .class-cnj .guage, .class-whm .guage, .class-sch .guage,
-.class-ast .guage { /* heal: light green 500 */
+.class-ast .guage { /* heal; light green 500 */
   box-shadow: 0.25rem 0 0 #8bc34a inset;
 }
 
