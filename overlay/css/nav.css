@@ -211,3 +211,6 @@ nav:hover > .container {
 .history-current {
   box-shadow: 0.125rem 0 0 var(--color-accent) inset;
 }
+.history-region, #history-region {
+  opacity: 0.5;
+}
