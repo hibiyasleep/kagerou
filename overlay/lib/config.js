@@ -282,6 +282,7 @@ const COLUMN_INDEX = {
           return res.text()
         }).then(css => {
           for(let k in variables) {
+            let v = variables[k]? variables[k] : 'none'
             css = css.replace(new RegExp(`var\\(--${k}\\)`, 'g'), variables[k])
           }
 
