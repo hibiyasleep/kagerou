@@ -175,7 +175,11 @@ const COLUMN_INDEX = {
     miss: 'misses',
     hitfail: 'hitfailed',
     critical: 'crithit%',
-    maxhit: 'maxhit'
+    max: 'MAXHIT',
+    maxhit: {
+      v: 'maxhit',
+      f: _ => l.skillname(_)
+    }
   },
   // tank
   tank: {
@@ -208,7 +212,12 @@ const COLUMN_INDEX = {
     over: 'OverHealPct',
     swing: 'heals',
     critical: 'critheal%',
-    cure: 'cures'
+    cure: 'cures',
+    max: 'MAXHEALWARD',
+    maxhit: {
+      v: 'maxhealward',
+      f: _ => l.skillname(_)
+    }
   },
   etc: {
     powerdrain: 'powerdrain',
