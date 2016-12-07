@@ -146,7 +146,7 @@ const COLUMN_INDEX = {
   i: {
     icon: {
       v: _ => resolveClass(_.Job, _.name)[0],
-      f: _ => `<img src="img/class/${_.toLowerCase()}.png" class="clsicon" />`
+      f: _ => `<img src="img/class/${_.toLowerCase() || 'empty'}.png" class="clsicon" />`
     },
     class: {
       v: _ => resolveClass(_.Job, _.name)[0]
