@@ -89,6 +89,12 @@
     }
   }
 
+  window.notify = function notify(message) {
+    let d = $('.footer-notify', 0)
+    d.textContent = '*' + message
+    setTimeout(_ => d.textContent = '', 15000)
+  }
+
   window.addEventListener('load', () => {
 
     // Dropdown

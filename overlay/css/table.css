@@ -223,10 +223,16 @@ footer {
   color: var(--color-accent);
 }
 
-.footer-stat {
+.footer-notify, .footer-stat {
   padding: 0 0.25rem;
   flex-grow: 1;
   flex-shrink: 0;
+}
+.footer-notify {
+  text-align: left;
+  flex-shrink: 1;
+}
+.footer-stat {
   text-align: right;
 }
 

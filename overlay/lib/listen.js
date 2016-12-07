@@ -129,7 +129,7 @@
           let nick = NICK_REGEX.exec(data.Encounter.title)[1]
           config.set('format.myname', [nick])
           config.save()
-          console.log('내 이름이 설정되었습니다!')
+          notify(`'${nick}' 설정됨`)
         }
         if(this.currentData) {
           let id = this.currentData.finalize()
