@@ -100,7 +100,7 @@ const switchTab = function switchTab(target) {
       _.addEventListener('click', function(e) {
         let key = this.getAttribute('data-reset') || false
         new dialog('confirm', {
-          title: '이 작업은 되돌릴 수 없습니다.',
+          title: '한 번 리셋하면 되돌릴 수 없습니다.',
           content: '해당 설정을 초기화시키겠습니까?',
           callback: _ => {
             config.reset(key)
