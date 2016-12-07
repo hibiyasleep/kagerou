@@ -155,12 +155,16 @@ const COLUMN_INDEX = {
   // deal
   deal: {
     per_second: {
-      v: 'encdps',
-      f: (_, conf) => parseFloat(_).toFixed(conf.format.significant_digit.dps) || '-'
+      v: _ => parseFloat(_.encdps),
+      f: (_, conf) => isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
     },
     pct: {
-      v: 'damage%',
-      f: _ => parseInt(_) + '%'
+      v: _ => parseFloat(_['damage%']),
+      f: _ => {
+        if(isNaN(_)) return '---'
+        else if(_ >= 100) return '100'
+        else return _ + '%'
+      }
     },
     total: 'damage',
     accuracy: { // '정확도'
@@ -189,12 +193,16 @@ const COLUMN_INDEX = {
   // heal
   heal: {
     per_second: {
-      v: 'enchps',
-      f: (_, conf) => parseFloat(_).toFixed(conf.format.significant_digit.hps) || '-'
+      v: _ => parseFloat(_.enchps),
+      f: (_, conf) => isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.hps)
     },
     pct: {
-      v: 'healed%',
-      f: _ => parseInt(_) + '%'
+      v: _ => parseFloat(_['healed%']),
+      f: _ => {
+        if(isNaN(_)) return '---'
+        else if(_ >= 100) return '100'
+        else return _ + '%'
+      }
     },
     total: 'healed',
     over: 'OverHealPct',
