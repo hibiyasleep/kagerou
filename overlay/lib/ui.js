@@ -99,11 +99,21 @@
       let target = button.getAttribute('data-dropdown')
 
       button.addEventListener('click', function(e) {
-        $(`#dropdown-${target}`).classList.toggle('opened')
+        let l = $(`#dropdown-${target}`).classList
+
+        if(l.contains('opened')) {
+          l.remove('opened')
+          l.add('closing')
+          setTimeout(_ => l.remove('closing'), 200)
+        } else {
+          l.add('opened')
+        }
       })
 
       $(`#dropdown-${target}`).addEventListener('click', function(e) {
         this.classList.remove('opened')
+        this.classList.add('closing')
+        setTimeout(_ => this.classList.remove('closing'), 200)
       })
     })
 
