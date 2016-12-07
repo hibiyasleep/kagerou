@@ -139,10 +139,14 @@ main > ul {
 #patchnote {
   display: block !important;
   height: auto;
+  word-break: keep-all;
   text-align: center;
 }
 #patchnote h3 {
   background: rgba(255, 255, 255, 0.1);
+}
+#patchnote p {
+  padding: 0 0.5rem;
 }
 #header, footer {
   display: flex;
