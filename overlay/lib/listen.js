@@ -50,6 +50,22 @@
               players[owner][k] = parseFloat(o[k])
                 + parseFloat(players[owner][k])
             }
+
+            for(let t in COLUMN_USE_LARGER) {
+              let targets = COLUMN_USE_LARGER[t]
+              let v
+              let v1 = parseFloat(o[t])
+              let v2 = parseFloat(players[owner][t])
+
+              if(v1 > v2 || isNaN(v2))
+                v = o
+              else if(v1 <= v2 || isNaN(v1))
+                v = players[owner]
+
+              for(let k of targets)
+                players[owner][k] = v[k]
+
+            }
             // if player: override metadata
             if(isUser) {
               players[owner].name = o.name

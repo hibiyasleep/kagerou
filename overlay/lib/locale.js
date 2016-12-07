@@ -4,6 +4,7 @@
 
   const L = {
     ko: {
+      skill: {},
       style: {
         'body-margin': '바깥쪽 여백',
         'body-font': '글꼴',
@@ -81,12 +82,13 @@
     }
 
     skillname(n) {
+      if(!n) return ''
       let o = n.split('-')
-      let name = this.get('skill.' + o[0])
+      let name = this.get('skill.' + o[0]) || o[0]
       let value = o[1] || -1
 
-      if(!value) {
-        return name + '-' + value
+      if(value) {
+        return name + ', ' + value
       } else {
         return name
       }

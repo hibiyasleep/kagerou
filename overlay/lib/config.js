@@ -80,6 +80,8 @@ const CONFIG_DEFAULT = {
     '_deal-miss': 2.5,
     '_deal-hitfail': 2.5,
     '_deal-critical': 2,
+    '_deal-max': 2.5,
+    '_deal-maxhit': 6,
     '_heal-critical': 2,
     '_tank-damage': 3.5,
     '_tank-heal': 3.5,
@@ -91,6 +93,8 @@ const CONFIG_DEFAULT = {
     '_heal-swing': 2,
     '_heal-over': 2,
     '_heal-cure': 2,
+    '_heal-max': 2.5,
+    '_heal-maxhit': 6,
     '_etc-powerdrain': 4,
     '_etc-powerheal': 4,
     '_etc-death': 2
@@ -116,11 +120,15 @@ const COLUMN_SORTABLE = [
 const COLUMN_MERGEABLE = [
   'encdps', 'damage', 'damage%',
   'swings', 'misses', 'hitfailed',
-  'crithit', 'maxhit', 'damagetaken',
-  'healstaken', 'enchps', 'healed',
-  'healed%', 'heals', 'critheal',
-  'cures', 'powerdrain', 'powerheal'
+  'crithit', 'damagetaken', 'healstaken',
+  'enchps', 'healed', 'healed%',
+  'heals', 'critheal', 'cures',
+  'powerdrain', 'powerheal'
 ]
+const COLUMN_USE_LARGER = {
+  'MAXHIT': ['MAXHIT', 'maxhit'],
+  'MAXHEAL': ['MAXHEAL', 'maxheal']
+}
 
 const PET_MAPPING = {
   '요정 에오스': 'eos',

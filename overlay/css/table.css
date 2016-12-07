@@ -22,7 +22,8 @@
 .flex-column-deal-miss        { width: calc(1rem * var(--_deal-miss)); }
 .flex-column-deal-hitfail     { width: calc(1rem * var(--_deal-hitfail)); }
 .flex-column-deal-critical    { width: calc(1rem * var(--_deal-critical)); }
-.flex-column-heal-critical    { width: calc(1rem * var(--_heal-critical)); }
+.flex-column-deal-max         { width: calc(1rem * var(--_deal-max)); }
+.flex-column-deal-maxhit      { width: calc(1rem * var(--_deal-maxhit)); }
 .flex-column-tank-damage      { width: calc(1rem * var(--_tank-damage)); }
 .flex-column-tank-parry       { width: calc(1rem * var(--_tank-parry)); }
 .flex-column-tank-heal        { width: calc(1rem * var(--_tank-heal)); }
@@ -33,6 +34,9 @@
 .flex-column-heal-swing       { width: calc(1rem * var(--_heal-swing)); }
 .flex-column-heal-over        { width: calc(1rem * var(--_heal-over)); }
 .flex-column-heal-cure        { width: calc(1rem * var(--_heal-cure)); }
+.flex-column-heal-critical    { width: calc(1rem * var(--_heal-critical)); }
+.flex-column-heal-max         { width: calc(1rem * var(--_heal-max)); }
+.flex-column-heal-maxhit      { width: calc(1rem * var(--_heal-maxhit)); }
 .flex-column-etc-powerdrain   { width: calc(1rem * var(--_etc-powerdrain)); }
 .flex-column-etc-death        { width: calc(1rem * var(--_etc-death)); }
 .flex-column-etc-powerheal    { width: calc(1rem * var(--_etc-powerheal)); }
