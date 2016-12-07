@@ -119,7 +119,7 @@ main {
   margin: 0 calc(var(--body-margin) * 1);
   background: var(--content-bg);
 
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 -0.25rem 0 rgba(0, 0, 0, 0.01), var(--shadow-card);
   text-shadow: var(--shadow-text);
 
   transition: height 200ms ease;
@@ -135,6 +135,14 @@ main > ul {
 
   line-height: 1.125rem;
   overflow-y: auto;
+}
+#patchnote {
+  display: block !important;
+  height: auto;
+  text-align: center;
+}
+#patchnote h3 {
+  background: rgba(255, 255, 255, 0.1);
 }
 #header, footer {
   display: flex;
