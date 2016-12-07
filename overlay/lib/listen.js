@@ -2,6 +2,8 @@
 
 ;(function() {
 
+  const NICK_REGEX = / \(([\uac00-\ud7a3']{1,9}|[A-Z][a-z' ]{0,15})\)$/
+
   const sanitize = _ => _.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-')
   const toArray = o => Object.keys(o).map(_ => o[_])
   const SORTABLE = {}
@@ -106,7 +108,13 @@
 
     push(data) {
       if(this.isNewEncounter(data.Encounter)) {
-
+        if(config.get('format.myname').length === 0
+        && NICK_REGEX.test(data.Encounter.title)) {
+          let nick = NICK_REGEX.exec(data.Encounter.title)[1]
+          config.set('format.myname', [nick])
+          config.save()
+          console.log('내 이름이 설정되었습니다!')
+        }
         if(this.currentData) {
           let id = this.currentData.finalize()
           this.history[id] = {
