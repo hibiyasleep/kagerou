@@ -363,6 +363,10 @@ section[data-page=info] {
 section[data-page=info] p {
   margin: 1rem 0;
 }
+pre {
+  font-size: 0.7rem;
+  opacity: 0.75;
+}
 header, main {
   transition: 200ms height ease;
 }
