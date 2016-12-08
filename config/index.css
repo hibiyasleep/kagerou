@@ -43,7 +43,6 @@ ul {
 b {
   font-weight: bold;
 }
-
 .hidden {
   display: none;
 }
@@ -57,14 +56,14 @@ b {
   text-align: right;
 }
 
-input[type=text] {
+input[type=text], select {
   text-align: right;
   background: none;
   border-bottom: 0.1rem solid #006064;
 
   transition: 100ms border-bottom-color ease;
 }
-input[type=text]:focus {
+input[type=text]:focus, select:focus {
   border-bottom-color: #0097A7;
 }
 input[type=range] {
@@ -137,6 +136,7 @@ header {
   height: 6rem;
 
   background: #fff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
 }
 header > h2 {
   padding: 1.5rem;
@@ -166,8 +166,6 @@ main {
   float: left;
   width: calc(100vw - 16rem);
   height: calc(100vh - 6rem);
-
-  box-shadow: 0.125rem 0.125rem 0.25rem -0.125rem rgba(0, 0, 0, 0.5) inset;
 }
 main h3 {
   font-size: 0.75rem;
@@ -255,14 +253,16 @@ section[data-page=tab] {
 .tab li {
   flex-grow: 1;
   flex-shrink: 0;
-  border-right: 0.1rem solid rgba(0, 0, 0, 0.5);
   border-bottom: 0 solid #00bcd4;
   padding: 0.75rem;
 
-  transition: background 200ms ease, border-bottom-width 50ms ease;
+  transition: background 200ms ease, border-bottom-width 200ms ease;
 }
 .tab li.active {
   border-bottom-width: 0.125rem;
+}
+.tab li.draggable {
+  cursor: ew-resize;
 }
 .tab li:hover {
   background: rgba(0, 0, 0, 0.05);
@@ -273,8 +273,9 @@ section[data-page=tab] {
   padding: 0.75rem 0.25rem;
   width: 2rem;
 }
-.tab li:last-of-type {
-  border-right: 0;
+.tab li svg {
+  fill: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 .tab li label {
   vertical-align: 0.375rem;
@@ -330,10 +331,14 @@ section[data-page=tab] {
   box-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.125);
 }
 
-.sortable-ghost, .sortable-chosen, .sortable-drag {
+.sortable-ghost, .sortable-chosen {
   background: rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.5);
 }
+.sortable-drag {
+  opacity: 0;
+}
+
 
 section[data-page=info] {
   font-family: 'Roboto Mono', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', monospace;
@@ -366,6 +371,7 @@ section[data-page=info] p {
 pre {
   font-size: 0.7rem;
   opacity: 0.75;
+  white-space: pre-wrap;
 }
 header, main {
   transition: 200ms height ease;
