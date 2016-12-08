@@ -71,8 +71,9 @@ const CONFIG_DEFAULT = {
     }
   ],
   colwidth: {
-    '_i-name': 6,
+    '_i-class': 2,
     '_i-owner': 6,
+    '_i-name': 6,
     '_deal-total': 4.5,
     '_deal-per_second': 3.5,
     '_deal-pct': 2,

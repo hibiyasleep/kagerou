@@ -12,8 +12,9 @@
   flex-grow: 10;
   flex-basis: 0%;
 }
-.flex-column-i-name           { width: calc(1rem * var(--_i-name)); }
+.flex-column-i-class          { width: calc(1rem * var(--_i-class)); }
 .flex-column-i-owner          { width: calc(1rem * var(--_i-owner)); }
+.flex-column-i-name           { width: calc(1rem * var(--_i-name)); }
 .flex-column-deal-total       { width: calc(1rem * var(--_deal-total)); }
 .flex-column-deal-per-second  { width: calc(1rem * var(--_deal-per_second)); }
 .flex-column-deal-pct         { width: calc(1rem * var(--_deal-pct)); }
