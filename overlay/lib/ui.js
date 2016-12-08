@@ -18,7 +18,6 @@
 
         firstTab = firstTab || k
 
-        console.log(v.tab.label)
         element.textContent = v.tab.label
 
         element.addEventListener('click', e => {
