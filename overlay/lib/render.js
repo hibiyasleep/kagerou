@@ -11,20 +11,22 @@
   class Renderer {
 
     constructor(config) {
-      this.config = config
-      this.tabs = []
       this.current = 0
 
       this.latestData = null
       this.currentHistory = false
+      this.updateConfig(config)
+    }
 
-      for(let t in this.config.tabs) {
-        this.tabs[t] = new Row(this.config.tabs[t])
+    updateConfig(config) {
+      this.config = config
+      this.tabs = []
+      for(let k in this.config.tabs) {
         try {
-
+          this.tabs[k] = new Row(this.config.tabs[k])
         } catch(e) {
           // TODO: global error handler
-          console.error(`Error while compiling tab ${t}: ${e}`)
+          console.error(`Error while compiling tab: ${e}`)
         }
       }
     }

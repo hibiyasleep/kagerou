@@ -34,6 +34,9 @@ input, button {
   font: inherit;
   vertical-align: baseline;
 }
+select {
+  font: inherit;
+}
 ol, ul {
   list-style: none;
 }

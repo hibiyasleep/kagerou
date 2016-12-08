@@ -128,6 +128,8 @@ const switchTab = function switchTab(target) {
         config.set(o.getAttribute('data-config-key'), value)
       })
 
+      tabconfig.save()
+
       config.save()
       OverlayPluginApi.broadcastMessage('restyle')
     })

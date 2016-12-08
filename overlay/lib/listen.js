@@ -10,7 +10,7 @@
 
   COLUMN_SORTABLE.map(_ => {
     let o = resolveDotIndex(COLUMN_INDEX, _)
-    SORTABLE[o.v || o] = _
+    SORTABLE[_] = o.v || o
   })
 
   class Data {
@@ -86,8 +86,7 @@
 
     sort(key, target) {
       let d = (('+-'.indexOf(key[0]))+1 || 1) * 2 - 3
-      let k = key.slice(1)
-
+      let k = SORTABLE[k]
       ;(target || this.data).sort((a, b) =>
         (parseFloat(a[k]) - parseFloat(b[k])) * d)
 
@@ -99,8 +98,8 @@
 
       for(let k in SORTABLE) {
         let v = SORTABLE[k]
-        max[v] = Math.max.apply(
-          Math, Object.keys(combatant).map(_ => combatant[_][k])
+        max[k] = Math.max.apply(
+          Math, Object.keys(combatant).map(_ => combatant[_][v])
         )
       }
 

@@ -8,13 +8,17 @@
       this.dom = $('.tabs', 0)
     }
 
-
     render() {
       this.dom.innerHTML = ''
+      let firstTab = false
 
-      window.renderer.tabs.forEach((v, k) => {
+      for(let k in window.renderer.tabs){
+        let v = window.renderer.tabs[k]
         let element = document.createElement('span')
 
+        firstTab = firstTab || k
+
+        console.log(v.tab.label)
         element.textContent = v.tab.label
 
         element.addEventListener('click', e => {
@@ -24,9 +28,10 @@
         })
 
         this.dom.insertAdjacentElement('beforeend', element)
-      })
+      }
 
       $('.tabs span', 0).classList.add('active')
+      renderer.switchTab(firstTab)
     }
   }
 
@@ -208,6 +213,8 @@
         config.load()
         config.setResizeFactor()
         config.attachOverlayStyle()
+        window.renderer = new Renderer(window.config.get())
+        tabdisplay.render()
         return
     }
   })

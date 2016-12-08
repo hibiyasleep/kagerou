@@ -26,10 +26,10 @@ const CONFIG_DEFAULT = {
   },
   tabs: [
     {
+      id: 0,
       label: '딜',
       gauge: 'deal.total',
-      sort: '+damage',
-      subgauge: false,
+      sort: 'deal.total',
       col: [
         'i.icon',
         'i.name',
@@ -40,10 +40,10 @@ const CONFIG_DEFAULT = {
         'deal.swing'
       ]
     }, {
+      id: 1,
       label: '탱',
       gauge: 'tank.damage',
-      sort: '+damagetaken',
-      subgauge: false,
+      sort: 'tank.damage',
       col: [
         'i.icon',
         'i.name',
@@ -54,10 +54,10 @@ const CONFIG_DEFAULT = {
         'etc.death'
       ]
     }, {
+      id: 2,
       label: '힐',
       gauge: 'heal.total',
-      sort: '+healed',
-      subgauge: false,
+      sort: 'heal.total',
       col: [
         'i.icon',
         'i.name',
@@ -109,6 +109,10 @@ const CONFIG_DEFAULT = {
     myname: []
   }
 }
+
+const CONFIG_KEY_SHOULD_OVERRIDE = [
+  'tabs'
+]
 
 const COLUMN_SORTABLE = [
   'deal.per_second',
@@ -259,7 +263,21 @@ const COLUMN_INDEX = {
         localStorage.setItem('kagerou_config', JSON.stringify(localConfig))
         this.config = localConfig
       } else {
-        this.config = updateObject(localConfig, o)
+        this.config = {}
+
+        for(let k in localConfig) {
+          if(CONFIG_KEY_SHOULD_OVERRIDE.indexOf(k) != -1) {
+            if(k == 'tabs' && o[k].length == 0) {
+              this.config[k] = localConfig[k]
+            } else {
+              this.config[k] = o[k]
+            }
+          } else if(typeof localConfig[k] !== 'object') {
+            this.config[k] = o[k]
+          } else {
+            this.config[k] = updateObject(localConfig[k], o[k])
+          }
+        }
       }
 
       return this.config

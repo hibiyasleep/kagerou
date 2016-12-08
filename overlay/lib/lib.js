@@ -1,24 +1,50 @@
 'use strict'
 
-const $ = function $(selector, index) {
+const $ = function $(root, selector, index) {
   'This is not actually jQuery, just shortcut for `document.querySelectorAll`.'
-  if(/^#[0-9a-z_\-]+?$/.test(selector))
-    return document.getElementById(selector.slice(1))
-  else if(index != undefined)
-    if(index == 0)
-      return document.querySelector(selector)
-    else
-      return document.querySelectorAll(selector)[index]
-  else
-    return document.querySelectorAll(selector)
-}
-
-const $map = function $map(selector, index, callback) {
-  if(index !== undefined && callback == undefined) {
-    callback = index
+  if(arguments.length === 2) {
+    index = selector
+    selector = root
+    root = document
+  } else if(arguments.length === 1) {
+    selector = root
+    root = document
     index = undefined
   }
-  return [].map.call($(selector, index), callback)
+
+  if(!root) {
+    root = document
+  }
+
+  if(/^#[0-9a-z_\-]+?$/.test(selector))
+    return root.getElementById(selector.slice(1))
+  else if(index || index == 0)
+    if(index == 0)
+      return root.querySelector(selector)
+    else
+      return root.querySelectorAll(selector)[index]
+  else
+    return root.querySelectorAll(selector)
+}
+
+const $map = function $map(root, selector, index, callback) {
+  let _$
+
+  switch(arguments.length) {
+    case 2:  // index, callback, undefined, undefined
+      _$ = $(root)
+      callback = selector
+      break
+    case 3: // selector, index, callback, undefined
+      _$ = $(root, selector)
+      callback = index
+      break
+    case 4:
+      _$ = $(root, selector, index)
+      break
+  }
+
+  return [].map.call(_$, callback)
 }
 
 const parseSvg = function parseSvg(text) {
