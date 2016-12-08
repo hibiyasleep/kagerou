@@ -22,6 +22,7 @@ const CONFIG_DEFAULT = {
     'shadow-card': '0 0.05rem 0.25rem rgba(0, 0, 0, 0.5)',
     'shadow-text': '0 0 0.125em rgba(0, 0, 0, 1)',
     'font-size-small': '0.75rem',
+    'gauge-height': '100%',
     'graph-height': '1.5rem'
   },
   tabs: [

@@ -189,6 +189,17 @@ window.addEventListener('load', _ => {
             </span>
           </p>
           <p class="control">
+            <label for="input-style-gauge-height"> 게이지 높이 </label>
+            <span class="input-group">
+              <label class="input-value" for="input-style-gauge-height">
+              </label>
+              <input type="range" id="input-style-gauge-height"
+                     data-config-key="style.gauge-height"
+                     data-unit="%"
+                     from="0" step="5" to="100"/>
+            </span>
+          </p>
+          <p class="control">
             <label for="input-style-body-font"> 본문 폰트 </label>
             <input type="text" id="input-style-body-font"
                    data-config-key="style.body-font"

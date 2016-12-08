@@ -187,9 +187,9 @@ main .clsicon { /* workaround */
 
 .guage {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  height: 100%;
+  height: var(--gauge-height);
   z-index: -1;
 
   -webkit-filter: blur(0.02rem);
