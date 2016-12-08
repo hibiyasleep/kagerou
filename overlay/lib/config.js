@@ -167,8 +167,11 @@ const COLUMN_INDEX = {
   // deal
   deal: {
     per_second: {
-      v: _ => parseFloat(_.encdps),
-      f: (_, conf) => isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
+      v: 'encdps',
+      f: (_, conf) => {
+        _ = parseFloat(_)
+        isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
+      }
     },
     pct: {
       v: _ => parseFloat(_['damage%']),
@@ -209,8 +212,11 @@ const COLUMN_INDEX = {
   // heal
   heal: {
     per_second: {
-      v: _ => parseFloat(_.enchps),
-      f: (_, conf) => isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.hps)
+      v: 'enchps',
+      f: (_, conf) => {
+        _ = parseFloat(_)
+        isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.hps)
+      }
     },
     pct: {
       v: _ => parseFloat(_['healed%']),
