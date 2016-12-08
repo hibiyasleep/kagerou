@@ -77,9 +77,10 @@ const switchTab = function switchTab(target) {
     $map('.input-value', _ => {
       let target = $('#' + _.getAttribute('for'))
       _.textContent = config.get(target.getAttribute('data-config-key'))
+      let unit = target.getAttribute('data-unit') || ''
 
       target.addEventListener('input', function(e) {
-        _.textContent = this.value
+        _.textContent = this.value + unit
       })
     })
 
