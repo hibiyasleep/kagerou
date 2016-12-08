@@ -171,7 +171,7 @@ const COLUMN_INDEX = {
       v: 'encdps',
       f: (_, conf) => {
         _ = parseFloat(_)
-        isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
+        return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
       }
     },
     pct: {
@@ -216,7 +216,7 @@ const COLUMN_INDEX = {
       v: 'enchps',
       f: (_, conf) => {
         _ = parseFloat(_)
-        isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.hps)
+        return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.hps)
       }
     },
     pct: {

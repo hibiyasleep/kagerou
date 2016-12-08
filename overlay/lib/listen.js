@@ -86,7 +86,7 @@
 
     sort(key, target) {
       let d = (('+-'.indexOf(key[0]))+1 || 1) * 2 - 3
-      let k = SORTABLE[k]
+      let k = SORTABLE[key]
       ;(target || this.data).sort((a, b) =>
         (parseFloat(a[k]) - parseFloat(b[k])) * d)
 

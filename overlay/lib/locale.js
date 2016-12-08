@@ -35,8 +35,8 @@
           miss: ['빗나감', '빗나간 횟수'],
           hitfail: ['막힘', '막힌 횟수'],
           critical: ['극대', '극대화 비율'],
-          max: ['Max-', '최대량 (스킬명 제외)'],
-          maxhit: ['Max-', '최대량 (스킬명 포함)']
+          max: ['Max-', 'Max (스킬명 제외)'],
+          maxhit: ['Max Damage', 'Max']
         },
         tank: {
           _: '탱',
@@ -54,12 +54,12 @@
           swing: ['타격', '타격 횟수'],
           critical: ['+극대', '극대화 비율'],
           cure: ['치료', '치료 (디버프 해제)'],
-          max: ['Max+', '최대량 (스킬명 제외)'],
-          maxhit: ['Max+', '최대량 (스킬명 포함)']
+          max: ['Max+', 'Max (스킬명 제외)'],
+          maxhit: ['Max Heal', 'Max']
         },
         etc: {
           _: '기타',
-          powerdrain: ['P.drn', 'Power drain'],
+          powerdrain: ['P.drn', 'Powerdrain'],
           powerheal: ['변환', '자원 변환'],
           death: ['사망', '데스카운트']
         }
@@ -89,7 +89,7 @@
       let value = o[1] || -1
 
       if(value) {
-        return name + ', ' + value
+        return name + ': ' + value
       } else {
         return name
       }
