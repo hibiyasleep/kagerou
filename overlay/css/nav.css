@@ -145,7 +145,7 @@ nav:hover > .container {
 
   width: 10rem;
   max-width: calc(100vw - 2rem);
-  max-height: calc(100vh - 3rem);
+  max-height: calc(100vh - 1rem);
 
   background-size: cover;
   background: var(--dropdown-bg);
