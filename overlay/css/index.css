@@ -26,8 +26,8 @@ body::after {
   height: 0;
 
   border: 8px solid; /* Resize handle size is controlled by plugin; no ctrl */
-  border-color: transparent rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.3) transparent;
-  background: rgba(0, 0, 0, 0.1);
+  border-color: transparent rgba(127, 127, 127, 0.3) rgba(127, 127, 127, 0.3) transparent;
+  background: rgba(127, 127, 127, 0.1);
 }
 
 /* Shared classes */
