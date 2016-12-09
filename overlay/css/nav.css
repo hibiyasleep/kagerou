@@ -47,6 +47,8 @@ nav:hover > .container {
   vertical-align: top;
   margin: 0.25rem;
   height: calc(100% - 0.5rem);
+
+  fill: var(--color-accent);
 }
 .history-label {
   display: inline-block;
