@@ -122,7 +122,10 @@ main {
   max-height: calc(100% - var(--body-margin) - 2rem);
 
   margin: 0 calc(var(--body-margin) * 1);
+
   background: var(--content-bg);
+  background-size: cover;
+  background-position: center;
 
   box-shadow: 0 -0.25rem 0 rgba(0, 0, 0, 0.01), var(--shadow-card);
   text-shadow: var(--shadow-text);
@@ -159,6 +162,8 @@ main > ul {
 
   color: #eee;
   background: var(--header-bg);
+  background-size: cover;
+  background-position: center;
   text-shadow: var(--shadow-text);
 }
 #table {

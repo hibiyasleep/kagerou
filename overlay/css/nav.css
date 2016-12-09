@@ -18,8 +18,10 @@ nav > .container {
   width: 100%;
   height: 100%;
 
-  background-size: cover;
   background: var(--nav-bg);
+  background-size: cover;
+  background-position: center;
+
   box-shadow: var(--shadow-card);
 
   color: var(--nav-fg);
