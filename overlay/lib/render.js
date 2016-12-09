@@ -16,6 +16,12 @@
       this.latestData = null
       this.currentHistory = false
       this.updateConfig(config)
+
+      this.elem = {}
+      this.acc = {
+        rdps: config.format.significant_digit.dps,
+        rhps: config.format.significant_digit.hps
+      }
     }
 
     updateConfig(config) {
@@ -52,8 +58,19 @@
     }
 
     updateHeader() {
-      let header = $('#header')
-      header.outerHTML = this.template.header
+      this.elem.header = this.elem.header || $('#header')
+      this.elem.header.outerHTML = this.template.header
+    }
+
+    updateFooter(dps, hps) {
+      this.elem.rdps = this.elem.rdps || $('#rdps')
+      this.elem.rhps = this.elem.rhps || $('#rhps')
+      animateNumber(this.elem.rdps, parseFloat(dps) || 0, {
+        digit: this.acc.rdps
+      })
+      animateNumber(this.elem.rhps, parseFloat(hps) || 0, {
+        digit: this.acc.rhps
+      })
     }
 
     update() {
@@ -89,10 +106,9 @@
         )
       }
 
-      // footer (rdps etc)
+      // footer (rdps, rhps)
 
-      $('#rdps').textContent = data.header.encdps
-      $('#rhps').textContent = data.header.enchps
+      this.updateFooter(data.header.encdps, data.header.enchps)
     }
 
   }

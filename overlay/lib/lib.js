@@ -132,6 +132,35 @@ const resolveOwner = function resolveOwner(_) {
   return o && o[1] || undefined
 }
 
+const animateNumber = function animateNumber(element, to, option) {
+  if(typeof element === 'string') {
+    element = $(element, 0)
+  }
+
+  option.timeout = option.timeout || 500
+
+  const from = parseFloat(element.textContent)
+  const step = (from - to) / (option.timeout / 20)
+  let current = from - step
+
+  let set = function(v) {
+    element.textContent = v.toFixed(option.digit || 0)
+  }
+
+  let interval = setInterval(function() {
+    current -= step
+    set(current)
+    if(current == to) {
+      clearInterval(interval)
+    }
+  }, 20)
+
+  setTimeout(function() {
+    clearInterval(interval)
+    set(to)
+  }, option.timeout)
+}
+
 const displayVersionNumber = function displayVersionNumber(dom) {
   [].map.call(dom, _ => _.textContent = VERSION)
 }
