@@ -58,17 +58,18 @@
     }
 
     updateHeader() {
-      this.elem.header = this.elem.header || $('#header')
-      this.elem.header.outerHTML = this.template.header
+      $('#header').outerHTML = this.template.header
     }
 
     updateFooter(dps, hps) {
       this.elem.rdps = this.elem.rdps || $('#rdps')
       this.elem.rhps = this.elem.rhps || $('#rhps')
       animateNumber(this.elem.rdps, parseFloat(dps) || 0, {
+        timeout: 266,
         digit: this.acc.rdps
       })
       animateNumber(this.elem.rhps, parseFloat(hps) || 0, {
+        timeout: 266,
         digit: this.acc.rhps
       })
     }
