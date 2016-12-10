@@ -109,6 +109,11 @@ const CONFIG_DEFAULT = {
     },
     merge_pet: true,
     myname: []
+  },
+  filter: {
+    unusual_spaces: true,
+    non_combatant: false,
+    jobless: true
   }
 }
 
@@ -359,8 +364,11 @@ const COLUMN_INDEX = {
 
     toggle(k) {
       if(!this.config) return false
-      if(typeof this.get(k) !== 'boolean') return false
-      this.set(k, !this.get(k))
+
+      let v = this.get(k)
+      if(typeof v !== 'boolean') return false
+      this.set(k, !v)
+      return !v
     }
 
     reset(key) {

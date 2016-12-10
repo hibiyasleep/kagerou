@@ -8,6 +8,11 @@
 
   const sanitize = _ => _.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
 
+  const NON_COMBATANT_JOBS = [
+    'alc', 'arm', 'bsm', 'btn', 'crp', 'cul',
+    'fsh', 'gsm', 'ltw', 'min', 'wvr', 'error'
+  ]
+
   class Renderer {
 
     constructor(config) {
@@ -82,6 +87,28 @@
       }
     }
 
+    _testRow(data) {
+      let d = resolveClass(data.Job, data.name)
+      let job = d[0]
+      let name = d[1]
+
+      if(this.config.filter.unusual_spaces
+        && !d[2] // not a pet
+        && name != 'Limit Break' // also not a limit break
+        && name.split(' ').length > 1) {
+        return false
+      }
+      if(this.config.filter.non_combatant
+        && NON_COMBATANT_JOBS.indexOf(job) != -1) {
+        return false
+      }
+      if(this.config.filter.jobless
+        && job.length == 0) {
+        return false
+      }
+      return true
+    }
+
     render(data) {
       // damn chromium 45
 
@@ -97,10 +124,12 @@
         window.config.get('format.merge_pet')
       )
       let d = got[0], max = got[1]
+
       let table = $('#table')
 
       table.innerHTML = ''
       for(let i of d) {
+        if(!this._testRow(i)) continue
         table.insertAdjacentHTML(
           'beforeend',
           this.template.render(i, max)

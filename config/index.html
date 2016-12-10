@@ -104,6 +104,14 @@ window.addEventListener('load', _ => {
           </svg>
           <label> 스타일 </label>
         </li>
+        <li data-page="width">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+            <path d="M23 7V1h-6v2H7V1H1v6h2v10H1v6h6v-2h10v2h6v-6h-2V7h2zM3 3h2v2H3V3zm2 18H3v-2h2v2zm12-2H7v-2H5V7h2V5h10v2h2v10h-2v2zm4 2h-2v-2h2v2zM19 5V3h2v2h-2zm-5.27 9h-3.49l-.73 2H7.89l3.4-9h1.4l3.41 9h-1.63l-.74-2zm-3.04-1.26h2.61L12 8.91l-1.31 3.83z" />
+          </svg>
+          <label> 너비 </label>
+        </li>
+        <li class="splitter"> </li>
         <li data-page="tab">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
@@ -111,12 +119,12 @@ window.addEventListener('load', _ => {
           </svg>
           <label> 탭 </label>
         </li>
-        <li data-page="width">
+        <li data-page="filter">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
-            <path d="M23 7V1h-6v2H7V1H1v6h2v10H1v6h6v-2h10v2h6v-6h-2V7h2zM3 3h2v2H3V3zm2 18H3v-2h2v2zm12-2H7v-2H5V7h2V5h10v2h2v10h-2v2zm4 2h-2v-2h2v2zM19 5V3h2v2h-2zm-5.27 9h-3.49l-.73 2H7.89l3.4-9h1.4l3.41 9h-1.63l-.74-2zm-3.04-1.26h2.61L12 8.91l-1.31 3.83z" />
+            <path d="M3 5H1v16c0 1.1.9 2 2 2h16v-2H3V5zm18-4H7c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 16H7V3h14v14z" />
           </svg>
-          <label> 너비 </label>
+          <label> 필터 </label>
         </li>
         <li class="splitter"> </li>
         <li data-page="info">
@@ -126,7 +134,6 @@ window.addEventListener('load', _ => {
           </svg>
           <label> 정보 </label>
         </li>
-        <li class="splitter"> </li>
         <li onclick="OverlayPluginApi.broadcastMessage('reload')">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
@@ -410,24 +417,6 @@ window.addEventListener('load', _ => {
           </p>
         </article>
       </section>
-      <section data-page="tab">
-        <ul class="tab" id="tab-container">
-          <li class="tab-button" id="tab-new">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                 viewBox="0 0 24 24" class="icon">
-              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-            </svg>
-          </li>
-          <li class="tab-button" data-reset="tabs">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                 viewBox="0 0 24 24" class="icon">
-              <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
-            </svg>
-          </li>
-        </ul>
-        <div class="tabconfig-pane-container">
-        </div>
-      </section>
       <section data-page="width">
         <article>
           <blockquote>
@@ -447,7 +436,57 @@ window.addEventListener('load', _ => {
           </p>
         </article>
       </section>
-
+      <section data-page="tab">
+        <ul class="tab" id="tab-container">
+          <li class="tab-button" id="tab-new">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                 viewBox="0 0 24 24" class="icon">
+              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+            </svg>
+          </li>
+          <li class="tab-button" data-reset="tabs">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                 viewBox="0 0 24 24" class="icon">
+              <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+            </svg>
+          </li>
+        </ul>
+        <div class="tabconfig-pane-container">
+        </div>
+      </section>
+      <section data-page="filter">
+        <article>
+          <h3> 일반 </h3>
+          <blockquote>
+            FFXIV_Plugin이 피아식별조차 제대로 못 하는 관계로, 어떻게든 적을
+            표시하지 않도록 시도합니다.
+          </blockquote>
+          <p class="control">
+            <label for="input-filter-unusual_spaces">
+              요정도 아닌데 이름에 띄어쓰기가 있음
+            </label>
+            <input type="checkbox" id="input-filter-unusual_spaces"
+                   data-type="boolean"
+                   data-config-key="filter.unusual_spaces" />
+          </p>
+          <p class="control">
+            <label for="input-filter-jobless">
+              클래스/잡이 비어있음
+            </label>
+            <input type="checkbox" id="input-filter-jobless"
+                   data-type="boolean"
+                   data-config-key="filter.jobless" />
+          </p>
+          <p class="control">
+            <label for="input-filter-non_combatant">
+              전투직이 아님
+            </label>
+            <input type="checkbox" id="input-filter-non_combatant"
+                   data-type="boolean"
+                   data-config-key="filter.non_combatant" />
+          </p>
+        </article>
+      </section>
       <section data-page="info">
         <svg xmlns="http://www.w3.org/2000/svg" width="416" height="128"
              viewBox="0 0 416 128" class="clock">

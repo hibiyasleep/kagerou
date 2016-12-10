@@ -116,7 +116,7 @@ const resolveClass = function resolveJobFromName(_job, _name) {
     if(_name === 'Limit Break' || _name === '리미트 브레이크') {
       return ['limit break', 'Limit Break', '']
     } else {
-      return [_job, _name, ''] // <- TODO: localized classname at [2]
+      return [_job.toLowerCase(), _name, '']
     }
   }
 

@@ -118,15 +118,16 @@ const switchTab = function switchTab(target) {
         let value = o.value
         let type = o.getAttribute('data-type')
         let unit = o.getAttribute('data-unit') || ''
+        let key = o.getAttribute('data-config-key')
 
         if(type === 'array') {
           value = value.split(o.getAttribute('data-splitter')).map(_ => _.trim())
         } else if(type === 'boolean') {
-          value = o.checked == 'true'
+          value = o.checked
         } else {
           value += unit
         }
-        config.set(o.getAttribute('data-config-key'), value)
+        config.set(key, value)
       })
 
       tabconfig.save()
