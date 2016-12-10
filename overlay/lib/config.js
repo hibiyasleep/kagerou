@@ -111,7 +111,7 @@ const CONFIG_DEFAULT = {
     myname: []
   },
   filter: {
-    unusual_spaces: true,
+    unusual_spaces: false,
     non_combatant: false,
     jobless: true
   }
