@@ -137,7 +137,6 @@ header {
   height: 6rem;
 
   background: #fff;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
 }
 header > h2 {
   padding: 1.5rem;
@@ -182,6 +181,8 @@ main > section {
 
   padding: 0.5rem 1.5rem;
   overflow-y: auto;
+
+  box-shadow: 0 0.25rem 0.5rem -0.25rem rgba(0, 0, 0, 0.5) inset;
 }
 section.active {
   display: block;
@@ -238,9 +239,12 @@ ol.list {
 }
 
 section[data-page=tab] {
+  height: calc(100% + 1rem);
+  margin-top: -1rem;
   padding: 0;
-  height: 100%;
+
   overflow: initial;
+  box-shadow: none;
 }
 .tab {
   display: flex;
@@ -301,7 +305,7 @@ section[data-page=tab] {
 
 .tabconfig-list-container {
   display: flex;
-  height: calc(100% - 9.5rem);
+  height: calc(100% - 10.875rem);
 }
 .tabconfig-list {
   width: 50%;
@@ -317,7 +321,8 @@ section[data-page=tab] {
 }
 .tabconfig-list > ul {
   padding-top: 2rem;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   height: 100%;
 }
 .tabconfig-list .header {
