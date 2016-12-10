@@ -99,6 +99,26 @@
     setTimeout(_ => d.textContent = '', 15000)
   }
 
+  const loadFormatButtons = function loadFormatButtons() {
+    [{
+      value: 'format.merge_pet',
+      callback: _ => {
+        if(_){
+          $('[data-button=merge-pet]', 0).classList.add('enabled')
+          $('body', 0).classList.add('pet-merged')
+        }
+      }
+    }, {
+      value: 'format.nameblur',
+      callback: _ => {
+        if(_){
+          $('[data-button=nameblur]', 0).classList.add('enabled')
+          $('body', 0).classList.add('nameblur')
+        }
+      }
+    }].forEach( _ => _.callback(config.get(_.value)) )
+  }
+
   window.addEventListener('load', () => {
 
     // Dropdown
@@ -128,23 +148,7 @@
     })
 
     // load configs
-    ;[{
-      value: 'format.merge_pet',
-      callback: _ => {
-        if(_){
-          $('[data-button=merge-pet]', 0).classList.add('enabled')
-          $('body', 0).classList.add('pet-merged')
-        }
-      }
-    }, {
-      value: 'format.nameblur',
-      callback: _ => {
-        if(_){
-          $('[data-button=nameblur]', 0).classList.add('enabled')
-          $('body', 0).classList.add('nameblur')
-        }
-      }
-    }].forEach( _ => _.callback(config.get(_.value)) )
+    loadFormatButtons()
 
 
     // Button handlers
@@ -159,6 +163,7 @@
       toggle: 'pet-merged',
       callback: _ => {
         window.config.toggle('format.merge_pet')
+        window.config.save()
         window.renderer.update()
       }
     }, {
@@ -212,8 +217,11 @@
         config.load()
         config.setResizeFactor()
         config.attachOverlayStyle()
+
         window.renderer = new Renderer(window.config.get())
         tabdisplay.render()
+
+        loadFormatButtons()
         return
     }
   })
