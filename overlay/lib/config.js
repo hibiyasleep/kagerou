@@ -101,6 +101,31 @@ const CONFIG_DEFAULT = {
     '_etc-powerheal': 4,
     '_etc-death': 2
   },
+  color: {
+    'gauge-default': '#444',
+    'gauge-opacity': '1',
+    'position-tank': 'rgb(33, 150, 243)',
+    'position-deal': 'rgb(244, 67, 54)',
+    'position-heal': 'rgb(139, 195, 74)',
+    pld: 'rgb(21, 28, 100)', // Indigo 900 (B -10%)
+    war: 'rgb(153, 23, 23)', // Red 900 (B -10%)
+    drk: 'rgb(136, 14, 79)', // Pink 900
+    mnk: 'rgb(255, 152, 0)', // Orange 500
+    drg: 'rgb(63, 81, 181)', // Indigo 500
+    brd: 'rgb(158, 157, 36)', // Lime 800
+    nin: 'rgb(211, 47, 47)', // Red 700
+    smn: 'rgb(46, 125, 50)', // Green 800
+    blm: 'rgb(126, 87, 194)', // Deep Purple 400
+    mch: 'rgb(0, 151, 167)', // Cyan 700
+    whm: 'rgb(117, 117, 117)', // Gray 600
+    sch: 'rgb(121, 134, 203)', // Indigo 300
+    ast: 'rgb(121, 85, 72)', // Brown 500
+    'limit-break': '',
+    'smn-pet': 'rgba(46, 125, 50, 0.5)',
+    'sch-pet': 'rgba(121, 134, 203, 0.5)',
+    'mch-pet': 'rgba(0, 151, 167, 0.5)',
+    'chocobo': '#444'
+  },
   format: {
     significant_digit: {
       dps: 2,
@@ -142,13 +167,16 @@ const COLUMN_USE_LARGER = {
 }
 
 const PET_MAPPING = {
-  '요정 에오스': 'eos',
+  // acn, smn
+  '카벙클 에메랄드': 'emerald',
   '가루다 에기': 'garuda',
+  '카벙클 토파즈': 'topaz',
   '타이탄 에기': 'titan',
   '이프리트 에기': 'ifrit',
+  // sch
+  '요정 에오스': 'eos',
   '요정 셀레네': 'selene',
-  '카벙클 에메랄드': 'emerald',
-  '카벙클 토파즈': 'topaz',
+  // mch
   '자동포탑 룩': 'look',
   '자동포탑 비숍': 'bishop'
 }
@@ -346,7 +374,7 @@ const COLUMN_INDEX = {
         'css/index.css',
         'css/nav.css'
       ], 'style')
-      this.attachCSS('css/table.css', ['style', 'colwidth'])
+      this.attachCSS('css/table.css', ['style', 'colwidth', 'color'])
     }
 
     get(k) {

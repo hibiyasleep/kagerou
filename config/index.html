@@ -88,7 +88,7 @@ window.addEventListener('load', _ => {
   </head>
   <body>
     <aside>
-      <h1> 설정 </h1>
+      <h1 onclick="location.reload()"> 설정 </h1>
       <ul class="menu">
         <li data-page="general">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -103,6 +103,14 @@ window.addEventListener('load', _ => {
             <path d="M2.53 19.65l1.34.56v-9.03l-2.43 5.86c-.41 1.02.08 2.19 1.09 2.61zm19.5-3.7L17.07 3.98c-.31-.75-1.04-1.21-1.81-1.23-.26 0-.53.04-.79.15L7.1 5.95c-.75.31-1.21 1.03-1.23 1.8-.01.27.04.54.15.8l4.96 11.97c.31.76 1.05 1.22 1.83 1.23.26 0 .52-.05.77-.15l7.36-3.05c1.02-.42 1.51-1.59 1.09-2.6zM7.88 8.75c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-2 11c0 1.1.9 2 2 2h1.45l-3.45-8.34v6.34z" />
           </svg>
           <label> 스타일 </label>
+        </li>
+        <li data-page="color">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+            <path d="M16.56 8.94L7.62 0 6.21 1.41l2.38 2.38-5.15 5.15c-.59.59-.59 1.54 0 2.12l5.5 5.5c.29.29.68.44 1.06.44s.77-.15 1.06-.44l5.5-5.5c.59-.58.59-1.53 0-2.12zM5.21 10L10 5.21 14.79 10H5.21zM19 11.5s-2 2.17-2 3.5c0 1.1.9 2 2 2s2-.9 2-2c0-1.33-2-3.5-2-3.5z" />
+            <path d="M0 20h24v4H0z" fill-opacity=".36" />
+          </svg>
+          <label> 게이지 색상 </label>
         </li>
         <li data-page="width">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -413,6 +421,278 @@ window.addEventListener('load', _ => {
                      data-config-key="style.shadow-text"
                      data-style="textShadow"
                      style="width: 10rem" />
+            </span>
+          </p>
+        </article>
+      </section>
+      <section data-page="color">
+        <article>
+          <p class="control">
+            <label for="button-reset-color">
+              색상 초기화
+            </label>
+            <button id="button-reset-color" data-reset="color">
+              실행
+            </button>
+          </p>
+          <p class="control">
+            <label for="input-color-gauge-default"> 기본 색상 </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-color-gauge-default">
+              </label>
+              <input type="text" id="input-color-gauge-default"
+                     data-config-key="color.gauge-default"
+                     data-style="background"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-gauge-opacity">
+              투명도
+            </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-color-gauge-opacity"
+                     style="background: #444;">
+              </label>
+              <input type="range" id="input-color-gauge-opacity"
+                     data-config-key="color.gauge-opacity"
+                     data-style="opacity"
+                     style="width: 10rem"
+                     min="0" step="0.05" max="1" />
+            </span>
+          </p>
+        </article>
+        <article>
+          <h3> 역할 표시 </h3>
+          <p class="control">
+            <label for="input-color-position-tank"> 방어 역할 (탱) </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-color-position-tank">
+              </label>
+              <input type="text" id="input-color-position-tank"
+                     style="width: 10rem"
+                     data-config-key="color.position-tank"
+                     data-style="background" />
+            </span>
+            <p class="control">
+              <label for="input-color-position-deal"> 공격 역할 (딜) </label>
+              <span class="input-group">
+                <label class="input-value-style" for="input-color-position-deal">
+                </label>
+                <input type="text" id="input-color-position-deal"
+                       style="width: 10rem"
+                       data-config-key="color.position-deal"
+                       data-style="background" />
+              </span>
+              <p class="control">
+                <label for="input-color-position-heal"> 치유 역할 (힐) </label>
+                <span class="input-group">
+                  <label class="input-value-style"
+                         for="input-color-position-heal">
+                  </label>
+                  <input type="text" id="input-color-position-heal"
+                         style="width: 10rem"
+                         data-config-key="color.position-heal"
+                         data-style="background" />
+                </span>
+        </article>
+        <article>
+          <h3> 방어 역할 </h3>
+          <p class="control">
+            <label for="input-color-pld"> 나이트 (검술사) </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-pld">
+                <img src="../overlay/img/class/pld.png" />
+              </label>
+              <input type="text" id="input-color-pld" style="width: 10rem"
+                     data-config-key="color.pld"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-war"> 전사 (도끼술사) </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-war">
+                <img src="../overlay/img/class/war.png" />
+              </label>
+              <input type="text" id="input-color-war" style="width: 10rem"
+                     data-config-key="color.war"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-drk"> 암흑기사 </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-drk">
+                <img src="../overlay/img/class/drk.png" />
+              </label>
+              <input type="text" id="input-color-drk" style="width: 10rem"
+                     data-config-key="color.drk"
+                     data-style="background" />
+            </span>
+          </p>
+        </article>
+        <article>
+          <h3> 공격 역할 </h3>
+
+          <p class="control">
+            <label for="input-color-mnk"> 몽크 (격투사) </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-mnk">
+                <img src="../overlay/img/class/mnk.png" />
+              </label>
+              <input type="text" id="input-color-mnk" style="width: 10rem"
+                     data-config-key="color.mnk"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-drg"> 용기사 (창술사) </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-drg">
+                <img src="../overlay/img/class/drg.png" />
+              </label>
+              <input type="text" id="input-color-drg" style="width: 10rem"
+                     data-config-key="color.drg"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-brd"> 음유시인 (궁술사) </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-brd">
+                <img src="../overlay/img/class/brd.png" />
+              </label>
+              <input type="text" id="input-color-brd" style="width: 10rem"
+                     data-config-key="color.brd"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-nin"> 닌자 (쌍검사) </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-nin">
+                <img src="../overlay/img/class/nin.png" />
+              </label>
+              <input type="text" id="input-color-nin" style="width: 10rem"
+                     data-config-key="color.nin"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-smn"> 소환사 (비술사) </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-smn">
+                <img src="../overlay/img/class/smn.png" />
+              </label>
+              <input type="text" id="input-color-smn" style="width: 10rem"
+                     data-config-key="color.smn"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-blm"> 흑마도사 (주술사) </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-blm">
+                <img src="../overlay/img/class/blm.png" />
+              </label>
+              <input type="text" id="input-color-blm" style="width: 10rem"
+                     data-config-key="color.blm"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-mch"> 기공사 </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-mch">
+                <img src="../overlay/img/class/mch.png" />
+              </label>
+              <input type="text" id="input-color-mch" style="width: 10rem"
+                     data-config-key="color.mch"
+                     data-style="background" />
+            </span>
+          </p>
+        </article>
+        <article>
+          <h3> 치유 역할 </h3>
+          <p class="control">
+            <label for="input-color-whm"> 백마도사 (환술사) </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-whm">
+                <img src="../overlay/img/class/whm.png" />
+              </label>
+              <input type="text" id="input-color-whm" style="width: 10rem"
+                     data-config-key="color.whm"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-sch"> 학자 </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-sch">
+                <img src="../overlay/img/class/sch.png" />
+              </label>
+              <input type="text" id="input-color-sch" style="width: 10rem"
+                     data-config-key="color.sch"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-ast"> 점성술사 </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-ast">
+                <img src="../overlay/img/class/ast.png" />
+              </label>
+              <input type="text" id="input-color-ast" style="width: 10rem"
+                     data-config-key="color.ast"
+                     data-style="background" />
+            </span>
+          </p>
+        </article>
+        <article>
+          <h3> 소환수/버디 </h3>
+          <p class="control">
+            <label for="input-color-smn-pet"> 소환사/비술사 </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-smn-pet">
+                <img src="../overlay/img/class/garuda.png" />
+              </label>
+              <input type="text" id="input-color-smn-pet" style="width: 10rem"
+                     data-config-key="color.smn-pet"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-sch-pet"> 학자 </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-sch-pet">
+                <img src="../overlay/img/class/selene.png" />
+              </label>
+              <input type="text" id="input-color-sch-pet" style="width: 10rem"
+                     data-config-key="color.sch-pet"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-mch-pet"> 기공사 </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-mch-pet">
+                <img src="../overlay/img/class/bishop.png" />
+              </label>
+              <input type="text" id="input-color-mch-pet" style="width: 10rem"
+                     data-config-key="color.mch-pet"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-chocobo"> 초코보 </label>
+            <span class="input-group">
+              <label class="input-value-style job" for="input-color-chocobo">
+                <img src="../overlay/img/class/chocobo.png" />
+              </label>
+              <input type="text" id="input-color-chocobo" style="width: 10rem"
+                     data-config-key="color.chocobo"
+                     data-style="background" />
             </span>
           </p>
         </article>

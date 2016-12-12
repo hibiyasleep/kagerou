@@ -54,64 +54,52 @@
 /* Position Helpers */
 .class-gld .guage, .class-pld .guage, .class-mrd .guage,
 .class-war .guage, .class-drk .guage { /* tank; blue 500 */
-  box-shadow: 0.25rem 0 0 #2196f3 inset;
+  box-shadow: 0.25rem 0 0 var(--position-tank) inset;
 }
 .class-pgl .guage, .class-mnk .guage, .class-lnc .guage,
 .class-drg .guage, .class-arc .guage, .class-brd .guage,
 .class-rog .guage, .class-nin .guage, .class-acn .guage,
 .class-smn .guage, .class-thm .guage, .class-blm .guage,
 .class-mch .guage { /* deal; red 500 */
-  box-shadow: 0.25rem 0 0 #f44336 inset;
+  box-shadow: 0.25rem 0 0 var(--position-deal) inset;
 }
 .class-cnj .guage, .class-whm .guage, .class-sch .guage,
 .class-ast .guage { /* heal; light green 500 */
-  box-shadow: 0.25rem 0 0 #8bc34a inset;
+  box-shadow: 0.25rem 0 0 var(--position-heal) inset;
 }
 
 /* Colors */
 .guage {
-  background: #444444;
+  background: var(--gauge-default);
+  opacity: var(--gauge-opacity);
 }
-.class-gld .guage, .class-pld .guage {
-  background: #151c64; /* Indigo 900 (B -10%) */
-}
-.class-mrd .guage, .class-war .guage {
-  background: #991717; /* Red 900 (B -10%) */
-}
-.class-drk .guage {
-  background: #880E4F; /* Pink 900 */
-}
+.class-gld .guage, .class-pld .guage { background: var(--pld); }
+.class-mrd .guage, .class-war .guage { background: var(--war); }
+.class-drk .guage { background: var(--drk); }
 
-.class-pgl .guage, .class-mnk .guage {
-  background: #FF9800; /* Orange 500 */
-}
-.class-lnc .guage, .class-drg .guage {
-  background: #3F51B5; /* Indigo 500 */
-}
-.class-arc .guage, .class-brd .guage {
-  background: #9E9D24; /* Lime 800 */
-}
-.class-rog .guage, .class-nin .guage {
-  background: #D32F2F; /* Red 700 */
-}
-.class-acn .guage, .class-smn .guage {
-  background: #2E7D32; /* Green 800 */
-}
-.class-thm .guage, .class-blm .guage {
-  background: #7E57C2; /* Deep Purple 400 */
-}
-.class-mch .guage {
-  background: #0097A7; /* Cyan 700 */
-}
+.class-pgl .guage, .class-mnk .guage { background: var(--mnk); }
+.class-lnc .guage, .class-drg .guage { background: var(--drg); }
+.class-arc .guage, .class-brd .guage { background: var(--brd); }
+.class-rog .guage, .class-nin .guage { background: var(--nin); }
+.class-acn .guage, .class-smn .guage { background: var(--smn); }
+.class-thm .guage, .class-blm .guage { background: var(--blm); }
+.class-mch .guage { background: var(--mch); }
 
-.class-cnj .guage, .class-whm .guage {
-  background: #757575; /* Gray 600 */
+.class-cnj .guage, .class-whm .guage { background: var(--whm); }
+.class-sch .guage { background: var(--sch); }
+.class-ast .guage { background: var(--ast); }
+
+/* pets */
+
+.class-emerald .guage, .class-garuda .guage, .class-topaz .guage,
+.class-titan .guage, .class-ifrit .guage { /* smn */
+  background: var(--smn-pet);
 }
-.class-sch .guage {
-  background: #7986CB; /* Indigo 300 */
+.class-eos .guage, .class-selene .guage { /* sch */
+  background: var(--sch-pet);
 }
-.class-ast .guage {
-  background: #795548; /* Brown 500 */
+.class-look .guage, .class-bishop .guage { /* mch */
+  background: var(--mch-pet);
 }
 
 main {
