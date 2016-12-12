@@ -21,21 +21,38 @@ const switchTab = function switchTab(target) {
       })
     })
 
+    // tab switcher
+
+    $map('.tab-switcher', element => {
+      let target = element.getAttribute('data-target')
+      let targets = $(target, 0)
+
+      ;[].forEach.call(element.getElementsByTagName('li'), _ => {
+        _.addEventListener('click', function() {
+          let id = this.getAttribute('data-pane')
+          $(element, '.active', 0).classList.remove('active')
+          $(targets, '.active', 0).classList.remove('active')
+          $(element, `li[data-pane='${id}']`, 0).classList.add('active')
+          $(targets, `[data-pane='${id}']`, 0).classList.add('active')
+        })
+      })
+    })
+
     // colwidth
+    ;(function(){
+      const columns = window.locale.get('col')
+      const _container = $('section[data-page=width]', 0)
 
-    const columns = window.locale.get('col')
-    const _container = $('section[data-page=width]', 0)
+      for(let k1 in columns) {
+        let article = '<article>'
 
-    for(let k1 in columns) {
-      let article = '<article>'
+        article += '<h3>' + locale.get(`col.${k1}._`) + '</h3>'
 
-      article += '<h3>' + locale.get(`col.${k1}._`) + '</h3>'
+        for(let k2 in columns[k1]) {
+          if(k2 === '_' || k2 === 'icon') continue
+          let id = `input-colwidth-_${k1}-${k2}`
 
-      for(let k2 in columns[k1]) {
-        if(k2 === '_' || k2 === 'icon') continue
-        let id = `input-colwidth-_${k1}-${k2}`
-
-        article += `
+          article += `
 <p class="control">
   <label for="${id}">
     ${locale.get(`col.${k1}.${k2}`)[1]}
@@ -47,11 +64,12 @@ const switchTab = function switchTab(target) {
            data-config-key="colwidth._${k1}-${k2}" />
   </span>
 </p>`
-      }
-      article += '</article>'
+        }
+        article += '</article>'
 
-      _container.insertAdjacentHTML('beforeend', article)
-    }
+        _container.insertAdjacentHTML('beforeend', article)
+      }
+    })()
 
     // load config & fill all inputs
     $map('input[data-config-key]', _ => {

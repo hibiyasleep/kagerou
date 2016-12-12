@@ -27,7 +27,7 @@
       }
       this.container = {
         tab: $('#tab-container'),
-        pane: $('.tabconfig-pane-container', 0)
+        pane: $('#tabconfig-pane-container')
       }
       this.newTabButton = $('#tab-new')
       this.newTabButton.addEventListener('click', _ => {
@@ -52,8 +52,8 @@
         }
       }
 
-      for(let tab of this.tabs) {
-        this.append(tab)
+      for(let k in this.tabs) {
+        this.append(this.tabs[k])
       }
 
       Sortable.create(this.container.tab, {
@@ -64,8 +64,11 @@
     }
 
     _switch(id) {
-      $map('.tabconfig-pane', _ => _.classList.remove('active'))
-      $(`.tabconfig-pane[data-id='${id}']`, 0).classList.add('active')
+      $map(this.container.pane, '.tabconfig-pane', _ => {
+        _.classList.remove('active')
+      })
+      $(this.container.pane, `.tabconfig-pane[data-id='${id}']`, 0)
+        .classList.add('active')
 
       $map('.tab li', _ => _.classList.remove('active'))
       $(`.tab [data-id='${id}']`, 0).classList.add('active')
@@ -75,13 +78,13 @@
       return $map('#tab-container li', _ => {
         let id = _.getAttribute('data-id')
         if(!id) return false
-        let pane = $(`.tabconfig-pane[data-id="${id}"]`, 0)
+        let pane = $(this.container.pane, `.tabconfig-pane[data-id="${id}"]`, 0)
         let r = { id: id }
 
         r.label = $(pane, '[data-render="title.input"]', 0).value
         r.sort = $(pane, '[data-render="sort.input"]', 0).value
         r.gauge = $(pane, '[data-render="gauge.input"]', 0).value
-        r.col = $map(pane, '[data-control="columns.used"] li', null, __ => {
+        r.col = $map(pane, '[data-control="columns.used"] li', __ => {
           return __.getAttribute('data-id')
         })
 

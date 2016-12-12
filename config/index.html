@@ -15,6 +15,7 @@
     <script src="lib/dialog.js"> </script>
     <script src="lib/ui.js"> </script>
     <script src="lib/tabconfig.js"> </script>
+    <script src="lib/import-export.js"> </script>
 
     <template id="template-tab">
       <li class="draggable">
@@ -88,7 +89,7 @@ window.addEventListener('load', _ => {
   </head>
   <body>
     <aside>
-      <h1 onclick="location.reload()"> 설정 </h1>
+      <h1 ondblclick="location.reload()"> 설정 </h1>
       <ul class="menu">
         <li data-page="general">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -142,14 +143,13 @@ window.addEventListener('load', _ => {
           </svg>
           <label> 정보 </label>
         </li>
-        <li onclick="OverlayPluginApi.broadcastMessage('reload')">
+        <li data-page="import-export">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
-            <path d="M3 12c0 2.21.91 4.2 2.36 5.64L3 20h6v-6l-2.24 2.24C5.68 15.15 5 13.66 5 12c0-2.61 1.67-4.83 4-5.65V4.26C5.55 5.15 3 8.27 3 12zm8 5h2v-2h-2v2zM21 4h-6v6l2.24-2.24C18.32 8.85 19 10.34 19 12c0 2.61-1.67 4.83-4 5.65v2.09c3.45-.89 6-4.01 6-7.74 0-2.21-.91-4.2-2.36-5.64L21 4zm-10 9h2V7h-2v6z" />
+            <path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z" />
           </svg>
-          <label> 오버레이 새로고침 </label>
+          <label> 들여오기/내보내기 </label>
         </li>
-        <li onclick="location.reload()"></li>
       </ul>
     </aside>
     <header>
@@ -734,7 +734,7 @@ window.addEventListener('load', _ => {
           </p>
         </article>
       </section>
-      <section data-page="tab">
+      <section data-page="tab" class="tabbed-section">
         <ul class="tab" id="tab-container">
           <li class="tab-button" id="tab-new">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -749,7 +749,7 @@ window.addEventListener('load', _ => {
             </svg>
           </li>
         </ul>
-        <div class="tabconfig-pane-container">
+        <div class="tabconfig-pane-container" id="tabconfig-pane-container">
         </div>
       </section>
       <section data-page="filter">
@@ -787,6 +787,70 @@ window.addEventListener('load', _ => {
                    data-config-key="filter.non_combatant" />
           </p>
         </article>
+      </section>
+      <section data-page="import-export" class="tabbed-section">
+        <ul class="tab tab-switcher text-center"
+            data-target="section[data-page=import-export] > div">
+          <li data-pane="import" class="active"> 들여오기 </li>
+          <li data-pane="export"> 내보내기 </li>
+        </ul>
+        <div class="tabconfig-pane-container">
+          <div class="tabconfig-pane active" data-pane="import">
+            <article>
+              <p class="text-center">
+                아래에 가져온 값을 붙여넣으세요:
+                <br />
+                <input type="text" id="import-text" class="text-center" />
+              </p>
+              <p class="control text-right">
+                <button id="import-button"> 가져오기 </button>
+              </p>
+            </article>
+            <div class="tabconfig-content text-center" id="import-data"
+                 style="height: calc(100% - 9rem);">
+            </div>
+          </div>
+          <div class="tabconfig-pane" data-pane="export">
+            <article>
+              <blockquote>
+                <b>먼저 저장해야 합니다!</b>
+              </blockquote>
+              <blockquote>
+                '일반 > 레이아웃'의 값은 '스타일'에 포함됩니다.
+                <br />
+                기본값과 다른 값은 내보내지지 않습니다.
+              </blockquote>
+              <p class="control">
+                <label>
+                  내보낼 설정
+                </label>
+                <select id="export-column">
+                  <option value="style"> 스타일 </option>
+                  <option value="color"> 게이지 색상 </option>
+                  <option value="colwidth"> 너비 </option>
+                  <option value="tabs"> 탭 </option>
+                  <option value="style,color,colwidth,tabs" selected>
+                    전부
+                  </option>
+                </select>
+              </p>
+              <p class="control text-right">
+                <button id="export-confirm">
+                  확인
+                </button>
+              </p>
+            </article>
+            <div class="tabconfig-content text-center"
+                 style="height: calc(100% - 12.375rem);">
+              <p>
+                아래의 값을 전부 복사하세요:
+              </p>
+              <p>
+                <input type="text" id="export-text" class="text-center" />
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
       <section data-page="info">
         <svg xmlns="http://www.w3.org/2000/svg" width="416" height="128"

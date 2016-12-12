@@ -5,17 +5,53 @@
   const L = {
     ko: {
       skill: {},
-      style: {
-        'body-margin': '바깥쪽 여백',
-        'body-font': '글꼴',
-        'nav-bg-translucent': '상단 바 배경',
-        'ui-bg': 'UI 배경',
-        'ui-fg': 'UI 전경',
-        'color-accent': '강조색',
-        'shadow-card': '상자 그림자',
-        'shadow-text': '텍스트 그림자',
-        'font-size-small': '작은 글씨 크기',
-        'graph-height': '열 높이'
+      config: {
+        style: {
+          _: '스타일',
+          'resize-factor': 'UI 크기 조절',
+          'body-margin': '헤더와 테이블 사이의 너비',
+          'body-font': '본문 폰트',
+          'nav-opacity': '비활성 시 상단 바 투명도',
+          'nav-bg': '상단 바 배경',
+          'nav-fg': '상단 바 글자 색',
+          'header-bg': '테이블 헤더 배경',
+          'dropdown-bg': '드롭다운 배경',
+          'dropdown-fg': '드롭다운 글자 색',
+          'content-bg': '테이블 배경',
+          'content-fg': '테이블 글자 색',
+          'color-accent': '강조색',
+          'shadow-card': '오버레이 창 그림자',
+          'shadow-text': '텍스트 그림자',
+          'font-size-small': '작은 글자 크기',
+          'gauge-height': '게이지 높이',
+          'graph-height': '테이블 한 줄 높이'
+        },
+        color: {
+          _: '게이지 색상',
+          'gauge-default': '게이지 기본 색상',
+          'gauge-opacity': '게이지 투명도',
+          'position-tank': '방어 역할 표시',
+          'position-deal': '공격 역할 표시',
+          'position-heal': '회복 역할 표시',
+          pld: '나이트 (검술사)',
+          war: '전사 (도끼술사)',
+          drk: '암흑기사',
+          mnk: '몽크 (격투사)',
+          drg: '용기사 (창술사)',
+          brd: '음유시인 (궁술사)',
+          nin: '닌자 (쌍검사)',
+          smn: '소환사 (비술사)',
+          blm: '흑마도사 (주술사)',
+          mch: '기공사',
+          whm: '백마도사 (환술사)',
+          sch: '학자',
+          ast: '기공사',
+          'smn-pet': '소환사 (비술사) 소환수',
+          'sch-pet': '학자 소환수',
+          'mch-pet': '기공사 포탑',
+          'chocobo': '초코보',
+          'limit-break': '리밋 브레이크'
+        }
       },
       col: { // [short, long]
         i: {

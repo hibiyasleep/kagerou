@@ -18,8 +18,8 @@ const $ = function $(root, selector, index) {
 
   if(/^#[0-9a-z_\-]+?$/.test(selector))
     return root.getElementById(selector.slice(1))
-  else if(index || index == 0)
-    if(index == 0)
+  else if(index || index === 0)
+    if(index === 0)
       return root.querySelector(selector)
     else
       return root.querySelectorAll(selector)[index]
@@ -27,20 +27,16 @@ const $ = function $(root, selector, index) {
     return root.querySelectorAll(selector)
 }
 
-const $map = function $map(root, selector, index, callback) {
+const $map = function $map(root, selector, callback) {
   let _$
 
   switch(arguments.length) {
-    case 2:  // index, callback, undefined, undefined
+    case 2: // selector, callback, undefined
       _$ = $(root)
       callback = selector
       break
-    case 3: // selector, index, callback, undefined
-      _$ = $(root, selector)
-      callback = index
-      break
-    case 4:
-      _$ = $(root, selector, index)
+    case 3: // selector, index, callback
+      _$ = $(root, selector, false)
       break
   }
 

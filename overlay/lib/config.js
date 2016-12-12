@@ -147,10 +147,16 @@ const CONFIG_KEY_SHOULD_OVERRIDE = [
   'tabs'
 ]
 
+const CONFIG_KEY_SHOULDNT_EXPORTED = [
+  'style.resize-factor',
+  'style.nav-opacity'
+]
+
 const COLUMN_SORTABLE = [
   'deal.per_second',
   'deal.total',
   'tank.damage',
+  'tank.heal',
   'heal.per_second',
   'heal.total'
 ]
@@ -389,6 +395,14 @@ const COLUMN_INDEX = {
         return resolveDotIndex(this.config, k, v)
       else
         this.config = v
+    }
+
+    update(k, v) {
+      if(k === 'tabs') {
+        this.config.tabs = v
+      } else {
+        updateObject(this.config[k], v)
+      }
     }
 
     toggle(k) {
