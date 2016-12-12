@@ -90,7 +90,6 @@
 .class-ast .guage { background: var(--ast); }
 
 /* pets */
-
 .class-emerald .guage, .class-garuda .guage, .class-topaz .guage,
 .class-titan .guage, .class-ifrit .guage { /* smn */
   background: var(--smn-pet);
@@ -100,6 +99,10 @@
 }
 .class-look .guage, .class-bishop .guage { /* mch */
   background: var(--mch-pet);
+}
+
+.class-limit-break .guage {
+  background: var(--limit-break);
 }
 
 main {

@@ -1,6 +1,6 @@
 'use strict'
 
-const VERSION = '0.3.1'
+const VERSION = '0.3.2'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
@@ -124,7 +124,8 @@ const CONFIG_DEFAULT = {
     'smn-pet': 'rgba(46, 125, 50, 0.5)',
     'sch-pet': 'rgba(121, 134, 203, 0.5)',
     'mch-pet': 'rgba(0, 151, 167, 0.5)',
-    'chocobo': '#444'
+    'chocobo': '#444',
+    'limit-break': '#444'
   },
   format: {
     significant_digit: {
