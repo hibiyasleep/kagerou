@@ -70,7 +70,7 @@
       $(this.container.pane, `.tabconfig-pane[data-id='${id}']`, 0)
         .classList.add('active')
 
-      $map('.tab li', _ => _.classList.remove('active'))
+      $map(this.container.tab, '.tab li', _ => _.classList.remove('active'))
       $(`.tab [data-id='${id}']`, 0).classList.add('active')
     }
 
