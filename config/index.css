@@ -140,6 +140,9 @@ header {
   height: 6rem;
 
   background: #fff;
+
+  position: relative;
+  z-index: 10;
 }
 header > h2 {
   padding: 1.5rem;
@@ -155,20 +158,16 @@ header > ul > li {
   padding: 0.75rem 1rem;
   transition: 200ms background ease;
 }
-header > ul > .button {
-  cursor: pointer;
-}
 .button-primary {
   color: #0097A7; /* cyan 700 */
-}
-header > ul > .button:hover {
-  background: rgba(0, 0, 0, 0.125);
 }
 
 main {
   float: left;
   width: calc(100vw - 16rem);
   height: calc(100vh - 6rem);
+
+  position: relative;
 }
 main h3 {
   font-size: 0.75rem;
@@ -180,12 +179,17 @@ main h3 {
 }
 main > section {
   display: none;
+  width: 100%;
   height: 100%;
 
   padding: 0.5rem 1.5rem;
   overflow-y: auto;
 
   box-shadow: 0 0.25rem 0.5rem -0.25rem rgba(0, 0, 0, 0.5) inset;
+
+  position: absolute;
+  top: 0;
+  z-index: 0;
 }
 section.active {
   display: block;
@@ -268,6 +272,7 @@ label.input-value-style.job img {
 
   overflow: initial;
   box-shadow: none;
+  z-index: 15;
 }
 .tab {
   display: flex;
@@ -384,6 +389,8 @@ section[data-page=info] {
 
   background: black;
   color: white;
+
+  z-index: 201408151230; /* tenki ga ii */
 }
 .clock {
   width: 26rem;

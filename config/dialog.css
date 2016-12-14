@@ -1,42 +1,74 @@
 .dialog {
-  width: 24rem;
-  max-width: 100%;
+  width: 100%;
 
   font-size: 0.875rem;
 
   margin: auto;
-  padding: 0.5rem;
 
-  position: fixed;
+  position: absolute;
+  top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
 
-  z-index: 1000;
+  z-index: 5;
 
-  transition: bottom 300ms ease;
+  transition: top 300ms ease;
 
-  box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.5),
+    0 0.25rem 0.5rem -0.25rem rgba(0, 0, 0, 0.5) inset;
+}
+.tabbed-section .dialog {
+  top: 2rem;
+}
+.tabbed-section .dialog.removing {
+  top: -3rem;
 }
 
+.dialog h4, .dialog p {
+  display: inline-block;
+  padding: 0.75rem;
+}
 .dialog h4 {
   font-size: 1em; /* force to current inherited font-size */
   font-weight: 600;
+
+  padding-right: 0;
+  padding-bottom: 0;
 }
 .dialog.removing {
-  bottom: -4rem;
+  top: -5rem;
 }
 .dialog.error {
-  background: #FF9800; /* orange 500 */
+  background: #424242; /* #FF9800; /* orange 500 */
+  color: white;
 }
 .dialog.confirm {
-  background: #81C784; /* green 300 */
+  background: #424242; /* gray 800 */
+  color: white;
 }
 .dialog .buttons {
   float: right;
+  margin: 0;
+}
+.dialog .buttons:before {
+  display: inline-block;
+  content: '';
+
+  margin: 0.75rem 0;
+  padding: 0 0.125rem;
+
+  width: 0;
+  height: 1.25rem;
+  border-left: 0.1rem solid #eee;
+
+  vertical-align: top;
 }
 .dialog-button {
   background: none;
+  padding: 0.75rem;
+
+  color: inherit;
+  cursor: pointer;
 }
 .dialog-button:hover {
   background: rgba(0, 0, 0, 0.125);

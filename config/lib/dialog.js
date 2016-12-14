@@ -59,7 +59,7 @@
       return h
     }
     _insert() {
-      document.body.insertAdjacentElement('beforeend', this.dom)
+      $('main', 0).insertAdjacentElement('afterBegin', this.dom)
       setTimeout(_ => this.dom.classList.remove('removing'), 0)
     }
     _remove() {
