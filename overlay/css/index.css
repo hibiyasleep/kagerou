@@ -57,7 +57,7 @@ mark {
   background: none;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(63, 63, 63, 0.5);
   border-radius: 0;
 }
 ::-webkit-scrollbar-corner {
