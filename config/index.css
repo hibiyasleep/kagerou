@@ -26,6 +26,7 @@ body {
 
   -webkit-user-select: none;
   overflow: hidden;
+  cursor: default;
 }
 
 h1, h2, h3 {
@@ -73,15 +74,28 @@ input[type=text]:focus, select:focus {
 input[type=range] {
   vertical-align: middle;
 }
+
 button {
-  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+button, .button {
+  font-weight: bold;
+
+  border-radius: 0.1rem;
+
+  color: #0097A7; /* cyan 500 */
   background: none;
 
-  transition: 200ms background ease;
-  background: #E0F7FA; /* cyan 50 */
+  transition: background 200ms ease;
+
+  cursor: pointer;
 }
-button:hover {
-  background: rgba(0, 0, 0, 0.125);
+button:hover, .button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+button:active, .button:active {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 aside {
