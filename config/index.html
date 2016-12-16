@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="dialog.css" />
     <script src="https://raw.githubusercontent.com/github/fetch/master/fetch.js"></script>
     <script src="lib/sortable-1.5.0-rc1.js"> </script>
-    <script src="../overlay/lib/lib.js"> </script>
-    <script src="../overlay/lib/locale.js"> </script>
-    <script src="../overlay/lib/config.js"> </script>
+    <script src="../share/lib/util.js"> </script>
+    <script src="../share/lib/locale.js"> </script>
+    <script src="../share/lib/config.js"> </script>
     <script src="lib/dialog.js"> </script>
     <script src="lib/ui.js"> </script>
     <script src="lib/tabconfig.js"> </script>
@@ -516,7 +516,7 @@ window.addEventListener('load', _ => {
             </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-pld">
-                <img src="../overlay/img/class/pld.png" />
+                <img src="../share/img/class/pld.png" />
               </label>
               <input type="text" id="input-color-pld" style="width: 10rem"
                      data-config-key="color.pld"
@@ -529,7 +529,7 @@ window.addEventListener('load', _ => {
             </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-war">
-                <img src="../overlay/img/class/war.png" />
+                <img src="../share/img/class/war.png" />
               </label>
               <input type="text" id="input-color-war" style="width: 10rem"
                      data-config-key="color.war"
@@ -542,7 +542,7 @@ window.addEventListener('load', _ => {
             </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-drk">
-                <img src="../overlay/img/class/drk.png" />
+                <img src="../share/img/class/drk.png" />
               </label>
               <input type="text" id="input-color-drk" style="width: 10rem"
                      data-config-key="color.drk"
@@ -558,7 +558,7 @@ window.addEventListener('load', _ => {
             </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-mnk">
-                <img src="../overlay/img/class/mnk.png" />
+                <img src="../share/img/class/mnk.png" />
               </label>
               <input type="text" id="input-color-mnk" style="width: 10rem"
                      data-config-key="color.mnk"
@@ -571,7 +571,7 @@ window.addEventListener('load', _ => {
             </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-drg">
-                <img src="../overlay/img/class/drg.png" />
+                <img src="../share/img/class/drg.png" />
               </label>
               <input type="text" id="input-color-drg" style="width: 10rem"
                      data-config-key="color.drg"
@@ -584,7 +584,7 @@ window.addEventListener('load', _ => {
             </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-brd">
-                <img src="../overlay/img/class/brd.png" />
+                <img src="../share/img/class/brd.png" />
               </label>
               <input type="text" id="input-color-brd" style="width: 10rem"
                      data-config-key="color.brd"
@@ -597,7 +597,7 @@ window.addEventListener('load', _ => {
             </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-nin">
-                <img src="../overlay/img/class/nin.png" />
+                <img src="../share/img/class/nin.png" />
               </label>
               <input type="text" id="input-color-nin" style="width: 10rem"
                      data-config-key="color.nin"
@@ -610,7 +610,7 @@ window.addEventListener('load', _ => {
             </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-smn">
-                <img src="../overlay/img/class/smn.png" />
+                <img src="../share/img/class/smn.png" />
               </label>
               <input type="text" id="input-color-smn" style="width: 10rem"
                      data-config-key="color.smn"
@@ -623,7 +623,7 @@ window.addEventListener('load', _ => {
             </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-blm">
-                <img src="../overlay/img/class/blm.png" />
+                <img src="../share/img/class/blm.png" />
               </label>
               <input type="text" id="input-color-blm" style="width: 10rem"
                      data-config-key="color.blm"
@@ -636,7 +636,7 @@ window.addEventListener('load', _ => {
             </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-mch">
-                <img src="../overlay/img/class/mch.png" />
+                <img src="../share/img/class/mch.png" />
               </label>
               <input type="text" id="input-color-mch" style="width: 10rem"
                      data-config-key="color.mch"
@@ -652,7 +652,7 @@ window.addEventListener('load', _ => {
             </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-whm">
-                <img src="../overlay/img/class/whm.png" />
+                <img src="../share/img/class/whm.png" />
               </label>
               <input type="text" id="input-color-whm" style="width: 10rem"
                      data-config-key="color.whm"
@@ -663,7 +663,7 @@ window.addEventListener('load', _ => {
             <label for="input-color-sch"> 학자 </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-sch">
-                <img src="../overlay/img/class/sch.png" />
+                <img src="../share/img/class/sch.png" />
               </label>
               <input type="text" id="input-color-sch" style="width: 10rem"
                      data-config-key="color.sch"
@@ -674,7 +674,7 @@ window.addEventListener('load', _ => {
             <label for="input-color-ast"> 점성술사 </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-ast">
-                <img src="../overlay/img/class/ast.png" />
+                <img src="../share/img/class/ast.png" />
               </label>
               <input type="text" id="input-color-ast" style="width: 10rem"
                      data-config-key="color.ast"
@@ -690,7 +690,7 @@ window.addEventListener('load', _ => {
             </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-smn-pet">
-                <img src="../overlay/img/class/garuda.png" />
+                <img src="../share/img/class/garuda.png" />
               </label>
               <input type="text" id="input-color-smn-pet" style="width: 10rem"
                      data-config-key="color.smn-pet"
@@ -701,7 +701,7 @@ window.addEventListener('load', _ => {
             <label for="input-color-sch-pet"> 학자 </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-sch-pet">
-                <img src="../overlay/img/class/selene.png" />
+                <img src="../share/img/class/selene.png" />
               </label>
               <input type="text" id="input-color-sch-pet" style="width: 10rem"
                      data-config-key="color.sch-pet"
@@ -712,7 +712,7 @@ window.addEventListener('load', _ => {
             <label for="input-color-mch-pet"> 기공사 </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-mch-pet">
-                <img src="../overlay/img/class/bishop.png" />
+                <img src="../share/img/class/bishop.png" />
               </label>
               <input type="text" id="input-color-mch-pet" style="width: 10rem"
                      data-config-key="color.mch-pet"
@@ -723,7 +723,7 @@ window.addEventListener('load', _ => {
             <label for="input-color-chocobo"> 초코보 </label>
             <span class="input-group">
               <label class="input-value-style job" for="input-color-chocobo">
-                <img src="../overlay/img/class/chocobo.png" />
+                <img src="../share/img/class/chocobo.png" />
               </label>
               <input type="text" id="input-color-chocobo" style="width: 10rem"
                      data-config-key="color.chocobo"
@@ -738,7 +738,7 @@ window.addEventListener('load', _ => {
             <span class="input-group">
               <label class="input-value-style job"
                      for="input-color-limit-break">
-                <img src="../overlay/img/class/limit break.png" />
+                <img src="../share/img/class/limit break.png" />
               </label>
               <input type="text" id="input-color-limit-break"
                      data-config-key="color.limit-break"

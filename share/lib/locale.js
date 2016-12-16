@@ -56,7 +56,7 @@
       col: { // [short, long]
         i: {
           _: '정보',
-          icon: ['<img src="img/class/empty.png" class="clsicon"/>', '직업 아이콘'],
+          icon: ['<img src="../shared/img/class/empty.png" class="clsicon"/>', '직업 아이콘'],
           class: ['직업', '클래스/잡'],
           owner: ['주인', '주인'],
           name: ['이름', '이름']
