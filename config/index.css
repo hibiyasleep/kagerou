@@ -228,6 +228,9 @@ section blockquote {
 }
 .control > label {
   flex-grow: 100;
+
+  display: flex:
+  align-items: center;
 }
 .control button + button {
   margin-left: 0.5rem;
