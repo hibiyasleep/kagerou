@@ -165,7 +165,7 @@
 
       new dialog('confirm', {
         title: '이 설정값을 적용할까요?',
-        content: '한 번 덮어씌우면 되돌릴 수 없습니다.',
+        content: '되돌릴 수 없습니다.',
         callback: _ => {
           for(let k of ['style', 'color', 'colwidth', 'tabs']) {
             config.update(k, d.data[k])

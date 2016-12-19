@@ -291,7 +291,7 @@ label.input-value-style.job img {
   margin-top: -1rem;
   padding: 0;
 
-  overflow: initial;
+  overflow: hidden;
   box-shadow: none;
   z-index: 15;
 }
@@ -302,7 +302,11 @@ label.input-value-style.job img {
   height: 2.5rem;
 
   overflow-x: auto;
+  background: #fff;
   box-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.25);
+
+  position: relative;
+  z-index: 8;
 }
 .tab li {
   flex-grow: 1;

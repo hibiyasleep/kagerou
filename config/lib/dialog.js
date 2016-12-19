@@ -59,8 +59,12 @@
       return h
     }
     _insert() {
-      $('main', 0).insertAdjacentElement('afterBegin', this.dom)
-      setTimeout(_ => this.dom.classList.remove('removing'), 0)
+      let section = $('section.active', 0)
+      if(section.classList.contains('tabbed-section'))
+        section.insertAdjacentElement('afterBegin', this.dom)
+      else
+        $('main', 0).insertAdjacentElement('afterBegin', this.dom)
+      setTimeout(_ => this.dom.classList.remove('removing'), 1)
     }
     _remove() {
       if(window.lastDialog == this) {
