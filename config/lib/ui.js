@@ -150,6 +150,10 @@ const switchTab = function switchTab(target) {
 
       tabconfig.save()
 
+      // css editor
+
+      config.set('custom_css', window.editor.getValue())
+
       config.save()
       OverlayPluginApi.broadcastMessage('restyle')
     })

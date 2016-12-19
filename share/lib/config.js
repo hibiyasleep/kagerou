@@ -140,7 +140,13 @@ const CONFIG_DEFAULT = {
     unusual_spaces: false,
     non_combatant: false,
     jobless: true
-  }
+  },
+  custom_css: `
+/* 사용자 스타일시트를 작성합니다.
+ * CSS가 뭔지 모르시면 넘기셔도 되고, 자세한 구조는 소스 코드를
+ * 직접 참조해주세요.
+ * var()로 설정값 일부를 가져올 수 있습니다. */
+`
 }
 
 const CONFIG_KEY_SHOULD_OVERRIDE = [
@@ -292,6 +298,35 @@ const COLUMN_INDEX = {
     return JSON.parse(JSON.stringify(o))
   }
 
+  const attachStyle = function attachStyle(id, section, css) {
+    let variables = []
+
+    if(section) {
+      if(!Array.isArray(section)) {
+        section = [section]
+      }
+      section = section.map(_ => config.config[_])
+
+      variables = Object.assign.apply(null, [variables].concat(section))
+    }
+
+    for(let k in variables) {
+      let v = variables[k]? variables[k] : 'none'
+      css = css.replace(new RegExp(`var\\(--${k}\\)`, 'g'), variables[k])
+    }
+
+    let oldNode = document.getElementById(id)
+
+    if(oldNode) { // (re)loadCSS
+      oldNode.innerHTML = css
+    } else {
+      let node = document.createElement('style')
+      node.id = id
+      node.innerHTML = css
+      document.getElementsByTagName('head')[0].appendChild(node)
+    }
+  }
+
   class Config {
 
     constructor() { }
@@ -331,17 +366,9 @@ const COLUMN_INDEX = {
       return this.config
     }
 
-    attachCSS(path, section) {
+    loadStyle(path, section) {
       let variables = copy(this.config.style)
 
-      if(section) {
-        if(!Array.isArray(section)) {
-          section = [section]
-        }
-        section = section.map(_ => this.config[_])
-
-        variables = Object.assign.apply(null, [variables].concat(section))
-      }
 
       if(!Array.isArray(path)) {
         path = [path]
@@ -349,25 +376,12 @@ const COLUMN_INDEX = {
 
       for(let p of path){
         let sanitizedId = p.replace(/[^a-z]/g, '_')
-        let oldNode = document.getElementById(sanitizedId)
 
         fetch(p).then(res => {
           if(!res.ok) return ''
           return res.text()
         }).then(css => {
-          for(let k in variables) {
-            let v = variables[k]? variables[k] : 'none'
-            css = css.replace(new RegExp(`var\\(--${k}\\)`, 'g'), variables[k])
-          }
-
-          if(oldNode) { // (re)loadCSS
-            oldNode.innerHTML = css
-          } else {
-            let node = document.createElement('style')
-            node.id = sanitizedId
-            node.innerHTML = css
-            document.getElementsByTagName('head')[0].appendChild(node)
-          }
+          attachStyle(sanitizedId, section, css)
         })
       }
     }
@@ -377,11 +391,18 @@ const COLUMN_INDEX = {
     }
 
     attachOverlayStyle() {
-      this.attachCSS([
+      this.loadStyle([
         'css/index.css',
         'css/nav.css'
       ], 'style')
-      this.attachCSS('css/table.css', ['style', 'colwidth', 'color'])
+      this.loadStyle('css/table.css', ['style', 'colwidth', 'color'])
+
+      attachStyle(
+        'custom_css',
+        ['style', 'colwidth', 'color'],
+        config.get('custom_css')
+      )
+
     }
 
     get(k) {

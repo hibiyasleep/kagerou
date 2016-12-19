@@ -16,6 +16,7 @@
     <script src="lib/ui.js"> </script>
     <script src="lib/tabconfig.js"> </script>
     <script src="lib/import-export.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"> </script>
 
     <template id="template-tab">
       <li class="draggable">
@@ -84,6 +85,18 @@ window.locale = new Locale()
 
 window.addEventListener('load', _ => {
   window.tabconfig = new Tabconfig()
+
+  window.editor = ace.edit('editor')
+  editor.$blockScrolling = Infinity
+  editor.setTheme('ace/theme/tomorrow_night_eighties')
+
+  let session = editor.getSession()
+  session.setMode('ace/mode/css')
+  session.setTabSize(2)
+  session.setUseSoftTabs(true)
+
+  editor.setValue(config.get('custom_css') || (CONFIG_DEFAULT.custom_css + '\n'))
+  editor.gotoLine(1)
 })
     </script>
   </head>
@@ -128,19 +141,19 @@ window.addEventListener('load', _ => {
           </svg>
           <label> 탭 </label>
         </li>
-        <li data-page="filter">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-               viewBox="0 0 24 24" class="icon">
-            <path d="M3 5H1v16c0 1.1.9 2 2 2h16v-2H3V5zm18-4H7c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 16H7V3h14v14z" />
-          </svg>
-          <label> 필터 </label>
-        </li>
         <li data-page="import-export">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
             <path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z" />
           </svg>
           <label> 들여오기/내보내기 </label>
+        </li>
+        <li data-page="etc">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+            <path d="M16,12A2,2 0 0,1 18,10A2,2 0 0,1 20,12A2,2 0 0,1 18,14A2,2 0 0,1 16,12M10,12A2,2 0 0,1 12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12M4,12A2,2 0 0,1 6,10A2,2 0 0,1 8,12A2,2 0 0,1 6,14A2,2 0 0,1 4,12Z" />
+          </svg>
+          <label> 기타 </label>
         </li>
         <li class="splitter"> </li>
         <li data-page="info">
@@ -785,42 +798,6 @@ window.addEventListener('load', _ => {
         <div class="tabconfig-pane-container" id="tabconfig-pane-container">
         </div>
       </section>
-      <section data-page="filter">
-        <article>
-          <h3> 일반 </h3>
-          <blockquote>
-            FFXIV_Plugin이 피아식별조차 제대로 못 하는 관계로, 어떻게든 적을
-            표시하지 않도록 시도합니다.
-          </blockquote>
-          <blockquote>
-            뭔가 이상하다면, 아래의 모든 옵션을 꺼 보세요.
-          </blockquote>
-          <p class="control">
-            <label for="input-filter-unusual_spaces">
-              요정도 아닌데 이름에 띄어쓰기가 있음
-            </label>
-            <input type="checkbox" id="input-filter-unusual_spaces"
-                   data-type="boolean"
-                   data-config-key="filter.unusual_spaces" />
-          </p>
-          <p class="control">
-            <label for="input-filter-jobless">
-              클래스/잡이 비어있음
-            </label>
-            <input type="checkbox" id="input-filter-jobless"
-                   data-type="boolean"
-                   data-config-key="filter.jobless" />
-          </p>
-          <p class="control">
-            <label for="input-filter-non_combatant">
-              전투직이 아님
-            </label>
-            <input type="checkbox" id="input-filter-non_combatant"
-                   data-type="boolean"
-                   data-config-key="filter.non_combatant" />
-          </p>
-        </article>
-      </section>
       <section data-page="import-export" class="tabbed-section">
         <ul class="tab tab-switcher text-center"
             data-target="section[data-page=import-export] > div">
@@ -883,6 +860,58 @@ window.addEventListener('load', _ => {
                 <input type="text" id="export-text" class="text-center" />
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+      <section data-page="etc" class="tabbed-section">
+        <ul class="tab tab-switcher text-center"
+            data-target="section[data-page=etc] > div">
+          <li data-pane="filter" class="active">
+            필터
+          </li>
+          <li data-pane="css">
+            CSS
+          </li>
+        </ul>
+        <div class="tabconfig-pane-container tabconfig-noshadow">
+          <div class="tabconfig-pane active" data-pane="filter">
+            <article>
+              <h3> 일반 </h3>
+              <blockquote>
+                FFXIV_Plugin이 피아식별조차 제대로 못 하는 관계로, 어떻게든 적을
+                표시하지 않도록 시도합니다.
+              </blockquote>
+              <blockquote>
+                뭔가 이상하다면, 아래의 모든 옵션을 꺼 보세요.
+              </blockquote>
+              <p class="control">
+                <label for="input-filter-unusual_spaces">
+                  요정도 아닌데 이름에 띄어쓰기가 있음
+                </label>
+                <input type="checkbox" id="input-filter-unusual_spaces"
+                       data-type="boolean"
+                       data-config-key="filter.unusual_spaces" />
+              </p>
+              <p class="control">
+                <label for="input-filter-jobless">
+                  클래스/잡이 비어있음
+                </label>
+                <input type="checkbox" id="input-filter-jobless"
+                       data-type="boolean"
+                       data-config-key="filter.jobless" />
+              </p>
+              <p class="control">
+                <label for="input-filter-non_combatant">
+                  전투직이 아님
+                </label>
+                <input type="checkbox" id="input-filter-non_combatant"
+                       data-type="boolean"
+                       data-config-key="filter.non_combatant" />
+              </p>
+            </article>
+          </div>
+          <div class="tabconfig-pane active" data-pane="css">
+            <div id="editor">...</div>
           </div>
         </div>
       </section>
