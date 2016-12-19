@@ -295,7 +295,7 @@ label.input-value-style.job img {
   display: flex;
 
   width: 100%;
-  height: 3rem;
+  height: 2.5rem;
 
   overflow-x: auto;
   box-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.25);
@@ -304,7 +304,7 @@ label.input-value-style.job img {
   flex-grow: 1;
   flex-shrink: 0;
   border-bottom: 0 solid #00bcd4;
-  padding: 0.75rem;
+  padding: 0.5rem;
 
   transition: background 200ms ease, border-bottom-width 200ms ease;
 }
@@ -320,7 +320,7 @@ label.input-value-style.job img {
 .tab li.tab-button {
   flex-grow: 0;
   flex-shrink: 0;
-  padding: 0.75rem 0.25rem;
+  padding: 0.5rem 0.25rem;
   width: 2rem;
 }
 .tab li svg {
@@ -333,7 +333,7 @@ label.input-value-style.job img {
 
 .tabconfig-pane-container {
   width: 100%;
-  height: calc(100% - 3rem);
+  height: calc(100% - 2.5rem);
 }
 .tabconfig-pane {
   display: none;
