@@ -146,6 +146,8 @@ const CONFIG_DEFAULT = {
  * CSS가 뭔지 모르시면 넘기셔도 되고, 자세한 구조는 소스 코드를
  * 직접 참조해주세요.
  * var()로 설정값 일부를 가져올 수 있습니다. */
+
+/* .gauge { -webkit-filter: blur(0.2rem); } */
 `
 }
 

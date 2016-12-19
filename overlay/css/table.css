@@ -188,8 +188,6 @@ main .clsicon { /* workaround */
   left: 0;
   height: var(--gauge-height);
   z-index: -1;
-
-  -webkit-filter: blur(0.02rem);
 }
 
 [class^='flex-column'] {
