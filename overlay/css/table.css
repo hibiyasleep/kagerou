@@ -52,56 +52,56 @@
 }
 
 /* Position Helpers */
-.class-gld .guage, .class-pld .guage, .class-mrd .guage,
-.class-war .guage, .class-drk .guage { /* tank; blue 500 */
+.class-gld .gauge, .class-pld .gauge, .class-mrd .gauge,
+.class-war .gauge, .class-drk .gauge { /* tank; blue 500 */
   box-shadow: 0.25rem 0 0 var(--position-tank) inset;
 }
-.class-pgl .guage, .class-mnk .guage, .class-lnc .guage,
-.class-drg .guage, .class-arc .guage, .class-brd .guage,
-.class-rog .guage, .class-nin .guage, .class-acn .guage,
-.class-smn .guage, .class-thm .guage, .class-blm .guage,
-.class-mch .guage { /* deal; red 500 */
+.class-pgl .gauge, .class-mnk .gauge, .class-lnc .gauge,
+.class-drg .gauge, .class-arc .gauge, .class-brd .gauge,
+.class-rog .gauge, .class-nin .gauge, .class-acn .gauge,
+.class-smn .gauge, .class-thm .gauge, .class-blm .gauge,
+.class-mch .gauge { /* deal; red 500 */
   box-shadow: 0.25rem 0 0 var(--position-deal) inset;
 }
-.class-cnj .guage, .class-whm .guage, .class-sch .guage,
-.class-ast .guage { /* heal; light green 500 */
+.class-cnj .gauge, .class-whm .gauge, .class-sch .gauge,
+.class-ast .gauge { /* heal; light green 500 */
   box-shadow: 0.25rem 0 0 var(--position-heal) inset;
 }
 
 /* Colors */
-.guage {
+.gauge {
   background: var(--gauge-default);
   opacity: var(--gauge-opacity);
 }
-.class-gld .guage, .class-pld .guage { background: var(--pld); }
-.class-mrd .guage, .class-war .guage { background: var(--war); }
-.class-drk .guage { background: var(--drk); }
+.class-gld .gauge, .class-pld .gauge { background: var(--pld); }
+.class-mrd .gauge, .class-war .gauge { background: var(--war); }
+.class-drk .gauge { background: var(--drk); }
 
-.class-pgl .guage, .class-mnk .guage { background: var(--mnk); }
-.class-lnc .guage, .class-drg .guage { background: var(--drg); }
-.class-arc .guage, .class-brd .guage { background: var(--brd); }
-.class-rog .guage, .class-nin .guage { background: var(--nin); }
-.class-acn .guage, .class-smn .guage { background: var(--smn); }
-.class-thm .guage, .class-blm .guage { background: var(--blm); }
-.class-mch .guage { background: var(--mch); }
+.class-pgl .gauge, .class-mnk .gauge { background: var(--mnk); }
+.class-lnc .gauge, .class-drg .gauge { background: var(--drg); }
+.class-arc .gauge, .class-brd .gauge { background: var(--brd); }
+.class-rog .gauge, .class-nin .gauge { background: var(--nin); }
+.class-acn .gauge, .class-smn .gauge { background: var(--smn); }
+.class-thm .gauge, .class-blm .gauge { background: var(--blm); }
+.class-mch .gauge { background: var(--mch); }
 
-.class-cnj .guage, .class-whm .guage { background: var(--whm); }
-.class-sch .guage { background: var(--sch); }
-.class-ast .guage { background: var(--ast); }
+.class-cnj .gauge, .class-whm .gauge { background: var(--whm); }
+.class-sch .gauge { background: var(--sch); }
+.class-ast .gauge { background: var(--ast); }
 
 /* pets */
-.class-emerald .guage, .class-garuda .guage, .class-topaz .guage,
-.class-titan .guage, .class-ifrit .guage { /* smn */
+.class-emerald .gauge, .class-garuda .gauge, .class-topaz .gauge,
+.class-titan .gauge, .class-ifrit .gauge { /* smn */
   background: var(--smn-pet);
 }
-.class-eos .guage, .class-selene .guage { /* sch */
+.class-eos .gauge, .class-selene .gauge { /* sch */
   background: var(--sch-pet);
 }
-.class-look .guage, .class-bishop .guage { /* mch */
+.class-look .gauge, .class-bishop .gauge { /* mch */
   background: var(--mch-pet);
 }
 
-.class-limit-break .guage {
+.class-limit-break .gauge {
   background: var(--limit-break);
 }
 
@@ -182,7 +182,7 @@ main .clsicon { /* workaround */
   height: var(--graph-height);
 }
 
-.guage {
+.gauge {
   position: absolute;
   bottom: 0;
   left: 0;

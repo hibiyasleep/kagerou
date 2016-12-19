@@ -195,7 +195,7 @@
         r = `<li class="class-${cls} ${data.name === 'YOU'? 'me' : ''}">`
 
         let width = this._value(gaugeBy, data) / max[this.tab.gauge] * 100
-        r += `<span class="guage" style="width:${width}%"></span>`
+        r += `<span class="gauge" style="width:${width}%"></span>`
       }
 
       for(let section of this.tab.col) {
