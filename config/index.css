@@ -59,6 +59,10 @@ b {
 .text-right.text-right {
   text-align: right;
 }
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
 
 input[type=text], select {
   text-align: right;
