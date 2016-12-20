@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="css/reset.css" />
     <script src="https://cdn.rawgit.com/github/fetch/master/fetch.js"></script>
+    <script src="https://cdn.ravenjs.com/3.9.1/raven.min.js"></script>
+    <script>
+'use strict'
+
+Raven.config('https://bbd31ac3a4ca44d386016ff32fb0512c@sentry.io/123696', {
+  whitelistUrls: [/hibiyasleep\.github\.io/]
+}).install()
+
+    </script>
     <script src="../share/lib/util.js"></script>
     <script src="../share/lib/config.js"></script>
     <script src="../share/lib/locale.js"></script>
@@ -15,45 +24,49 @@
     <script>
 'use strict'
 
-// config
-window.config = new Config()
+try {
+  // config
+  window.config = new Config()
 
-config.load()
-config.setResizeFactor()
+  config.load()
+  config.setResizeFactor()
 
-config.attachOverlayStyle('overlay')
+  config.attachOverlayStyle('overlay')
 
-// locale
-window.l = new Locale()
+  // locale
+  window.l = new Locale()
 
-// render
-window.renderer = new Renderer(window.config.get())
+  // render
+  window.renderer = new Renderer(window.config.get())
 
-document.addEventListener('DOMContentLoaded', e => {
+  document.addEventListener('DOMContentLoaded', e => {
 
-  window.renderer.updateHeader()
+    window.renderer.updateHeader()
 
-  ;[].map.call($('svg'), _ => {
-    _.style.width = parseInt(_.getAttribute('width')) / 16 + 'rem'
-    _.style.height = parseInt(_.getAttribute('height')) / 16 + 'rem'
+    ;[].map.call($('svg'), _ => {
+      _.style.width = parseInt(_.getAttribute('width')) / 16 + 'rem'
+      _.style.height = parseInt(_.getAttribute('height')) / 16 + 'rem'
+    })
   })
-})
 
-// listen
-const listener = e => {
-  window.hist.push(e.detail)
-}
-
-document.addEventListener('onOverlayDataUpdate', listener)
-document.addEventListener('message', e => {
-  if(e.data.type == 'onOverlayDataUpdate') {
-    listener(e)
+  // listen
+  const listener = e => {
+    window.hist.push(e.detail)
   }
-})
 
-window.hist = new History()
+  document.addEventListener('onOverlayDataUpdate', listener)
+  document.addEventListener('message', e => {
+    if(e.data.type == 'onOverlayDataUpdate') {
+      listener(e)
+    }
+  })
 
-window.addEventListener('load', _ => $('.splash', 0).classList.add('hidden') )
+  window.hist = new History()
+
+  window.addEventListener('load', _ => $('.splash', 0).classList.add('hidden') )
+} catch(e) {
+  Raven.captureException(e)
+}
 
     </script>
   </head>
