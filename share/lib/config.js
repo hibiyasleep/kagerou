@@ -405,7 +405,7 @@ const COLUMN_INDEX = {
       attachStyle(
         'custom_css',
         ['style', 'colwidth', 'color'],
-        config.get('custom_css')
+        config.get('custom_css') || ''
       )
 
     }
