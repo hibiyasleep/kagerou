@@ -60,17 +60,20 @@ window.addEventListener('load', _ => $('.splash', 0).classList.add('hidden') )
   <body style="overflow:hidden">
     <div class="splash">
       <div>
-        로딩이 너무 오래 걸리는 것 같습니다...
+        문제가 있는 것 같습니다...
         <br />
-        문제가 계속된다면 설정을 초기화해보세요.
+        계속 발생한다면 바로 개발자에게 알려주세요!
         <br />
-        버그일 수도 있습니다.
+        오딘 히비야 / @hibiyasleep
         <br /><br />
         <button onclick="location.reload()">
           재시도
         </button>
         <button onclick="localStorage.setItem('kagerou_config','');location.reload()">
-          설정 초기화
+          초기화
+        </button>
+        <button onclick="window.open('../config/','kagerou - Settings','width=800,height=600')">
+          설정
         </button>
       </div>
     </div>
