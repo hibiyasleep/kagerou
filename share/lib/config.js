@@ -302,6 +302,9 @@ const COLUMN_INDEX = {
 
   const attachStyle = function attachStyle(id, section, css) {
     let variables = []
+    if(!css) {
+      css = ''
+    }
 
     if(section) {
       if(!Array.isArray(section)) {
