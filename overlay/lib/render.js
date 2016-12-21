@@ -80,6 +80,8 @@
     }
 
     update() {
+      if(!window.hist.currentData) return
+
       if(!this.currentHistory) {
         this.render(window.hist.current)
       } else {
