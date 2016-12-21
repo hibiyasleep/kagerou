@@ -11,7 +11,13 @@
 'use strict'
 
 Raven.config('https://bbd31ac3a4ca44d386016ff32fb0512c@sentry.io/123696', {
-  whitelistUrls: [/hibiyasleep\.github\.io/]
+  whitelistUrls: [/hibiyasleep\.github\.io/],
+  dataCallback: function(data) {
+    if(window.hist && window.hist.lastEncounter) {
+      data.extra.lastEncounter = window.hist.lastEncounter
+    }
+    return data
+  }
 }).install()
 
     </script>
@@ -23,6 +29,8 @@ Raven.config('https://bbd31ac3a4ca44d386016ff32fb0512c@sentry.io/123696', {
     <script src="lib/ui.js" async></script>
     <script>
 'use strict'
+
+Raven.setRelease(VERSION)
 
 try {
   // config
