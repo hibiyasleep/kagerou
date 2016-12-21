@@ -107,6 +107,8 @@ const resolveDotIndex = function resolveDotIndex(o, p, v) {
 const _in = (key, array) => array.indexOf(key) > -1
 
 const resolveClass = function resolveJobFromName(_job, _name) {
+  _job = _job || ''
+
   let o = /^(.+?) \((.+?)\)$/.exec(_name)
   if(!o) {
     if(_name === 'Limit Break' || _name === '리미트 브레이크') {
