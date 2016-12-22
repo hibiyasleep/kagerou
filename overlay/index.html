@@ -13,8 +13,8 @@
 Raven.config('https://bbd31ac3a4ca44d386016ff32fb0512c@sentry.io/123696', {
   whitelistUrls: [/hibiyasleep\.github\.io/],
   dataCallback: function(data) {
-    if(window.hist && window.hist.lastEncounter) {
-      data.extra.lastEncounter = JSON.stringify(window.hist.lastEncounter)
+    if(window.hist && window.hist.currentData) {
+      data.extra.currentData = JSON.stringify(window.hist.currentData)
     }
     return data
   }
