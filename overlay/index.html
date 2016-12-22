@@ -23,14 +23,18 @@ Raven.config('https://bbd31ac3a4ca44d386016ff32fb0512c@sentry.io/123696', {
     </script>
     <script src="../share/lib/util.js"></script>
     <script src="../share/lib/config.js"></script>
+    <script>
+'use strict'
+
+Raven.setRelease(VERSION)
+
+    </script>
     <script src="../share/lib/locale.js"></script>
     <script src="lib/render.js"></script>
     <script src="lib/listen.js"></script>
     <script src="lib/ui.js" async></script>
     <script>
 'use strict'
-
-Raven.setRelease(VERSION)
 
 try {
   // config
