@@ -118,7 +118,7 @@
       $('.history', 0).classList.toggle('enabled', !data.isCurrent)
       $('#history-time').textContent = data.header.duration
       $('#history-mob').textContent = data.header.title
-      $('#history-region').textContent = data.header.CurrentZoneName
+      $('#history-region').textContent = window.l.zone(data.header.CurrentZoneName)
 
       // columns
       let got = data.get(
