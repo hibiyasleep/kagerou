@@ -32,10 +32,10 @@ body::after {
 
 /* Shared classes */
 
-.text-right {
+.text-right.text-right {
   text-align: right;
 }
-.hidden {
+.hidden.hidden {
   display: none;
 }
 

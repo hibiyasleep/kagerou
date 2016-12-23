@@ -144,7 +144,8 @@ const CONFIG_DEFAULT = {
   footer: {
     rank: true,
     rdps: true,
-    rhps: false
+    rhps: false,
+    recover: false
   },
   custom_css: `
 /* 사용자 스타일시트를 작성합니다.

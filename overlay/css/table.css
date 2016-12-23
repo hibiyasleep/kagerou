@@ -219,16 +219,21 @@ footer {
 }
 
 .footer-notify, .footer-stat {
-  padding: 0 0.25rem;
   flex-grow: 1;
   flex-shrink: 0;
 }
 .footer-notify {
+  padding: 0 0.25rem;
   text-align: left;
   flex-shrink: 1;
 }
 .footer-stat {
   text-align: right;
+}
+.footer-stat > * {
+  display: inline-block;
+  padding: 0 0.25rem;
+  border-left: 0.1rem solid rgba(255, 255, 255, 0.5);
 }
 
 .collapsed {
