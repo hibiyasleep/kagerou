@@ -119,13 +119,17 @@
     }].forEach( _ => _.callback(config.get(_.value)) )
   }
 
+  const setFooterVisibility = function setFooterVisibility() {
+    let f = window.config.get('footer')
+    Object.keys(f)
+          .forEach(_ => $(`.footer-${_}`, 0).classList.toggle('hidden', !f[_]))
+  }
+
   window.addEventListener('load', () => {
 
     // Dropdown
 
-    let dropdowns = $('.dropdown-trigger')
-
-    ;[].forEach.call(dropdowns, button => {
+    $map('.dropdown-trigger', button => {
       let target = button.getAttribute('data-dropdown')
 
       button.addEventListener('click', function(e) {
@@ -144,6 +148,20 @@
         this.classList.remove('opened')
         this.classList.add('closing')
         setTimeout(_ => this.classList.remove('closing'), 200)
+      })
+    })
+
+    // dropdown menu label
+
+    $map('#dropdown-more li', _ => {
+      _.addEventListener('mouseover', function(e) {
+        let label = this.getAttribute('data-label')
+        let label_enabled = this.getAttribute('data-label-enabled')
+        if(this.classList.contains('enabled')) {
+          $('#nav-label').textContent = label_enabled || label
+        } else {
+          $('#nav-label').textContent = label
+        }
       })
     })
 
@@ -197,6 +215,9 @@
       window.historyUI.updateList()
     })
 
+    if(true) { // TODO: legacy-overlayplugin
+      document.body.classList.add('legacy-overlayplugin')
+    }
 
     setFooterVisibility()
 

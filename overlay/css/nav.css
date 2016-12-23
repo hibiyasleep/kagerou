@@ -228,10 +228,45 @@ nav:hover > .container {
 }
 
 .dropdown.buttons {
-  width: 5rem;
+  width: 7.5rem;
   height: 5rem;
 }
 .dropdown.buttons li {
   display: inline-block;
   height: 2.5rem;
+}
+
+.legacy-overlayplugin .dropdown.buttons {
+  width: 5rem;
+}
+.legacy-overlayplugin [data-button='end-encounter'],
+.legacy-overlayplugin [data-button='screenshot'] {
+  display: none !important;
+}
+
+#nav-label {
+  position: absolute;
+  top: calc(7.1rem + var(--body-margin));
+  right: var(--body-margin);
+
+  font-size: 0.75rem;
+  padding: 0.25rem;
+
+  background: #f00;
+  color: #0f0;
+
+  background-size: cover;
+  background: var(--dropdown-bg);
+  box-shadow: var(--shadow-card);
+
+  color: var(--dropdown-fg);
+  fill: var(--dropdown-fg);
+
+  z-index: 10;
+
+  opacity: 0;
+  transition: 200ms opacity ease;
+}
+.buttons:hover + #nav-label {
+  opacity: 1;
 }
