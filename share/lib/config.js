@@ -141,6 +141,11 @@ const CONFIG_DEFAULT = {
     non_combatant: false,
     jobless: true
   },
+  footer: {
+    rank: true,
+    rdps: true,
+    rhps: false
+  },
   custom_css: `
 /* 사용자 스타일시트를 작성합니다.
  * CSS가 뭔지 모르시면 무시하셔도 되며, 자세한 구조는 소스 코드를

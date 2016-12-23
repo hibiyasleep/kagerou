@@ -197,6 +197,9 @@
       window.historyUI.updateList()
     })
 
+
+    setFooterVisibility()
+
   })
 
 
@@ -217,6 +220,7 @@
         config.load()
         config.setResizeFactor()
         config.attachOverlayStyle()
+        setFooterVisibility()
 
         window.renderer = new Renderer(window.config.get())
         tabdisplay.render()

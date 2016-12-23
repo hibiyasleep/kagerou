@@ -66,17 +66,20 @@
       $('#header').outerHTML = this.template.header
     }
 
-    updateFooter(dps, hps) {
-      this.elem.rdps = this.elem.rdps || $('#rdps')
-      this.elem.rhps = this.elem.rhps || $('#rhps')
-      animateNumber(this.elem.rdps, parseFloat(dps) || 0, {
-        timeout: 266,
-        digit: this.acc.rdps
-      })
-      animateNumber(this.elem.rhps, parseFloat(hps) || 0, {
-        timeout: 266,
-        digit: this.acc.rhps
-      })
+    updateFooter(d) {
+      let r = Object.keys(this.config.footer).filter(_ => this.config.footer[_])
+      for(let k of r) {
+        if(k == 'rank') {
+          this.elem.rank = this.elem.rank || $('#rank')
+          this.elem.rank.textContent = d.rank
+        } else {
+          this.elem[k] = this.elem[k] || $('#' + k)
+          animateNumber(this.elem[k], parseFloat(d[k]) || 0, {
+            timeout: 266,
+            digit: this.acc[k]
+          })
+        }
+      }
     }
 
     update() {
@@ -125,22 +128,32 @@
         this.template.tab.sort,
         window.config.get('format.merge_pet')
       )
-      let d = got[0], max = got[1]
+      let d = got[0].filter(_ => this._testRow(_))
+      let max = got[1]
+
+      let rank = 0
 
       let table = $('#table')
-
       table.innerHTML = ''
-      for(let i of d) {
-        if(!this._testRow(i)) continue
+
+      for(let i in d) {
+        let o = d[i]
+        if(o.name == 'YOU') { // TODO: is YOU are you?
+          rank = parseInt(i) + 1
+        }
         table.insertAdjacentHTML(
           'beforeend',
-          this.template.render(i, max)
+          this.template.render(o, max)
         )
       }
 
       // footer (rdps, rhps)
 
-      this.updateFooter(data.header.encdps, data.header.enchps)
+      this.updateFooter({
+        rank: rank + '/' + d.length,
+        rdps: data.header.encdps,
+        rhps: data.header.enchps
+      })
     }
 
   }
