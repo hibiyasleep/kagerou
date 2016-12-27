@@ -185,6 +185,9 @@
         window.renderer.update()
       }
     }, {
+      name: 'end-encounter',
+      callback: _ => OverlayPluginApi.endEncounter()
+    }, {
       name: 'settings',
       callback: _ => {
         let resize = window.config.get('style.resize-factor')
@@ -215,7 +218,7 @@
       window.historyUI.updateList()
     })
 
-    if(true) { // TODO: legacy-overlayplugin
+    if(!(OverlayPluginApi && OverlayPluginApi.endEncounter)) {
       document.body.classList.add('legacy-overlayplugin')
     }
 
