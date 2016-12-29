@@ -221,7 +221,7 @@
       window.historyUI.updateList()
     })
 
-    if(!(OverlayPluginApi && OverlayPluginApi.endEncounter)) {
+    if(!('OverlayPluginApi' in window && 'endEncounter' in OverlayPluginApi)) {
       document.body.classList.add('legacy-overlayplugin')
     }
 
