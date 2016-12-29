@@ -267,6 +267,6 @@ nav:hover > .container {
   opacity: 0;
   transition: 200ms opacity ease;
 }
-.buttons:hover + #nav-label {
+.buttons:not(.closed):hover + #nav-label {
   opacity: 1;
 }

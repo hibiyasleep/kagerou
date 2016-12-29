@@ -137,15 +137,18 @@
 
         if(l.contains('opened')) {
           l.remove('opened')
+          l.add('closed')
           l.add('closing')
           setTimeout(_ => l.remove('closing'), 200)
         } else {
           l.add('opened')
+          l.remove('closed')
         }
       })
 
       $(`#dropdown-${target}`).addEventListener('click', function(e) {
         this.classList.remove('opened')
+        this.classList.add('closed')
         this.classList.add('closing')
         setTimeout(_ => this.classList.remove('closing'), 200)
       })
