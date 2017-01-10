@@ -257,10 +257,10 @@ const COLUMN_INDEX = {
     }
     last10: 'Last10',
     last30: 'Last30',
-    last60: 'Last60',
+    last60: 'Last60'/*,
     last180: {
       v: _ => 'Last180' in _? _.Last180 : NaN
-    }
+    }*/
   },
   // tank
   tank: {

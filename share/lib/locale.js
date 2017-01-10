@@ -81,8 +81,8 @@
           maxhit: ['Max Damage', 'Max'],
           last10: ['최근 10초 DPS', 'l10'],
           last30: ['최근 30초 DPS', 'l30'],
-          last60: ['최근 60초 DPS', 'l60'],
-          last180: ['최근 180초 DPS (베타)', 'l180']
+          last60: ['최근 60초 DPS', 'l60']/*,
+          last180: ['최근 180초 DPS (베타)', 'l180']*/
         },
         tank: {
           _: '탱',
