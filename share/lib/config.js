@@ -254,7 +254,7 @@ const COLUMN_INDEX = {
     maxhit: {
       v: 'maxhit',
       f: _ => l.skillname(_)
-    }
+    },
     last10: 'Last10',
     last30: 'Last30',
     last60: 'Last60'/*,
