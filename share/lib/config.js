@@ -259,7 +259,7 @@ const COLUMN_INDEX = {
     last30: 'Last30',
     last60: 'Last60',
     last180: {
-      v: _ => 'Last180' in _? _.Last180 : '---'
+      v: _ => 'Last180' in _? _.Last180 : NaN
     }
   },
   // tank
