@@ -3,6 +3,7 @@
 ;(function() {
 
   const UNKNOWN_ZONE_REGEX = /^Unknown Zone \(([0-9A-Fa-f]{3})\)$/
+  const SKILL_REGEX = /^(.+?)( \(\*\))?$/
 
   const L = {
     ko: {
@@ -144,6 +145,9 @@
           '227': '적의 공격을 피하면서 싸우자!',
           '228': '마지막 훈련!'
         }
+      },
+      skill: {
+
       }
     }
   }
@@ -166,14 +170,25 @@
     skillname(n) {
       if(!n) return ''
       let o = n.split('-')
-      let name = this.get('skill.' + o[0]) || o[0]
+      let dot = this._skill(o[0])
+      let name = this.get('skill.' + dot[0]) || dot[0]
       let value = o[1] || -1
 
       if(value) {
-        return name + ': ' + value
+        return name + (dot[1]? '*' : '') + ': ' + value
       } else {
         return name
       }
+    }
+
+    _skill(n) {
+      let o = SKILL_REGEX.exec(n)
+      if(!o)
+        return []
+      else if(o[2] === undefined)
+        return [n, false]
+      else if(o[2] === '(*)')
+        return [n, true]
     }
 
     zone(n) {
