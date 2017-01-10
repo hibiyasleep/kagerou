@@ -84,6 +84,10 @@ const CONFIG_DEFAULT = {
     '_deal-critical': 2,
     '_deal-max': 2.5,
     '_deal-maxhit': 6,
+    '_deal-last10': 3.5,
+    '_deal-last30': 3.5,
+    '_deal-last60': 3.5,
+    '_deal-last180': 3.5,
     '_heal-critical': 2,
     '_tank-damage': 3.5,
     '_tank-heal': 3.5,
@@ -250,6 +254,12 @@ const COLUMN_INDEX = {
     maxhit: {
       v: 'maxhit',
       f: _ => l.skillname(_)
+    }
+    last10: 'Last10',
+    last30: 'Last30',
+    last60: 'Last60',
+    last180: {
+      v: _ => 'Last180' in _? _.Last180 : '---'
     }
   },
   // tank

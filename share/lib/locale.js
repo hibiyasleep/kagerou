@@ -77,7 +77,11 @@
           hitfail: ['막힘', '막힌 횟수'],
           critical: ['극대', '극대화 비율'],
           max: ['Max-', 'Max (스킬명 제외)'],
-          maxhit: ['Max Damage', 'Max']
+          maxhit: ['Max Damage', 'Max'],
+          last10: ['최근 10초 DPS', 'l10'],
+          last30: ['최근 30초 DPS', 'l30'],
+          last60: ['최근 60초 DPS', 'l60'],
+          last180: ['최근 180초 DPS', 'l180']
         },
         tank: {
           _: '탱',
