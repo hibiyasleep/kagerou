@@ -25,6 +25,10 @@
 .flex-column-deal-critical    { width: calc(1rem * var(--_deal-critical)); }
 .flex-column-deal-max         { width: calc(1rem * var(--_deal-max)); }
 .flex-column-deal-maxhit      { width: calc(1rem * var(--_deal-maxhit)); }
+.flex-column-deal-last10      { width: calc(1rem * var(--_deal-last10)); }
+.flex-column-deal-last30      { width: calc(1rem * var(--_deal-last30)); }
+.flex-column-deal-last60      { width: calc(1rem * var(--_deal-last60)); }
+.flex-column-deal-last180      { width: calc(1rem * var(--_deal-last180)); }
 .flex-column-tank-damage      { width: calc(1rem * var(--_tank-damage)); }
 .flex-column-tank-parry       { width: calc(1rem * var(--_tank-parry)); }
 .flex-column-tank-heal        { width: calc(1rem * var(--_tank-heal)); }
