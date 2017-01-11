@@ -3,9 +3,9 @@
 ;(function() {
 
   const liRender = (_, locale) => {
-    let head = locale.get(`col.${_.split('.')[0]}._`)
-    let label = locale.get('col.' + _)[1]
-    return `<li data-id="${_}"><b>${head}</b>: ${label}</li>`
+    let head = `<b data-locale="col.${_.split('.')[0]}._">..</b>`
+    let label = `<span data-locale="col.${_}.1">...</span>`
+    return `<li data-id="${_}">${head}: ${label}</li>`
   }
 
   const MIGRATE_SORTABLE = {
@@ -36,9 +36,9 @@
       this.firstTab = true
 
       this.selections = COLUMN_SORTABLE.map(_ => {
-        let head = locale.get(`col.${_.split('.')[0]}._`)
-        let label = locale.get('col.' + _)[1]
-        return `<option value="${_}">${head}: ${label}</option>`
+        let head = `<span data-locale="col.${_.split('.')[0]}._">...</span>`
+        let label = `<span data-locale="col.${_}.1">...</span>`
+        return `<option value="${_}" data-locale="col.${_.split('.')[0]}._+: +col.${_}.1"></option>`
       }).join('')
 
       this.columns = []

@@ -3,9 +3,10 @@
 const switchTab = function switchTab(target) {
   $('section.active', 0).classList.remove('active')
   $(`section[data-page='${target}']`, 0).classList.add('active')
+  let targetLi = $(`li[data-page='${target}']`, 0)
 
-  $('header h2', 0).textContent = $(`li[data-page='${target}']`, 0).textContent
-
+  $('header h2', 0).textContent = targetLi.textContent
+  $('header h2', 0).setAttribute('data-locale', targetLi.getAttribute('data-locale'))
   $('body', 0).classList.toggle('hide-header', target === 'info')
 }
 
@@ -40,13 +41,13 @@ const switchTab = function switchTab(target) {
 
     // colwidth
     ;(function(){
-      const columns = window.locale.get('col')
+      const columns = COLUMN_INDEX
       const _container = $('section[data-page=width]', 0)
 
       for(let k1 in columns) {
         let article = '<article>'
 
-        article += '<h3>' + locale.get(`col.${k1}._`) + '</h3>'
+        article += `<h3 data-locale="col.${k1}._"> </h3>`
 
         for(let k2 in columns[k1]) {
           if(k2 === '_' || k2 === 'icon') continue
@@ -54,12 +55,9 @@ const switchTab = function switchTab(target) {
 
           article += `
 <p class="control">
-  <label for="${id}">
-    ${locale.get(`col.${k1}.${k2}`)[1]}
-  </label>
+  <label for="${id}" data-locale="col.${k1}.${k2}.1"> </label>
   <span class="input-group">
-    <label class="input-value" for="${id}">
-    </label>
+    <label class="input-value" for="${id}"> ... </label>
     <input type="range" id="${id}" min="1.5" step="0.5" max="9"
            data-config-key="colwidth._${k1}-${k2}" />
   </span>

@@ -1,0 +1,259 @@
+{
+  "ui": {
+    "header": {
+      "in-develop": "Develop version",
+      "waiting-data": "Awaiting combatant",
+      "no-data-yet": "No data yet.",
+      "please-do-combat": "Check after doing some combatant."
+    },
+    "menu": {
+      "merge-pet-on": "Turn on pet-merging",
+      "merge-pet-off": "Turn off pet-merging",
+      "nameblur-on": "Blur name",
+      "nameblur-off": "Unblur name",
+      "end-encounter": "Split encounter",
+      "settings": "Settings",
+      "reload": "Reload overlay",
+      "screenshot": "Take screenshot"
+    },
+    "config": {
+      "_": "Settings",
+      "save": "Save",
+      "execute": "Execute",
+      "general": {
+        "_": "General",
+        "combine_pet": "Pet merging",
+        "split-by-comma": "Divide multiple names by comma.",
+        "layout": "Layout",
+        "margin-alert": "If this set to less than 1, shadow may not display properly.",
+        "footer": {
+          "_": "Footer elements",
+          "rank": "Current rank",
+          "rdps": "RDPS",
+          "rhps": "RHPS",
+          "recover": "Total Taken Heals / Taken Damages 🔄"
+        },
+        "reset": "Reset",
+        "reset-this": "Reset All"
+      },
+      "style": {
+        "_": "Style",
+        "reset-this": "Reset style",
+        "css-help": [
+          "Use CSS values. Can be extended with other attributes with semicolon.",
+          "Use semi-transparent color with <code>rgba(Red, Green, Blue, Alpha)</code>. <br /> Alpha is 0 to 1.",
+          "Use image background with <code>url('URL here')</code>"
+        ],
+        "background": "Background",
+        "foreground": "Foreground",
+        "element": {
+          "nav": "Navbar",
+          "dropdown": "Dropdown menu",
+          "header": "Table header",
+          "table": "Table"
+        },
+        "shadow": "Shadow"
+      },
+      "color": {
+        "_": "Gauge Colors",
+        "reset-this": "Reset Colors",
+        "position": "Position Helpers",
+        "position-none": "Set 'none' to remove.",
+        "pet-buddy": "Pet/Buddy"
+      },
+      "width": {
+        "_": "Column Width",
+        "reset-this": "Reset Widths",
+        "css-help": [
+          "Unit is default 16px, and changed by UI scale.",
+          "The 'Name' column is the first to decrease when the window width decreases."
+        ]
+      },
+      "tab": {
+        "_": "Tab"
+      },
+      "i/e": {
+        "_": "Import/Export",
+        "import": "Import",
+        "export": "Export",
+        "copy-this": "Copy all of the value below:",
+        "paste-here": "Paste the fetched value below:",
+        "save-first": "Save First!!",
+        "export-help": "The value of 'General &gt; Layout' is included in 'Style' and some values are excluded. <br /> Values that are the same as the default are not exported.",
+        "config-to-export": "Config to export",
+        "all": "All"
+      },
+      "etc": {
+        "_": "Etc",
+        "filter": {
+          "_": "Filter",
+          "general": "General",
+          "help": [
+            "FFXIV_Plugin does not identify friends or foe, so that this option will try not to display enemies in anyway.",
+            "If something wrong, try disable all of option below."
+          ],
+          "unusual-spaces": "Name contains space, but not a pet (Korea Server Only)",
+          "jobless": "Class/Job is empty",
+          "not-combatant": "Not a combat class/job"
+        },
+        "css": "CSS"
+      },
+      "info": {
+        "_": "About",
+        "created-by": "Created by",
+        "servers": "<del>Sabotender Ultima</del> <del>Odin</del> Chocobo",
+        "hibiya": "히비야 (ヒビヤ)",
+        "support": "Support",
+        "license": "License",
+        "icon-files": "All files under share/img/class,",
+        "privacy": {
+          "_": "Privacy Policy",
+          "list": [
+            "If a problem occurs during operation of this program,<br />information for troubleshooting can be sent to the server.",
+            "Collected information is limited to a minimum amount to identify the problem:",
+            "* Program Version<br />* Last Combatant Data<br />* Other information collected by ravenjs"
+          ]
+        }
+      }
+    }
+  },
+  "config": {
+    "style": {
+      "_": "Style",
+      "resize-factor": "UI scale",
+      "body-margin": "Margin between header and content",
+      "body-font": "Font family",
+      "nav-opacity": "Navbar opacity when inactive",
+      "accent-color": "Accent",
+      "shadow-card": "Window",
+      "shadow-text": "Text",
+      "font-size-small": "'Small' fontsize",
+      "gauge-height": "Gauge height",
+      "graph-height": "Table line height"
+    },
+    "color": {
+      "_": "Guage Color",
+      "gauge-default": "Default",
+      "gauge-opacity": "Opacity",
+      "position-tank": "Label for Tank",
+      "position-deal": "Label for DPS",
+      "position-heal": "Label for Heal",
+      "pld": "Paladin (Gladiator)",
+      "war": "Warrior (Marauder)",
+      "drk": "Dark Knight",
+      "mnk": "Monk (Pugilist)",
+      "drg": "Dragoon (Lancer)",
+      "brd": "Bard (Archer)",
+      "nin": "Ninja (Rogue)",
+      "smn": "Summoner (Arcanist)",
+      "blm": "Black Mage (Thaumaturge)",
+      "mch": "Machinist",
+      "whm": "White Mage (Conjurer)",
+      "sch": "Scholar",
+      "ast": "Astrologian",
+      "smn-pet": "Summoner (Arcanist) Carbuncle/Egi",
+      "sch-pet": "Scholar Egi",
+      "mch-pet": "Machinist Turret",
+      "chocobo": "Chocobo",
+      "limit-break": "Limit Break"
+    },
+    "format": {
+      "significant_digit": {
+        "_": "Decimal accuracy",
+        "dps": "DPS",
+        "hps": "HPS",
+        "accuracy": "Failure (Miss / Swing)"
+      },
+      "myname": "My name"
+    }
+  },
+  "col": {
+    "i": {
+      "_": "Info",
+      "icon": [
+        "<img src=\"../share/img/class/empty.png\" class=\"clsicon\"/>",
+        "Class Icon"
+      ],
+      "class": ["Cls", "Class/Job"],
+      "owner": ["Owner", "Owner"],
+      "name": ["Name", "Name"]
+    },
+    "deal": {
+      "_": "DPS",
+      "per_second": ["DPS", "per Second"],
+      "pct": ["Deal%", "Deal %"],
+      "total": ["D.Tot", "Total"],
+      "accuracy": ["Failure", "Failure (Miss / Swing)"],
+      "swing": ["Swing", "Swings"],
+      "miss": ["Miss", "Misses"],
+      "hitfail": ["HitF", "Hitfail"],
+      "critical": ["Crit", "Critical%"],
+      "max": ["MaxD", "Maxhit (w/o skillname)"],
+      "maxhit": ["Max Damage", "Maxhit (w/ skillname)"],
+      "last10": ["10s", "DPS for Last 10s"],
+      "last30": ["30s", "DPS for Last 30s"],
+      "last60": ["1m", "DPS for Last 1min"],
+      "last180": ["3m", "DPS for Last 3min (베타)"]
+    },
+    "tank": {
+      "_": "Tank",
+      "damage": ["TakenD", "Damage taken"],
+      "heal": ["TakenH", "Heal taken"],
+      "parry": ["Parry", "Parry"],
+      "block": ["Block", "Block"]
+    },
+    "heal": {
+      "_": "Heal",
+      "per_second": ["HPS", "per Second"],
+      "pct": ["Heal%", "Heal %"],
+      "total": ["D.Tot", "Total"],
+      "over": ["OvrH", "Overheal"],
+      "swing": ["Swing", "Swings"],
+      "critical": ["HCrit", "Critical%"],
+      "cure": ["Cure", "Cures"],
+      "max": ["MaxH", "Maxhit (w/o skillname)"],
+      "maxhit": ["Max Heal", "Maxhit (w/ skillname)"]
+    },
+    "etc": {
+      "_": "Etc",
+      "powerdrain": ["PDrn", "Powerdrain"],
+      "powerheal": ["PHeal", "Powerheal"],
+      "death": ["Death", "Deathcount"]
+    }
+  },
+  "zone": {
+    "unknown": {
+      "204": "The Antitower",
+      "207": "옛 암다포르 시가지 (어려움)",
+      "205": "봉쇄구역 S1T7",
+      "20C": "봉쇄구역 S1T7 (극)",
+      "208": "기공성 알렉산더: 율동편 1",
+      "209": "기공성 알렉산더: 율동편 2",
+      "20A": "기공성 알렉산더: 율동편 3",
+      "20B": "기공성 알렉산더: 율동편 4",
+      "211": "기공성 알렉산더: 율동편 (영웅) 1",
+      "212": "기공성 알렉산더: 율동편 (영웅) 2",
+      "213": "기공성 알렉산더: 율동편 (영웅) 3",
+      "214": "기공성 알렉산더: 율동편 (영웅) 4",
+      "219": "범위 공격을 피하자!",
+      "21A": "콤보를 이어 적개심을 끌자!",
+      "21B": "실전에서 콤보를 사용해보자!",
+      "21C": "다수의 적에게서 적개심을 끌자!",
+      "21D": "실전에서 다수의 적과 싸워보자!",
+      "21E": "멀리서 적개심을 끌자!",
+      "21F": "적 지원군에 대처하자!",
+      "220": "파티원과 협력하여 적을 물리치자!",
+      "221": "파티원과 같은 적을 공격하자!",
+      "222": "적의 공격을 피하면서 싸우자!",
+      "223": "적 지원군에 대처하자!",
+      "224": "특수 장치를 활용하며 싸우자!",
+      "225": "파티원을 회복시키자!",
+      "226": "다수의 파티원을 회복시키자!",
+      "227": "적의 공격을 피하면서 싸우자!",
+      "228": "마지막 훈련!"
+    }
+  },
+  "skill": {
+
+  }
+}
