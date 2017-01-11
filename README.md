@@ -1,27 +1,49 @@
 # kagerou
 
-ACT-OverlayPlugin skin for FF14.
+ACT-OverlayPlugin skin for FF14. pronounced as /ka-ge-rou/.
 
-Material-like, Fully-configurable, etc.
-
-WIP.
+Modern, Easily configurable, always up-to-date.
 
 
 ## Usage
 
 Use this as overlay URL: `https://hibiyasleep.github.io/kagerou/overlay`.
 
-### 엣취
+1. Open ACT.
+2. Plugins > OverlayPlugin.dll > Add 'Mini Parse' with any name.
+3. go to 'YOUR NAME HERE' tab, and set url as above.
 
-* **왜 전부 영어죠?**
+## Features / Screenshots
 
-이게 편해요.
+![Overlay Preview](https://d.hibiya.moe/obZ.png)
 
-* **어떻게 쓰나요?**
+* RDPS/RHPS
+* Solo Mode
+* History lookup
+* Merge/Unmerge Pet stats
+* Blur/Unblur other user's name
+* Configurable tabbed column set
+* (WIP) Display initial of name, instead of full long name
+* Localization: Korean, English, or Add your language!
 
-새 오버레이를 추가하시고, URL 칸에 저 위에 있는 URL을 복붙해서 넣으세요.
+![Settings window - General](https://d.hibiya.moe/zLm.png)
 
-* **이거 이상해요.**
+* Fully configurable, No Notepad!
 
-저어기 위에 Issues를 누르고, 초록색 New issue를 클릭하세요.
-제목에 증상을 설명할만한 문장을 간략하게 적어주시고, 내용은 자세하게, 어떤 짓을 했는데 어떻게 됐다-까지 적어주시면 됩니다. 영어가 아니어도 상관없어요.
+![CSS Customizing; HotS logo spinning](https://d.hibiya.moe/rne.png)
+
+* Custom CSS: Setting isn't enough? Expand as you want!
+
+## Contribute
+
+* Pull Requests is welcome, but please keep this code clean as possible.
+* 2 spaces.
+* 80 char per line. Inline SVG is an exception, keep them in one line.
+* No raster images; exclude job icons, use SVG.
+* Target is Chrome 45, when support of other platform is needed and code should
+  follow that; then I'll use Babel.
+* Locale file is in `share/lang`.
+
+## License
+
+GPLv3.
