@@ -7,6 +7,7 @@ Modern, Easily configurable, always up-to-date.
 
 ## Usage
 
+No download, please first read `Warning` below.
 Use this as overlay URL: `https://hibiyasleep.github.io/kagerou/overlay`.
 
 1. Open ACT.
