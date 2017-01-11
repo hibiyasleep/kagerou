@@ -35,6 +35,10 @@
       })
     }
 
+    get loaded() {
+      return this.current in this.L
+    }
+
     get(path) {
       return resolveDotIndex(this.L[this.current], path)
     }

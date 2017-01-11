@@ -29,9 +29,9 @@
       "general": {
         "_": "General",
         "combine_pet": "Pet merging",
-        "split-by-comma": "Divide multiple names by comma.",
+        "split-by-comma": "Divide multiple names by ','",
         "layout": "Layout",
-        "margin-alert": "If this set to less than 1, shadow may not display properly.",
+        "margin-alert": "If this set to less than 2, shadow may not display properly.",
         "footer": {
           "_": "Footer elements",
           "rank": "Current rank",

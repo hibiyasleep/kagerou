@@ -158,7 +158,7 @@ const CONFIG_DEFAULT = {
  * var()로 설정값 일부를 가져올 수 있습니다. */
 
 /* Writing User-stylesheet.
- * If you don't know what CSS is, you can simply ignore this section.
+ * If you don't know what CSS is, you can ignore this section.
  * For details, please refer source code or DevTools directly.
  * some config value can be loaded by var(). */
 

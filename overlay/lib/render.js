@@ -194,7 +194,7 @@
 
     getTitle(col) {
       let content = '...'
-      if(window.l.locale.length > 0)
+      if(window.l.loaded)
         content = window.l.get(`col.${col}.0`)
       return `<span data-locale="col.${col}.0">${content}</span>`
     }
