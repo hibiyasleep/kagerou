@@ -11,7 +11,19 @@ Use this as overlay URL: `https://hibiyasleep.github.io/kagerou/overlay`.
 
 1. Open ACT.
 2. Plugins > OverlayPlugin.dll > Add 'Mini Parse' with any name.
-3. go to 'YOUR NAME HERE' tab, and set url as above.
+3. Read warning below.
+4. go to 'YOUR NAME HERE' tab, and set url as above.
+
+## Warning - **OverlayPlugin 0.3.3.11** Required!!!
+
+if you are using older version, settings WILL NOT saved!
+
+### How to Check
+
+1. Open ACT.
+2. Plugins > OverlayPlugin.dll > Click any tab, except 'General'
+3. If there's 2 buttons: you are on legacy. Get [Latest](https://github.com/hibiyasleep/OverlayPlugin/releases/tag/0.3.3.11) here.
+   There should be 3 buttons, named like this: "Copy", "Open DevTools", "Reload".
 
 ## Features / Screenshots
 
