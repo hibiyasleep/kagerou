@@ -31,14 +31,16 @@
       <div class="tabconfig-pane">
         <article>
           <p class="control">
-            <label data-render="title.label">
+            <label data-render="title.label"
+                   data-locale="ui.config.tab.title">
               제목
             </label>
             <input type="text" data-render="title.input"
                    style="width: 3rem;" />
           </p>
           <p class="control">
-            <label data-render="sort.label">
+            <label data-render="sort.label"
+                   data-locale="ui.config.tab.sortby">
               정렬 기준
             </label>
             <select data-render="sort.input">
@@ -46,7 +48,8 @@
             </select>
           </p>
           <p class="control">
-            <label data-render="gauge.label">
+            <label data-render="gauge.label"
+                   data-locale="ui.config.tab.gaugeby">
               게이지 기준
             </label>
             <select data-render="gauge.input">
@@ -56,14 +59,16 @@
         </article>
         <div class="tabconfig-list-container">
           <ul class="tabconfig-list">
-            <li class="header">
+            <li class="header"
+                data-locale="ui.config.tab.available">
               사용할 수 있는 항목
             </li>
             <ul data-control="columns.available">
             </ul>
           </ul>
           <ul class="tabconfig-list">
-            <li class="header">
+            <li class="header"
+                data-locale="ui.config.tab.configured">
               설정된 항목 (권장: 이름 제외 6개까지)
             </li>
             <ul data-control="columns.used">
@@ -175,6 +180,18 @@ window.addEventListener('load', _ => {
     </header>
     <main>
       <section data-page="general" class="active">
+        <article>
+          <p class="control">
+            <label for="input-lang">
+              Language
+            </label>
+            <select id="input-lang"
+                    data-config-key="lang">
+              <option value="ko"> 한국어 </option>
+              <option value="en"> English </option>
+            </select>
+          </p>
+        </article>
         <article>
           <h3 data-locale="ui.config.general.combine_pet"> 펫 합산 </h3>
           <p class="control">
@@ -669,7 +686,9 @@ window.addEventListener('load', _ => {
           </p>
         </article>
         <article>
-          <h3> 공격 역할 </h3>
+          <h3 data-locale="config.color.position-deal">
+            공격 역할
+          </h3>
           <p class="control">
             <label for="input-color-mnk" data-locale="config.color.mnk">
               몽크 <span class="text-muted">(격투사)</span>
@@ -763,7 +782,9 @@ window.addEventListener('load', _ => {
           </p>
         </article>
         <article>
-          <h3> 회복 역할 </h3>
+          <h3 data-locale="config.color.position-heal">
+            회복 역할
+          </h3>
           <p class="control">
             <label for="input-color-whm" data-locale="config.color.whm">
               백마도사 <span class="text-muted">(환술사)</span>
@@ -866,10 +887,12 @@ window.addEventListener('load', _ => {
           </p>
         </article>
         <article>
-          <h3> 기타 </h3>
+          <h3 data-locale="ui.config.color.etc">
+            기타
+          </h3>
           <p class="control">
             <label for="input-color-limit-break"
-                   data-locale="config.color.chocobo">
+                   data-locale="config.color.limit-break">
               리밋 브레이크
             </label>
             <span class="input-group">
@@ -999,8 +1022,9 @@ window.addEventListener('load', _ => {
                 </select>
               </p>
               <p class="control text-right">
-                <button id="export-confirm">
-                  확인
+                <button id="export-confirm"
+                        data-locale="ui.config.i/e.export">
+                  내보내기
                 </button>
               </p>
             </article>

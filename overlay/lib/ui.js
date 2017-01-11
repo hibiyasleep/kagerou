@@ -241,6 +241,7 @@
         config.load()
         config.setResizeFactor()
         config.attachOverlayStyle()
+        window.l.setLang(config.get('lang'))
         setFooterVisibility()
 
         window.renderer = new Renderer(window.config.get())

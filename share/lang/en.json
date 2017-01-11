@@ -59,6 +59,7 @@
         "reset-this": "Reset Colors",
         "position": "Position Helpers",
         "position-none": "Set 'none' to remove.",
+        "etc": "Etc",
         "pet-buddy": "Pet/Buddy"
       },
       "width": {
@@ -70,7 +71,12 @@
         ]
       },
       "tab": {
-        "_": "Tab"
+        "_": "Tab",
+        "title": "Title",
+        "sortby": "Sort by",
+        "gaugeby": "Gauge by",
+        "available": "Available columns",
+        "configured": "Configured columns"
       },
       "i/e": {
         "_": "Import/Export",
@@ -135,9 +141,9 @@
       "_": "Guage Color",
       "gauge-default": "Default",
       "gauge-opacity": "Opacity",
-      "position-tank": "Label for Tank",
-      "position-deal": "Label for DPS",
-      "position-heal": "Label for Heal",
+      "position-tank": "Tank",
+      "position-deal": "DPS",
+      "position-heal": "Heal",
       "pld": "Paladin (Gladiator)",
       "war": "Warrior (Marauder)",
       "drk": "Dark Knight",

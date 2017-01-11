@@ -70,7 +70,7 @@ const switchTab = function switchTab(target) {
     })()
 
     // load config & fill all inputs
-    $map('input[data-config-key]', _ => {
+    $map('[data-config-key]', _ => {
       let placeholder = _.getAttribute('placeholder')
       let value = config.get(_.getAttribute('data-config-key'))
       let type = _.getAttribute('data-type')
@@ -130,7 +130,7 @@ const switchTab = function switchTab(target) {
 
     // save
     $('#save').addEventListener('click', _ => {
-      [].map.call($('input[data-config-key]'), o => {
+      [].map.call($('[data-config-key]'), o => {
         let value = o.value
         let type = o.getAttribute('data-type')
         let unit = o.getAttribute('data-unit') || ''
@@ -143,8 +143,10 @@ const switchTab = function switchTab(target) {
         } else {
           value += unit
         }
+
         config.set(key, value)
       })
+      window.locale.setLang(config.get('lang'))
 
       tabconfig.save()
 
