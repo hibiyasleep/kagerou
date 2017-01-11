@@ -19,9 +19,13 @@
       this.load(lang, callback || (_ => this.localizeAll()) )
     }
 
-    load(lang, callback) {
+    load(lang, callback, forceReload) {
       if(!lang) lang = this.current || 'en'
 
+      if(lang in this.L || forceReload) {
+        if(callback) callback(this.L[lang])
+        return this.L[lang]
+      }
       fetch(LOCALE_PATH + lang + '.json').then(res => {
         if(!res.ok) return false
         return res.json()
@@ -29,28 +33,6 @@
         this.L[lang] = json
         if(callback) callback(json)
       })
-
-      // XHR version: dirty, sync, but no race-condition
-      /*
-      let xhr = new XMLHttpRequest()
-      let json
-      xhr.open('GET', LOCALE_PATH + lang + '.json', false)
-      xhr.send(null)
-
-      if(xhr.status != 200) {
-        if(callback) callback(xhr.status, null)
-        return false
-      }
-
-      try {
-        json = JSON.parse(xhr.responseText)
-        this.L[lang] = json
-      } catch(e) {
-        if(callback) callback(e, null)
-        return false
-      }
-      if(callback) callback(null, json)
-      */
     }
 
     get(path) {
