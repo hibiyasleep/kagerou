@@ -5,8 +5,12 @@ const switchTab = function switchTab(target) {
   $(`section[data-page='${target}']`, 0).classList.add('active')
   let targetLi = $(`li[data-page='${target}']`, 0)
 
-  $('header h2', 0).textContent = targetLi.textContent
-  $('header h2', 0).setAttribute('data-locale', targetLi.getAttribute('data-locale'))
+  $('header h2', 0).textContent = $(`li[data-page='${target}']`, 0).textContent
+  $('header h2', 0).setAttribute(
+    'data-locale',
+    $(`li[data-page='${target}'] > label`, 0).getAttribute('data-locale')
+  )
+
   $('body', 0).classList.toggle('hide-header', target === 'info')
 }
 
@@ -146,6 +150,7 @@ const switchTab = function switchTab(target) {
 
         config.set(key, value)
       })
+
       window.locale.setLang(config.get('lang'))
 
       tabconfig.save()
