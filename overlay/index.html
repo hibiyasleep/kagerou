@@ -52,6 +52,7 @@ try {
   document.addEventListener('DOMContentLoaded', e => {
     // locale
     window.l = new Locale(_ => {
+      window.l.localizeAll()
       window.renderer = new Renderer(window.config.get())
       window.renderer.updateHeader()
 
@@ -135,12 +136,16 @@ try {
               <mark id="history-time">
                 kagerou <span class="version"> ERROR </span>
               </mark>
-              <span id="history-mob" data-locale="ui.header.in-develop">
-                개발 중 버전
+              <span id="history-mob">
+                <span data-locale="ui.header.in-develop">
+                  개발 중 버전
+                </span>
               </span>
             </span>
-            <span id="history-region" data-locale="ui.header.waiting-data">
-              데이터를 기다리는 중
+            <span id="history-region">
+              <span data-locale="ui.header.waiting-data">
+                데이터를 기다리는 중
+              </span>
             </span>
           </div>
         </div>

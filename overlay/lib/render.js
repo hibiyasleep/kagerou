@@ -196,7 +196,6 @@
       let content = '...'
       if(window.l.locale.length > 0)
         content = window.l.get(`col.${col}.0`)
-      console.log(content)
       return `<span data-locale="col.${col}.0">${content}</span>`
     }
 
