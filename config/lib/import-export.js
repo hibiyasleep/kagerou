@@ -47,7 +47,7 @@
     let d = {}
 
     if(!author) {
-      return '일반 > 내 이름부터 설정해주세요'
+      return ''
     }
 
     if(!Array.isArray(col)) {
