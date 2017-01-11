@@ -1,6 +1,6 @@
 'use strict'
 
-const VERSION = '0.4.8'
+const VERSION = '0.4.9'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',

@@ -187,8 +187,10 @@
         return []
       else if(o[2] === undefined)
         return [n, false]
-      else if(o[2] === '(*)')
+      else if(o[2] === ' (*)')
         return [n, true]
+      else
+        return []
     }
 
     zone(n) {
