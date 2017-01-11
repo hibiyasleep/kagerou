@@ -193,12 +193,11 @@
     }
 
     getTitle(col) {
-      let title = window.l.get(`col.${col.split('.')[0]}._`)
-      let content = window.l.get(`col.${col}`)
-      if(!content) {
-        console.error(`Cannot find localized string for col.${col}`)
-      }
-      return `<span title="${title}: ${content[1]}">${content[0]}</span>`
+      let content = '...'
+      if(window.l.locale.length > 0)
+        content = window.l.get(`col.${col}.0`)
+      console.log(content)
+      return `<span data-locale="col.${col}.0">${content}</span>`
     }
 
     render(data, max) {

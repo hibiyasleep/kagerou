@@ -5,7 +5,6 @@
     <title> kagerou overlay </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="css/reset.css" />
-    <script src="https://cdn.rawgit.com/github/fetch/master/fetch.js"></script>
     <script src="https://cdn.ravenjs.com/3.9.1/raven.min.js"></script>
     <script>
 'use strict'
@@ -43,17 +42,29 @@ try {
   config.load()
   config.setResizeFactor()
 
+
+  // style
   config.attachOverlayStyle('overlay')
 
-  // locale
-  window.l = new Locale()
 
   // render
-  window.renderer = new Renderer(window.config.get())
 
   document.addEventListener('DOMContentLoaded', e => {
+    // locale
+    window.l = new Locale(_ => {
+      window.renderer = new Renderer(window.config.get())
+      window.renderer.updateHeader()
 
-    window.renderer.updateHeader()
+      window.tabdisplay = new TabDisplay()
+      tabdisplay.render()
+
+      window.historyUI = new HistoryUI()
+
+      $('.history', 0).addEventListener('click', e => {
+        window.historyUI.updateList()
+      })
+
+    })
 
     ;[].map.call($('svg'), _ => {
       _.style.width = parseInt(_.getAttribute('width')) / 16 + 'rem'
@@ -77,6 +88,7 @@ try {
 
   window.addEventListener('load', _ => $('.splash', 0).classList.add('hidden') )
 } catch(e) {
+  console.error(e)
   Raven.captureException(e)
 }
 
@@ -85,20 +97,20 @@ try {
   <body style="overflow:hidden">
     <div class="splash">
       <div>
-        문제가 있는 것 같습니다...
+        Something went wrong...
         <br />
-        계속 발생한다면 바로 개발자에게 알려주세요!
+        문제가 계속 발생한다면 바로 개발자에게 알려주세요!
         <br />
         오딘 히비야 / @hibiyasleep
         <br /><br />
         <button onclick="location.reload()">
-          재시도
+          재시도/Retry
         </button>
         <button onclick="localStorage.setItem('kagerou_config','');location.reload()">
-          초기화
+          초기화/Reset
         </button>
         <button onclick="window.open('../config/','kagerou - Settings','width=800,height=600')">
-          설정
+          설정/Settings
         </button>
       </div>
     </div>
@@ -121,13 +133,15 @@ try {
           </span><div class="history-label">
             <span>
               <mark id="history-time">
-                kagerou <span class="version"> 로드 실패 </span>
+                kagerou <span class="version"> ERROR </span>
               </mark>
-              <span id="history-mob">
+              <span id="history-mob" data-locale="ui.header.in-develop">
                 개발 중 버전
               </span>
             </span>
-            <span id="history-region">데이터를 기다리는 중</span>
+            <span id="history-region" data-locale="ui.header.waiting-data">
+              데이터를 기다리는 중
+            </span>
           </div>
         </div>
         <ul class="buttons">
@@ -162,7 +176,8 @@ try {
       </ul>
       <ul class="dropdown buttons right" id="dropdown-more">
         <li data-button="merge-pet" data-active-by="label"
-            data-label="펫 합산 켜기" data-label-enabled="펫 합산 끄기">
+            data-label="펫 합산 켜기" data-label-enabled="펫 합산 끄기"
+            data-locale="ui.menu.merge-pet-on=data-label|ui.menu.merge-pet-off=data-label-enabled">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
             <g class="when-enabled">
@@ -177,7 +192,8 @@ try {
           </svg>
         </li><!--
      --><li data-button="nameblur" data-active-by="label"
-            data-label="이름 가리기" data-label-enabled="이름 보이기">
+            data-label="이름 가리기" data-label-enabled="이름 보이기"
+            data-locale="ui.menu.nameblur-on=data-label|ui.menu.nameblur-off=data-label-enabled">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
             <g class="when-enabled">
@@ -190,37 +206,39 @@ try {
           </svg>
         </li><!--
      --><li data-button="end-encounter"
-            data-label="전투 집계 끊기">
+            data-label="전투 집계 끊기"
+            data-locale="ui.menu.end-encounter=data-label">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
             <path d="M12,20A7,7 0 0,1 5,13C5,11.72 5.35,10.5 5.95,9.5L15.5,19.04C14.5,19.65 13.28,20 12,20M3,4L1.75,5.27L4.5,8.03C3.55,9.45 3,11.16 3,13A9,9 0 0,0 12,22C13.84,22 15.55,21.45 17,20.5L19.5,23L20.75,21.73L13.04,14L3,4M11,9.44L13,11.44V8H11M15,1H9V3H15M19.04,4.55L17.62,5.97C16.07,4.74 14.12,4 12,4C10.17,4 8.47,4.55 7.05,5.5L8.5,6.94C9.53,6.35 10.73,6 12,6A7,7 0 0,1 19,13C19,14.27 18.65,15.47 18.06,16.5L19.5,17.94C20.45,16.53 21,14.83 21,13C21,10.88 20.26,8.93 19.03,7.39L20.45,5.97L19.04,4.55Z" />
           </svg>
         </li><!--
      --><li data-button="settings"
-            data-label="설정">
+            data-label="설정"
+            data-locale="ui.menu.settings=data-label">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
             <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" />
           </svg>
         </li><!--
      --><li data-button="reload" onclick="location.reload()"
-            data-label="새로고침">
+            data-label="새로고침"
+            data-locale="ui.menu.reload=data-label">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
             <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
           </svg>
         </li><!--
      --><li data-button="screenshot"
-            data-label="스크린샷">
+            data-label="스크린샷"
+            data-locale="ui.menu.screenshot=data-label">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
             <path d="M4,4H7L9,2H15L17,4H20A2,2 0 0,1 22,6V18A2,2 0 0,1 20,20H4A2,2 0 0,1 2,18V6A2,2 0 0,1 4,4M12,7A5,5 0 0,0 7,12A5,5 0 0,0 12,17A5,5 0 0,0 17,12A5,5 0 0,0 12,7M12,9A3,3 0 0,1 15,12A3,3 0 0,1 12,15A3,3 0 0,1 9,12A3,3 0 0,1 12,9Z" />
           </svg>
         </li>
       </ul>
-      <label id="nav-label">
-        메뉴
-      </label>
+      <label id="nav-label"> </label>
     </nav>
 
     <main>
@@ -244,7 +262,7 @@ try {
       </ul>
       <footer>
         <div class="tabs">
-          탭 불러오는 중
+          Loading tabs...
         </div>
         <span class="footer-notify">
         </span>

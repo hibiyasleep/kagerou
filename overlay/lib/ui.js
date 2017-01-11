@@ -93,6 +93,9 @@
     }
   }
 
+  window.TabDisplay = TabDisplay
+  window.HistoryUI = HistoryUI
+
   window.notify = function notify(message) {
     let d = $('.footer-notify', 0)
     d.textContent = '*' + message
@@ -210,15 +213,6 @@
         if(_.callback)
           _.callback(e)
       })
-    })
-
-    window.tabdisplay = new TabDisplay()
-    tabdisplay.render()
-
-    window.historyUI = new HistoryUI()
-
-    $('.history', 0).addEventListener('click', e => {
-      window.historyUI.updateList()
     })
 
     if(!('OverlayPluginApi' in window && 'endEncounter' in OverlayPluginApi)) {
