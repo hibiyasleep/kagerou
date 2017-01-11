@@ -15,11 +15,15 @@ Use this as overlay URL: `https://hibiyasleep.github.io/kagerou/overlay`.
 3. Read warning below.
 4. go to 'YOUR NAME HERE' tab, and set url as above.
 
-## Warning - **OverlayPlugin 0.3.3.11** Required!!!
+## Warning
+
+### EnmityOverlay may conflict with OverlayPlugin
+
+that's no way, since I don't have many knowledge for plugins.
+
+### **OverlayPlugin 0.3.3.11** Required!!!
 
 if you are using older version, settings WILL NOT saved!
-
-### How to Check
 
 1. Open ACT.
 2. Plugins > OverlayPlugin.dll > Click any tab, except 'General'
