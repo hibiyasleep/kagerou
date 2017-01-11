@@ -62,6 +62,7 @@ Pending features:
 
 * Pull Requests is welcome, but please keep this code clean as possible.
 * 2 spaces.
+* NO semicolon in Javascript, except `;(function`.
 * 80 char per line. Inline SVG is an exception, keep them in one line.
 * No raster images; exclude job icons, use SVG.
 * Target is Chrome 45, when support of other platform is needed and code should
