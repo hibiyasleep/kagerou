@@ -10,7 +10,7 @@
 
     constructor(callback) {
       this.L = {}
-      this.current = window.config.get('lang') || CONFIG_DEFAULT.locale
+      this.current = window.config.get('lang') || CONFIG_DEFAULT.locale || 'en'
       this.load(this.current, callback || (_ => this.localizeAll()) )
     }
 

@@ -88,9 +88,8 @@ config.setResizeFactor()
 
 window.locale = new Locale()
 
-window.addEventListener('load', _ => {
+document.addEventListener('DOMContentLoaded', _ => {
   window.tabconfig = new Tabconfig()
-
   window.editor = ace.edit('editor')
   editor.$blockScrolling = Infinity
   editor.setTheme('ace/theme/tomorrow_night_eighties')
@@ -102,6 +101,8 @@ window.addEventListener('load', _ => {
 
   editor.setValue(config.get('custom_css') || (CONFIG_DEFAULT.custom_css + '\n'))
   editor.gotoLine(1)
+
+  setTimeout(_ => window.locale.localizeAll(), 250)
 })
     </script>
   </head>
