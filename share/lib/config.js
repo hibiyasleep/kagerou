@@ -28,7 +28,7 @@ const CONFIG_DEFAULT = {
   tabs: [
     {
       id: 0,
-      label: '딜',
+      label: 'DPS',
       gauge: 'deal.total',
       sort: 'deal.total',
       col: [
@@ -42,7 +42,7 @@ const CONFIG_DEFAULT = {
       ]
     }, {
       id: 1,
-      label: '탱',
+      label: 'Tank',
       gauge: 'tank.damage',
       sort: 'tank.damage',
       col: [
@@ -56,7 +56,7 @@ const CONFIG_DEFAULT = {
       ]
     }, {
       id: 2,
-      label: '힐',
+      label: 'Heal',
       gauge: 'heal.total',
       sort: 'heal.total',
       col: [
