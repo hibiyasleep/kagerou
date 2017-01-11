@@ -37,6 +37,7 @@
             if(b === 'yes') this.callback()
             this._remove(button.parentNode.parentNode)
           })
+          button.textContent = window.locale.get('ui.config.dialog.' + b)
           buttons.insertAdjacentElement('beforeend', button)
         }
       } else {

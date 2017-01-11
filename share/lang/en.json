@@ -20,6 +20,12 @@
       "_": "Settings",
       "save": "Save",
       "execute": "Execute",
+      "dialog": {
+        "really": "Really reset these settings?",
+        "undone": "there's no undo!",
+        "yes": "Yes",
+        "no": "No"
+      },
       "general": {
         "_": "General",
         "combine_pet": "Pet merging",

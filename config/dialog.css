@@ -78,11 +78,3 @@
   content: '×';
   display: inline;
 }
-.dialog-button.yes:before {
-  content: '예';
-  display: inline;
-}
-.dialog-button.no:before {
-  content: '아니오';
-  display: inline;
-}

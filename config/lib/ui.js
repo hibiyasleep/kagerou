@@ -121,8 +121,8 @@ const switchTab = function switchTab(target) {
       _.addEventListener('click', function(e) {
         let key = this.getAttribute('data-reset') || false
         new dialog('confirm', {
-          title: '해당 설정을 초기화시키겠습니까?',
-          content: '되돌릴 수 없습니다.',
+          title: window.locale.get('ui.config.dialog.really'),
+          content: window.locale.get('ui.config.dialog.undone'),
           callback: _ => {
             config.reset(key)
             OverlayPluginApi.broadcastMessage('reload')
