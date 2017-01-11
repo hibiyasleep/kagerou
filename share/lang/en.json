@@ -187,7 +187,7 @@
     "deal": {
       "_": "DPS",
       "per_second": ["DPS", "per Second"],
-      "pct": ["Deal%", "Deal %"],
+      "pct": ["D%", "Deal %"],
       "total": ["D.Tot", "Total"],
       "accuracy": ["Failure", "Failure (Miss / Swing)"],
       "swing": ["Swing", "Swings"],
@@ -211,7 +211,7 @@
     "heal": {
       "_": "Heal",
       "per_second": ["HPS", "per Second"],
-      "pct": ["Heal%", "Heal %"],
+      "pct": ["H%", "Heal %"],
       "total": ["D.Tot", "Total"],
       "over": ["OvrH", "Overheal"],
       "swing": ["Swing", "Swings"],
@@ -224,7 +224,7 @@
       "_": "Etc",
       "powerdrain": ["PDrn", "Powerdrain"],
       "powerheal": ["PHeal", "Powerheal"],
-      "death": ["Death", "Deathcount"]
+      "death": ["Dead", "Deathcount"]
     }
   },
   "zone": {
