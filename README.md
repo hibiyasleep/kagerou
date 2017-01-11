@@ -48,6 +48,17 @@ if you are using older version, settings WILL NOT saved!
 
 ## Contribute
 
+### If you are not developer
+
+Since I only play on korean server, I need your feedback and suggestion for
+Global server support.
+
+Pending features:
+
+* Option to short username, like from 'Kuriyama Hibiya' to 'K.H.'.
+
+### Else
+
 * Pull Requests is welcome, but please keep this code clean as possible.
 * 2 spaces.
 * 80 char per line. Inline SVG is an exception, keep them in one line.
