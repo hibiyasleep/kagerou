@@ -18,6 +18,7 @@
 .flex-column-deal-total       { width: calc(1rem * var(--_deal-total)); }
 .flex-column-deal-per-second  { width: calc(1rem * var(--_deal-per_second)); }
 .flex-column-deal-pct         { width: calc(1rem * var(--_deal-pct)); }
+.flex-column-deal-failure     { width: calc(1rem * var(--_deal-failure)); }
 .flex-column-deal-accuracy    { width: calc(1rem * var(--_deal-accuracy)); }
 .flex-column-deal-swing       { width: calc(1rem * var(--_deal-swing)); }
 .flex-column-deal-miss        { width: calc(1rem * var(--_deal-miss)); }

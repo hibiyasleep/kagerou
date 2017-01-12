@@ -77,6 +77,7 @@ const CONFIG_DEFAULT = {
     '_deal-total': 4.5,
     '_deal-per_second': 3.5,
     '_deal-pct': 2,
+    '_deal-failure': 3,
     '_deal-accuracy': 3,
     '_deal-swing': 2.5,
     '_deal-miss': 2.5,
