@@ -168,6 +168,9 @@
         this.firstTab = false
       }
 
+      if(window.locale.loaded)
+        window.locale.localizeAll(pane)
+
       this.container.tab.insertBefore(tab, this.newTabButton)
       this.container.pane.insertAdjacentElement('beforeend', pane)
 
@@ -177,7 +180,7 @@
       let id = Date.now()
       this.append({
         id: id,
-        label: '새 탭',
+        label: 'Tab',
         gauge: 'deal.total',
         sort: 'deal.total',
         col: [
