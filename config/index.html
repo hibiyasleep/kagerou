@@ -253,7 +253,21 @@ document.addEventListener('DOMContentLoaded', _ => {
               <input type="range" id="input-style-gauge-height"
                      data-config-key="style.gauge-height"
                      data-unit="%"
-                     from="0" step="5" to="100"/>
+                     min="0" step="5" max="100"/>
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-graph-height"
+                   data-locale="config.style.graph-height">
+              테이블 줄 높이
+            </label>
+            <span class="input-group">
+              <label class="input-value" for="input-style-graph-height">
+              </label>
+              <input type="range" id="input-style-graph-height"
+                     data-config-key="style.graph-height"
+                     data-unit="rem"
+                     min="1" step="0.25" max="2.5"/>
             </span>
           </p>
           <p class="control">
