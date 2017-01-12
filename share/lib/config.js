@@ -248,8 +248,12 @@ const COLUMN_INDEX = {
       }
     },
     total: 'damage',
-    accuracy: { // '정확도'
+    failure: {
       v: _ => _.swings > 0? _.misses/_.swings * 100 : -1,
+      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy)
+    },
+    accuracy: {
+      v: _ => _.swings > 0? (1 - _.misses/_.swings) * 100 : -1,
       f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy)
     },
     swing: 'swings',
