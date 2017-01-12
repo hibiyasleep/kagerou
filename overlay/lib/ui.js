@@ -250,6 +250,8 @@
         setFooterVisibility()
 
         window.renderer = new Renderer(window.config.get())
+        if(!window.tabdisplay)
+          window.tabdisplay = new TabDisplay()
         window.tabdisplay.render()
 
         loadFormatButtons()
