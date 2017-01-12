@@ -122,6 +122,7 @@
     }
 
     push(data) {
+      if(!data.Encounter) return
       if(this.isNewEncounter(data.Encounter)) {
         if(config.get('format.myname').length === 0
         && NICK_REGEX.test(data.Encounter.title)) {
