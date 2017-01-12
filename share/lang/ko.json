@@ -177,7 +177,8 @@
         "hps": "HPS",
         "accuracy": "실패율 (미스 수 / 타격 수)"
       },
-      "myname": "내 이름"
+      "myname": "내 이름",
+      "use_short_name": "이름을 이니셜로 표시 (글로벌 서버용)"
     }
   },
   "col": {

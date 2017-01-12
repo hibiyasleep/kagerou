@@ -1,6 +1,6 @@
 # kagerou
 
-ACT-OverlayPlugin skin for FF14. pronounced as /ka-ge-rou/.
+ACT-OverlayPlugin skin for FF14. pronounced as /ka-ge-row/ (not j-like g).
 
 Modern, Easily configurable, always up-to-date.
 
@@ -60,7 +60,7 @@ Global server support.
 
 Pending features:
 
-* Option to short username, like from 'Kuriyama Hibiya' to 'K.H.'.
+* ?
 
 ### Else
 

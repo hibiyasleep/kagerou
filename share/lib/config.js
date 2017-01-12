@@ -139,7 +139,8 @@ const CONFIG_DEFAULT = {
       accuracy: 2
     },
     merge_pet: true,
-    myname: []
+    myname: [],
+    use_short_name: false
   },
   filter: {
     unusual_spaces: false,
@@ -237,7 +238,14 @@ const COLUMN_INDEX = {
     },
     name: {
       v: _ => resolveClass(_.Job, _.name)[1],
-      f: _ => `<span class="${_ === 'YOU'? 'name-you' : ''}">${_}</span>`
+      f: (_, conf) => {
+        let text
+        if(conf.format.use_short_name && _ !== 'YOU')
+          text = _.split(' ').reduceRight((p, c) => p = c[0] + '. ' + p)
+        else
+          text = _
+        return `<span class="${_ === 'YOU'? 'name-you' : ''}">${text}</span>`
+      }
     }
   },
   // deal
