@@ -44,6 +44,12 @@ mark {
   color: var(--color-accent);
 }
 
+/* Locale */
+
+html.ko .en-only, html.en .ko-only {
+  display: none;
+}
+
 /* Scrollbar */
 
 ::-webkit-scrollbar {

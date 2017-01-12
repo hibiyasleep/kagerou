@@ -81,6 +81,7 @@
     }
 
     localizeAll(under) {
+      $('html', 0).className = this.current
       $map(under, '[data-locale]', _ => {
         let c = _.getAttribute('data-locale')
         if(!c) return
