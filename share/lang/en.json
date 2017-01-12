@@ -1,7 +1,7 @@
 {
   "ui": {
     "header": {
-      "in-develop": "Develop version",
+      "in-develop": "Develop/Unstable",
       "waiting-data": "Awaiting combatant",
       "no-data-yet": "No data yet.",
       "please-do-combat": "Check after doing some combatant."
