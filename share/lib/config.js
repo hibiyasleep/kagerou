@@ -201,16 +201,25 @@ const COLUMN_USE_LARGER = {
 const PET_MAPPING = {
   // acn, smn
   '카벙클 에메랄드': 'emerald',
-  '가루다 에기': 'garuda',
+  'Emerald Carbuncle': 'emerald',
   '카벙클 토파즈': 'topaz',
+  'Topaz Carbuncle': 'topaz',
+  '가루다 에기': 'garuda',
+  'Garuda-Egi': 'garuda',
   '타이탄 에기': 'titan',
+  'Titan-Egi': 'titan',
   '이프리트 에기': 'ifrit',
+  'Ifrit-Egi': 'ifrit',
   // sch
   '요정 에오스': 'eos',
+  'Eos': 'eos',
   '요정 셀레네': 'selene',
+  'Selene': 'selene',
   // mch
   '자동포탑 룩': 'look',
-  '자동포탑 비숍': 'bishop'
+  'Look Autoturret': 'look',
+  '자동포탑 비숍': 'bishop',
+  'Bishop Autoturret': 'bishop'
 }
 
 const COLUMN_INDEX = {
