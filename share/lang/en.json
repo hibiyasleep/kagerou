@@ -220,7 +220,7 @@
       "_": "Heal",
       "per_second": ["HPS", "per Second"],
       "pct": ["H%", "Heal %"],
-      "total": ["D.Tot", "Total"],
+      "total": ["H.Tot", "Total"],
       "over": ["OvrH", "Overheal"],
       "swing": ["Swing", "Swings"],
       "critical": ["HCrit", "Critical%"],
