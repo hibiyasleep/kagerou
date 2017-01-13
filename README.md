@@ -51,9 +51,13 @@ If there's 2 buttons: you are on legacy. Get [Latest](https://github.com/hibiyas
 * (WIP) Display abbreviated name, instead of full long name
 * Localization: Korean, English, or Add your language!
 
+---
+
 ![Settings window - General](https://d.hibiya.moe/zLm.png)
 
 * Fully configurable, no Notepad! (Settings require `OverlayPlugin 0.3.3.11` to **Save**)
+
+---
 
 ![CSS Customizing; HotS logo spinning](https://d.hibiya.moe/rne.png)
 
@@ -61,6 +65,8 @@ If there's 2 buttons: you are on legacy. Get [Latest](https://github.com/hibiyas
 Use the DevTools to find the CSS selectors that you wish to modify.
 
 ![how to use custom CSS and DevTools](https://veltall.github.io/kagerou/images/custom-css.png)
+
+---
 
 ## Contribute
 
