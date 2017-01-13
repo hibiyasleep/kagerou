@@ -4,12 +4,26 @@ ACT-OverlayPlugin skin for FF14. pronounced as /ka-ge-row/ (not j-like g).
 
 Modern, Material Design, easily configurable, cloud-hosted and always up-to-date.
 
+## Warning
+
+### EnmityOverlay may conflict with OverlayPlugin
+
+There's no way to fix, since I don't have much knowledge for plugins.
+
+### **OverlayPlugin 0.3.3.11** Required!!!
+
+If you are using older version, settings WILL NOT saved!
+
+If there's 2 buttons: you are on legacy. Get [Latest](https://github.com/hibiyasleep/OverlayPlugin/releases/tag/0.3.3.11) here.
+   There should be 3 buttons, named like this: `Copy`, `Open DevTools`, `Reload`. See screenshots below.
+
+---
 
 ## Usage
 
 ### Quick setup
 
-No download needed, please first read `Warning` below.
+No download needed, please first read `Warning` above.
 Use this as overlay URL:
 
 > `https://hibiyasleep.github.io/kagerou/overlay`
@@ -21,22 +35,10 @@ Use this as overlay URL:
 1. Open ACT.
 2. Plugins > OverlayPlugin.dll > Add 'Mini Parse' with any name (e.g. Totoro).
 3. Read warning below.
-4. go to the new tab (e.g. Totoro), and set url as above.
+4. Go to the new tab (e.g. Totoro), and set url as above.
 
 ![detailed instructions](https://veltall.github.io/kagerou/images/totoro.png)
 
-## Warning
-
-### EnmityOverlay may conflict with OverlayPlugin
-
-that's no way, since I don't have many knowledge for plugins.
-
-### **OverlayPlugin 0.3.3.11** Required!!!
-
-if you are using older version, settings WILL NOT saved!
-
-If there's 2 buttons: you are on legacy. Get [Latest](https://github.com/hibiyasleep/OverlayPlugin/releases/tag/0.3.3.11) here.
-   There should be 3 buttons, named like this: `Copy`, `Open DevTools`, `Reload`.
 
 ## Features / Screenshots
 
