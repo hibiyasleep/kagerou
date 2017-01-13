@@ -14,7 +14,7 @@ Use this as overlay URL:
 
 > `https://hibiyasleep.github.io/kagerou/overlay`
 
-![act-settings](https://veltall.github.io/kagerou/images/act-settings.png =500x)
+![act-settings](https://veltall.github.io/kagerou/images/act-settings.png)
 
 ### Detailed
 
@@ -23,7 +23,7 @@ Use this as overlay URL:
 3. Read warning below.
 4. go to the new tab (e.g. Totoro), and set url as above.
 
-![detailed instructions](https://veltall.github.io/kagerou/images/totoro.png =500x)
+![detailed instructions](https://veltall.github.io/kagerou/images/totoro.png)
 
 ## Warning
 
@@ -64,7 +64,7 @@ If there's 2 buttons: you are on legacy. Get [Latest](https://github.com/hibiyas
 * Custom CSS: Setting isn't enough? Expand as you want!  
 Use the DevTools to find the CSS selectors that you wish to modify.
 
-![how to use custom CSS and DevTools](https://veltall.github.io/kagerou/images/custom-css.png =500x)
+![how to use custom CSS and DevTools](https://veltall.github.io/kagerou/images/custom-css.png)
 
 ---
 
