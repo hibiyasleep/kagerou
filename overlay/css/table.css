@@ -102,7 +102,7 @@
 .class-eos .gauge, .class-selene .gauge { /* sch */
   background: var(--sch-pet);
 }
-.class-look .gauge, .class-bishop .gauge { /* mch */
+.class-rook .gauge, .class-bishop .gauge { /* mch */
   background: var(--mch-pet);
 }
 

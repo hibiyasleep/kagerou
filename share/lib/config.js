@@ -217,8 +217,8 @@ const PET_MAPPING = {
   '요정 셀레네': 'selene',
   'Selene': 'selene',
   // mch
-  '자동포탑 룩': 'look',
-  'Look Autoturret': 'look',
+  '자동포탑 룩': 'rook',
+  'Rook Autoturret': 'rook',
   '자동포탑 비숍': 'bishop',
   'Bishop Autoturret': 'bishop'
 }
