@@ -161,7 +161,7 @@ main > ul {
   display: flex;
   width: 100%;
 
-  color: #eee;
+  color: var(--content-fg);
   background: var(--header-bg);
   background-size: cover;
   background-position: center;
