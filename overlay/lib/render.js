@@ -3,7 +3,7 @@
 ;(function(){
 
   const cell = function cell(col, value) {
-    return `<span class="flex-column-${sanitize(col)}">${value}</span>\n`
+    return `<span class="flex-column flex-column-${sanitize(col)}">${value}</span>\n`
   }
 
   const sanitize = _ => _.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()

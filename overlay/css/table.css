@@ -1,5 +1,8 @@
 
 /* Column width defines */
+.flex-column {
+  text-align: var(--content-align);
+}
 .flex-column-i-icon {
   flex-grow: 0;
   flex-shrink: 0;
@@ -8,6 +11,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  text-align: left;
 
   flex-grow: 10;
   flex-basis: 0%;

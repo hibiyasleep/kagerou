@@ -208,9 +208,18 @@ document.addEventListener('DOMContentLoaded', _ => {
         </article>
         <article>
           <h3 data-locale="ui.config.general.layout"> 레이아웃 </h3>
-          <blockquote data-locale="ui.config.general.margin-alert">
-            1칸 이하로 설정하면 그림자가 제대로 표시되지 않습니다.
-          </blockquote>
+          <p class="control">
+            <label for="input-style-content-align"
+                   data-locale="config.style.content-align">
+              내용 정렬
+            </label>
+            <select id="input-style-content-align"
+                    data-config-key="style.content-align">
+              <option value="left" data-locale="general.left"> 왼쪽 </option>
+              <option value="center" data-locale="general.center"> 가운데 </option>
+              <option value="right" data-locale="general.right"> 오른쪽 </option>
+            </select>
+          </p>
           <p class="control">
             <label for="input-style-body-margin"
                    data-locale="config.style.body-margin">
@@ -227,6 +236,9 @@ document.addEventListener('DOMContentLoaded', _ => {
                      min="0" step="0.125" max="0.5" />
             </span>
           </p>
+          <blockquote data-locale="ui.config.general.margin-alert">
+            1칸 이하로 설정하면 그림자가 제대로 표시되지 않습니다.
+          </blockquote>
           <p class="control">
             <label for="input-style-resize-factor"
                    data-locale="config.style.resize-factor">

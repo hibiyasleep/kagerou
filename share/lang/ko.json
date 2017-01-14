@@ -1,4 +1,9 @@
 {
+  "general": {
+    "left": "왼쪽",
+    "center": "가운데",
+    "right": "오른쪽"
+  },
   "ui": {
     "header": {
       "in-develop": "개발 중 버전",
@@ -140,6 +145,7 @@
       "accent-color": "강조",
       "shadow-card": "오버레이 창",
       "shadow-text": "텍스트",
+      "content-align": "내용 정렬",
       "font-size-small": "작은 글자 크기",
       "gauge-height": "게이지 높이",
       "graph-height": "테이블 한 줄 높이"

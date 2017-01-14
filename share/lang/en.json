@@ -1,4 +1,9 @@
 {
+  "general": {
+    "left": "Left",
+    "center": "Center",
+    "right": "Right"
+  },
   "ui": {
     "header": {
       "in-develop": "Develop/Unstable",
@@ -140,6 +145,7 @@
       "accent-color": "Accent",
       "shadow-card": "Window",
       "shadow-text": "Text",
+      "content-align": "Content text alignment",
       "font-size-small": "'Small' fontsize",
       "gauge-height": "Gauge height",
       "graph-height": "Table line height"
