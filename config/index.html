@@ -209,6 +209,15 @@ document.addEventListener('DOMContentLoaded', _ => {
         <article>
           <h3 data-locale="ui.config.general.layout"> 레이아웃 </h3>
           <p class="control">
+            <label for="input-format-use_short_name"
+                   data-locale="config.format.use_short_name">
+              이름을 이니셜로 표시 (글로벌 서버용)
+            </label>
+            <input type="checkbox" id="input-format-use_short_name"
+                   data-type="boolean"
+                   data-config-key="format.use_short_name" />
+          </p>
+          <p class="control">
             <label for="input-style-content-align"
                    data-locale="config.style.content-align">
               내용 정렬
@@ -219,6 +228,49 @@ document.addEventListener('DOMContentLoaded', _ => {
               <option value="center" data-locale="general.center"> 가운데 </option>
               <option value="right" data-locale="general.right"> 오른쪽 </option>
             </select>
+          </p>
+          <p class="control">
+            <label for="input-style-resize-factor"
+                   data-locale="config.style.resize-factor">
+              UI 크기 조절
+            </label>
+            <span class="input-group">
+              <label class="input-value"
+                     for="input-style-resize-factor">
+                1.0
+              </label>
+              <input type="range" id="input-style-resize-factor"
+                     data-config-key="style.resize-factor"
+                     min="0.75" step="0.125" max="2" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-graph-height"
+                   data-locale="config.style.graph-height">
+              테이블 줄 높이
+            </label>
+            <span class="input-group">
+              <label class="input-value" for="input-style-graph-height">
+              </label>
+              <input type="range" id="input-style-graph-height"
+                     data-config-key="style.graph-height"
+                     data-unit="rem"
+                     min="1" step="0.25" max="2.5"/>
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-gauge-height"
+                   data-locale="config.style.gauge-height">
+              게이지 높이
+            </label>
+            <span class="input-group">
+              <label class="input-value" for="input-style-gauge-height">
+              </label>
+              <input type="range" id="input-style-gauge-height"
+                     data-config-key="style.gauge-height"
+                     data-unit="%"
+                     min="0" step="5" max="100"/>
+            </span>
           </p>
           <p class="control">
             <label for="input-style-body-margin"
@@ -237,49 +289,6 @@ document.addEventListener('DOMContentLoaded', _ => {
             </span>
           </p>
           <p class="control">
-            <label for="input-style-resize-factor"
-                   data-locale="config.style.resize-factor">
-              UI 크기 조절
-            </label>
-            <span class="input-group">
-              <label class="input-value"
-                     for="input-style-resize-factor">
-                1.0
-              </label>
-              <input type="range" id="input-style-resize-factor"
-                     data-config-key="style.resize-factor"
-                     min="0.75" step="0.125" max="2" />
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-gauge-height"
-                   data-locale="config.style.gauge-height">
-              게이지 높이
-            </label>
-            <span class="input-group">
-              <label class="input-value" for="input-style-gauge-height">
-              </label>
-              <input type="range" id="input-style-gauge-height"
-                     data-config-key="style.gauge-height"
-                     data-unit="%"
-                     min="0" step="5" max="100"/>
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-graph-height"
-                   data-locale="config.style.graph-height">
-              테이블 줄 높이
-            </label>
-            <span class="input-group">
-              <label class="input-value" for="input-style-graph-height">
-              </label>
-              <input type="range" id="input-style-graph-height"
-                     data-config-key="style.graph-height"
-                     data-unit="rem"
-                     min="1" step="0.25" max="2.5"/>
-            </span>
-          </p>
-          <p class="control">
             <label for="input-style-body-font"
                    data-locale="config.style.body-font">
               본문 폰트
@@ -287,15 +296,6 @@ document.addEventListener('DOMContentLoaded', _ => {
             <input type="text" id="input-style-body-font"
                    data-config-key="style.body-font"
                    style="flex-grow: 50;"/>
-          </p>
-          <p class="control">
-            <label for="input-format-use_short_name"
-                   data-locale="config.format.use_short_name">
-              이름을 이니셜로 표시 (글로벌 서버용)
-            </label>
-            <input type="checkbox" id="input-format-use_short_name"
-                   data-type="boolean"
-                   data-config-key="format.use_short_name" />
           </p>
         </article>
         <article>
