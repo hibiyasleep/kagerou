@@ -36,7 +36,6 @@
         "combine_pet": "펫 합산",
         "split-by-comma": "쉼표(,)로 구분합니다.",
         "layout": "레이아웃",
-        "margin-alert": "1칸 이하로 설정하면 그림자가 제대로 표시되지 않습니다.",
         "footer": {
           "_": "하단 바 항목",
           "rank": "현재 순위",
