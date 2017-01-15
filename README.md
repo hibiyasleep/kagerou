@@ -2,33 +2,43 @@
 
 ACT-OverlayPlugin skin for FF14. pronounced as /ka-ge-row/ (not j-like g).
 
-Modern, Easily configurable, always up-to-date.
-
-
-## Usage
-
-No download, please first read `Warning` below.
-Use this as overlay URL: `https://hibiyasleep.github.io/kagerou/overlay`.
-
-1. Open ACT.
-2. Plugins > OverlayPlugin.dll > Add 'Mini Parse' with any name.
-3. Read warning below.
-4. go to 'YOUR NAME HERE' tab, and set url as above.
+Modern, Material Design, easily configurable, cloud-hosted and always up-to-date.
 
 ## Warning
 
 ### EnmityOverlay may conflict with OverlayPlugin
 
-that's no way, since I don't have many knowledge for plugins.
+There's no way to fix, since I don't have much knowledge for plugins.
 
 ### **OverlayPlugin 0.3.3.11** Required!!!
 
-if you are using older version, settings WILL NOT saved!
+If you are using older version, settings WILL NOT saved!
+
+If there's 2 buttons: you are on legacy. Get [Latest](https://github.com/hibiyasleep/OverlayPlugin/releases/tag/0.3.3.11) here.
+   There should be 3 buttons, named like this: `Copy`, `Open DevTools`, `Reload`. See screenshots below.
+
+---
+
+## Usage
+
+### Quick setup
+
+No download needed, please first read `Warning` above.
+Use this as overlay URL:
+
+> `https://hibiyasleep.github.io/kagerou/overlay`
+
+![act-settings](https://veltall.github.io/kagerou/images/act-settings.png)
+
+### Detailed
 
 1. Open ACT.
-2. Plugins > OverlayPlugin.dll > Click any tab, except 'General'
-3. If there's 2 buttons: you are on legacy. Get [Latest](https://github.com/hibiyasleep/OverlayPlugin/releases/tag/0.3.3.11) here.
-   There should be 3 buttons, named like this: "Copy", "Open DevTools", "Reload".
+2. Plugins > OverlayPlugin.dll > Add 'Mini Parse' with any name (e.g. Totoro).
+3. Read warning below.
+4. Go to the new tab (e.g. Totoro), and set url as above.
+
+![detailed instructions](https://veltall.github.io/kagerou/images/totoro.png)
+
 
 ## Features / Screenshots
 
@@ -39,17 +49,26 @@ if you are using older version, settings WILL NOT saved!
 * History lookup
 * Merge/Unmerge Pet stats
 * Blur/Unblur other user's name
-* Configurable tabbed column set
-* (WIP) Display initial of name, instead of full long name
+* Configurable info table (column width, ordering, colors, etc.)
+* (WIP) Display abbreviated name, instead of full long name
 * Localization: Korean, English, or Add your language!
+
+---
 
 ![Settings window - General](https://d.hibiya.moe/zLm.png)
 
-* Fully configurable, No Notepad!
+* Fully configurable, no Notepad! (Settings require `OverlayPlugin 0.3.3.11` to **Save**)
+
+---
 
 ![CSS Customizing; HotS logo spinning](https://d.hibiya.moe/rne.png)
 
-* Custom CSS: Setting isn't enough? Expand as you want!
+* Custom CSS: Setting isn't enough? Expand as you want!  
+Use the DevTools to find the CSS selectors that you wish to modify.
+
+![how to use custom CSS and DevTools](https://veltall.github.io/kagerou/images/custom-css.png)
+
+---
 
 ## Contribute
 
