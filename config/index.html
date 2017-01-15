@@ -1095,8 +1095,8 @@ document.addEventListener('DOMContentLoaded', _ => {
         <ul class="tab tab-switcher text-center"
             data-target="section[data-page=etc] > div">
           <li data-pane="filter" class="active"
-              data-locale="ui.config.etc.filter._">
-            필터
+              data-locale="ui.config.etc.others._">
+            기타
           </li>
           <li data-pane="css"
               data-locale="ui.config.etc.css">
@@ -1106,17 +1106,30 @@ document.addEventListener('DOMContentLoaded', _ => {
         <div class="tabconfig-pane-container tabconfig-noshadow">
           <div class="tabconfig-pane active" data-pane="filter">
             <article>
-              <h3 data-locale="ui.config.etc.filter.general"> 일반 </h3>
-              <blockquote data-locale="ui.config.etc.filter.help.0">
+              <blockquote data-locale="ui.config.etc.others.skill-aliases-help">
+                'The Forbidden Chakra'와 같은 긴 스킬 이름에 대해 약칭을 사용합니다.
+              </blockquote>
+              <p class="control">
+                <label for="input-format-use_skill_aliases"
+                       data-locale="config.format.use_skill_aliases">
+                  스킬 별명 표시 (글로벌 서버용)
+                </label>
+                <input type="checkbox" id="input-format-use_skill_aliases"
+                       data-type="boolean"
+                       data-config-key="format.use_skill_aliases" />
+              </p>
+            <article>
+              <h3 data-locale="ui.config.etc.others.filter"> 필터 </h3>
+              <blockquote data-locale="ui.config.etc.others.filter-help.0">
                 FFXIV_Plugin이 피아식별조차 제대로 못 하는 관계로, 어떻게든
                 적을 표시하지 않도록 시도합니다.
               </blockquote>
-              <blockquote data-locale="ui.config.etc.filter.help.1">
+              <blockquote data-locale="ui.config.etc.others.filter-help.1">
                 뭔가 이상하다면, 아래의 모든 옵션을 꺼 보세요.
               </blockquote>
               <p class="control">
                 <label for="input-filter-unusual_spaces"
-                       data-locale="ui.config.etc.filter.unusual-spaces">
+                       data-locale="ui.config.etc.others.unusual-spaces">
                   소환수도 아닌데 이름에 띄어쓰기가 있음
                 </label>
                 <input type="checkbox" id="input-filter-unusual_spaces"
@@ -1125,7 +1138,7 @@ document.addEventListener('DOMContentLoaded', _ => {
               </p>
               <p class="control">
                 <label for="input-filter-jobless"
-                       data-locale="ui.config.etc.filter.jobless">
+                       data-locale="ui.config.etc.others.jobless">
                   클래스/잡이 비어있음
                 </label>
                 <input type="checkbox" id="input-filter-jobless"
@@ -1134,7 +1147,7 @@ document.addEventListener('DOMContentLoaded', _ => {
               </p>
               <p class="control">
                 <label for="input-filter-non_combatant"
-                       data-locale="ui.config.etc.filter.not-combatant">
+                       data-locale="ui.config.etc.others.not-combatant">
                   전투직이 아님
                 </label>
                 <input type="checkbox" id="input-filter-non_combatant"

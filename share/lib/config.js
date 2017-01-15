@@ -140,7 +140,8 @@ const CONFIG_DEFAULT = {
     },
     merge_pet: true,
     myname: [],
-    use_short_name: false
+    use_short_name: false,
+    use_skill_aliases: true
   },
   filter: {
     unusual_spaces: false,
@@ -281,7 +282,7 @@ const COLUMN_INDEX = {
     max: 'MAXHIT',
     maxhit: {
       v: 'maxhit',
-      f: _ => l.skillname(_)
+      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases)
     },
     last10: 'Last10DPS',
     last30: 'Last30DPS',
@@ -328,7 +329,7 @@ const COLUMN_INDEX = {
     max: 'MAXHEALWARD',
     maxhit: {
       v: 'maxhealward',
-      f: _ => l.skillname(_)
+      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases)
     }
   },
   etc: {

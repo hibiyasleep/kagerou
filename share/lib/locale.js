@@ -43,12 +43,17 @@
       return resolveDotIndex(this.L[this.current], path)
     }
 
-    skillname(n) {
+    skillname(n, useAlias) {
       if(!n) return ''
+
       let o = n.split('-')
       let dot = this._skill(o[0])
       let name = this.get('skill.' + dot[0]) || dot[0]
       let value = o[1] || -1
+
+      if(useAlias && this.get('skill.alias.' + name)) {
+        name = this.get('skill.alias.' + name)
+      }
 
       if(value) {
         return name + (dot[1]? '*' : '') + ': ' + value

@@ -102,10 +102,11 @@
       },
       "etc": {
         "_": "More",
-        "filter": {
-          "_": "Filter",
-          "general": "General",
-          "help": [
+        "others": {
+          "_": "Others",
+          "skill-aliases-help": "Use shorter abbreviations for long skill names like 'The Forbidden Chakra'.",
+          "filter": "Filter",
+          "filter-help": [
             "FFXIV_Plugin does not identify friends or foe, so that this option will try not to display enemies in anyway.",
             "If something wrong, try disable all of option below."
           ],
@@ -183,7 +184,8 @@
         "accuracy": "Failure (Miss / Swing)"
       },
       "myname": "My name",
-      "use_short_name": "Initialize username (as like K. Hibiya)"
+      "use_short_name": "Initialize username (as like K. Hibiya)",
+      "use_skill_aliases": "Use skillname aliases"
     }
   },
   "col": {
@@ -244,5 +246,9 @@
   "zone": {
     "unknown": { }
   },
-  "skill": { }
+  "skill": {
+    "alias": {
+      "The Forbidden Chakra": "Forb..Chakra"
+    }
+  }
 }
