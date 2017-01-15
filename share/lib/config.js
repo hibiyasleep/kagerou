@@ -126,7 +126,6 @@ const CONFIG_DEFAULT = {
     whm: 'rgb(117, 117, 117)', // Gray 600
     sch: 'rgb(121, 134, 203)', // Indigo 300
     ast: 'rgb(121, 85, 72)', // Brown 500
-    'limit-break': '',
     'smn-pet': 'rgba(46, 125, 50, 0.5)',
     'sch-pet': 'rgba(121, 134, 203, 0.5)',
     'mch-pet': 'rgba(0, 151, 167, 0.5)',
