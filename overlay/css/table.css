@@ -55,8 +55,8 @@
 .pet-merged .flex-column-i-owner {
   display: none !important;
 }
-.nameblur .flex-column-i-name > span:not(.name-you),
-.nameblur .flex-column-i-owner > span:not(.name-you) {
+.nameblur #table .flex-column-i-name > span:not(.name-you),
+.nameblur #table .flex-column-i-owner > span:not(.name-you) {
   filter: blur(0.2rem) -webkit-blur(0.2rem);
   -webkit-filter: blur(0.2rem);
 }
