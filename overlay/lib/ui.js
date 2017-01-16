@@ -78,8 +78,7 @@
         <br />
         <span class="history-region">${window.l.zone(histdata.region)}</span>
         |
-        <span class="history-dps">${parseFloat(histdata.dps).toFixed(2)}</span>
-      `.trim()
+        <span class="history-dps">${parseFloat(histdata.dps).toFixed(2)}</span>`
 
       elem.addEventListener('click', e => {
         window.renderer.browseHistory(histdata.id)
