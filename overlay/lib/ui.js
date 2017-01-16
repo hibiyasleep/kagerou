@@ -44,20 +44,11 @@
       let active = window.renderer.currentHistory || 'current'
       let r = []
 
-      dom.innerHTML = ''
-
       if(!current) {
-        dom.innerHTML = `<li>
-          <span data-locale="ui.header.no-data-yet">
-            ${window.l.get('ui.header.no-data-yet')}
-          </span>
-          <br/>
-          <span data-locale="ui.header.please-do-combat">
-            ${window.l.get('ui.header.please-do-combat')}
-          </span>
-        </li>`
         return
       }
+
+      dom.innerHTML = ''
 
       for(let k in window.hist.list) {
         let v = window.hist.browse(k)
