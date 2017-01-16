@@ -26,7 +26,7 @@
           renderer.switchTab(k)
         })
 
-        this.dom.insertAdjacentElement('beforeend', element)
+        this.dom.appendChild(element)
       }
 
       $('.tabs span', 0).classList.add('active')
@@ -74,7 +74,7 @@
 
       r.reverse()
       if(r.length !== 0)
-        r.map(_ => dom.insertAdjacentElement('beforeend', _))
+        r.map(_ => dom.appendChild(_))
     }
 
     _render(histdata, active) {
