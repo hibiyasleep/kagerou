@@ -6,10 +6,6 @@ Modern, Material Design, easily configurable, cloud-hosted and always up-to-date
 
 ## Warning
 
-### EnmityOverlay may conflict with OverlayPlugin
-
-There's no way to fix, since I don't have much knowledge for plugins.
-
 ### **OverlayPlugin 0.3.3.11** Required!!!
 
 If you are using older version, settings WILL NOT saved!
