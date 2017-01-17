@@ -138,7 +138,7 @@
 
       for(let i in d) {
         let o = d[i]
-        if(o.name == 'YOU') { // TODO: is YOU are you?
+        if(isYou(o.name, this.config.format.myname)) {
           rank = parseInt(i) + 1
         }
         table.insertAdjacentHTML(
@@ -168,6 +168,7 @@
     constructor(tab) {
       this.tab = tab
       this.header = this.render(null)
+      this.owners = window.config && window.config.get('format.myname')
     }
 
     _value(v, data) {
@@ -210,7 +211,7 @@
 
       if(data !== null) {
         let cls = sanitize(this[part]('i.class', data)) || 'unknown'
-        r = `<li class="class-${cls} ${data.name === 'YOU'? 'me' : ''}">`
+        r = `<li class="class-${cls} ${isYou(data.name, this.owners)? 'me' : ''}">`
 
         let width = this._value(gaugeBy, data) / max[this.tab.gauge] * 100
         r += `<span class="gauge" style="width:${width}%"></span>`

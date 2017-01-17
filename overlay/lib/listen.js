@@ -34,13 +34,14 @@
 
       if(merged) {
         let players = {}
+        let haveYou = r.some(_ => _.name === 'YOU')
 
         for(let o of r) {
           let name = o.name
           let owner = resolveOwner(name)
           let isUser = !owner
 
-          if(window.config.get('format.myname').indexOf(owner) != -1) {
+          if(haveYou && window.config.get('format.myname').indexOf(owner) != -1) {
             owner = 'YOU'
           }
           owner = owner || name

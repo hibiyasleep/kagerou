@@ -241,11 +241,12 @@ const COLUMN_INDEX = {
       v: _ => resolveClass(_.Job, _.name)[1],
       f: (_, conf) => {
         let text
-        if(conf.format.use_short_name && _ !== 'YOU')
+        let you = isYou(_, conf.format.myname)
+        if(conf.format.use_short_name && !you)
           text = _.split(' ').reduceRight((p, c) => p = c[0] + '. ' + p)
         else
           text = _
-        return `<span class="${_ === 'YOU'? 'name-you' : ''}">${text}</span>`
+        return `<span class="${you? 'name-you' : ''}">${text}</span>`
       }
     }
   },
