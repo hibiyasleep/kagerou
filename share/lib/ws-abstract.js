@@ -3,7 +3,7 @@
 ;(function() {
 
   const resolveSockURI = function() {
-    let o = /[?&]HOST_PORT=([^&]+)/.exec(location.search)
+    let o = /[?&]HOST_PORT=(ws:\/\/[^&]+\/)/.exec(location.search)
     return o && o[1]
   }
 
@@ -24,6 +24,9 @@
       super()
       this.uri = resolveSockURI() + 'MiniParse'
 
+      this.canRetry = RECONNECT_RETRY
+      this.retryTimeout = null
+
       window.addEventListener('message', e => {
         this.emit('message', e.data)
       })
@@ -33,14 +36,24 @@
       if(!this.uri) return false
       this.ws = new WebSocket(this.uri)
 
-      this.ws.onmessage = e => this._onmessage(e)
+      this.ws.onmessage = e => {
+        this.canRetry = RECONNECT_RETRY
+        this._onmessage(e)
+      }
       this.ws.onerror = e => {
         this.ws.close()
         console.error(e)
       }
       this.ws.onclose = e => {
-
+        this.emit('closed', {
+          code: e.code,
+          reconnecting: this.canRetry
+        })
+        this.retryTimeout = setTimeout(_ => {
+          this.connect()
+        }, 2000)
       }
+
     }
 
     request(feature) {
