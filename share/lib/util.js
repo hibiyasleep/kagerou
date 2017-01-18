@@ -159,6 +159,10 @@ const animateNumber = function animateNumber(element, to, option) {
   }, option.timeout)
 }
 
+const isYou = function isYou(name, list) {
+  return (name === 'YOU' || Array.isArray(list) && list.indexOf(name) !== -1)
+}
+
 const displayVersionNumber = function displayVersionNumber(dom) {
   [].map.call(dom, _ => _.textContent = VERSION)
 }

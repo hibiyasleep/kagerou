@@ -1,6 +1,6 @@
 'use strict'
 
-const VERSION = '0.5.5'
+const VERSION = '0.5.6'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
@@ -8,7 +8,7 @@ const CONFIG_DEFAULT = {
     // body
     'resize-factor': 1,
     'body-margin': '0.25rem',
-    'body-font': "'Roboto', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', sans-serif",
+    'body-font': "'Roboto', 'Source Han Sans', 'Meiryo UI', 'MalgunGotinc', sans-serif",
     // header / ui
     'nav-opacity': 1,
     'nav-bg': 'rgba(31, 31, 31, 0.9)',
@@ -241,11 +241,12 @@ const COLUMN_INDEX = {
       v: _ => resolveClass(_.Job, _.name)[1],
       f: (_, conf) => {
         let text
-        if(conf.format.use_short_name && _ !== 'YOU')
+        let you = isYou(_, conf.format.myname)
+        if(conf.format.use_short_name && !you)
           text = _.split(' ').reduceRight((p, c) => p = c[0] + '. ' + p)
         else
           text = _
-        return `<span class="${_ === 'YOU'? 'name-you' : ''}">${text}</span>`
+        return `<span class="${you? 'name-you' : ''}">${text}</span>`
       }
     }
   },
