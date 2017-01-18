@@ -8,7 +8,7 @@
   }
 
   const RECONNECT_TIMEOUT = 2000
-  const RECONNECT_RETRY = 3
+  const RECONNECT_RETRY = 5
 
   class Layer extends EventEmitter {
 
@@ -45,9 +45,10 @@
         console.error(e)
       }
       this.ws.onclose = e => {
+        if(!this.canRetry) return
         this.emit('closed', {
           code: e.code,
-          reconnecting: this.canRetry
+          reconnecting: this.canRetry--
         })
         this.retryTimeout = setTimeout(_ => {
           this.connect()
