@@ -69,7 +69,7 @@
       else if(o[2] === undefined)
         return [n, false]
       else if(o[2] === ' (*)')
-        return [n, true]
+        return [o[1], true]
       else
         return []
     }
