@@ -123,7 +123,7 @@
     }
 
     push(data) {
-      if(!data || !data.Encounter) return
+      if(!data || !data.Encounter || data.Encounter.hits < 1) return
 
       if(this.isNewEncounter(data.Encounter)) {
         if(config.get('format.myname').length === 0
