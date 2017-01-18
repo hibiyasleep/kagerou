@@ -156,7 +156,7 @@
 
   if('OverlayPluginApi' in window) {
     window.layer = new LegacyLayer()
-  } else if(resolveSockURI) {
+  } else if(resolveSockURI()) {
     window.layer = new WSLayer()
   } else {
     window.layer = new Layer()
