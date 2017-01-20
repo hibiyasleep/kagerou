@@ -11,11 +11,9 @@
   const RECONNECT_RETRY = 5
 
   class Layer extends EventEmitter {
-
     constructor() { super() }
     connect() { return true }
-    request() { return false }
-
+    request(feature) { return false }
   }
 
   class WSLayer extends Layer {
