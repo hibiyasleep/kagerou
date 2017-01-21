@@ -84,6 +84,8 @@ const switchTab = function switchTab(target) {
         _.value = value.join(', ')
       } else if(type === 'boolean') {
         _.checked = value
+      } else if(type === 'integer') {
+        _.value = +value
       } else {
         _.value = ((value || '') + '').replace(new RegExp(unit, 'g'), '')
       }
