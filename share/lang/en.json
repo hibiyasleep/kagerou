@@ -184,7 +184,7 @@
         "accuracy": "Failure (Miss / Swing)"
       },
       "myname": "My name",
-      "use_short_name": "Initialize username (as like K. Hibiya)",
+      "use_short_name": "Initialize username",
       "use_skill_aliases": "Use skillname aliases"
     }
   },
