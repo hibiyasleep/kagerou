@@ -8,7 +8,7 @@ const CONFIG_DEFAULT = {
     // body
     'resize-factor': 1,
     'body-margin': '0.25rem',
-    'body-font': "'Roboto', 'Source Han Sans', 'Meiryo UI', 'MalgunGotinc', sans-serif",
+    'body-font': "'Roboto', 'Source Han Sans', 'Meiryo UI', '맑은 고딕', sans-serif",
     // header / ui
     'nav-opacity': 1,
     'nav-bg': 'rgba(31, 31, 31, 0.9)',
