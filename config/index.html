@@ -213,9 +213,14 @@ document.addEventListener('DOMContentLoaded', _ => {
                    data-locale="config.format.use_short_name">
               이름을 이니셜로 표시 (글로벌 서버용)
             </label>
-            <input type="checkbox" id="input-format-use_short_name"
-                   data-type="boolean"
-                   data-config-key="format.use_short_name" />
+            <select id="input-format-use_short_name"
+                    data-type="integer"
+                    data-config-key="format.use_short_name">
+              <option value="0">Kuriyama Hibiya</option>
+              <option value="1">K. Hibiya</option>
+              <option value="2">Kuriyama H.</option>
+              <option value="3">K. H.</option>
+            </select>
           </p>
           <p class="control">
             <label for="input-style-content-align"
