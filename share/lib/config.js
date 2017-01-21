@@ -140,7 +140,7 @@ const CONFIG_DEFAULT = {
     },
     merge_pet: true,
     myname: [],
-    use_short_name: false,
+    use_short_name: 0,
     use_skill_aliases: true
   },
   filter: {
@@ -240,13 +240,16 @@ const COLUMN_INDEX = {
     name: {
       v: _ => resolveClass(_.Job, _.name)[1],
       f: (_, conf) => {
-        let text
+        let name = _.split(' ')
+        let flag = +conf.format.use_short_name
         let you = isYou(_, conf.format.myname)
-        if(conf.format.use_short_name && !you)
-          text = _.split(' ').reduceRight((p, c) => p = c[0] + '. ' + p)
-        else
-          text = _
-        return `<span class="${you? 'name-you' : ''}">${text}</span>`
+        if(!you && name.length >= 2) {
+          if((flag & 1) && typeof name[0] === 'string') // Firstname
+            name[0] = name[0][0] + '.'
+          if((flag & 2) && typeof name[1] === 'string') // Lastname
+            name[1] = name[1][0] + '.'
+        }
+        return `<span class="${you? 'name-you' : ''}">${name.join(' ')}</span>`
       }
     }
   },
