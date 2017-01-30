@@ -14,7 +14,7 @@
     constructor() {
       super()
 
-      this.feature = []
+      this.features = []
 
       window.addEventListener('message', e => {
         this.emit('message', {
