@@ -49,7 +49,7 @@
       this.current = id
       this.updateHeader()
       if(window.hist.current)
-        this.update(window.hist)
+        this.update()
     }
 
     browseHistory(id) {
@@ -79,13 +79,13 @@
       }
     }
 
-    update(hist) {
-      if(!hist.currentData) return
+    update() {
+      if(!window.hist.currentData) return
 
       if(!this.currentHistory) {
-        this.render(hist.current)
+        this.render(window.hist.current)
       } else {
-        this.render(hist.browse(this.currentHistory).data)
+        this.render(window.hist.browse(this.currentHistory).data)
       }
     }
 

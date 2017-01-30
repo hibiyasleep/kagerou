@@ -76,7 +76,7 @@ try {
   layer.connect()
   layer.on('data', d => {
     window.hist.push(d)
-    window.renderer.update(window.hist)
+    window.renderer.update()
   })
 
   window.hist = new History()
