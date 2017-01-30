@@ -162,7 +162,16 @@ const switchTab = function switchTab(target) {
       config.set('custom_css', window.editor.getValue())
 
       config.save()
-      OverlayPluginApi.broadcastMessage('restyle')
+      if(window.OverlayPluginApi) {
+        OverlayPluginApi.broadcastMessage('restyle')
+      } else if(window.opener) {
+        window.opener.postMessage('restyle', '*')
+      } else {
+        new dialog('error', {
+          title: window.locale.get('ui.config.dialog.manual-reload.title'),
+          content: window.locale.get('ui.config.dialog.manual-reload.content')
+        })
+      }
     })
 
   })

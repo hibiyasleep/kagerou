@@ -29,7 +29,11 @@
         "really": "Really reset these settings?",
         "undone": "there's no undo!",
         "yes": "Yes",
-        "no": "No"
+        "no": "No",
+        "manual-reload": {
+          "title": "Cannot reload overlay!",
+          "content": "Please reload overlay manually."
+        }
       },
       "general": {
         "_": "General",

@@ -172,7 +172,7 @@
         window.locale.localizeAll(pane)
 
       this.container.tab.insertBefore(tab, this.newTabButton)
-      this.container.pane.insertAdjacentElement('beforeend', pane)
+      this.container.pane.appendChild(pane)
 
     }
 

@@ -26,7 +26,7 @@
           renderer.switchTab(k)
         })
 
-        this.dom.insertAdjacentElement('beforeend', element)
+        this.dom.appendChild(element)
       }
 
       $('.tabs span', 0).classList.add('active')
@@ -65,7 +65,7 @@
 
       r.reverse()
       if(r.length !== 0)
-        r.map(_ => dom.insertAdjacentElement('beforeend', _))
+        r.map(_ => dom.appendChild(_))
     }
 
     _render(histdata, active) {
@@ -219,16 +219,8 @@
   })
 
 
-  document.addEventListener('onBroadcastMessageReceive', e => {
-    let message
-
-    try {
-      message = e.detail.message
-    } catch(e) {
-      return
-    }
-
-    switch(message) {
+  window.layer.on('message', e => {
+    switch(e.message) {
       case 'reload':
         location.reload()
         break

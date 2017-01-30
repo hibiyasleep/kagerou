@@ -38,7 +38,7 @@
             this._remove(button.parentNode.parentNode)
           })
           button.textContent = window.locale.get('ui.config.dialog.' + b)
-          buttons.insertAdjacentElement('beforeend', button)
+          buttons.appendChild(button)
         }
       } else {
         let button = document.createElement('button')
@@ -46,7 +46,7 @@
         button.addEventListener('click', _ => {
           this._remove(button.parentNode.parentNode)
         })
-        buttons.insertAdjacentElement('beforeend', button)
+        buttons.appendChild(button)
       }
 
       dom.insertAdjacentElement('afterbegin', buttons)
@@ -62,9 +62,11 @@
     _insert() {
       let section = $('section.active', 0)
       if(section.classList.contains('tabbed-section'))
-        section.insertAdjacentElement('afterBegin', this.dom)
-      else
-        $('main', 0).insertAdjacentElement('afterBegin', this.dom)
+        section.insertBefore(this.dom, section.firstChild)
+      else {
+        let main = $('main', 0)
+        main.insertBefore(this.dom, main.firstChild)
+      }
       setTimeout(_ => this.dom.classList.remove('removing'), 1)
     }
     _remove() {

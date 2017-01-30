@@ -190,3 +190,27 @@ class EventEmitter {
 document.addEventListener('DOMContentLoaded', function(e) {
   $map('.version', _ => _.textContent = VERSION)
 })
+
+class EventEmitter {
+  /* Copyright (c) 2011 Jerome Etienne, http://jetienne.com - MIT License */
+
+  constructor() { }
+
+  on(event, fct){
+    this._events = this._events || {}
+    this._events[event] = this._events[event]	|| []
+    this._events[event].push(fct)
+  }
+
+  off(event, fct){
+    this._events = this._events || {}
+    if(!(event in this._events)) return
+    this._events[event].splice(this._events[event].indexOf(fct), 1)
+  }
+
+  emit(event/*, args...*/){
+    this._events = this._events || {}
+    if(!(event in this._events)) return
+    this._events[event].forEach(_ => _.apply(this, [].slice.call(arguments, 1)))
+  }
+}

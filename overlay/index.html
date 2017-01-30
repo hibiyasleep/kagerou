@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title> kagerou overlay </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="css/reset.css" />
     <script src="https://cdn.ravenjs.com/3.9.1/raven.min.js"></script>
@@ -28,6 +29,7 @@ Raven.config('https://bbd31ac3a4ca44d386016ff32fb0512c@sentry.io/123696', {
 Raven.setRelease(VERSION)
 
     </script>
+    <script src="../share/lib/ws-abstract.js"></script>
     <script src="../share/lib/locale.js"></script>
     <script src="lib/render.js"></script>
     <script src="lib/listen.js"></script>
@@ -71,22 +73,16 @@ try {
   })
 
   // listen
-  const listener = e => {
-    if(!window.hist) return
-    window.hist.push(e.detail)
+  layer.connect()
+  layer.on('data', d => {
+    window.hist.push(d)
     window.renderer.update(window.hist)
-  }
-
-  document.addEventListener('onOverlayDataUpdate', listener)
-  document.addEventListener('message', e => {
-    if(e.data.type == 'onOverlayDataUpdate') {
-      listener(e)
-    }
   })
 
   window.hist = new History()
 
   window.addEventListener('load', _ => $('.splash', 0).classList.add('hidden') )
+
 } catch(e) {
   console.error(e)
   Raven.captureException(e)
