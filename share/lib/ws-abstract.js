@@ -13,12 +13,18 @@
   class Layer extends EventEmitter {
     constructor() {
       super()
+
+      this.feature = []
+
       window.addEventListener('message', e => {
         this.emit('message', {
           type: 'window',
           message: e.data
         })
       })
+    }
+    supported(feature) {
+      return this.features.indexOf(feature) !== -1
     }
     connect() { return true }
     request(feature) { return false }
@@ -36,6 +42,8 @@
       window.addEventListener('message', e => {
         this.emit('message', e.data)
       })
+
+      this.features = ['end']
     }
 
     connect() {
@@ -125,6 +133,10 @@
     constructor() {
       super()
       this.connected = false
+      this.features = []
+      if(window.OverlayPluginApi && window.OverlayPluginApi.endEncounter) {
+        this.features.push('end')
+      }
     }
 
     connect() {

@@ -187,7 +187,7 @@
       }
     }, {
       name: 'end-encounter',
-      callback: _ => OverlayPluginApi.endEncounter()
+      callback: _ => layer.request('end')
     }, {
       name: 'settings',
       callback: _ => {
@@ -210,7 +210,7 @@
       })
     })
 
-    if(!('OverlayPluginApi' in window && 'endEncounter' in OverlayPluginApi)) {
+    if(!layer.supported('end')) {
       document.body.classList.add('legacy-overlayplugin')
     }
 
