@@ -28,12 +28,13 @@
         if(callback) callback(this.L[lang])
         return this.L[lang]
       }
+
       fetch(LOCALE_PATH + lang + '.json').then(res => {
         if(!res.ok) return false
         return res.json()
       }).then(json => {
         this.L[lang] = json
-        this.emit('loaded', { lang: lang })
+        this.emit('load', { lang: lang })
         if(callback) callback(json)
       })
     }
