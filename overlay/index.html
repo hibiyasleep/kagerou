@@ -43,11 +43,9 @@ try {
 
   config.load()
   config.setResizeFactor()
-
-  // style
   config.attachOverlayStyle('overlay')
 
-  // render
+  window.hist = new History()
 
   document.addEventListener('DOMContentLoaded', e => {
     // locale
@@ -64,6 +62,14 @@ try {
       $('.history', 0).addEventListener('click', e => {
         window.historyUI.updateList()
       })
+
+      // listen
+
+      layer.connect()
+      layer.on('data', d => {
+        window.hist.push(d)
+        window.renderer.update()
+      })
     })
 
     $map('svg', _ => {
@@ -72,14 +78,6 @@ try {
     })
   })
 
-  // listen
-  window.hist = new History()
-
-  layer.connect()
-  layer.on('data', d => {
-    window.hist.push(d)
-    window.renderer.update()
-  })
 
   window.addEventListener('load', _ => $('.splash', 0).classList.add('hidden') )
 
