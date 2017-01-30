@@ -78,7 +78,7 @@ try {
   layer.connect()
   layer.on('data', d => {
     window.hist.push(d)
-    window.renderer.update(window.hist)
+    window.renderer.update()
   })
 
   window.addEventListener('load', _ => $('.splash', 0).classList.add('hidden') )
