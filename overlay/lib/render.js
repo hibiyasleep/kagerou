@@ -80,7 +80,6 @@
     }
 
     update(hist) {
-      console.log(hist)
       if(!hist.currentData) return
 
       if(!this.currentHistory) {
