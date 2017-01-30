@@ -2,10 +2,6 @@
 
 ;(function(){
 
-  const cell = function cell(col, value) {
-    return `<span class="flex-column flex-column-${sanitize(col)}">${value}</span>\n`
-  }
-
   const sanitize = _ => _.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
 
   const NON_COMBATANT_JOBS = [
@@ -64,7 +60,8 @@
     }
 
     updateHeader() {
-      $('#header').outerHTML = this.template.header
+      let h = $('#header')
+      h.parentNode.replaceChild(this.template.header, h)
     }
 
     updateFooter(d) {
@@ -141,10 +138,7 @@
         if(isYou(o.name, this.config.format.myname)) {
           rank = parseInt(i) + 1
         }
-        table.insertAdjacentHTML(
-          'beforeend',
-          this.template.render(o, max)
-        )
+        table.appendChild(this.template.render(o, max))
       }
 
       // footer (rdps, rhps)
@@ -179,30 +173,37 @@
     }
 
     part(c, data) {
+      let el = document.createElement('span')
+      el.className = `flex-column flex-column-${sanitize(c)}`
+
+      if(!data) {
+        let content = window.l.loaded? window.l.get(`col.${c}.0`) : '...'
+        el.setAttribute('data-locale', `col.${c}.0`)
+        el.innerHTML = content
+        return el
+      }
       const col = resolveDotIndex(COLUMN_INDEX, c)
 
+      let val
       if(typeof col === 'string') {
-        return data[col]
+        val = data[col]
+        el.innerHTML = val
       } else {
-        let val = this._value(col.v, data)
+        val = this._value(col.v, data)
 
         if(typeof col.f === 'function')
-          return col.f(val, window.config.get())
+          el.innerHTML = col.f(val, window.config.get())
         else
-          return val
+          el.innerHTML = val
       }
-    }
-
-    getTitle(col) {
-      let content = '...'
-      if(window.l.loaded)
-        content = window.l.get(`col.${col}.0`)
-      return `<span data-locale="col.${col}.0">${content}</span>`
+      if(val == 0 || val === '0%' || val === '---') {
+        el.classList.add('zero')
+      }
+      return el
     }
 
     render(data, max) {
-      let r = data == null? '<li id="header">' : ''
-      let part = data == null? 'getTitle' : 'part'
+      let el = document.createElement('li')
       let gaugeBy = resolveDotIndex(COLUMN_INDEX, this.tab.gauge)
 
       if(gaugeBy.v) {
@@ -210,20 +211,21 @@
       }
 
       if(data !== null) {
-        let cls = sanitize(this[part]('i.class', data)) || 'unknown'
-        r = `<li class="class-${cls} ${isYou(data.name, this.owners)? 'me' : ''}">`
+        let cls = sanitize(COLUMN_INDEX.i.class.v(data))
+        el.classList.add('class-' + (cls || 'unknown'))
+        el.classList.toggle('me', isYou(data.name, this.owners))
 
         let width = this._value(gaugeBy, data) / max[this.tab.gauge] * 100
-        r += `<span class="gauge" style="width:${width}%"></span>`
+        el.innerHTML = `<span class="gauge" style="width:${width}%"></span>`
+      } else {
+        el.id = 'header'
       }
 
       for(let section of this.tab.col) {
-        r += cell(section, this[part](section, data))
+        el.appendChild(this.part(section, data))
       }
 
-      r += '</li>'
-
-      return r
+      return el
     }
 
   }
