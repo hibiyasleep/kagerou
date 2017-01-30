@@ -8,9 +8,9 @@
 
   class Locale {
 
-    constructor(callback) {
+    constructor(lang, callback) {
       this.L = {}
-      this.current = window.config.get('lang') || CONFIG_DEFAULT.locale || 'en'
+      this.current = lang || CONFIG_DEFAULT.locale || 'en'
       this.load(this.current, callback || (_ => this.localizeAll()) )
     }
 

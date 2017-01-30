@@ -86,7 +86,7 @@ window.config = new Config()
 config.load()
 config.setResizeFactor()
 
-window.locale = new Locale()
+window.locale = new Locale(window.config.get('lang'))
 
 document.addEventListener('DOMContentLoaded', _ => {
   window.tabconfig = new Tabconfig()
