@@ -163,10 +163,30 @@ const isYou = function isYou(name, list) {
   return (name === 'YOU' || Array.isArray(list) && list.indexOf(name) !== -1)
 }
 
-const displayVersionNumber = function displayVersionNumber(dom) {
-  [].map.call(dom, _ => _.textContent = VERSION)
+class EventEmitter {
+  /* Copyright (c) 2011 Jerome Etienne, http://jetienne.com - MIT License */
+
+  constructor() { }
+
+  on(event, fct){
+    this._events = this._events || {}
+    this._events[event] = this._events[event]	|| []
+    this._events[event].push(fct)
+  }
+
+  off(event, fct){
+    this._events = this._events || {}
+    if(!(event in this._events)) return
+    this._events[event].splice(this._events[event].indexOf(fct), 1)
+  }
+
+  emit(event/*, args...*/){
+    this._events = this._events || {}
+    if(!(event in this._events)) return
+    this._events[event].forEach(_ => _.apply(this, [].slice.call(arguments, 1)))
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function(e) {
-  displayVersionNumber($('.version'))
+  $map('.version', _ => _.textContent = VERSION)
 })
