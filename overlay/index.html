@@ -73,13 +73,13 @@ try {
   })
 
   // listen
+  window.hist = new History()
+
   layer.connect()
   layer.on('data', d => {
     window.hist.push(d)
     window.renderer.update(window.hist)
   })
-
-  window.hist = new History()
 
   window.addEventListener('load', _ => $('.splash', 0).classList.add('hidden') )
 

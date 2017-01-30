@@ -49,7 +49,7 @@
       this.current = id
       this.updateHeader()
       if(window.hist.current)
-        this.update()
+        this.update(window.hist)
     }
 
     browseHistory(id) {
