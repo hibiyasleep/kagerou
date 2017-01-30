@@ -72,7 +72,7 @@ try {
 
   // listen
   const listener = e => {
-    if(window.hist) return
+    if(!window.hist) return
     window.hist.push(e.detail)
     window.renderer.update(window.hist)
   }
