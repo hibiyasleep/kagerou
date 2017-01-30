@@ -79,13 +79,14 @@
       }
     }
 
-    update() {
-      if(!window.hist.currentData) return
+    update(hist) {
+      console.log(hist)
+      if(!hist.currentData) return
 
       if(!this.currentHistory) {
-        this.render(window.hist.current)
+        this.render(hist.current)
       } else {
-        this.render(window.hist.browse(this.currentHistory).data)
+        this.render(hist.browse(this.currentHistory).data)
       }
     }
 

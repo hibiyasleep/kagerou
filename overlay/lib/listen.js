@@ -151,11 +151,6 @@
       } else {
         this.currentData.update(data)
       }
-
-      if(!window.renderer && window.l.loaded) {
-        window.renderer = new Renderer(window.config.get())
-      }
-      window.renderer && window.renderer.update()
     }
 
     updateLastEncounter(encounter) {

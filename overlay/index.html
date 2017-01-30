@@ -72,7 +72,9 @@ try {
 
   // listen
   const listener = e => {
-    window.hist && window.hist.push(e.detail)
+    if(window.hist) return
+    window.hist.push(e.detail)
+    window.renderer.update(window.hist)
   }
 
   document.addEventListener('onOverlayDataUpdate', listener)
