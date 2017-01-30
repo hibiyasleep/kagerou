@@ -11,7 +11,15 @@
   const RECONNECT_RETRY = 5
 
   class Layer extends EventEmitter {
-    constructor() { super() }
+    constructor() {
+      super()
+      window.addEventListener('message', e => {
+        this.emit('message', {
+          type: 'window',
+          message: e.data
+        })
+      })
+    }
     connect() { return true }
     request(feature) { return false }
   }

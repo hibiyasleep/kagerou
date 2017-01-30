@@ -219,16 +219,8 @@
   })
 
 
-  document.addEventListener('onBroadcastMessageReceive', e => {
-    let message
-
-    try {
-      message = e.detail.message
-    } catch(e) {
-      return
-    }
-
-    switch(message) {
+  window.layer.on('message', e => {
+    switch(e.message) {
       case 'reload':
         location.reload()
         break
