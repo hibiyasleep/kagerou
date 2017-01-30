@@ -49,7 +49,8 @@ try {
 
   document.addEventListener('DOMContentLoaded', e => {
     // locale
-    window.l = new Locale(_ => {
+    window.l = new Locale()
+    window.l.on('load', e => {
       window.l.localizeAll()
       window.renderer = new Renderer(window.config.get())
       window.renderer.updateHeader()

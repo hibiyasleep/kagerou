@@ -6,9 +6,11 @@
   const SKILL_REGEX = /^(.+?)( \(\*\))?$/
   const LOCALE_PATH = '../share/lang/'
 
-  class Locale {
+  class Locale extends EventEmitter {
 
     constructor(callback) {
+      super()
+
       this.L = {}
       this.current = window.config.get('lang') || CONFIG_DEFAULT.locale || 'en'
       this.load(this.current, callback || (_ => this.localizeAll()) )
@@ -31,6 +33,7 @@
         return res.json()
       }).then(json => {
         this.L[lang] = json
+        this.emit('loaded', { lang: lang })
         if(callback) callback(json)
       })
     }
