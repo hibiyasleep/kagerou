@@ -60,7 +60,9 @@
   filter: blur(0.2rem) -webkit-blur(0.2rem);
   -webkit-filter: blur(0.2rem);
 }
-
+.zero {
+  opacity: 0.75;
+}
 /* Position Helpers */
 .class-gld .gauge, .class-pld .gauge, .class-mrd .gauge,
 .class-war .gauge, .class-drk .gauge { /* tank; blue 500 */
