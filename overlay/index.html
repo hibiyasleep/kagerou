@@ -64,10 +64,13 @@ try {
       })
 
       // listen
-
       layer.connect()
       layer.on('data', d => {
         window.hist.push(d)
+        if(!window.renderer) { // why why
+          window.renderer = new Renderer(window.config.get())
+          window.renderer.updateHeader()
+        }
         window.renderer.update()
       })
     })
