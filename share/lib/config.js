@@ -284,7 +284,7 @@ const COLUMN_INDEX = {
     miss: 'misses',
     hitfail: 'hitfailed',
     critical: {
-      v: _ => _.crithit / _.swings * 100
+      v: _ => _.crithit / _.swings * 100,
       f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + '%'
     },
     max: 'MAXHIT',
@@ -333,7 +333,7 @@ const COLUMN_INDEX = {
     over: 'OverHealPct',
     swing: 'heals',
     critical: {
-      v: _ => _.critheal / _.heals * 100
+      v: _ => _.critheal / _.heals * 100,
       f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + '%'
     },
     cure: 'cures',
