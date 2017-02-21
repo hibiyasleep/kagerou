@@ -190,9 +190,9 @@ const COLUMN_SORTABLE = [
 const COLUMN_MERGEABLE = [
   'encdps', 'damage', 'damage%',
   'swings', 'misses', 'hitfailed',
-  'crithit', 'damagetaken', 'healstaken',
+  'crithits', 'damagetaken', 'healstaken',
   'enchps', 'healed', 'healed%',
-  'heals', 'critheal', 'cures',
+  'heals', 'critheals', 'cures',
   'powerdrain', 'powerheal',
   'Last10DPS', 'Last30DPS', 'Last60DPS'
 ]
@@ -284,7 +284,7 @@ const COLUMN_INDEX = {
     miss: 'misses',
     hitfail: 'hitfailed',
     critical: {
-      v: _ => _.crithit / _.swings * 100,
+      v: _ => (parseInt(_.crithits) || 0) / (parseInt(_.swings) || 1) * 100,
       f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + '%'
     },
     max: 'MAXHIT',
@@ -333,7 +333,7 @@ const COLUMN_INDEX = {
     over: 'OverHealPct',
     swing: 'heals',
     critical: {
-      v: _ => _.critheal / _.heals * 100,
+      v: _ => (parseInt(_.critheals) || 0) / (parseInt(_.heals) || 1) * 100,
       f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + '%'
     },
     cure: 'cures',
