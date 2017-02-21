@@ -185,7 +185,8 @@
         "_": "Decimal accuracy",
         "dps": "DPS",
         "hps": "HPS",
-        "accuracy": "Failure (Miss / Swing)"
+        "accuracy": "Failure (Miss / Swing)",
+        "critical": "% of Critical hits/heals"
       },
       "myname": "My name",
       "use_short_name": "Initialize username",

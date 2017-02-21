@@ -136,7 +136,8 @@ const CONFIG_DEFAULT = {
     significant_digit: {
       dps: 2,
       hps: 2,
-      accuracy: 2
+      accuracy: 2,
+      critical: 0
     },
     merge_pet: true,
     myname: [],
@@ -282,7 +283,10 @@ const COLUMN_INDEX = {
     swing: 'swings',
     miss: 'misses',
     hitfail: 'hitfailed',
-    critical: 'crithit%',
+    critical: {
+      v: _ => _.crithit / _.swings * 100
+      f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + '%'
+    },
     max: 'MAXHIT',
     maxhit: {
       v: 'maxhit',
@@ -328,7 +332,10 @@ const COLUMN_INDEX = {
     total: 'healed',
     over: 'OverHealPct',
     swing: 'heals',
-    critical: 'critheal%',
+    critical: {
+      v: _ => _.critheal / _.heals * 100
+      f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + '%'
+    },
     cure: 'cures',
     max: 'MAXHEALWARD',
     maxhit: {
