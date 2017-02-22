@@ -168,7 +168,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
 })
 
 const pFloat = function parseLocaledFloat(string) {
-  return parseFloat(string.replace(',', '.'))
+  if(typeof string !== 'string') return string
+  else return parseFloat(string.replace(',', '.'))
 }
 
 const sanitize = _ => _.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-')
