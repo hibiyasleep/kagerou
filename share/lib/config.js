@@ -259,12 +259,12 @@ const COLUMN_INDEX = {
     per_second: {
       v: 'encdps',
       f: (_, conf) => {
-        _ = parseFloat(_)
+        _ = pFloat(_)
         return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
       }
     },
     pct: {
-      v: _ => parseFloat(_['damage%']),
+      v: _ => parseInt(_['damage%']),
       f: _ => {
         if(isNaN(_)) return '---'
         else if(_ >= 100) return '100'
@@ -317,12 +317,12 @@ const COLUMN_INDEX = {
     per_second: {
       v: 'enchps',
       f: (_, conf) => {
-        _ = parseFloat(_)
+        _ = pFloat(_)
         return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.hps)
       }
     },
     pct: {
-      v: _ => parseFloat(_['healed%']),
+      v: _ => parseInt(_['healed%']),
       f: _ => {
         if(isNaN(_)) return '---'
         else if(_ >= 100) return '100'

@@ -2,8 +2,6 @@
 
 ;(function(){
 
-  const sanitize = _ => _.replace(/[^a-zA-Z0-9]/g, '-').toLowerCase()
-
   const NON_COMBATANT_JOBS = [
     'alc', 'arm', 'bsm', 'btn', 'crp', 'cul',
     'fsh', 'gsm', 'ltw', 'min', 'wvr', 'error'

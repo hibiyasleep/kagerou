@@ -167,6 +167,12 @@ document.addEventListener('DOMContentLoaded', function(e) {
   $map('.version', _ => _.textContent = VERSION)
 })
 
+const pFloat = function parseLocaledFloat(string) {
+  return parseFloat(string.replace(',', '.'))
+}
+
+const sanitize = _ => _.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-')
+
 class EventEmitter {
   /* Copyright (c) 2011 Jerome Etienne, http://jetienne.com - MIT License */
 

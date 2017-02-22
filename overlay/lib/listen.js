@@ -4,7 +4,6 @@
 
   const NICK_REGEX = / \(([\uac00-\ud7a3']{1,9}|[A-Z][a-z' ]{0,15})\)$/
 
-  const sanitize = _ => _.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-')
   const toArray = o => Object.keys(o).map(_ => o[_])
   const SORTABLE = {}
 
@@ -48,15 +47,14 @@
 
           if(players[owner]) {
             for(let k of COLUMN_MERGEABLE) {
-              players[owner][k] = parseFloat(o[k])
-                + parseFloat(players[owner][k])
+              players[owner][k] = pFloat(o[k]) + pFloat(players[owner][k])
             }
 
             for(let t in COLUMN_USE_LARGER) {
               let targets = COLUMN_USE_LARGER[t]
               let v
-              let v1 = parseFloat(o[t])
-              let v2 = parseFloat(players[owner][t])
+              let v1 = pFloat(o[t])
+              let v2 = pFloat(players[owner][t])
 
               if(v1 > v2 || isNaN(v2))
                 v = o
@@ -88,8 +86,7 @@
     sort(key, target) {
       let d = (('+-'.indexOf(key[0]))+1 || 1) * 2 - 3
       let k = SORTABLE[key]
-      ;(target || this.data).sort((a, b) =>
-        (parseFloat(a[k]) - parseFloat(b[k])) * d)
+      ;(target || this.data).sort((a, b) => (pFloat(a[k]) - pFloat(b[k])) * d)
 
       if(target) return target
     }
