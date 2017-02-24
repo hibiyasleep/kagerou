@@ -172,12 +172,10 @@
   window.WSLayer = WSLayer
   window.LegacyLayer = LegacyLayer
 
-  if('OverlayPluginApi' in window) {
-    window.layer = new LegacyLayer()
-  } else if(resolveSockURI()) {
+  if(resolveSockURI()) {
     window.layer = new WSLayer()
-  } else {
-    window.layer = new Layer()
+  } else if('OverlayPluginApi' in window) {
+    window.layer = new LegacyLayer()
   }
 
 })()
