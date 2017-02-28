@@ -1,4 +1,4 @@
-@media (max-width: 680px) {
+@media (max-width: 720px) {
   aside {
     width: 4rem;
     white-space: nowrap;
@@ -16,7 +16,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .mobile-only {
     display: inherit;
   }
