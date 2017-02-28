@@ -69,7 +69,7 @@
         if(k == 'rank') {
           this.elem[k].textContent = d[k]
         } else {
-          animateNumber(this.elem[k], parseFloat(d[k]) || 0, {
+          animateNumber(this.elem[k], pFloat(d[k]) || 0, {
             timeout: 266,
             digit: this.acc[k]
           })
