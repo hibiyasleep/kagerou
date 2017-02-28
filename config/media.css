@@ -1,0 +1,76 @@
+@media (max-width: 680px) {
+  aside {
+    width: 4rem;
+    white-space: nowrap;
+    padding: 0.5rem 0.25rem 0.5rem 0.5rem;
+  }
+  aside > h1 {
+    display: none;
+  }
+  aside .menu {
+    overflow-x: hidden;
+    height: 100%;
+  }
+  header, main {
+    width: calc(100vw - 4rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-only {
+    display: inherit;
+  }
+  aside {
+    width: 15rem;
+    max-width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: -16rem;
+
+    transition: left 200ms ease;
+    z-index: 100;
+  }
+  #aside-toggle:checked + .aside-dimmer {
+    pointer-events: all;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  #aside-toggle:checked ~ aside {
+    left: 0;
+  }
+  aside > h1 {
+    display: none;
+  }
+  aside > ul {
+    overflow-x: hidden;
+  }
+  header, main {
+    width: 100vw;
+  }
+  header {
+    height: 4rem;
+  }
+  header > label {
+    display: block;
+
+    padding: 0.75rem;
+    margin: 0.5rem;
+
+    transition: background-color 200ms ease;
+  }
+  header > label:hover {
+    background: rgba(0, 0, 0, 0.125);
+  }
+  header > label:active {
+    background: rgba(0, 0, 0, 0.125);
+  }
+  header > h2 {
+    padding: 1.125rem;
+    padding-left: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  header > ul {
+    padding: 0.5rem;
+  }
+}

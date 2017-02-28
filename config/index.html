@@ -3,9 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <title> kagerou - Settings </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700">
     <link rel="stylesheet" href="../overlay/css/reset.css" />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="media.css" />
     <link rel="stylesheet" href="dialog.css" />
     <script src="https://cdn.rawgit.com/github/fetch/master/fetch.js"></script>
     <script src="lib/sortable-1.5.0-rc1.js"> </script>
@@ -107,10 +109,20 @@ document.addEventListener('DOMContentLoaded', _ => {
     </script>
   </head>
   <body>
-    <aside>
+    <input type="checkbox" class="hidden" id="aside-toggle" />
+    <label class="aside-dimmer" for="aside-toggle"> </label>
+    <aside onclick="$('#aside-toggle').click()">
       <h1 ondblclick="location.reload()"
           data-locale="ui.config._"> 설정 </h1>
       <ul class="menu">
+        <li class="mobile-only">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+          <label data-locale="ui.config._"> 설정 </label>
+        </li>
+        <li class="mobile-only splitter"> </li>
         <li data-page="general">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
@@ -173,6 +185,11 @@ document.addEventListener('DOMContentLoaded', _ => {
       </ul>
     </aside>
     <header>
+      <label for="aside-toggle">
+        <svg class="icon" width="1.5em" height="1.5em" viewBox="0 0 24 24">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+        </svg>
+      </label>
       <h2 data-locale="ui.config.general._"> 일반 </h2>
       <ul class="buttons">
         <li class="button button-primary" id="save"

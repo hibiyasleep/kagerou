@@ -63,6 +63,9 @@ b {
   width: 1.5rem;
   height: 1.5rem;
 }
+.mobile-only {
+  display: none;
+}
 
 input[type=text], select {
   text-align: right;
@@ -102,6 +105,21 @@ button:active, .button:active {
   background: rgba(0, 0, 0, 0.1);
 }
 
+.aside-dimmer {
+  width: 100vw;
+  height: 100vh;
+
+  pointer-events: none;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  z-index: 70;
+
+  transition: background-color 200ms ease;
+}
+
 aside {
   float: left;
   width: 16rem;
@@ -113,16 +131,17 @@ aside {
   background: #006064;
   color: #fff;
   fill: #fff;
+  z-index: 100;
 }
 aside ::-webkit-scrollbar-thumb {
   background: #fff;
 }
-aside > h1 {
+aside h1 {
   margin-bottom: 1rem;
   padding: 0.5rem;
 }
 
-aside > .menu {
+aside .menu {
   overflow-y: auto;
   height: calc(100vh - 6.75rem);
 }
@@ -161,6 +180,9 @@ header {
 
   position: relative;
   z-index: 10;
+}
+header > label {
+  display: none;
 }
 header > h2 {
   padding: 1.5rem;
