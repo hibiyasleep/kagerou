@@ -2,7 +2,7 @@
   aside {
     width: 4rem;
     white-space: nowrap;
-    padding: 0.5rem 0.25rem 0.5rem 0.5rem;
+    padding: 0.5rem;
   }
   aside > h1 {
     display: none;
@@ -23,6 +23,8 @@
   aside {
     width: 15rem;
     max-width: 100%;
+
+    padding: 0.5rem 0.25rem 0.5rem 0.5rem;
 
     position: fixed;
     top: 0;
