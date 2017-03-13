@@ -10,8 +10,7 @@
         data: d.d,
         header: {
           col: header[0].split(','),
-          date: header[1],
-          author: header[2]
+          date: header[1]
         }
       }
     } catch(e) {
@@ -61,7 +60,7 @@
 
     return btoa(unescape(encodeURIComponent(JSON.stringify({
       d: d,
-      h: `${col.join(',')}|${Date.now()}|${author}`
+      h: `${col.join(',')}|${Date.now()}`
     }))))
   }
 
@@ -95,8 +94,6 @@
         output.textContent = '데이터가 잘못되었습니다.'
         return
       }
-
-      output.appendChild(outputRow('작성자', d.header.author))
 
       for(let k of ['style', 'color', 'colwidth', 'tabs']) {
         if(!d.data[k] || d.header.col.indexOf(k) === -1)
