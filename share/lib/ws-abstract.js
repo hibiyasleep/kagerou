@@ -3,7 +3,7 @@
 ;(function() {
 
   const resolveSockURI = function() {
-    let o = /[?&]HOST_PORT=(ws:\/\/[^&]+\/)/.exec(location.search)
+    let o = /[?&]HOST_PORT=(wss?:\/\/[^&]+\/)/.exec(location.search)
     return o && o[1]
   }
 
@@ -14,6 +14,7 @@
     constructor() {
       super()
 
+      this.type = false
       this.features = []
 
       window.addEventListener('message', e => {
@@ -34,6 +35,7 @@
 
     constructor() {
       super()
+      this.type = 'ws'
       this.uri = resolveSockURI() + 'MiniParse'
 
       this.canRetry = RECONNECT_RETRY
@@ -132,6 +134,7 @@
 
     constructor() {
       super()
+      this.type = 'legacy'
       this.connected = false
       this.features = []
       if(window.OverlayPluginApi && window.OverlayPluginApi.endEncounter) {
