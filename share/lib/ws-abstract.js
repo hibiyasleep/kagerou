@@ -158,6 +158,12 @@
           message: e.detail.message
         })
       })
+      document.addEventListener('onEcho', e => {
+        this.emit('message', {
+          type: 'echo',
+          message: e.detail.message
+        })
+      })
       this.connected = true
     }
 
