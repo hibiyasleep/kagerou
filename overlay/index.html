@@ -11,7 +11,7 @@
 'use strict'
 
 Raven.config('https://bbd31ac3a4ca44d386016ff32fb0512c@sentry.io/123696', {
-  whitelistUrls: [/hibiyasleep\.github\.io/],
+  whitelistUrls: [/hibiyasleep\.github\.io/, /kagerou\.hibiya\.moe/],
   dataCallback: function(data) {
     if(window.hist && window.hist.currentData) {
       data.extra.currentData = JSON.stringify(window.hist.currentData)
@@ -36,6 +36,13 @@ Raven.setRelease(VERSION)
     <script src="lib/ui.js" async></script>
     <script>
 'use strict'
+
+// temporal ACTWebSocket fix: Newer OverlayProc doesn't allow 'downgrade'
+// security, from https to unsecured websocket, and GitHub pages forces HTTPS.
+// I know this sucks.
+if(layer && layer.type === 'ws' && location.host === 'hibiyasleep.github.io') {
+  location.href = 'http://kagerou.hibiya.moe/overlay' + search
+}
 
 try {
   // config
@@ -80,7 +87,6 @@ try {
       _.style.height = parseInt(_.getAttribute('height')) / 16 + 'rem'
     })
   })
-
 
   window.addEventListener('load', _ => $('.splash', 0).classList.add('hidden') )
 
@@ -255,6 +261,23 @@ try {
               <br />
               기부: 브라우저에서 <u>hibiya.moe/donate</u>
             </p>
+            <h3 class="unsecure-only">
+              UNSECURE MODE (웹소켓 강제 호환)
+            </h3>
+            <p class="unsecure-only ko-only">
+              kagerou의 보안 수준을 ACTWebSocket에 맞춰
+              <br />
+              낮추어 둔 상태입니다. (https+ws;)
+              <br />
+              <a href="https://hibiyasleep.github.io/kagerou/config/"
+                 target="_blank" style="color: #9cf;">
+                여기를 클릭</a>해서 예전 값을 '내보내기'하고
+              <br />
+              <a href="../config/" target="_blank" style="color: #9cf;">
+                새 설정 창</a>으로 '들여오기'해주세요.
+            </p>
+            <h3> 0.6.8 - 2017/03/13 </h3>
+            <p class="ko-only">- 웹소켓 임시 대처</p>
             <h3> 0.6.7 - 2017/03/01 </h3>
             <p class="ko-only">- 설정 페이지 모바일 지원</p>
             <p class="ko-only">- rdps 소수점 문제 수정</p>

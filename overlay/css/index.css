@@ -49,6 +49,9 @@ mark {
 html.ko .en-only, html.en .ko-only {
   display: none;
 }
+body.https .unsecure-only {
+  display: none;
+}
 
 /* Scrollbar */
 

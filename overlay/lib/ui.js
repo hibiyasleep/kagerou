@@ -214,6 +214,8 @@
       document.body.classList.add('legacy-overlayplugin')
     }
 
+    document.body.classList.add(location.protocol.slice(0, -1))
+
     setFooterVisibility()
 
   })
