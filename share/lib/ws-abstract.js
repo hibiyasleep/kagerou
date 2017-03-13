@@ -143,6 +143,7 @@
     }
 
     connect() {
+      if(this.connected) return
       document.addEventListener('onOverlayDataUpdate', e => {
         this.emit('data', e.detail)
       })
@@ -158,8 +159,8 @@
           message: e.detail.message
         })
       })
-      document.addEventListener('onEcho', e => {
-        this.emit('message', {
+      document.addEventListener('onLogLine', e => {
+        this.emit('logline', {
           type: 'echo',
           message: e.detail.message
         })
