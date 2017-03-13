@@ -101,8 +101,7 @@
         "save-first": "Save First!!",
         "export-help": "The value of 'General &gt; Layout' is included in 'Style' and some values are excluded. <br /> Values that are the same as the default are not exported.",
         "config-to-export": "Config to export",
-        "all": "All",
-        "name-first": "Please set \"General &gt; My name\" first!"
+        "all": "All"
       },
       "etc": {
         "_": "More",

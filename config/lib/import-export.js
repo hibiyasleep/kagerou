@@ -43,12 +43,7 @@
   }
 
   const getExportedValue = function getExportedValue(col) {
-    let author = config.get('format.myname')[0]
     let d = {}
-
-    if(!author) {
-      return ''
-    }
 
     if(!Array.isArray(col)) {
       col = col.split(',')
