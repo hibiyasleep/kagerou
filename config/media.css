@@ -75,4 +75,11 @@
   header > ul {
     padding: 0.5rem;
   }
+  main {
+    height: calc(100vh - 4rem)
+  }
+  .tabbed-section {
+    height: calc(100% + 0.25rem);
+    margin-top: 0;
+  }
 }
