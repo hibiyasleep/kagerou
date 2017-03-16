@@ -201,7 +201,7 @@ main li {
   line-height: var(--graph-height);
   overflow: hidden;
 
-  transition: height 200ms ease;
+  transition: width 200ms ease, height 200ms ease, background 100ms ease;
 }
 .clsicon {
   max-width: 100%;
@@ -269,6 +269,21 @@ footer {
 .collapsed {
   height: calc(var(--graph-height) * 2);
 }
+.collapsed #table {
+  height: var(--graph-height);
+  overflow-y: hidden;
+}
 .collapsed #header, .collapsed #table > li:not(.me) {
   height: 0;
+}
+.collapsed #table[data-width='2'] > li:not(.me),
+.collapsed #table[data-width='3'] > li:not(.me) {
+  width: 0;
+  margin: 0;
+}
+.collapsed #table[data-width='2'] > li.me,
+.collapsed #table[data-width='3'] > li.me {
+  background: none;
+  width: 100%;
+  margin: 0;
 }
