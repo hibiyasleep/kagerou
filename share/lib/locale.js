@@ -97,7 +97,20 @@
       return n
     }
 
-    localizeAll(under) {
+    localizeAll(under, _stack) { // retry stack
+      if(!(this.current in this.L)
+      || JSON.stringify(this.L[this.current]) === '{}' ) {
+        if(_stack < 5) {
+          setTimeout(_ => {
+            _stack = _stack || 0
+            this.localizeAll(under, _stack + 1)
+          }, 200)
+        } else {
+          console.error('Current locale not loaded; try refresh this page.')
+        }
+        return
+      }
+
       $('html', 0).className = this.current
       $map(under, '[data-locale]', _ => {
         let c = _.getAttribute('data-locale')
