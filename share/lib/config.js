@@ -430,7 +430,6 @@ const COLUMN_INDEX = {
     loadStyle(path, section) {
       let variables = copy(this.config.style)
 
-
       if(!Array.isArray(path)) {
         path = [path]
       }
@@ -438,12 +437,16 @@ const COLUMN_INDEX = {
       for(let p of path){
         let sanitizedId = p.replace(/[^a-z]/g, '_')
 
-        fetch(p).then(res => {
-          if(!res.ok) return ''
-          return res.text()
-        }).then(css => {
-          attachStyle(sanitizedId, section, css)
-        })
+        let xhr = new XMLHttpRequest()
+        xhr.open('GET', p, true)
+        xhr.onreadystatechange = _ => {
+          if(xhr.readyState === 4) {
+            if(xhr.status === 200) {
+              attachStyle(sanitizedId, section, xhr.responseText)
+            }
+          }
+        }
+        xhr.send(null)
       }
     }
 

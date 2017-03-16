@@ -22,18 +22,29 @@
     load(lang, callback, forceReload) {
       if(!lang) lang = this.current || 'en'
 
-      if(lang in this.L || forceReload) {
+      if(lang in this.L && forceReload) {
         if(callback) callback(this.L[lang])
         return this.L[lang]
       }
 
-      fetch(LOCALE_PATH + lang + '.json').then(res => {
-        if(!res.ok) return false
-        return res.json()
-      }).then(json => {
-        this.L[lang] = json
-        if(callback) callback(json)
-      })
+      let xhr = new XMLHttpRequest()
+      xhr.open('GET', LOCALE_PATH + lang + '.json')
+
+      xhr.onreadystatechange = _ => {
+        if(xhr.readyState === 4) {
+          if(xhr.status === 200) {
+            let json
+            try {
+              json = JSON.parse(xhr.responseText)
+            } catch(e) {
+              return
+            }
+            this.L[lang] = json
+            if(callback) callback(json)
+          }
+        }
+      }
+      xhr.send(null)
     }
 
     get loaded() {
