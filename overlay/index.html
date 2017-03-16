@@ -61,8 +61,15 @@ try {
       window.renderer = new Renderer(window.config.get())
       window.renderer.updateHeader()
 
-      window.tabdisplay = new TabDisplay()
-      tabdisplay.render()
+      try {
+        window.tabdisplay = new TabDisplay()
+        tabdisplay.render()
+      } catch(e) {
+        setTimeout(_ => {
+          window.tabdisplay = new TabDisplay()
+          tabdisplay.render()
+        }, 200)
+      }
 
       window.historyUI = new HistoryUI()
 
