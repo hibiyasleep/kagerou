@@ -19,6 +19,7 @@
       "end-encounter": "Split encounter",
       "settings": "Settings",
       "reload": "Reload overlay",
+      "fullscreen": "Toggle fullscreen",
       "screenshot": "Take screenshot"
     },
     "config": {
