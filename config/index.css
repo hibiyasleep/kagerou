@@ -188,8 +188,19 @@ header > h2 {
   padding: 1.5rem;
   flex-grow: 100;
 }
+header > h2:not([data-locale='ui.config.tab._']) + .ws-tab-notice {
+  display: none;
+}
+header > .ws-tab-notice {
+  font-size: 0.75rem;
+  margin: 1.375rem 0;
+  padding: 0.5rem;
+  background: rgba(255, 127, 127, 0.25);
+}
 header > ul {
   list-style: none;
+  flex-shrink: 0;
+
   display: flex;
 
   padding: 1.5rem;

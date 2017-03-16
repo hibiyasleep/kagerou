@@ -174,6 +174,28 @@ const switchTab = function switchTab(target) {
       }
     })
 
+    if(navigator.userAgent.indexOf('QtWebEngine') !== -1) {
+      $('.ws-tab-notice', 0).classList.remove('hidden')
+      let dragging
+
+      const copyEvent = (type, event) => {
+        let clone = new event.constructor(event.type, event)
+        clone.cloned = true
+        return clone
+      }
+
+      document.addEventListener('mousedown', _ => {
+        console.log('mousedown, dragging:', dragging, ', event:', _)
+        if(dragging) {
+          dragging = false
+          e = copyEvent('dragend', _)
+          console.log('trying to send drop event to sortable with:', e)
+          window.tabconfig.sortable._onDrop(e)
+        }
+      })
+      document.addEventListener('dragstart', _ => { dragging = true; console.log('set dragging true:', dragging) })
+    }
+
   })
 
 })()

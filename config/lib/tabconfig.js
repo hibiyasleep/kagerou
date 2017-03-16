@@ -56,7 +56,7 @@
         this.append(this.tabs[k])
       }
 
-      Sortable.create(this.container.tab, {
+      this.sortable = Sortable.create(this.container.tab, {
         group: 'tab',
         animation: 166,
         draggable: '.draggable'
