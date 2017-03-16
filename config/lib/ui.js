@@ -16,6 +16,19 @@ const switchTab = function switchTab(target) {
 
 ;(function() {
 
+  let sendMessage = (message) => {
+    if(window.OverlayPluginApi) {
+      OverlayPluginApi.broadcastMessage(message)
+    } else if(window.opener) {
+      window.opener.postMessage(message, '*')
+    } else {
+      new dialog('error', {
+        title: window.locale.get('ui.config.dialog.manual-reload.title'),
+        content: window.locale.get('ui.config.dialog.manual-reload.content')
+      })
+    }
+  }
+
   window.addEventListener('load', function(e) {
 
     // menu switcher
@@ -127,7 +140,7 @@ const switchTab = function switchTab(target) {
           content: window.locale.get('ui.config.dialog.undone'),
           callback: _ => {
             config.reset(key)
-            OverlayPluginApi.broadcastMessage('reload')
+            sendMessage('reload')
             location.reload()
           }
         })
@@ -162,16 +175,7 @@ const switchTab = function switchTab(target) {
       config.set('custom_css', window.editor.getValue())
 
       config.save()
-      if(window.OverlayPluginApi) {
-        OverlayPluginApi.broadcastMessage('restyle')
-      } else if(window.opener) {
-        window.opener.postMessage('restyle', '*')
-      } else {
-        new dialog('error', {
-          title: window.locale.get('ui.config.dialog.manual-reload.title'),
-          content: window.locale.get('ui.config.dialog.manual-reload.content')
-        })
-      }
+      sendMessage('restyle')
     })
 
     if(navigator.userAgent.indexOf('QtWebEngine') !== -1) {
