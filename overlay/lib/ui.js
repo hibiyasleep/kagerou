@@ -91,12 +91,6 @@
   window.TabDisplay = TabDisplay
   window.HistoryUI = HistoryUI
 
-  window.notify = function notify(message) {
-    let d = $('.footer-notify', 0)
-    d.textContent = '*' + message
-    setTimeout(_ => d.textContent = '', 15000)
-  }
-
   const loadFormatButtons = function loadFormatButtons() {
     [{
       value: 'format.merge_pet',
