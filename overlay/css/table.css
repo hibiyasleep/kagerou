@@ -149,6 +149,9 @@ main > ul {
 }
 #patchnote {
   display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  background: none !important;
   height: auto;
   word-break: keep-all;
   text-align: center;
