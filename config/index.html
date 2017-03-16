@@ -32,13 +32,26 @@
     <template id="template-pane">
       <div class="tabconfig-pane">
         <article>
-          <p class="control">
+          <p class="control half">
             <label data-render="title.label"
                    data-locale="ui.config.tab.title">
               제목
             </label>
             <input type="text" data-render="title.input"
                    style="width: 3rem;" />
+          </p><p class="control half">
+            <label data-render="width.label"
+                   data-locale="ui.config.tab.width">
+              24인 모드
+            </label>
+            <select data-render="width.input">
+              <option data-locale="ui.config.tab.widths.1"
+                      value="1"> 끔 </option>
+              <option data-locale="ui.config.tab.widths.2"
+                      value="2"> 2명씩 </option>
+              <option data-locale="ui.config.tab.widths.3"
+                      value="3"> 3명씩 </option>
+            </select>
           </p>
           <p class="control">
             <label data-render="sort.label"
@@ -46,15 +59,6 @@
               정렬 기준
             </label>
             <select data-render="sort.input">
-              <option> ... </option>
-            </select>
-          </p>
-          <p class="control">
-            <label data-render="gauge.label"
-                   data-locale="ui.config.tab.gaugeby">
-              게이지 기준
-            </label>
-            <select data-render="gauge.input">
               <option> ... </option>
             </select>
           </p>
@@ -535,6 +539,23 @@ document.addEventListener('DOMContentLoaded', _ => {
               </label>
               <input type="text" id="input-style-content-bg"
                      data-config-key="style.content-bg"
+                     data-style="background"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <blockquote data-locale="ui.config.style.width-applied-only">
+            24인 모드가 설정되어 있을 때만 적용됩니다.
+          </blockquote>
+          <p class="control">
+            <label for="input-style-cell-bg"
+                   data-locale="ui.config.style.element.cell">
+              항목
+            </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-cell-bg">
+              </label>
+              <input type="text" id="input-style-cell-bg"
+                     data-config-key="style.cell-bg"
                      data-style="background"
                      style="width: 10rem" />
             </span>

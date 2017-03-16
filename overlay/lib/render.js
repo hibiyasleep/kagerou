@@ -48,6 +48,8 @@
       this.updateHeader()
       if(window.hist.current)
         this.update()
+
+      $('#table').setAttribute('data-width', this.tabs[id].tab.width)
     }
 
     browseHistory(id) {
@@ -202,7 +204,8 @@
 
     render(data, max) {
       let el = document.createElement('li')
-      let gaugeBy = resolveDotIndex(COLUMN_INDEX, this.tab.gauge)
+      let gaugeBy = resolveDotIndex(COLUMN_INDEX, this.tab.sort)
+      // this.tab.gauge) <- deprecated
 
       if(gaugeBy.v) {
         gaugeBy = gaugeBy.v
@@ -213,7 +216,7 @@
         el.classList.add('class-' + (cls || 'unknown'))
         el.classList.toggle('me', isYou(data.name, this.owners))
 
-        let width = this._value(gaugeBy, data) / max[this.tab.gauge] * 100
+        let width = this._value(gaugeBy, data) / max[this.tab.sort] * 100
         el.innerHTML = `<span class="gauge" style="width:${width}%"></span>`
       } else {
         el.id = 'header'

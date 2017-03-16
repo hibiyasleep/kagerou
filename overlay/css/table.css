@@ -178,6 +178,21 @@ main > ul {
   z-index: 2;
   position: relative;
 }
+#table[data-width='2'], #table[data-width='3'] {
+  flex-direction: row;
+}
+#table[data-width='2'] > li, #table[data-width='3'] > li {
+  display: inline-flex;
+  margin: 0 0.125rem;
+  background: var(--cell-bg);
+}
+#table[data-width='2'] > li {
+  width: calc(50% - 0.25rem);
+}
+#table[data-width='3'] > li {
+  width: calc((100% / 3) - 0.25rem);
+}
+
 main li {
   height: var(--graph-height);
   line-height: var(--graph-height);

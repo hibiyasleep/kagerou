@@ -235,10 +235,10 @@ section.active {
   display: block;
 }
 article {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 section p {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
 section blockquote {
   padding: 0.25rem 0.5rem;
@@ -247,7 +247,12 @@ section blockquote {
 }
 
 .control {
-  display: flex;
+  display: inline-flex;
+  width: 100%;
+  padding: 0 0.5rem;
+}
+.control.half {
+  width: 50%;
 }
 .control.text-right {
   justify-content: flex-end;
@@ -382,14 +387,14 @@ label.input-value-style.job img {
 }
 .tabconfig-content {
   padding: 1rem 1.5rem;
-  height: calc(100% - 10.875rem);
+  height: calc(100% - 6.75rem);
 
   overflow-y: auto;
 }
 
 .tabconfig-list-container {
   display: flex;
-  height: calc(100% - 10.875rem);
+  height: calc(100% - 6.75rem);
 }
 .tabconfig-list {
   width: 50%;

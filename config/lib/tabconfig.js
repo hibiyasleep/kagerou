@@ -82,8 +82,8 @@
         let r = { id: id }
 
         r.label = $(pane, '[data-render="title.input"]', 0).value
+        r.width = $(pane, '[data-render="width.input"]', 0).value
         r.sort = $(pane, '[data-render="sort.input"]', 0).value
-        r.gauge = $(pane, '[data-render="gauge.input"]', 0).value
         r.col = $map(pane, '[data-control="columns.used"] li', __ => {
           return __.getAttribute('data-id')
         })
@@ -136,12 +136,11 @@
       Sortable.create(listRight, { group: 'g' + o.id, animation: 150 })
 
       let title = $(pane, '[data-render="title.input"]', 0)
+      let width = $(pane, '[data-render="width.input"]', 0)
       let sort = $(pane, '[data-render="sort.input"]', 0)
-      let gauge = $(pane, '[data-render="gauge.input"]', 0)
 
       title.value = o.label
       sort.innerHTML = this.selections
-      gauge.innerHTML = this.selections
 
       title.addEventListener('keyup', function() {
         $(tab, 'label', 0).textContent = this.value
@@ -151,9 +150,9 @@
         sort.value = MIGRATE_SORTABLE[o.sort]
       else
         sort.value = o.sort
-      gauge.value = o.gauge
+      width.value = o.width || 1
 
-      for(let k of ['title', 'sort', 'gauge']) {
+      for(let k of ['title', 'width', 'sort']) {
         let id_input = `input-${k}-${o.id}`
         let label = $(pane, `[data-render="${k}.label"]`, 0)
         let input = $(pane, `[data-render="${k}.input"]`, 0)
@@ -181,7 +180,7 @@
       this.append({
         id: id,
         label: 'Tab',
-        gauge: 'deal.total',
+        width: 1,
         sort: 'deal.total',
         col: [
           'i.icon',

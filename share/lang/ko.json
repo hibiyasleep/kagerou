@@ -60,11 +60,13 @@
         ],
         "background": "배경",
         "foreground": "글자 색",
+        "width-applied-only": "24인 모드가 설정되어 있을 때만 적용됩니다.",
         "element": {
           "nav": "상단 바",
           "dropdown": "드롭다운",
           "header": "표 헤더",
-          "table": "표"
+          "table": "표",
+          "cell": "항목"
         },
         "shadow": "그림자"
       },
@@ -87,10 +89,11 @@
       "tab": {
         "_": "탭",
         "title": "제목",
+        "width": "24인 모드",
         "sortby": "정렬 기준",
-        "gaugeby": "게이지 기준",
         "available": "사용할 수 있는 항목",
-        "configured": "설정된 항목 (권장: 이름 제외 6개까지)"
+        "configured": "설정된 항목 (권장: 이름 제외 6개까지)",
+        "widths": [ 0, "끔", "2명씩", "3명씩" ]
       },
       "i/e": {
         "_": "들여오기/내보내기",

@@ -60,11 +60,13 @@
         ],
         "background": "Background",
         "foreground": "Foreground",
+        "width-applied-only": "Only for tabs setted 'Cell per line' other than 1.",
         "element": {
           "nav": "Navbar",
           "dropdown": "Dropdown menu",
           "header": "Table header",
-          "table": "Table"
+          "table": "Table",
+          "cell": "Cell"
         },
         "shadow": "Shadow"
       },
@@ -87,10 +89,11 @@
       "tab": {
         "_": "Tab",
         "title": "Title",
+        "width": "Cell per line",
         "sortby": "Sort by",
-        "gaugeby": "Gauge by",
         "available": "Available columns",
-        "configured": "Configured columns"
+        "configured": "Configured columns",
+        "widths": [ 0, 1, 2, 3 ]
       },
       "i/e": {
         "_": "Import/Export",

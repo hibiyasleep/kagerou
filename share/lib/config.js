@@ -18,6 +18,7 @@ const CONFIG_DEFAULT = {
     'dropdown-fg': '#ddd',
     'content-bg': 'rgba(0, 0, 0, 0.5)',
     'content-fg': '#eee',
+    'cell-bg': 'rgba(255, 255, 255, 0.1)',
     'content-align': 'left',
     'color-accent': '#26c6da',
     'shadow-card': '0 0.05rem 0.25rem rgba(0, 0, 0, 0.5)',
@@ -30,7 +31,7 @@ const CONFIG_DEFAULT = {
     {
       id: 0,
       label: 'DPS',
-      gauge: 'deal.total',
+      width: 1,
       sort: 'deal.total',
       col: [
         'i.icon',
@@ -44,7 +45,7 @@ const CONFIG_DEFAULT = {
     }, {
       id: 1,
       label: 'Tank',
-      gauge: 'tank.damage',
+      width: 1,
       sort: 'tank.damage',
       col: [
         'i.icon',
@@ -58,7 +59,7 @@ const CONFIG_DEFAULT = {
     }, {
       id: 2,
       label: 'Heal',
-      gauge: 'heal.total',
+      width: 1,
       sort: 'heal.total',
       col: [
         'i.icon',
@@ -68,6 +69,17 @@ const CONFIG_DEFAULT = {
         'heal.total',
         'heal.over',
         'heal.swing'
+      ]
+    }, {
+      id: 3,
+      label: '24',
+      width: 3,
+      sort: 'deal.total',
+      col: [
+        'i.icon',
+        'i.name',
+        'deal.per_second',
+        'deal.swing'
       ]
     }
   ],
