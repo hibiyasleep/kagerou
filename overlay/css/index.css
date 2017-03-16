@@ -30,6 +30,23 @@ body::after {
   background: rgba(127, 127, 127, 0.1);
 }
 
+/* Client Restrictors */
+body.legacy-plugin .supports-end {
+  display: none !important;
+}
+body:not(.overlay) .overlay-only {
+  display: none !important;
+}
+body.overlay .browser-only {
+  display: none !important;
+}
+body:not(.ws) .ws-only {
+  display: none !important;
+}
+body.https .unsecure-only {
+  display: none !important;
+}
+
 /* Shared classes */
 
 .text-right.text-right {
@@ -47,9 +64,6 @@ mark {
 /* Locale */
 
 html.ko .en-only, html.en .ko-only {
-  display: none;
-}
-body.https .unsecure-only {
   display: none;
 }
 

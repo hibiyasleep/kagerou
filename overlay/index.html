@@ -218,7 +218,8 @@ try {
             </g>
           </svg>
         </li><!--
-     --><li data-button="end-encounter"
+     --><li class="supports-end"
+            data-button="end-encounter"
             data-label="전투 집계 끊기"
             data-locale="ui.menu.end-encounter=data-label">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -235,11 +236,30 @@ try {
           </svg>
         </li><!--
      --><li data-button="reload" onclick="location.reload()"
+            class="overlay-only"
             data-label="새로고침"
             data-locale="ui.menu.reload=data-label">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                viewBox="0 0 24 24" class="icon">
             <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" />
+          </svg>
+        </li><!--
+     --><li data-button="fullscreen"
+            class="browser-only"
+            data-label="전체화면 토글"
+            data-locale="ui.menu.fullscreen=data-label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+            <path d="M5,5H10V7H7V10H5V5M14,5H19V10H17V7H14V5M17,14H19V19H14V17H17V14M10,17V19H5V14H7V17H10Z" />
+          </svg>
+        </li><!--
+     --><li data-button="capture"
+            class="overlay-only ws-only"
+            data-label="캡쳐"
+            data-locale="ui.menu.capture=data-label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" class="icon">
+            <path d="M22,16V4A2,2 0 0,0 20,2H8A2,2 0 0,0 6,4V16A2,2 0 0,0 8,18H20A2,2 0 0,0 22,16M11,12L13.03,14.71L16,11L20,16H8M2,6V20A2,2 0 0,0 4,22H18V20H4V6" />
           </svg>
         </li>
       </ul>

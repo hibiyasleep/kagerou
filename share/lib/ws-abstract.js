@@ -24,7 +24,7 @@
         })
       })
     }
-    supported(feature) {
+    supports(feature) {
       return this.features.indexOf(feature) !== -1
     }
     connect() { return true }
@@ -45,7 +45,7 @@
         this.emit('message', e.data)
       })
 
-      this.features = ['end']
+      this.features = ['end', 'capture']
     }
 
     connect() {
@@ -77,6 +77,8 @@
       switch(feature) {
         case 'end':
           this._send('RequestEnd')
+        case 'capture':
+          this._send('Capture')
       }
     }
 

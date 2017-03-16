@@ -199,6 +199,36 @@
           `width=${800 * resize},height=${600 * resize}`
         )
       }
+    }, {
+      name: 'fullscreen',
+      toggle: 'fullscreen',
+      callback: _ => {
+        // WEB IS AWESOME
+        if(!document.fullscreenElement
+        && !document.mozFullScreenElement
+        && !document.webkitFullscreenElement) {
+          if(document.documentElement.requestFullscreen)
+            document.documentElement.requestFullscreen()
+          if(document.documentElement.mozRequestFullScreen)
+            document.documentElement.mozRequestFullScreen()
+          if(document.documentElement.webkitrequestFullscreen)
+            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT)
+        } else {
+          if(document.cancelFullScreen)
+            document.cancelFullScreen()
+          if(document.mozCancelFullScreen)
+            document.mozCancelFullScreen()
+          if(document.webkitCancelFullScreen)
+            document.webkitCancelFullScreen()
+        }
+      }
+    }, {
+      name: 'capture',
+      callback: _ => {
+        if(layer.supports('capture')) {
+          setTimeout(_ => layer.request('capture'), 216)
+        }
+      }
     }].forEach(_ => {
       $(`[data-button=${_.name}]`, 0).addEventListener('click', function(e) {
         if(_.toggle) {
@@ -210,11 +240,16 @@
       })
     })
 
-    if(!layer.supported('end')) {
-      document.body.classList.add('legacy-overlayplugin')
+    if(!layer.supports('end')) {
+      document.body.classList.add('legacy-plugin')
     }
 
+    document.body.classList.add(layer.type)
     document.body.classList.add(location.protocol.slice(0, -1))
+    if(navigator.userAgent.indexOf('Overlay') !== -1
+    || 'OverlayPluginApi' in window) {
+      document.body.classList.add('overlay')
+    }
 
     setFooterVisibility()
 
