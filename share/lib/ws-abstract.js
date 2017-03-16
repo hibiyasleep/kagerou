@@ -3,7 +3,7 @@
 ;(function() {
 
   const resolveSockURI = function() {
-    let o = /[?&]HOST_PORT=(wss?:\/\/[^&]+\/)/.exec(location.search)
+    let o = /[?&]HOST_PORT=(wss?:\/\/[^&\/]+)/.exec(location.search)
     return o && o[1]
   }
 
@@ -36,7 +36,7 @@
     constructor() {
       super()
       this.type = 'ws'
-      this.uri = resolveSockURI() + 'MiniParse'
+      this.uri = resolveSockURI() + '/MiniParse'
 
       this.canRetry = RECONNECT_RETRY
       this.retryTimeout = null
