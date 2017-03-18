@@ -13,6 +13,9 @@ body {
   user-select: none;
   -webkit-user-select: none;
 }
+body.overlay {
+  margin-top: 0.5rem !important;
+}
 /* Resize handle */
 body::after {
   display: block;
