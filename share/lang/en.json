@@ -40,7 +40,7 @@
         "_": "General",
         "combine_pet": "Pet merging",
         "split-by-comma": "Divide multiple names by ','",
-        "layout": "Layout",
+        "basic": "Basic",
         "footer": {
           "_": "Footer elements",
           "rank": "Current rank",
@@ -59,6 +59,7 @@
           "Use semi-transparent color with <code>rgba(Red, Green, Blue, Alpha)</code>. <br /> Alpha is 0 to 1.",
           "Use image background with <code>url('URL here')</code>"
         ],
+        "layout": "Layout",
         "background": "Background",
         "foreground": "Foreground",
         "width-applied-only": "Only for tabs setted 'Cell per line' other than 1.",
@@ -103,7 +104,7 @@
         "copy-this": "Copy all of the value below:",
         "paste-here": "Paste the fetched value below:",
         "save-first": "Save First!!",
-        "export-help": "The value of 'General &gt; Layout' is included in 'Style' and some values are excluded. <br /> Values that are the same as the default are not exported.",
+        "export-help": "Values that are the same as the default, and some values are not exported.",
         "config-to-export": "Config to export",
         "all": "All"
       },
@@ -146,7 +147,7 @@
     "style": {
       "_": "Style",
       "resize-factor": "UI scale",
-      "body-margin": "Margin between header and content",
+      "body-margin": "Outer margin",
       "body-font": "Font family",
       "nav-opacity": "Navbar opacity when inactive",
       "accent-color": "Accent",

@@ -40,7 +40,7 @@
         "_": "일반",
         "combine_pet": "펫 합산",
         "split-by-comma": "쉼표(,)로 구분합니다.",
-        "layout": "레이아웃",
+        "basic": "기본",
         "footer": {
           "_": "하단 바 항목",
           "rank": "현재 순위",
@@ -59,6 +59,7 @@
           "<code>rgba(빨강, 초록, 파랑, 투명도)</code>로 반투명한 색을 사용합니다. 투명도는 0에서 1입니다.",
           "<code>url(이미지 주소)</code>로 배경 이미지를 사용합니다."
         ],
+        "layout": "레이아웃",
         "background": "배경",
         "foreground": "글자 색",
         "width-applied-only": "24인 모드가 설정되어 있을 때만 적용됩니다.",
@@ -103,7 +104,7 @@
         "copy-this": "아래의 값을 전부 복사하세요:",
         "paste-here": "아래에 가져온 값을 붙여넣으세요:",
         "save-first": "먼저 저장해야 합니다!",
-        "export-help": "'일반 > 레이아웃'의 값은 '스타일'에 포함되고, 몇몇 값은 제외됩니다. <br /> 기본값과 같은 값은 내보내지지 않습니다.",
+        "export-help": "기본값인 설정과 일부 설정값은 내보내지지 않습니다.",
         "config-to-export": "내보낼 설정",
         "all": "전부"
       },
@@ -146,7 +147,7 @@
     "style": {
       "_": "스타일",
       "resize-factor": "UI 크기 조절",
-      "body-margin": "헤더와 테이블 사이의 여백",
+      "body-margin": "바깥쪽 여백",
       "body-font": "본문 폰트",
       "nav-opacity": "비활성 시 상단 바 투명도",
       "accent-color": "강조",

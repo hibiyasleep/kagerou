@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', _ => {
           </p>
         </article>
         <article>
-          <h3 data-locale="ui.config.general.layout"> 레이아웃 </h3>
+          <h3 data-locale="ui.config.general.basic"> 기본 </h3>
           <p class="control">
             <label for="input-format-use_short_name"
                    data-locale="config.format.use_short_name">
@@ -249,18 +249,6 @@ document.addEventListener('DOMContentLoaded', _ => {
             </select>
           </p>
           <p class="control">
-            <label for="input-style-content-align"
-                   data-locale="config.style.content-align">
-              내용 정렬
-            </label>
-            <select id="input-style-content-align"
-                    data-config-key="style.content-align">
-              <option value="left" data-locale="general.left"> 왼쪽 </option>
-              <option value="center" data-locale="general.center"> 가운데 </option>
-              <option value="right" data-locale="general.right"> 오른쪽 </option>
-            </select>
-          </p>
-          <p class="control">
             <label for="input-style-resize-factor"
                    data-locale="config.style.resize-factor">
               UI 크기 조절
@@ -273,50 +261,6 @@ document.addEventListener('DOMContentLoaded', _ => {
               <input type="range" id="input-style-resize-factor"
                      data-config-key="style.resize-factor"
                      min="0.75" step="0.125" max="2" />
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-graph-height"
-                   data-locale="config.style.graph-height">
-              테이블 줄 높이
-            </label>
-            <span class="input-group">
-              <label class="input-value" for="input-style-graph-height">
-              </label>
-              <input type="range" id="input-style-graph-height"
-                     data-config-key="style.graph-height"
-                     data-unit="rem"
-                     min="1" step="0.25" max="2.5"/>
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-gauge-height"
-                   data-locale="config.style.gauge-height">
-              게이지 높이
-            </label>
-            <span class="input-group">
-              <label class="input-value" for="input-style-gauge-height">
-              </label>
-              <input type="range" id="input-style-gauge-height"
-                     data-config-key="style.gauge-height"
-                     data-unit="%"
-                     min="0" step="5" max="100"/>
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-body-margin"
-                   data-locale="config.style.body-margin">
-              헤더와 테이블 사이의 여백
-            </label>
-            <span class="input-group">
-              <label class="input-value-style" for="input-style-body-margin"
-                     style="background: #333; vertical-align: -0.25rem;">
-              </label>
-              <input type="range" id="input-style-body-margin"
-                     data-config-key="style.body-margin"
-                     data-style="width"
-                     data-unit="rem"
-                     min="0" step="0.125" max="0.5" />
             </span>
           </p>
           <p class="control">
@@ -473,6 +417,65 @@ document.addEventListener('DOMContentLoaded', _ => {
           <blockquote data-locale="ui.config.style.css-help.2">
             <code>url(이미지 주소)</code>로 배경 이미지를 사용합니다.
           </blockquote>
+        </article>
+        <article>
+          <h3 data-locale="ui.config.style.layout"> 레이아웃 </h3>
+          <p class="control">
+            <label for="input-style-content-align"
+                   data-locale="config.style.content-align">
+              내용 정렬
+            </label>
+            <select id="input-style-content-align"
+                    data-config-key="style.content-align">
+              <option value="left" data-locale="general.left"> 왼쪽 </option>
+              <option value="center" data-locale="general.center"> 가운데 </option>
+              <option value="right" data-locale="general.right"> 오른쪽 </option>
+            </select>
+          </p>
+          <p class="control">
+            <label for="input-style-graph-height"
+                   data-locale="config.style.graph-height">
+              테이블 줄 높이
+            </label>
+            <span class="input-group">
+              <label class="input-value" for="input-style-graph-height">
+              </label>
+              <input type="range" id="input-style-graph-height"
+                     data-config-key="style.graph-height"
+                     data-unit="rem"
+                     min="1" step="0.25" max="2.5"/>
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-gauge-height"
+                   data-locale="config.style.gauge-height">
+              게이지 높이
+            </label>
+            <span class="input-group">
+              <label class="input-value" for="input-style-gauge-height">
+              </label>
+              <input type="range" id="input-style-gauge-height"
+                     data-config-key="style.gauge-height"
+                     data-unit="%"
+                     min="0" step="5" max="100"/>
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-body-margin"
+                   data-locale="config.style.body-margin">
+              바깥쪽 여백
+            </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-body-margin"
+                     style="background: #333; vertical-align: -0.25rem;">
+              </label>
+              <input type="range" id="input-style-body-margin"
+                     data-config-key="style.body-margin"
+                     data-style="width"
+                     data-unit="rem"
+                     min="0" step="0.125" max="0.5" />
+            </span>
+          </p>
         </article>
         <article>
           <h3 data-locale="ui.config.style.background"> 배경 </h3>
