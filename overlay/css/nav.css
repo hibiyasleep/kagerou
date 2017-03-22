@@ -214,7 +214,7 @@ nav:hover > .container {
   font-size: 0.75rem;
   width: 14rem;
 
-  top: calc(var(--body-margin) - 0.1875rem);
+  top: 0.3125rem;
   left: calc(var(--body-margin) + 1.5rem);
 }
 .dropdown-history li {
