@@ -13,7 +13,7 @@
     },
     "menu": {
       "merge-pet-on": "펫 합산 켜기",
-      "merge-pet-off": "펫 합산 켜기",
+      "merge-pet-off": "펫 합산 끄기",
       "nameblur-on": "이름 가리기",
       "nameblur-off": "이름 보이기",
       "end-encounter": "전투 집계 끊기",
