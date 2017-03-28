@@ -47,7 +47,9 @@
 
           if(players[owner]) {
             for(let k of COLUMN_MERGEABLE) {
-              players[owner][k] = pFloat(o[k]) + pFloat(players[owner][k])
+              let v1 = pFloat(o[k])
+              let v2 = pFloat(players[owner][k])
+              players[owner][k] = (isNaN(v1)? 0 : v1) + (isNaN(v2)? 0 : v2)
             }
 
             for(let t in COLUMN_USE_LARGER) {
