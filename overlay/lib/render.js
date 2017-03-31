@@ -116,6 +116,7 @@
 
       // history header
       $('.history', 0).classList.toggle('enabled', !data.isCurrent)
+      $('.history', 0).classList.toggle('stopped', data.isActive === 'false')
       $('#history-time').textContent = data.header.duration
       $('#history-mob').textContent = data.header.title
       $('#history-region').textContent = window.l.zone(data.header.CurrentZoneName)

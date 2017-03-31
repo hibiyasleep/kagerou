@@ -23,6 +23,7 @@
     }
 
     update(data) {
+      this.isActive = data.isActive
       this.header = data.Encounter
       this.data = toArray(data.Combatant)
       this.calculateMax(data.Combatant)
@@ -130,7 +131,6 @@
           let nick = NICK_REGEX.exec(data.Encounter.title)[1]
           config.set('format.myname', [nick])
           config.save()
-          notify(`'${nick}' 설정됨`)
         }
         if(this.currentData) {
           let id = this.currentData.finalize()

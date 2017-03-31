@@ -237,11 +237,39 @@ const PET_MAPPING = {
   'Bishop Autoturret': 'bishop'
 }
 
+const APRIL_FOOL_CLASS_REMAP = {
+  'pld': 'gld', 'gld': 'pld',
+  'war': 'mrd', 'mrd': 'war',
+  'drk': 'min', 'min': 'drk',
+  'mnk': 'pug', 'pug': 'mnk',
+  'drg': 'lnc', 'lnc': 'drg',
+  'brd': 'arc', 'arc': 'brd',
+  'nin': 'rog', 'rog': 'nin',
+  'smn': 'arc', 'arc': 'smn',
+  'blm': 'thm', 'thm': 'blm',
+  'mch': 'bsm', 'bsm': 'mch',
+  'whm': 'cnj', 'cnj': 'whm',
+  'sch': 'acn', 'acn': 'sch',
+  'ast': 'fsh', 'fsh': 'ast',
+  'garuda': 'emerald', 'emerald': 'garuda',
+  'titan': 'topaz', 'topaz': 'titan',
+  'eos': 'emerald',
+  'selene': 'topaz',
+}
+
 const COLUMN_INDEX = {
   i: {
     icon: {
       v: _ => resolveClass(_.Job, _.name)[0],
-      f: _ => `<img src="../share/img/class/${_.toLowerCase() || 'empty'}.png" class="clsicon" />`
+      f: _ => {
+        let job = _.toLowerCase()
+        if('IS_APRIL_FOOL' in window
+         && IS_APRIL_FOOL === true
+         && job in APRIL_FOOL_CLASS_REMAP) {
+          job = APRIL_FOOL_CLASS_REMAP[job]
+        }
+        return `<img src="../share/img/class/${job || 'empty'}.png" class="clsicon" />`
+      }
     },
     class: {
       v: _ => resolveClass(_.Job, _.name)[0]
