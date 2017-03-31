@@ -48,6 +48,7 @@ nav:hover > .container {
 #history-icon {
   vertical-align: top;
   margin: 0.25rem;
+  width: 1.5rem;
   height: calc(100% - 0.5rem);
 
   fill: var(--color-accent);
