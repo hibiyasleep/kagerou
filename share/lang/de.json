@@ -1,0 +1,264 @@
+{
+  "general": {
+    "left": "Links",
+    "center": "Zentriert",
+    "right": "Rechts"
+  },
+  "ui": {
+    "header": {
+      "in-develop": "Develop/Unstable",
+      "waiting-data": "Erwarte Kampfdaten",
+      "no-data-yet": "Keine Daten",
+      "please-do-combat": "Prüfe nach Kampf"
+    },
+    "menu": {
+      "merge-pet-on": "Begleiter zusammenfassen",
+      "merge-pet-off": "Begleiter einzeln listen",
+      "nameblur-on": "Namen unkenntlich machen",
+      "nameblur-off": "Namen anzeigen",
+      "end-encounter": "Encounter aufteilen",
+      "settings": "Einstellungen",
+      "reload": "Overlay aktualisieren",
+      "fullscreen": "Vollbildmodus",
+      "screenshot": "Bildschirmfoto"
+    },
+    "config": {
+      "_": "Einstellungen",
+      "save": "Speichern",
+      "execute": "Ausführen",
+      "dialog": {
+        "really": "Einstellungen wirklich zurücksetzen?",
+        "undone": "Diese Aktion kann nicht rückgängig gemacht werden",
+        "yes": "Ja",
+        "no": "Nein",
+        "manual-reload": {
+          "title": "Overlay kann nicht aktualisiert werden",
+          "content": "Bitte aktualisiere das Overlay manuell"
+        }
+      },
+      "general": {
+        "_": "Allgemein",
+        "combine_pet": "Begleiter zusammenfassen",
+        "split-by-comma": "Mehrfache Namen mit ',' trennen",
+        "basic": "Allgemeine Einstellungen",
+        "footer": {
+          "_": "Fußzeile",
+          "rank": "Derzeitiger Rang",
+          "rdps": "Raid DPS",
+          "rhps": "Raid HPS",
+          "recover": "Gesamtheilung / Gesamtschaden ðŸ”„"
+        },
+        "reset": "Zurücksetzen",
+        "reset-this": "Alle Einstellungen zurücksetzen"
+      },
+      "style": {
+        "_": "Style",
+        "reset-this": "Style zurücksetzen",
+        "css-help": [
+          "CSS Werte benutzen. Kann mit weiteren Attributen via Semikolon erweitert werden",
+          "Für transparente Farben benutze <code>rgba(Rot, Grün, Blau, Alpha)</code>. <br /> Alpha von 0 bis 1.",
+          "Für eigenes Hintergrundbild benutze  <code>url('Bild URL')</code>"
+        ],
+        "layout": "Layout",
+        "background": "Hintergrund",
+        "foreground": "Vordergrund",
+        "width-applied-only": "Nur für Tabs mit Zellen pro Linie > 1",
+        "element": {
+          "nav": "Navigationsleiste",
+          "dropdown": "Dropdown Menü",
+          "header": "Tabellenkopf",
+          "table": "Tabelle",
+          "cell": "Zelle"
+        },
+        "shadow": "Schatten"
+      },
+      "color": {
+        "_": "Balkenfarben",
+        "reset-this": "Farben zurücksetzen",
+        "position": "Rollen-Farbe",
+        "position-none": "Ausblenden mit 'none'",
+        "etc": "Sonstiges",
+        "pet-buddy": "Begleiter"
+      },
+      "width": {
+        "_": "Spaltenbreite",
+        "reset-this": "Breite zurücksetzen",
+        "css-help": [
+          "Standardwert ist 16px und skaliert mit 'UI Skalierung'",
+          "Die Spalte 'Name' wird als erste verkleinert wenn das gesamte Fenster verkleinert wird"
+        ]
+      },
+      "tab": {
+        "_": "Tab",
+        "title": "Name",
+        "width": "Zellen pro Linie",
+        "sortby": "Sortieren nach",
+        "available": "Verfügbare Kategorien",
+        "configured": "Ausgewählte Kategorien",
+        "widths": [ 0, 1, 2, 3 ]
+      },
+      "i/e": {
+        "_": "Importieren/Exportieren",
+        "import": "Importieren",
+        "export": "Exportieren",
+        "copy-this": "Folgenden Code kopieren",
+        "paste-here": "Exportcode hier einfügen",
+        "save-first": "Bitte zuerst speichern",
+        "export-help": "Einige Werte können nicht exportiert werden; Standardwerte werden nie exportiert",
+        "config-to-export": "Auswählen was exportiert werden soll",
+        "all": "Alles"
+      },
+      "etc": {
+        "_": "Erweitert",
+        "others": {
+          "_": "Sonstiges",
+          "skill-aliases-help": "Benutze Abkürzungen für lange Namen von Fähigkeiten",
+          "filter": "Filter",
+          "filter-help": [
+            "FFXIV_Plugin unterscheidet nicht zwischen Gegner und Mitspieler. Die folgenden Optionen vermeiden, dass die entsprechenden Kombatanten nicht im Overlay gelistet werden",
+            "Sollte es zu Fehlern kommen, deaktiviere alle Optionen"
+          ],
+          "unusual-spaces": "Name beinhaltet Leerzeichen; kein Begleiter (Nur koreanischer Server)",
+          "jobless": "Klasse/Beruf hat keinen Wert",
+          "not-combatant": "Sonstige Klassen/Berufe"
+        },
+        "css": "CSS"
+      },
+      "info": {
+        "_": "Über",
+        "created-by": "Created by",
+        "servers": "<del>Odin</del> Chocobo...@KR / Tonberry",
+        "hibiya": "Kuriyama Hibiya (히비야/ヒビヤ)",
+        "support": "Support",
+        "license": "License",
+        "icon-files": "All files under share/img/class,",
+        "privacy": {
+          "_": "Privacy Policy",
+          "list": [
+            "If a problem occurs during operation of this program,<br />information for troubleshooting can be sent to the server.",
+            "Collected information is limited to a minimum amount to identify the problem:",
+            "* Program Version<br />* Last Combatant Data<br />* Other information collected by ravenjs"
+          ]
+        }
+      }
+    }
+  },
+  "config": {
+    "style": {
+      "_": "Style",
+      "resize-factor": "UI Skalierung",
+      "body-margin": "Äußerer Rand",
+      "body-font": "Schriftart",
+      "nav-opacity": "Sichtbarkeit der Navigationsleiste bei inaktivem Fenster",
+      "accent-color": "Akzent",
+      "shadow-card": "Fenster",
+      "shadow-text": "Text",
+      "content-align": "Ausrichtung des Inhaltstext",
+      "font-size-small": "'Small' fontsize",
+      "gauge-height": "Balkenhöhe",
+      "graph-height": "Höhe der Tabellenzeilen"
+    },
+    "color": {
+      "_": "Balkenfarbe",
+      "gauge-default": "Standard",
+      "gauge-opacity": "Undurchsichtigkeit",
+      "position-tank": "Tank",
+      "position-deal": "DPS",
+      "position-heal": "Heiler",
+      "pld": "Paladin (Gladiator)",
+      "war": "Krieger (Marodeur)",
+      "drk": "Dunkelritter",
+      "mnk": "Mönch (Faustkämpfer)",
+      "drg": "Dragoon (Pikenier)",
+      "brd": "Barde (Waldläufer)",
+      "nin": "Ninja (Schurke)",
+      "smn": "Beschwörer (Hermetiker)",
+      "blm": "Schwarzmagier (Thaumaturg)",
+      "mch": "Maschinist",
+      "whm": "Weißmagier (Druide)",
+      "sch": "Gelehrter",
+      "ast": "Astrologe",
+      "smn-pet": "Beschwörer (Hermetiker) Carbuncle/Egi",
+      "sch-pet": "Gelehrter Egi",
+      "mch-pet": "Maschinist Turm",
+      "chocobo": "Chocobo",
+      "limit-break": "Limit Break"
+    },
+    "format": {
+      "significant_digit": {
+        "_": "Anzahl der Nachkommastellen",
+        "dps": "DPS",
+        "hps": "HPS",
+        "accuracy": "Fehlschlag (Verfehlt / Angriffe)",
+        "critical": "% der kritischen Treffer/Heilungen"
+      },
+      "myname": "Mein Name",
+      "use_short_name": "Darstellung von Spielernamen",
+      "use_skill_aliases": "Benutze Alias für Fähigkeitsnamen"
+    }
+  },
+  "col": {
+    "i": {
+      "_": "Info",
+      "icon": [
+        "<img src=\"../share/img/class/empty.png\" class=\"clsicon\"/>",
+        "Class Icon"
+      ],
+      "class": ["Job", "Klasse/Job"],
+      "owner": ["Besitzer", "Besitzer"],
+      "name": ["Name", "Name"]
+    },
+    "deal": {
+      "_": "DPS",
+      "per_second": ["DPS", "Schaden pro Sekunde"],
+      "pct": ["D%", "% des Gesamtschadens"],
+      "total": ["D.Ges.", "Gesamtschaden"],
+      "failure": ["Fehlschlag", "Fehlschlag (Verfehlt / Angriffe)"],
+      "accuracy": ["Acc.", "Genauigkeit (1 - Verfehlt / Angriffe)"],
+      "swing": ["Angriffe", "Angriffe"],
+      "miss": ["Verfehlt", "Verfehlt"],
+      "hitfail": ["HitF", "Hitfail"],
+      "critical": ["Crit", "Kritische Trefferchance"],
+      "max": ["MaxD", "Maximaler Schaden (ohne Fähigkeitsname)"],
+      "maxhit": ["Max Schaden", "Maximaler Schaden (mit Fähigkeitsname)"],
+      "last10": ["10s", "DPS der letzten 10s"],
+      "last30": ["30s", "DPS der letzten 30s"],
+      "last60": ["1m", "DPS der letzten 1min"],
+      "last180": ["3m", "DPS der letzten 3min (Beta)"]
+    },
+    "tank": {
+      "_": "Tank",
+      "damage": ["Erl.Schad.", "Erlittener Schaden"],
+      "heal": ["Geheilt", "Erhaltene Heilung"],
+      "parry": ["Parade", "Pariert"],
+      "block": ["Block", "Geblockt"]
+    },
+    "heal": {
+      "_": "Heilung",
+      "per_second": ["HPS", "Heilung pro Sekunde"],
+      "pct": ["H%", "% der Gesamtheilung"],
+      "total": ["H.Ges.", "Gesamtheilung"],
+      "over": ["OvrH", "Overheal"],
+      "swing": ["Heilungen", "Anzahl der Heilungen"],
+      "critical": ["HCrit", "Kritischer Trefferchance"],
+      "cure": ["Reinigung", "Anzahl der Reinigungen"],
+      "max": ["MaxH", "Maximale Heilung (ohne Fähigkeitsname)"],
+      "maxhit": ["Max Heal", "Maximale Heilung (mit Fähigkeitsname)"]
+    },
+    "etc": {
+      "_": "Etc",
+      "powerdrain": ["PDrn", "Powerdrain"],
+      "powerheal": ["PHeal", "Powerheal"],
+      "death": ["Tode", "Anzahl der Tode"]
+    }
+  },
+  "zone": {
+    "unknown": { }
+  },
+  "skill": {
+    "alias": {
+
+    }
+  },
+  "_author": "u/tollekarte666"
+}
