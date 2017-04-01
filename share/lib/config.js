@@ -237,6 +237,7 @@ const PET_MAPPING = {
   'Bishop Autoturret': 'bishop'
 }
 
+/*
 const APRIL_FOOL_CLASS_REMAP = {
   'pld': 'gld', 'gld': 'pld',
   'war': 'mrd', 'mrd': 'war',
@@ -256,6 +257,7 @@ const APRIL_FOOL_CLASS_REMAP = {
   'eos': 'emerald',
   'selene': 'topaz',
 }
+*/
 
 const COLUMN_INDEX = {
   i: {
@@ -263,11 +265,13 @@ const COLUMN_INDEX = {
       v: _ => resolveClass(_.Job, _.name)[0],
       f: _ => {
         let job = _.toLowerCase()
+        /*
         if('IS_APRIL_FOOL' in window
          && IS_APRIL_FOOL === true
          && job in APRIL_FOOL_CLASS_REMAP) {
           job = APRIL_FOOL_CLASS_REMAP[job]
         }
+        */
         return `<img src="../share/img/class/${job || 'empty'}.png" class="clsicon" />`
       }
     },

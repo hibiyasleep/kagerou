@@ -20,92 +20,6 @@ Raven && Raven.config('https://bbd31ac3a4ca44d386016ff32fb0512c@sentry.io/123696
   }
 }).install()
     </script>
-    <script>
-'use strict'
-
-window.addEventListener('load', function() {
-  const updateFool = function(to) {
-    document.body.classList.toggle('hots', to)
-    window.IS_APRIL_FOOL = to
-  }
-
-  const ln_base = (value, base) => Math.log(value) / Math.log(base)
-  const hots = document.getElementById('hots')
-
-  let date = new Date()
-  let current = (date.getTime() - (date.getTimezoneOffset() * 60 * 1000))
-  let offset = current - 1491004800000
-
-  if(0 < offset && offset < 86400000) {
-    updateFool(true)
-    setTimeout(function() {
-      updateFool(false)
-    }, 86400000 - offset)
-  } else if(offset < 0) {
-    setTimeout(function() {
-      updateFool(true)
-      setTimeout(function() {
-        updateFool(false)
-      }, 86400000 + offset)
-    }, -offset)
-  } else if(86400000 < offset) {
-    updateFool(false)
-  }
-
-  window.layer && window.layer.on('data', function(d) {
-    try {
-      let dps = parseInt(d.Encounter.Last10DPS) || 0
-      if(isNaN(dps)) return
-
-      let speed = 5000 / ln_base(dps * 0.1, 2)
-      hots.style.animationDuration = speed + 'ms'
-      console.log(speed)
-    } catch(e) {}
-  })
-})
-    </script>
-    <style>
-/* HotS stylesheet for kagerou - 2016-12-29 */
-@keyframes hots-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.hots #history-icon {
-  position: relative;
-  width: 1.5rem;
-}
-.hots .history svg {
-  display: none;
-}
-#hots {
-  display: none;
-}
-.hots #hots {
-  display: block;
-  content: ' ';
-  width: 1.5rem;
-  height: 1.5rem;
-  background: url('../share/img/hots.png');
-  background-size: cover;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  animation: hots-spin 2000ms linear reverse infinite running;
-  transition: animation-duration 200ms linear;
-}
-.hots .history.enabled #hots,
-.hots .history.stopped #hots {
-  animation-play-state: paused !important;
-}
-
-    </style>
     <script src="../share/lib/util.js"></script>
     <script src="../share/lib/config.js"></script>
     <script>
@@ -227,7 +141,7 @@ try {
               C8.3,42,10.5,43,13,43c5,0,9-4,9-9S18,25,13,25z M12,30v5l4.3,2.5
               l0.7-1.2l-3.5-2.1V30H12z"/>
             </svg>
-            <img id="hots" width="1.5rem" height="1.5rem" />
+            <!--img id="hots" width="1.5rem" height="1.5rem" /-->
           </span><div class="history-label">
             <span>
               <mark id="history-time">
