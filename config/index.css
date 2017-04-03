@@ -151,7 +151,7 @@ aside .menu {
   cursor: pointer;
   transition: 200ms background ease;
 
-  overflow-x: hidden;
+  overflow: hidden;
   white-space: nowrap;
 }
 .menu > li:hover {
