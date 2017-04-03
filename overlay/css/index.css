@@ -66,8 +66,15 @@ mark {
 
 /* Locale */
 
-html.ko .en-only, html.en .ko-only {
+html:not(.ko) .ko-only,
+html:not(.en) .en-only,
+html:not(.de) .de-only {
   display: none;
+}
+html.ko .ko-only,
+html.en .en-only,
+html.de .de-only {
+  display: initial !important;
 }
 
 /* Scrollbar */
