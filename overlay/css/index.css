@@ -71,10 +71,11 @@ html:not(.en) .en-only,
 html:not(.de) .de-only {
   display: none;
 }
-html.ko .ko-only,
-html.en .en-only,
-html.de .de-only {
-  display: initial !important;
+
+/* Patchnotes that sharing 2 language */
+html.en .en-only.de-only,
+html.de .en-only.de-only {
+  display: block !important;
 }
 
 /* Scrollbar */
