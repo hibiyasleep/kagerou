@@ -137,6 +137,9 @@ main {
 
   z-index: 0;
 }
+.overlay main {
+  max-height: calc(100% - (var(--body-margin) / 2) - 2.5rem);
+}
 
 main > ul {
   height: 100%;
