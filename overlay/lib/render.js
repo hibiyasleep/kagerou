@@ -7,6 +7,19 @@
     'fsh', 'gsm', 'ltw', 'min', 'wvr', 'error'
   ]
 
+  const TAB_SORTBY_MIGRATE_MAPPING = {
+    '+encdps': 'deal.per_second',
+    '-encdps': 'deal.per_second',
+    '+damage': 'deal.total',
+    '-damage': 'deal.total',
+    '+damagetaken': 'tank.damage',
+    '-damagetaken': 'tank.damage',
+    '+enchps': 'heal.per_second',
+    '-enchps': 'heal.per_second',
+    '+healed': 'heal.total',
+    '-healed': 'heal.total'
+  }
+
   class Renderer {
 
     constructor(config) {
@@ -29,6 +42,11 @@
       this.tabs = []
       for(let k in this.config.tabs) {
         try {
+          let current = this.config.tabs[k]
+          // migration before 0.2; it's from 2016!!
+          if(current.sort in TAB_SORTBY_MIGRATE_MAPPING) {
+            current.sort = TAB_SORTBY_MIGRATE_MAPPING[current.sort]
+          }
           this.tabs[k] = new Row(this.config.tabs[k])
         } catch(e) {
           // TODO: global error handler
