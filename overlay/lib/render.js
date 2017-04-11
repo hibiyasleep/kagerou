@@ -33,6 +33,12 @@
         } catch(e) {
           // TODO: global error handler
           console.error(`Error while compiling tab: ${e}`)
+          Raven && Raven.captureException(e, {
+            extra: {
+              key: k,
+              tab_string: k in this.config.tabs? JSON.stringify(this.config.tabs[k]) : 'undefined'
+            }
+          })
         }
       }
     }
