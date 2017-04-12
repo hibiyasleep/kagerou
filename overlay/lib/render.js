@@ -85,18 +85,7 @@
 
     updateHeader() {
       let h = $('#header')
-      try {
-        h.parentNode.replaceChild(this.template.header, h)
-      } catch(e) {
-        Raven && Raven.captureException(e, {
-          extra: {
-            h: h? h.toString() : '',
-            p: h? ('parentNode' in h) : '',
-            $: $.toString()
-          }
-        })
-        console.error(e)
-      }
+      h.parentNode.replaceChild(this.template.header, h)
     }
 
     updateFooter(d) {

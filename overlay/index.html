@@ -43,63 +43,57 @@ if(layer && layer.type === 'ws' && location.host === 'hibiyasleep.github.io') {
   location.href = 'http://kagerou.hibiya.moe/overlay' + location.search
 }
 
-try {
-  // config
-  window.config = new Config()
+// config
+window.config = new Config()
 
-  config.load()
-  config.setResizeFactor()
-  config.attachOverlayStyle('overlay')
+config.load()
+config.setResizeFactor()
+config.attachOverlayStyle('overlay')
 
-  window.hist = new History()
+window.hist = new History()
 
-  document.addEventListener('DOMContentLoaded', e => {
-    // locale
-    window.l = new Locale(window.config.get('lang'), e => {
-      window.l.localizeAll()
-      window.renderer = new Renderer(window.config.get())
-      window.renderer.updateHeader()
+window.addEventListener('load', e => {
+  // locale
+  window.l = new Locale(window.config.get('lang'), e => {
+    window.l.localizeAll()
+    window.renderer = new Renderer(window.config.get())
+    window.renderer.updateHeader()
 
-      try {
+    try {
+      window.tabdisplay = new TabDisplay()
+      tabdisplay.render()
+    } catch(e) {
+      setTimeout(_ => {
         window.tabdisplay = new TabDisplay()
         tabdisplay.render()
-      } catch(e) {
-        setTimeout(_ => {
-          window.tabdisplay = new TabDisplay()
-          tabdisplay.render()
-        }, 200)
-      }
+      }, 200)
+    }
 
-      window.historyUI = new HistoryUI()
+    window.historyUI = new HistoryUI()
 
-      $('.history', 0).addEventListener('click', e => {
-        window.historyUI.updateList()
-      })
-
-      // listen
-      layer.connect()
-      layer.on('data', d => {
-        window.hist.push(d)
-        if(!window.renderer) { // why why
-          window.renderer = new Renderer(window.config.get())
-          window.renderer.updateHeader()
-        }
-        window.renderer.update()
-      })
+    $('.history', 0).addEventListener('click', e => {
+      window.historyUI.updateList()
     })
 
-    $map('svg', _ => {
-      _.style.width = parseInt(_.getAttribute('width')) / 16 + 'rem'
-      _.style.height = parseInt(_.getAttribute('height')) / 16 + 'rem'
+    // listen
+    layer.connect()
+    layer.on('data', d => {
+      window.hist.push(d)
+      if(!window.renderer) { // why why
+        window.renderer = new Renderer(window.config.get())
+        window.renderer.updateHeader()
+      }
+      window.renderer.update()
     })
   })
 
-  window.addEventListener('load', _ => $('.splash', 0).classList.add('hidden') )
+  $map('svg', _ => {
+    _.style.width = parseInt(_.getAttribute('width')) / 16 + 'rem'
+    _.style.height = parseInt(_.getAttribute('height')) / 16 + 'rem'
+  })
 
-} catch(e) {
-  console.error(e)
-  Raven.captureException(e)
-}
+  $('.splash', 0).classList.add('hidden')
+})
 
     </script>
   </head>
