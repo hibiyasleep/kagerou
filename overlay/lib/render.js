@@ -89,7 +89,11 @@
         h.parentNode.replaceChild(this.template.header, h)
       } catch(e) {
         Raven && Raven.captureException(e, {
-          extra: { h: h? h.toString() : '', p: h? ('parentNode' in h) : '' }
+          extra: {
+            h: h? h.toString() : '',
+            p: h? ('parentNode' in h) : '',
+            $: $.toString()
+          }
         })
         console.error(e)
       }
