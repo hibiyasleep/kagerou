@@ -342,9 +342,27 @@ const COLUMN_INDEX = {
       v: 'maxhit',
       f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases)
     },
-    last10: 'Last10DPS',
-    last30: 'Last30DPS',
-    last60: 'Last60DPS'/*,
+    last10: {
+      v: 'Last10DPS',
+      f: (_, conf) => {
+        _ = pFloat(_)
+        return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
+      }
+    },
+    last30: {
+      v: 'Last30DPS',
+      f: (_, conf) => {
+        _ = pFloat(_)
+        return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
+      }
+    },
+    last60: {
+      v: 'Last60DPS',
+      f: (_, conf) => {
+        _ = pFloat(_)
+        return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
+      }
+    }/*,
     last180: {
       v: _ => 'Last180DPS' in _? _.Last180 : NaN
     }*/
