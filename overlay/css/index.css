@@ -63,6 +63,9 @@ mark {
   background: none;
   color: var(--color-accent);
 }
+a {
+  color: var(--color-accent);
+}
 
 /* Locale */
 
