@@ -346,21 +346,21 @@ const COLUMN_INDEX = {
       v: 'Last10DPS',
       f: (_, conf) => {
         _ = pFloat(_)
-        return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
+        return isNaN(_)? '0' : +_.toFixed(conf.format.significant_digit.dps)
       }
     },
     last30: {
       v: 'Last30DPS',
       f: (_, conf) => {
         _ = pFloat(_)
-        return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
+        return isNaN(_)? '0' : +_.toFixed(conf.format.significant_digit.dps)
       }
     },
     last60: {
       v: 'Last60DPS',
       f: (_, conf) => {
         _ = pFloat(_)
-        return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
+        return isNaN(_)? '0' : +_.toFixed(conf.format.significant_digit.dps)
       }
     }/*,
     last180: {
