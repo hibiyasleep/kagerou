@@ -22,7 +22,7 @@ body {
   margin: 0;
   padding: 0;
 
-  font-family: 'Roboto', 'Segoe UI', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', sans-serif;
+  font-family: 'Roboto', 'Segoe UI', 'Meiryo UI', 'Source Han Sans', 'MalgunGotinc', '본고딕', '맑은 고딕', sans-serif;
 
   -webkit-user-select: none;
   overflow: hidden;

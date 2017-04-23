@@ -1,0 +1,265 @@
+{
+  "general": {
+    "left": "左",
+    "center": "中",
+    "right": "右"
+  },
+  "ui": {
+    "header": {
+      "in-develop": "開発中のバージョン",
+      "waiting-data": "データをお待ちしております",
+      "no-data-yet": "まだデータがありません。",
+      "please-do-combat": "戦闘してご確認ください。"
+    },
+    "menu": {
+      "merge-pet-on": "ペット合算 ON",
+      "merge-pet-off": "ペット合算 OFF",
+      "nameblur-on": "名前を隠す",
+      "nameblur-off": "名前を表示する",
+      "end-encounter": "エンカウンター切る",
+      "settings": "設定",
+      "reload": "リロード",
+      "fullscreen": "フールスクリン",
+      "screenshot": "スクリーンショット"
+    },
+    "config": {
+      "_": "設定",
+      "save": "セーブ",
+      "execute": "実行",
+      "dialog": {
+        "really": "本当にこの設定を初期化しますか？",
+        "undone": "元に戻すできません！",
+        "yes": "はい",
+        "no": "いいえ",
+        "manual-reload": {
+          "title": "オーバーレイのリロードに失敗！",
+          "content": "メニューから手動でリロードしてください。"
+        }
+      },
+      "general": {
+        "_": "一般",
+        "combine_pet": "ペット合算",
+        "split-by-comma": "半角コンマ（,）で区切ります。",
+        "basic": "基本",
+        "footer": {
+          "_": "下部バーの項目",
+          "rank": "現在のランキング",
+          "rdps": "RDPS",
+          "rhps": "RHPS",
+          "recover": "総受け回復量 / 受けるダメージ 🔄"
+        },
+        "reset": "Re:ゼロ",
+        "reset-this": "全てリセットする"
+      },
+      "style": {
+        "_": "スタイル",
+        "reset-this": "スタイルリセット",
+        "css-help": [
+          "CSS値を使用できます。<br />セミコロンを付けて他の属性を追加できます。",
+          "<code>rgba(赤, 緑, 青, 透明度:0~1)</code>で半透明な色を使います。",
+          "<code>url(httpで始まるイメージURL)</code>で背景イメージを設定します。"
+        ],
+        "layout": "レイアウト",
+        "background": "背景",
+        "foreground": "文字色",
+        "width-applied-only": "セルの背景は「24人モード」にのみ適用されます。",
+        "element": {
+          "nav": "上部バー",
+          "dropdown": "ドロップダウン",
+          "header": "表のヘッダー",
+          "table": "表",
+          "cell": "セル"
+        },
+        "shadow": "影"
+      },
+      "color": {
+        "_": "ゲージ色",
+        "reset-this": "色リセット",
+        "position": "役割の表示",
+        "position-none": "noneを使用して取り除きます。",
+        "etc": "その他",
+        "pet-buddy": "ペット"
+      },
+      "width": {
+        "_": "項目の幅",
+        "reset-this": "幅リセット",
+        "css-help": [
+          "16px単位であり、UIサイズ倍率に影響されます。",
+          "「名前」の幅は自動的に調整されます。"
+        ]
+      },
+      "tab": {
+        "_": "タブ",
+        "title": "タイトル",
+        "width": "24人モード",
+        "sortby": "ソート基準",
+        "available": "使える項目",
+        "configured": "設定された項目",
+        "widths": [ 0, "オフ", "2人つづ", "3人つづ" ]
+      },
+      "i/e": {
+        "_": "設定の共有",
+        "import": "インポート",
+        "export": "エクスポート",
+        "copy-this": "下の値をすべてコピーしてください",
+        "paste-here": "下にインポートされた値を貼り付けてください",
+        "save-first": "保存先にしてください!",
+        "export-help": "いくつかの個人的な設定値はエクスポートされません。",
+        "config-to-export": "エクスポート設定",
+        "all": "全部"
+      },
+      "etc": {
+        "_": "その他",
+        "others": {
+          "_": "その他",
+          "skill-aliases-help": "'The Forbidden Chakra'のような長いスキル名に略称を使用します。",
+          "filter": "フィルター",
+          "filter-help": [
+            "FFXIV_Pluginが敵味方識別すらまともにできない関係で、なんとか敵を表示しないようにします。",
+            "何か異常であれば、下のすべてのオプションをオフに見てください。"
+          ],
+          "unusual-spaces": "ペットでもないのに名前に間隔がある(韓国サーバー用)",
+          "jobless": "クラス・ジョブがない",
+          "not-combatant": "戦闘職がない"
+        },
+        "css": "CSS"
+      },
+      "info": {
+        "_": "情報",
+        "created-by": "作った人",
+        "servers": "<del>오딘</del> 초코보 / Tonberry",
+        "hibiya": "히비야 (Kuriyama Hibiya)",
+        "support": "サポート",
+        "license": "ライセンス",
+        "icon-files": "share/img/class内のすべてのファイルに対し、",
+        "privacy": {
+          "_": "Privacy Policy",
+          "list": [
+            "このプログラムが動作中に問題が発生した時に、<br/>解決のための情報がサーバーに送信されることがあります。",
+            "収集される情報は問題を識別するための最小限の情報に制限されます。:",
+            "* プログラムのバージョン<br />* 最後のエンカウンターデータ<br />* ravenjsが収集するその他の情報"
+          ]
+        }
+      }
+    }
+  },
+  "config": {
+    "style": {
+      "_": "スタイル",
+      "resize-factor": "UIサイズ倍率",
+      "body-margin": "外側の余白",
+      "body-font": "本文フォント",
+      "nav-opacity": "非アクティブ時の上部バーの透明度",
+      "accent-color": "強調",
+      "shadow-card": "オーバーレイウィンドウ",
+      "shadow-text": "テキスト",
+      "content-align": "テキストの配置",
+      "font-size-small": "小さな文字サイズ",
+      "gauge-height": "ゲージの高さ",
+      "graph-height": "テーブルの行の高さ"
+    },
+    "color": {
+      "_": "ゲージ色",
+      "gauge-default": "デフォルト",
+      "gauge-opacity": "透明度",
+      "position-tank": "Tank",
+      "position-deal": "DPS",
+      "position-heal": "Heal",
+      "pld": "ナイト (剣術士)",
+      "war": "戦士 (斧術士)",
+      "drk": "暗黒騎士",
+      "mnk": "モンク (格闘士)",
+      "drg": "竜騎士 (槍術士)",
+      "brd": "吟遊詩人 (弓術士)",
+      "nin": "忍者 (双剣士)",
+      "smn": "召喚士 (巴術士)",
+      "blm": "黒魔道士 (呪術士)",
+      "mch": "機工士",
+      "whm": "白魔道士 (幻術士)",
+      "sch": "学者",
+      "ast": "占星術師",
+      "smn-pet": "エギ・カーバンクル",
+      "sch-pet": "フェアリー",
+      "mch-pet": "オートタレット",
+      "chocobo": "チョコボ",
+      "limit-break": "リミットブレイズ"
+    },
+    "format": {
+      "significant_digit": {
+        "_": "小数点精度",
+        "dps": "DPS",
+        "hps": "HPS",
+        "accuracy": "命中率",
+        "critical": "クリティカル"
+      },
+      "myname": "名前",
+      "use_short_name": "名前をイニシャルで表示",
+      "use_skill_aliases": "スキル名略称を使用"
+    }
+  },
+  "col": {
+    "i": {
+      "_": "情報",
+      "icon": [
+        "<img src=\"../share/img/class/empty.png\" class=\"clsicon\"/>",
+        "クラスアイコン"
+      ],
+      "class": ["Job", "クラス・"],
+      "owner": ["Owner", "主人"],
+      "name": ["名前", "名前"]
+    },
+    "deal": {
+      "_": "DPS",
+      "per_second": ["DPS", "DPS"],
+      "pct": ["D%", "寄与率"],
+      "total": ["D合", "合計"],
+      "failure": ["Miss%", "ミスの割合"],
+      "accuracy": ["Acc%", "命中率 (1 - ミスの割合)"],
+      "swing": ["Swing", "打撃回数"],
+      "miss": ["Miss", "外れた回数"],
+      "hitfail": ["Hitfail", "Hitfail回数"],
+      "critical": ["Crit", "Critical%"],
+      "max": ["Max-", "Max (スキル名を除く)"],
+      "maxhit": ["MaxDamage", "Max"],
+      "last10": ["10s", "最近10秒DPS"],
+      "last30": ["30s", "最近30秒DPS"],
+      "last60": ["1分", "最近1分DPS"],
+      "last180": ["3分", "最近3分DPS (β)"]
+    },
+    "tank": {
+      "_": "Tank",
+      "damage": ["TakenD", "受けたダメージ"],
+      "heal": ["TakenH", "受けたヒル"],
+      "parry": ["Parry", "Parry"],
+      "block": ["Block", "Block"]
+    },
+    "heal": {
+      "_": "Heal",
+      "per_second": ["HPS", "HPS"],
+      "pct": ["H%", "寄与率"],
+      "total": ["H合", "合計"],
+      "over": ["Ovr+", "オーバーヒル"],
+      "swing": ["Swing", "詠唱回数"],
+      "critical": ["HCrit", "Critical%"],
+      "cure": ["Cure", "治療 (デバフ解除)"],
+      "max": ["Max+", "Max (スキル名を除く)"],
+      "maxhit": ["MaxHeal", "Max"]
+    },
+    "etc": {
+      "_": "その他",
+      "powerdrain": ["P.drn", "Powerdrain"],
+      "powerheal": ["変換", "資源変換"],
+      "death": ["死", "死亡回数"]
+    }
+  },
+  "zone": {
+    "unknown": {
+
+    }
+  },
+  "skill": {
+    "alias": {
+
+    }
+  }
+}

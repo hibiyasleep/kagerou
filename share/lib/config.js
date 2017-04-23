@@ -214,27 +214,33 @@ const COLUMN_USE_LARGER = {
 }
 
 const PET_MAPPING = {
-  // acn, smn
   '카벙클 에메랄드': 'emerald',
-  'Emerald Carbuncle': 'emerald',
   '카벙클 토파즈': 'topaz',
-  'Topaz Carbuncle': 'topaz',
   '가루다 에기': 'garuda',
-  'Garuda-Egi': 'garuda',
   '타이탄 에기': 'titan',
-  'Titan-Egi': 'titan',
   '이프리트 에기': 'ifrit',
-  'Ifrit-Egi': 'ifrit',
-  // sch
   '요정 에오스': 'eos',
-  'Eos': 'eos',
   '요정 셀레네': 'selene',
-  'Selene': 'selene',
-  // mch
   '자동포탑 룩': 'rook',
-  'Rook Autoturret': 'rook',
   '자동포탑 비숍': 'bishop',
-  'Bishop Autoturret': 'bishop'
+  'Emerald Carbuncle': 'emerald',
+  'Topaz Carbuncle': 'topaz',
+  'Garuda-Egi': 'garuda',
+  'Titan-Egi': 'titan',
+  'Ifrit-Egi': 'ifrit',
+  'Eos': 'eos',
+  'Selene': 'selene',
+  'Rook Autoturret': 'rook',
+  'Bishop Autoturret': 'bishop',
+  'カーバンクル・エメラルド': 'emerald',
+  'カーバンクル・トパーズ': 'topaz',
+  'ガルーダ・エギ': 'garuda',
+  'タイタン・エギ': 'titan',
+  'イフリート・エギ': 'ifrit',
+  'フェアリー・エオス': 'eos',
+  'フェアリー・セレネ': 'selene',
+  'オートタレット・ルーク': 'rook',
+  'オートタレット・ビショップ': 'bishop'
 }
 
 /*
