@@ -47,7 +47,7 @@
   header, main {
     width: 100vw;
   }
-  header {
+  header, .hide-header header {
     height: 4rem;
   }
   header > label {
@@ -79,5 +79,8 @@
   .tabbed-section {
     height: calc(100% + 0.25rem);
     margin-top: 0;
+  }
+  section[data-page=info] {
+    z-index: 20;
   }
 }
