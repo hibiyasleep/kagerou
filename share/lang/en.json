@@ -9,7 +9,7 @@
       "in-develop": "Develop/Unstable",
       "waiting-data": "Awaiting combatant",
       "no-data-yet": "No data yet.",
-      "please-do-combat": "Check after doing some combatant."
+      "please-do-combat": "Check after doing some combat."
     },
     "menu": {
       "merge-pet-on": "Turn on pet-merging",
