@@ -35,8 +35,16 @@
 
     constructor() {
       super()
+
       this.type = 'ws'
-      this.uri = resolveSockURI() + '/MiniParse'
+      this.features = ['end', 'capture']
+
+      this.uri = resolveSockURI()
+
+      if(this.uri === 'ws://:10501') {
+        this.uri = 'ws://localhost:10501'
+      }
+      this.uri += '/MiniParse'
 
       this.canRetry = RECONNECT_RETRY
       this.retryTimeout = null
@@ -45,7 +53,7 @@
         this.emit('message', e.data)
       })
 
-      this.features = ['end', 'capture']
+
     }
 
     connect() {
