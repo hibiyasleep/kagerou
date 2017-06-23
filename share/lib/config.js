@@ -250,7 +250,7 @@ const PET_MAPPING = {
 
 /*
 const APRIL_FOOL_CLASS_REMAP = {
-  'pld': 'gld', 'gld': 'pld',
+  'pld': 'gla', 'gla': 'pld',
   'war': 'mrd', 'mrd': 'war',
   'drk': 'min', 'min': 'drk',
   'mnk': 'pug', 'pug': 'mnk',
