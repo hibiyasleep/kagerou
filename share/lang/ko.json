@@ -64,7 +64,7 @@
           "help": "배경 이미지가 배경 색보다 우선합니다. 이미지 주소는 반드시 <code>url('http://...')</code>처럼 감싸야 합니다.",
           "color": "색",
           "image": "이미지",
-          "opacity": "이미지 투명도",
+          "opacity": "배경 투명도",
           "filter": "CSS 필터 (고급)",
           "default": "기본 값: "
         },
