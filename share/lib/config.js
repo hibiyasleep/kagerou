@@ -344,11 +344,11 @@ const COLUMN_INDEX = {
     },
     direct: {
       v: _ => _ !== null? pFloat(_.DirectHitPct) : null,
-      f: (_, conf) => { console.dir(_); return _ + '%'}
+      f: (_, conf) => _ + '%'
     },
     crit_direct: {
       v: _ => _ !== null? pFloat(_.CritDirectHitPct) : null,
-      f: (_, conf) => { console.dir(_); return _ + '%'}
+      f: (_, conf) => _ + '%'
     },
     max: 'MAXHIT',
     maxhit: {
