@@ -221,6 +221,8 @@
       "miss": ["빗나감", "빗나간 횟수"],
       "hitfail": ["막힘", "막힌 횟수"],
       "critical": ["극대", "극대화 비율"],
+      "direct": ["Direct", "Direct Hit 비율 (4.0)"],
+      "crit_direct": ["!!!", "Critical Direct Hit 비율 (!!!, 4.0)"],
       "max": ["Max-", "Max (스킬명 제외)"],
       "maxhit": ["Max Damage", "Max"],
       "last10": ["10초", "최근 10초 DPS"],

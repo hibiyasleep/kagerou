@@ -221,6 +221,8 @@
       "miss": ["Miss", "Misses"],
       "hitfail": ["HitF", "Hitfail"],
       "critical": ["Crit", "Critical%"],
+      "direct": ["Direct", "Direct Hit%"],
+      "crit_direct": ["!!!", "Critical Direct Hit% (!!!)"],
       "max": ["MaxD", "Maxhit (w/o skillname)"],
       "maxhit": ["Max Damage", "Maxhit (w/ skillname)"],
       "last10": ["10s", "DPS for Last 10s"],

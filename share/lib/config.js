@@ -96,6 +96,8 @@ const CONFIG_DEFAULT = {
     '_deal-miss': 2.5,
     '_deal-hitfail': 2.5,
     '_deal-critical': 2.5,
+    '_deal-direct': 2.5,
+    '_deal-crit_direct': 2.5,
     '_deal-max': 2.5,
     '_deal-maxhit': 7,
     '_deal-last10': 3.5,
@@ -338,6 +340,14 @@ const COLUMN_INDEX = {
     critical: {
       v: _ => (parseInt(_.crithits) || 0) / (parseInt(_.swings) || 1) * 100,
       f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + '%'
+    },
+    direct: {
+      v: _ => _ !== null? pFloat(_.DirectHitPct) : null,
+      f: (_, conf) => { console.dir(_); return _ + '%'}
+    },
+    crit_direct: {
+      v: _ => _ !== null? pFloat(_.CritDirectHitPct) : null,
+      f: (_, conf) => { console.dir(_); return _ + '%'}
     },
     max: 'MAXHIT',
     maxhit: {

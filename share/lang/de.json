@@ -221,6 +221,8 @@
       "miss": ["Verfehlt", "Verfehlt"],
       "hitfail": ["HitF", "Hitfail"],
       "critical": ["Crit", "Kritische Trefferchance"],
+      "direct": ["Direct", "*Direct Hit%"],
+      "crit_direct": ["!!!", "*Critical Direct Hit% (!!!)"],
       "max": ["MaxD", "Maximaler Schaden (ohne Fähigkeitsname)"],
       "maxhit": ["Max Schaden", "Maximaler Schaden (mit Fähigkeitsname)"],
       "last10": ["10s", "DPS der letzten 10s"],
