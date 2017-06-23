@@ -77,7 +77,14 @@ html.ko .lang.ko,
 html.ja .lang.ja,
 html.en .lang.en,
 html.de .lang.de {
-  display: initial;
+  display: block;
+}
+
+html.ko span.lang.ko,
+html.ja span.lang.ja,
+html.en span.lang.en,
+html.de span.lang.de {
+  display: inline;
 }
 
 /* Scrollbar */
