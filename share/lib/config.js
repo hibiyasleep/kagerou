@@ -41,7 +41,6 @@ const CONFIG_DEFAULT = {
         'i.name',
         'deal.pct',
         'deal.per_second',
-        'deal.total',
         'deal.critical',
         'deal.swing'
       ]
@@ -56,7 +55,6 @@ const CONFIG_DEFAULT = {
         'deal.per_second',
         'tank.damage',
         'tank.heal',
-        'tank.parry',
         'etc.death'
       ]
     }, {
