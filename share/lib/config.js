@@ -343,11 +343,11 @@ const COLUMN_INDEX = {
       f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + '%'
     },
     direct: {
-      v: _ => _ !== null? pFloat(_.DirectHitPct) : null,
+      v: _ => 'DirectHitPct' in _? pFloat(_.DirectHitPct) : null,
       f: (_, conf) => _ + '%'
     },
     crit_direct: {
-      v: _ => _ !== null? pFloat(_.CritDirectHitPct) : null,
+      v: _ => 'CritDirectHitPct' in _? pFloat(_.CritDirectHitPct) : null,
       f: (_, conf) => _ + '%'
     },
     max: 'MAXHIT',
