@@ -57,8 +57,17 @@
         "css-help": [
           "CSS値を使用できます。<br />セミコロンを付けて他の属性を追加できます。",
           "<code>rgba(赤, 緑, 青, 透明度:0~1)</code>で半透明な色を使います。",
-          "<code>url(httpで始まるイメージURL)</code>で背景イメージを設定します。"
+          "<code>url('http(s)で始まるイメージURL')</code>で背景イメージを設定します。"
         ],
+        "image": {
+          "_": "背景イメージ",
+          "help": "*The background image takes precedence over specified background color, excpet transparent pixels. Image URL should wrapped in <code>url('http(s)で始まるイメージURL')</code>.",
+          "color": "フィル",
+          "image": "イメージ",
+          "opacity": "透明度",
+          "filter": "CSSフィルタ (詳細設定)",
+          "default": "デフォルト: "
+        },
         "layout": "レイアウト",
         "background": "背景",
         "foreground": "文字色",

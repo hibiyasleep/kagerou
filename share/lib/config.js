@@ -16,7 +16,10 @@ const CONFIG_DEFAULT = {
     'header-bg': 'rgba(0, 0, 0, 0.5)',
     'dropdown-bg': 'rgba(31, 31, 31, 0.95)',
     'dropdown-fg': '#ddd',
-    'content-bg': 'rgba(0, 0, 0, 0.5)',
+    'content-bg': '', // URL
+    'content-bg-color': 'rgba(0, 0, 0, 0.5)',
+    'content-bg-opacity': 1,
+    'content-bg-filter': '',
     'content-fg': '#eee',
     'cell-bg': 'rgba(255, 255, 255, 0.1)',
     'content-align': 'center',

@@ -421,6 +421,66 @@ document.addEventListener('DOMContentLoaded', _ => {
           </blockquote>
         </article>
         <article>
+          <h3 data-locale="ui.config.style.image._"> 배경 이미지 </h3>
+          <blockquote data-locale="ui.config.style.image.help">
+            배경 이미지가 배경 색보다 우선하며, 이미지 URL은
+            <code>url()</code>로 감싸야 합니다.
+          </blockquote>
+          <p class="control">
+            <label for="input-style-content-bg-color"
+                   data-locale="ui.config.style.image.color">
+              색
+            </label>
+            <span class="input-group">
+              <input type="text" id="input-style-content-bg-color"
+                     data-config-key="style.content-bg-color"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-content-bg"
+                   data-locale="ui.config.style.image.image">
+              이미지
+            </label>
+            <span class="input-group">
+              <input type="text" id="input-style-content-bg"
+                     data-config-key="style.content-bg"
+                     style="width: 10rem" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-style-content-bg-opacity"
+                   data-locale="ui.config.style.image.opacity">
+              이미지 투명도
+            </label>
+            <span class="input-group">
+              <label class="input-value-style" for="input-style-content-bg-opacity"
+                     style="background: #111">
+              </label>
+              <input type="range" id="input-style-content-bg-opacity"
+                     data-config-key="style.content-bg-opacity"
+                     data-style="opacity"
+                     min="0" max="1" step="0.05" />
+            </span>
+          </p>
+          <blockquote>
+            <span data-locale="ui.config.style.image.default"> 기본 값: </span>
+            blur(0px) brightness(1) contrast(1) grayscale(0) hue-rotate(0deg) invert(0) saturate(1) sepia(0)
+          </blockquote>
+          <p class="control">
+            <label for="input-style-content-bg-filter"
+                   data-locale="ui.config.style.image.filter">
+              CSS 필터 (고급)
+            </label>
+            <span class="input-group">
+              <input type="text" id="input-style-content-bg-filter"
+                     data-config-key="style.content-bg-filter"
+                     placeholder="blur(2px) brightness(0.7)"
+                     style="width: 12rem" />
+            </span>
+          </p>
+        </article>
+        <article>
           <h3 data-locale="ui.config.style.layout"> 레이아웃 </h3>
           <p class="control">
             <label for="input-style-content-align"
@@ -535,20 +595,6 @@ document.addEventListener('DOMContentLoaded', _ => {
               </label>
               <input type="text" id="input-style-header-bg"
                      data-config-key="style.header-bg"
-                     data-style="background"
-                     style="width: 10rem" />
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-content-bg"
-                   data-locale="ui.config.style.element.table">
-              표
-            </label>
-            <span class="input-group">
-              <label class="input-value-style" for="input-style-content-bg">
-              </label>
-              <input type="text" id="input-style-content-bg"
-                     data-config-key="style.content-bg"
                      data-style="background"
                      style="width: 10rem" />
             </span>

@@ -57,8 +57,17 @@
         "css-help": [
           "Use CSS values. Can be extended with other attributes with semicolon.",
           "Use semi-transparent color with <code>rgba(Red, Green, Blue, Alpha)</code>. <br /> Alpha is 0 to 1.",
-          "Use image background with <code>url('URL here')</code>"
+          "Use image background with <code>url('Image URL')</code>"
         ],
+        "image": {
+          "_": "Background image",
+          "help": "The background image takes precedence over specified background color, excpet transparent pixels. Image URL should wrapped in <code>url('Image URL')</code>.",
+          "color": "Fill",
+          "image": "Image",
+          "opacity": "Opacity",
+          "filter": "CSS Filter (Advanced)",
+          "default": "Default: "
+        },
         "layout": "Layout",
         "background": "Background",
         "foreground": "Foreground",

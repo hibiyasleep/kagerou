@@ -130,10 +130,6 @@ main {
 
   margin: 0 calc(var(--body-margin) * 1);
 
-  background: var(--content-bg);
-  background-size: cover;
-  background-position: center;
-
   box-shadow: 0 -0.25rem 0 rgba(0, 0, 0, 0.01), var(--shadow-card);
   text-shadow: var(--shadow-text);
 
@@ -153,6 +149,24 @@ main > ul {
 
   line-height: 1.125rem;
   overflow-y: auto;
+}
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  background: var(--content-bg);
+  background-color: var(--content-bg-color);
+  background-size: cover;
+  background-position: center;
+
+  opacity: var(--content-bg-opacity);
+  -webkit-filter: var(--content-bg-filter);
+  filter: var(--content-bg-filter);
 }
 #patchnote {
   display: block !important;
@@ -178,6 +192,10 @@ main > ul {
   background-size: cover;
   background-position: center;
   text-shadow: var(--shadow-text);
+  z-index: 5;
+}
+#header {
+  position: relative;
 }
 #table {
   padding-bottom: 1.5rem;
@@ -239,7 +257,6 @@ footer {
 
   position: absolute;
   bottom: 0;
-  z-index: 5;
 }
 .tabs {
   padding: 0 !important;

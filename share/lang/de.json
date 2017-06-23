@@ -57,8 +57,17 @@
         "css-help": [
           "CSS Werte benutzen. Kann mit weiteren Attributen via Semikolon erweitert werden",
           "Für transparente Farben benutze <code>rgba(Rot, Grün, Blau, Alpha)</code>. <br /> Alpha von 0 bis 1.",
-          "Für eigenes Hintergrundbild benutze  <code>url('Bild URL')</code>"
+          "Für eigenes Hintergrundbild benutze <code>url('Bild URL')</code>"
         ],
+        "image": {
+          "_": "Hintergrundbild",
+          "help": "*The background image takes precedence over specified background color, excpet transparent pixels. Image URL should wrapped in <code>url('Bild URL')</code>.",
+          "color": "Füllfarbe",
+          "image": "Bild",
+          "opacity": "Opazität",
+          "filter": "CSS-Filter (Erweitert)",
+          "default": "Default: "
+        },
         "layout": "Layout",
         "background": "Hintergrund",
         "foreground": "Vordergrund",
