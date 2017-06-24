@@ -10,7 +10,7 @@ Modern, Material Design, easily configurable, cloud-hosted and always up-to-date
 
 If you are using older version, settings WILL NOT saved!
 
-If there's 2 buttons: you are on legacy. Get [Latest](https://github.com/hibiyasleep/OverlayPlugin/releases/tag/0.3.3.11) here.
+If there's 2 buttons: you are on legacy. Get [Latest](https://github.com/hibiyasleep/OverlayPlugin/releases/latest) here.
    There should be 3 buttons, named like this: `Copy`, `Open DevTools`, `Reload`. See screenshots below.
 
 ---
