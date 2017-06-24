@@ -165,6 +165,7 @@ const isYou = function isYou(name, list) {
 
 document.addEventListener('DOMContentLoaded', function(e) {
   $map('.version', _ => _.textContent = VERSION)
+  $map('.codename', _ => _.textContent = CODENAME)
 })
 
 const pFloat = function parseLocaledFloat(string) {

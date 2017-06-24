@@ -1,6 +1,7 @@
 'use strict'
 
 const VERSION = '0.7.0'
+const CODENAME = 'Losstime Memory'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
