@@ -10,6 +10,11 @@
   const RECONNECT_TIMEOUT = 2000
   const RECONNECT_RETRY = 5
 
+  const WS_REQUEST_COMMAND = {
+    'end': 'RequestEnd',
+    'capture': 'Capture'
+  }
+
   class Layer extends EventEmitter {
     constructor() {
       super()
@@ -48,12 +53,11 @@
 
       this.canRetry = RECONNECT_RETRY
       this.retryTimeout = null
+      this._overlayid = ''
 
       window.addEventListener('message', e => {
         this.emit('message', e.data)
       })
-
-
     }
 
     connect() {
@@ -82,17 +86,31 @@
     }
 
     request(feature) {
-      switch(feature) {
-        case 'end':
-          this._send('RequestEnd')
-        case 'capture':
-          this._send('Capture')
+      if(!(feature in WS_REQUEST_COMMAND)) {
+        return false
       }
+      if('overlayWindowId' in window && this._overlayid !== overlayWindowId) {
+        this._overlayid = window.overlayWindowId
+        this._send({ // WHY THE FUCK
+          type: 'set_id',
+          id: this._overlayid
+        })
+      }
+      this._send({
+        type: 'overlayAPI',
+        to: this._overlayid,
+        msgtype: WS_REQUEST_COMMAND[feature],
+        msg: undefined
+      })
     }
 
     _send(m) {
       if(this.ws.readyState === 1) {
-        this.ws.send(m)
+        if(typeof m === 'string') {
+          this.ws.send(m)
+        } else {
+          this.ws.send(JSON.stringify(m))
+        }
         return true
       } else return false
     }
@@ -112,7 +130,7 @@
         return
       }
 
-      if(d.type == 'broadcast') {
+      if(d.type === 'broadcast') {
 
         switch(d.msgtype) {
           case 'broadcast':
@@ -128,12 +146,14 @@
             break
 
         }
-      } else if(d.type == 'send') {
+      } else if(d.type === 'send') {
         this.emit('message', {
           type: 'single',
           from: d.from,
           message: d.msg
         })
+      } else if(d.type === 'set_id') {
+        this._overlayid = d.id
       }
 
     }
