@@ -1,6 +1,6 @@
 'use strict'
 
-const VERSION = '0.7.0'
+const VERSION = '0.7.1'
 const CODENAME = 'Losstime Memory'
 
 const CONFIG_DEFAULT = {
