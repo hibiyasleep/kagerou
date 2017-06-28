@@ -52,7 +52,7 @@
     }
 
     get(path) {
-      return resolveDotIndex(this.L[this.current], path)
+      return resolveDotIndex(this.L[this.current], path) || path
     }
 
     skillname(n, useAlias) {

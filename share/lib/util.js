@@ -94,14 +94,16 @@ const resolveDotIndex = function resolveDotIndex(o, p, v) {
   //   o: {a: {b: {c: 1}}}
   //   p: 'a.b.c'
   //   returns: 1
-  if (typeof p === 'string')
-    return resolveDotIndex(o, p.split('.'), v);
-  else if (p.length === 1 && v !== undefined)
-    return o[p[0]] = v;
-  else if (p.length==0)
+  if(typeof p === 'string')
+    return resolveDotIndex(o, p.split('.'), v)
+  else if(p.length === 0)
     return o
+  else if(p[0] != null && !(p[0] in o))
+    return undefined
+  else if(p.length === 1 && v !== undefined)
+    return o[p[0]] = v
   else
-    return resolveDotIndex(o[p[0]], p.slice(1), v);
+    return resolveDotIndex(o[p[0]], p.slice(1), v)
 }
 
 const _in = (key, array) => array.indexOf(key) > -1
