@@ -343,15 +343,15 @@ const COLUMN_INDEX = {
     hitfail: 'hitfailed',
     critical: {
       v: _ => (parseInt(_.crithits) || 0) / (parseInt(_.swings) || 1) * 100,
-      f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + '%'
+      f: (_, conf) => _.toFixed(conf.format.significant_digit.critical)
     },
     direct: {
-      v: _ => 'DirectHitPct' in _? pFloat(_.DirectHitPct) : null,
-      f: (_, conf) => _ + '%'
+      v: _ => 'DirectHitCount' in _? (parseInt(_.DirectHitCount) || 0) / (parseInt(_.swings) || 1) * 100 : null,
+      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) : 'null'
     },
     crit_direct: {
-      v: _ => 'CritDirectHitPct' in _? pFloat(_.CritDirectHitPct) : null,
-      f: (_, conf) => _ + '%'
+      v: _ => 'CritDirectHitCount' in _? (parseInt(_.CritDirectHitCount) || 0) / (parseInt(_.swings) || 1) * 100 : null,
+      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) : 'null'
     },
     crittypes: {
       v: _ => [_.DirectHitCount || '-', _.crithits || '-', _.CritDirectHitCount || '-'],
