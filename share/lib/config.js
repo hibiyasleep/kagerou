@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.1'
-const CODENAME = 'Losstime Memory'
+const VERSION = '0.7.2'
+const CODENAME = 'Summertime Record'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
