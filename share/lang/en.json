@@ -232,6 +232,7 @@
       "critical": ["Crit", "Critical%"],
       "direct": ["Direct", "Direct Hit%"],
       "crit_direct": ["!!!", "Critical Direct Hit% (!!!)"],
+      "crittypes": ["D/!/!!!", "Direct/Critical/!!! Count"],
       "max": ["MaxD", "Maxhit (w/o skillname)"],
       "maxhit": ["Max Damage", "Maxhit (w/ skillname)"],
       "last10": ["10s", "DPS for Last 10s"],

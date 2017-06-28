@@ -31,6 +31,7 @@
 .flex-column-deal-critical    { width: calc(1rem * var(--_deal-critical)); }
 .flex-column-deal-direct      { width: calc(1rem * var(--_deal-direct)); }
 .flex-column-deal-crit-direct { width: calc(1rem * var(--_deal-crit_direct)); }
+.flex-column-deal-crittypes   { width: calc(1rem * var(--_deal-crittypes)); }
 .flex-column-deal-max         { width: calc(1rem * var(--_deal-max)); }
 .flex-column-deal-maxhit      { width: calc(1rem * var(--_deal-maxhit)); }
 .flex-column-deal-last10      { width: calc(1rem * var(--_deal-last10)); }

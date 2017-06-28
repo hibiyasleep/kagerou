@@ -101,6 +101,7 @@ const CONFIG_DEFAULT = {
     '_deal-critical': 2.5,
     '_deal-direct': 2.5,
     '_deal-crit_direct': 2.5,
+    '_deal-crittypes': 4,
     '_deal-max': 2.5,
     '_deal-maxhit': 7,
     '_deal-last10': 3.5,
@@ -351,6 +352,10 @@ const COLUMN_INDEX = {
     crit_direct: {
       v: _ => 'CritDirectHitPct' in _? pFloat(_.CritDirectHitPct) : null,
       f: (_, conf) => _ + '%'
+    },
+    crittypes: {
+      v: _ => [_.DirectHitCount || '-', _.crithits || '-', _.CritDirectHitCount || '-'],
+      f: _ => _.join('/')
     },
     max: 'MAXHIT',
     maxhit: {

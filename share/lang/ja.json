@@ -232,6 +232,7 @@
       "critical": ["Crit", "Critical%"],
       "direct": ["Direct", "Direct Hit%"],
       "crit_direct": ["!!!", "Critical Direct Hit% (!!!)"],
+      "crittypes": ["D/!/!!!", "Critical回数まとめ (D/!/!!!)"],
       "max": ["Max-", "Max (スキル名を除く)"],
       "maxhit": ["MaxDamage", "Max"],
       "last10": ["10s", "最近10秒DPS"],
