@@ -9,7 +9,7 @@
       "in-develop": "Develop/Unstable",
       "waiting-data": "Awaiting combat",
       "no-data-yet": "No data yet",
-      "please-do-combat": "No data available, please initiate combat first"
+      "please-do-combat": "Please initiate combat first"
     },
     "menu": {
       "merge-pet-on": "Turn on pet-merging",
@@ -46,7 +46,7 @@
           "rank": "Current rank",
           "rdps": "RDPS",
           "rhps": "RHPS",
-          "recover": "Total Taken Heals / Taken Damages 🔄"
+          "recover": "Total Healing Recieved / Damage Taken 🔄"
         },
         "reset": "Reset",
         "reset-this": "Reset All"
@@ -61,7 +61,7 @@
         ],
         "image": {
           "_": "Background image",
-          "help": "The background image takes precedence over specified background color, except transparent pixels. Image URL should wrapped in <code>url('Image URL')</code>.",
+          "help": "The background image takes precedence over specified background color, except transparent pixels. Image URL should be wrapped in <code>url('Image URL')</code>.",
           "color": "Fill",
           "image": "Image",
           "opacity": "Opacity",
@@ -124,7 +124,7 @@
           "skill-aliases-help": "Use shorter abbreviations for long skill names like 'The Forbidden Chakra'.",
           "filter": "Filter",
           "filter-help": [
-            "FFXIV_Plugin does not identify friends or foe, so that this option will try not to display enemies in anyway.",
+            "FFXIV_Plugin does not identify friends or foe, so these options will try not to display enemies in any way.",
             "If something is wrong, try disabling all of the options below."
           ],
           "unusual-spaces": "Name contains space, but not a pet (Korea Server Only)",
