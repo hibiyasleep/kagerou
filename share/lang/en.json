@@ -7,9 +7,9 @@
   "ui": {
     "header": {
       "in-develop": "Develop/Unstable",
-      "waiting-data": "Awaiting combatant",
-      "no-data-yet": "No data yet.",
-      "please-do-combat": "Check after doing some combat."
+      "waiting-data": "Awaiting combat",
+      "no-data-yet": "No data yet",
+      "please-do-combat": "No data available, please initiate combat first"
     },
     "menu": {
       "merge-pet-on": "Turn on pet-merging",
@@ -28,7 +28,7 @@
       "execute": "Execute",
       "dialog": {
         "really": "Really reset these settings?",
-        "undone": "there's no undo!",
+        "undone": "This cannot be undone!",
         "yes": "Yes",
         "no": "No",
         "manual-reload": {
@@ -61,7 +61,7 @@
         ],
         "image": {
           "_": "Background image",
-          "help": "The background image takes precedence over specified background color, excpet transparent pixels. Image URL should wrapped in <code>url('Image URL')</code>.",
+          "help": "The background image takes precedence over specified background color, except transparent pixels. Image URL should wrapped in <code>url('Image URL')</code>.",
           "color": "Fill",
           "image": "Image",
           "opacity": "Opacity",
@@ -110,10 +110,10 @@
         "_": "Import/Export",
         "import": "Import",
         "export": "Export",
-        "copy-this": "Copy all of the value below:",
+        "copy-this": "Copy everything below:",
         "paste-here": "Paste the fetched value below:",
         "save-first": "Save First!!",
-        "export-help": "Values that are the same as the default, and some values are not exported.",
+        "export-help": "Some values and values that are the same as the default are not exported.",
         "config-to-export": "Config to export",
         "all": "All"
       },
@@ -125,11 +125,11 @@
           "filter": "Filter",
           "filter-help": [
             "FFXIV_Plugin does not identify friends or foe, so that this option will try not to display enemies in anyway.",
-            "If something wrong, try disable all of option below."
+            "If something is wrong, try disabling all of the options below."
           ],
           "unusual-spaces": "Name contains space, but not a pet (Korea Server Only)",
           "jobless": "Class/Job is empty",
-          "not-combatant": "Not a combat class/job"
+          "not-combatant": "Not a Discipline of War/Magic"
         },
         "css": "CSS"
       },
@@ -145,7 +145,7 @@
           "_": "Privacy Policy",
           "list": [
             "If a problem occurs during operation of this program,<br />information for troubleshooting can be sent to the server.",
-            "Collected information is limited to a minimum amount to identify the problem:",
+            "Collected information is limited to a minimum amount needed to identify the problem:",
             "* Program Version<br />* Last Combatant Data<br />* Other information collected by ravenjs"
           ]
         }
@@ -204,7 +204,7 @@
         "critical": "% of Critical hits/heals"
       },
       "myname": "My name",
-      "use_short_name": "Initialize username",
+      "use_short_name": "Player Name Appearance",
       "use_skill_aliases": "Use skillname aliases"
     }
   },
@@ -243,7 +243,7 @@
     "tank": {
       "_": "Tank",
       "damage": ["TakenD", "Damage taken"],
-      "heal": ["TakenH", "Heal taken"],
+      "heal": ["HealR", "Healing Received"],
       "parry": ["Parry", "Parry"],
       "block": ["Block", "Block"]
     },
