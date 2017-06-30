@@ -48,34 +48,6 @@ const parseSvg = function parseSvg(text) {
   return parser.parseFromString(text, 'image/svg+xml')
 }
 
-const loadSvg = function loadSvg(src, callback) {
-  let xhr = new XMLHttpRequest()
-  xhr.open('GET', src, true)
-
-  xhr.onreadystatechange = (e) => {
-    if(xhr.readyState === 4)
-      if(xhr.status === 200)
-        callback(null, parseSvg(xhr.responseText))
-      else
-        callback({
-          xhr: xhr,
-          event: e
-        }, null)
-  }
-
-  xhr.send(null)
-}
-
-const loadSvgSync = function loadSvgSync(src) {
-  let xhr = new XMLHttpRequest()
-  xhr.open('GET', src, false)
-  xhr.send(null)
-
-  if(req.status === 200)
-    return parseSvg(xhr.responseText)
-  else return null
-}
-
 const updateObject = function updateObject(obj/*, ... */) {
   for(let i=1; i<arguments.length; i++) {
     for(let prop in arguments[i]) {
@@ -105,8 +77,6 @@ const resolveDotIndex = function resolveDotIndex(o, p, v) {
   else
     return resolveDotIndex(o[p[0]], p.slice(1), v)
 }
-
-const _in = (key, array) => array.indexOf(key) > -1
 
 const resolveClass = function resolveJobFromName(_job, _name) {
   _job = _job || ''
