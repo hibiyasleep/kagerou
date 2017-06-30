@@ -175,6 +175,11 @@ const pFloat = function parseLocaledFloat(string) {
   else return parseFloat(string.replace(',', '.'))
 }
 
+const pInt = function parseLocaledInteger(string) {
+  if(typeof string !== 'string') return string
+  else return parseInt(string.replace(/[,.]/g, ''))
+}
+
 const sanitize = _ => _.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-')
 
 class EventEmitter {
