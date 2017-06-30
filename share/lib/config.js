@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.2'
-const CODENAME = 'Summertime Record'
+const VERSION = '0.7.3'
+const CODENAME = 'Summertime Endroll'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
