@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.3'
-const CODENAME = 'Summertime Endroll'
+const VERSION = '0.7.4'
+const CODENAME = 'Fictional World of Marry'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
