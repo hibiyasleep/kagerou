@@ -279,6 +279,7 @@ const COLUMN_INDEX = {
       v: _ => resolveClass(_.Job, _.name)[0],
       f: _ => {
         let job = _.toLowerCase()
+        if(job === 'gld') job = 'gla'
         /*
         if('IS_APRIL_FOOL' in window
          && IS_APRIL_FOOL === true
@@ -290,7 +291,11 @@ const COLUMN_INDEX = {
       }
     },
     class: {
-      v: _ => resolveClass(_.Job, _.name)[0]
+      v: _ => {
+        let job = resolveClass(_.Job, _.name)[0]
+        if(job === 'gld') job = 'gla'
+        return job
+      }
     },
     owner: {
       v: _ => resolveClass(_.Job, _.name)[2],
