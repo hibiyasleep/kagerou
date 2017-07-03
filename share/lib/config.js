@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.4'
-const CODENAME = 'Fictional World of Marry'
+const VERSION = '0.7.5'
+const CODENAME = 'Moon-Viewing Recital'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
