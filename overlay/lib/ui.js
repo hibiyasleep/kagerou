@@ -194,6 +194,17 @@
         )
       }
     }, {
+      name: 'donate',
+      callback: _ => {
+        let resize = window.config.get('style.resize-factor')
+
+        window.open(
+          'https://hibiya.moe/donate',
+          'hibiya.moe - donate',
+          `width=${800 * resize},height=${600 * resize}`
+        )
+      }
+    }, {
       name: 'fullscreen',
       toggle: 'fullscreen',
       callback: _ => {

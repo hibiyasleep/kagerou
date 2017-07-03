@@ -186,6 +186,49 @@ main > ul {
 #patchnote p {
   padding: 0 0.5rem;
 }
+#init-menu {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  height: 3rem;
+  background: none !important
+}
+#init-menu > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+}
+#init-menu > ul li {
+  flex-grow: 1;
+  position: relative;
+
+  margin: 0.25rem;
+  padding: 0 0.25rem;
+  height: calc(100% - 0.5rem);
+
+
+  overflow: hidden;
+}
+#init-menu > ul li.button {
+  background: var(--header-bg);
+  text-align: right;
+  cursor: pointer;
+}
+#init-menu > ul li.button:hover {
+}
+#init-menu > ul > li.text {
+  background: transparent;
+  line-height: 1.25rem;
+}
+#init-menu > ul li .icon {
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  position: absolute;
+  left: 0.25rem;
+  bottom: -0.5rem;
+}
 #header, footer {
   display: flex;
   width: 100%;
