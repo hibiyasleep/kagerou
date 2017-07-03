@@ -336,7 +336,9 @@ footer {
   height: var(--graph-height);
   overflow-y: hidden;
 }
-.collapsed #header, .collapsed #table > li:not(.me) {
+.collapsed #header,
+.standby #header,
+.collapsed #table > li:not(.me) {
   height: 0;
 }
 .collapsed #table[data-width='2'] > li:not(.me),
