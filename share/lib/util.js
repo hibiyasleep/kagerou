@@ -155,22 +155,21 @@ const sanitize = _ => _.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-')
 class EventEmitter {
   /* Copyright (c) 2011 Jerome Etienne, http://jetienne.com - MIT License */
 
-  constructor() { }
+  constructor() {
+    this._events = {}
+  }
 
-  on(event, fct){
-    this._events = this._events || {}
-    this._events[event] = this._events[event]	|| []
+  on(event, fct) {
+    this._events[event] = this._events[event] || []
     this._events[event].push(fct)
   }
 
-  off(event, fct){
-    this._events = this._events || {}
+  off(event, fct) {
     if(!(event in this._events)) return
     this._events[event].splice(this._events[event].indexOf(fct), 1)
   }
 
-  emit(event/*, args...*/){
-    this._events = this._events || {}
+  emit(event/*, args...*/) {
     if(!(event in this._events)) return
     this._events[event].forEach(_ => _.apply(this, [].slice.call(arguments, 1)))
   }

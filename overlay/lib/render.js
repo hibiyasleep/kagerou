@@ -25,7 +25,6 @@
     constructor(config) {
       this.current = 0
 
-      this.latestData = null
       this.currentHistory = false
       this.updateConfig(config)
 
