@@ -20,7 +20,8 @@
       "settings": "Settings",
       "reload": "Reload overlay",
       "fullscreen": "Toggle fullscreen",
-      "screenshot": "Take screenshot"
+      "screenshot": "Take screenshot",
+      "donate": "Donate"
     },
     "config": {
       "_": "Settings",

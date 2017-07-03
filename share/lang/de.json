@@ -20,7 +20,8 @@
       "settings": "Einstellungen",
       "reload": "Overlay aktualisieren",
       "fullscreen": "Vollbildmodus",
-      "screenshot": "Bildschirmfoto"
+      "screenshot": "Bildschirmfoto",
+      "donate": "Spenden"
     },
     "config": {
       "_": "Einstellungen",

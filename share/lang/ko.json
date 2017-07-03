@@ -20,7 +20,8 @@
       "settings": "설정",
       "reload": "새로고침",
       "fullscreen": "전체 화면 전환",
-      "screenshot": "스크린샷"
+      "screenshot": "스크린샷",
+      "donate": "기부"
     },
     "config": {
       "_": "설정",
