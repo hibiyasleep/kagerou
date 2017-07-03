@@ -191,7 +191,7 @@ main > ul {
   width: 100% !important;
   margin: 0 !important;
   height: 3rem;
-  background: none !important
+  background: var(--header-bg) !important;
 }
 #init-menu > ul {
   display: flex;
@@ -201,13 +201,12 @@ main > ul {
   height: 100%;
 }
 #init-menu > ul li {
-  flex-grow: 1;
   position: relative;
+  width: 4rem;
 
   margin: 0.25rem;
   padding: 0 0.25rem;
   height: calc(100% - 0.5rem);
-
 
   overflow: hidden;
 }
@@ -216,9 +215,8 @@ main > ul {
   text-align: right;
   cursor: pointer;
 }
-#init-menu > ul li.button:hover {
-}
 #init-menu > ul > li.text {
+  flex-grow: 1;
   background: transparent;
   line-height: 1.25rem;
 }
