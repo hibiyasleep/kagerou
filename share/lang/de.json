@@ -246,7 +246,8 @@
       "damage": ["Erl.Schad.", "Erlittener Schaden"],
       "heal": ["Geheilt", "Erhaltene Heilung"],
       "parry": ["Parade", "Pariert"],
-      "block": ["Block", "Geblockt"]
+      "block": ["Block", "Geblockt"],
+      "threat_delta": ["Th∆", "'Threat' Delta"]
     },
     "heal": {
       "_": "Heilung",

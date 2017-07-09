@@ -246,7 +246,8 @@
       "damage": ["TakenD", "Damage taken"],
       "heal": ["HealR", "Healing Received"],
       "parry": ["Parry", "Parry"],
-      "block": ["Block", "Block"]
+      "block": ["Block", "Block"],
+      "threat_delta": ["Th∆", "Threat Delta"]
     },
     "heal": {
       "_": "Heal",

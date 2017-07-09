@@ -246,7 +246,8 @@
       "damage": ["TakenD", "受けたダメージ"],
       "heal": ["TakenH", "受けたヒル"],
       "parry": ["Parry", "Parry"],
-      "block": ["Block", "Block"]
+      "block": ["Block", "Block"],
+      "threat_delta": ["Th∆", "スレットデルタ(∆)"]
     },
     "heal": {
       "_": "Heal",

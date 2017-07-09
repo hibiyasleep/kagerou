@@ -113,6 +113,7 @@ const CONFIG_DEFAULT = {
     '_tank-heal': 4,
     '_tank-parry': 2,
     '_tank-block': 2,
+    '_tank-threat_delta': 3.5,
     '_heal-per_second': 3,
     '_heal-pct': 2,
     '_heal-total': 4,
@@ -403,7 +404,8 @@ const COLUMN_INDEX = {
       f: _ => '+' + _
     },
     parry: 'ParryPct',
-    block: 'BlockPct'
+    block: 'BlockPct',
+    threat_delta: 'threatdelta'
   },
   // heal
   heal: {
