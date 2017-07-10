@@ -234,8 +234,9 @@
       "direct": ["DH%", "Direct Hit % (4.x)"],
       "crit_direct": ["!!!", "Critical Direct Hit % (!!!, 4.x)"],
       "crittypes": ["D/!/!!!", "극대 모아보기 (D/!/!!!, 4.x)"],
-      "max": ["Max-", "Max (스킬명 제외)"],
-      "maxhit": ["Max Damage", "Max"],
+      "max": ["MaxD", "Maxhit (스킬명 제외)"],
+      "maxskill": ["MaxD 스킬", "Maxhit (스킬명만)"],
+      "maxhit": ["MaxDamage", "Maxhit"],
       "last10": ["10초", "최근 10초 DPS"],
       "last30": ["30초", "최근 30초 DPS"],
       "last60": ["1분", "최근 1분 DPS"],
@@ -258,8 +259,9 @@
       "swing": ["타격", "타격 횟수"],
       "critical": ["+극대", "극대화 비율"],
       "cure": ["치료", "치료 (디버프 해제)"],
-      "max": ["Max+", "Max (스킬명 제외)"],
-      "maxhit": ["Max Heal", "Max"]
+      "max": ["MaxH", "Maxhit (스킬명 제외)"],
+      "maxskill": ["MaxH 스킬", "Maxhit (스킬명만)"],
+      "maxhit": ["MaxHeal", "Maxhit"]
     },
     "etc": {
       "_": "기타",

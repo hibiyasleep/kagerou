@@ -235,7 +235,8 @@
       "crit_direct": ["!!!", "Critical Direct Hit% (!!!)"],
       "crittypes": ["D/!/!!!", "Direct/Critical/!!! Count"],
       "max": ["MaxD", "Maxhit (w/o skillname)"],
-      "maxhit": ["Max Damage", "Maxhit (w/ skillname)"],
+      "maxskill": ["MaxDS", "Maxhit (skillname only)"],
+      "maxhit": ["MaxDamage", "Maxhit"],
       "last10": ["10s", "DPS for Last 10s"],
       "last30": ["30s", "DPS for Last 30s"],
       "last60": ["1m", "DPS for Last 1min"],
@@ -259,7 +260,8 @@
       "critical": ["HCrit", "Critical%"],
       "cure": ["Cure", "Cures"],
       "max": ["MaxH", "Maxhit (w/o skillname)"],
-      "maxhit": ["Max Heal", "Maxhit (w/ skillname)"]
+      "maxskill": ["MaxHS", "Maxhit (skillname only)"],
+      "maxhit": ["MaxHeal", "Maxhit"]
     },
     "etc": {
       "_": "Etc",

@@ -104,6 +104,7 @@ const CONFIG_DEFAULT = {
     '_deal-crittypes': 4,
     '_deal-max': 2.5,
     '_deal-maxhit': 7,
+    '_deal-maxskill': 5,
     '_deal-last10': 3.5,
     '_deal-last30': 3.5,
     '_deal-last60': 3.5,
@@ -122,6 +123,7 @@ const CONFIG_DEFAULT = {
     '_heal-cure': 2,
     '_heal-max': 2.5,
     '_heal-maxhit': 7,
+    '_heal-maxskill': 5,
     '_etc-powerdrain': 4,
     '_etc-powerheal': 4,
     '_etc-death': 2
@@ -366,7 +368,11 @@ const COLUMN_INDEX = {
     max: 'MAXHIT',
     maxhit: {
       v: 'maxhit',
-      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases)
+      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases).join(': ')
+    },
+    maxskill: {
+      v: 'maxhit',
+      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases)[0]
     },
     last10: {
       v: 'Last10DPS',
@@ -435,7 +441,11 @@ const COLUMN_INDEX = {
     max: 'MAXHEALWARD',
     maxhit: {
       v: 'maxhealward',
-      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases)
+      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases).join(': ')
+    },
+    maxskill: {
+      v: 'maxhealward',
+      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases)[0]
     }
   },
   etc: {

@@ -34,6 +34,7 @@
 .flex-column-deal-crittypes     { width: calc(1rem * var(--_deal-crittypes)); }
 .flex-column-deal-max           { width: calc(1rem * var(--_deal-max)); }
 .flex-column-deal-maxhit        { width: calc(1rem * var(--_deal-maxhit)); }
+.flex-column-deal-maxskill      { width: calc(1rem * var(--_deal-maxskill)); }
 .flex-column-deal-last10        { width: calc(1rem * var(--_deal-last10)); }
 .flex-column-deal-last30        { width: calc(1rem * var(--_deal-last30)); }
 .flex-column-deal-last60        { width: calc(1rem * var(--_deal-last60)); }
@@ -52,6 +53,7 @@
 .flex-column-heal-critical      { width: calc(1rem * var(--_heal-critical)); }
 .flex-column-heal-max           { width: calc(1rem * var(--_heal-max)); }
 .flex-column-heal-maxhit        { width: calc(1rem * var(--_heal-maxhit)); }
+.flex-column-heal-maxskill      { width: calc(1rem * var(--_heal-maxskill)); }
 .flex-column-etc-powerdrain     { width: calc(1rem * var(--_etc-powerdrain)); }
 .flex-column-etc-death          { width: calc(1rem * var(--_etc-death)); }
 .flex-column-etc-powerheal      { width: calc(1rem * var(--_etc-powerheal)); }

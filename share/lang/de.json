@@ -235,7 +235,8 @@
       "crit_direct": ["!!!", "*Critical Direct Hit% (!!!)"],
       "crittypes": ["D/!/!!!", "*Direct/Critical/!!! Count"],
       "max": ["MaxD", "Maximaler Schaden (ohne Fähigkeitsname)"],
-      "maxhit": ["Max Schaden", "Maximaler Schaden (mit Fähigkeitsname)"],
+      "maxskill": ["MaxDS", "Maximaler Schaden Fähigkeitsname"],
+      "maxhit": ["MaxSchaden", "Maximaler Schaden (mit Fähigkeitsname)"],
       "last10": ["10s", "DPS der letzten 10s"],
       "last30": ["30s", "DPS der letzten 30s"],
       "last60": ["1m", "DPS der letzten 1min"],
@@ -258,8 +259,9 @@
       "swing": ["Heilungen", "Anzahl der Heilungen"],
       "critical": ["HCrit", "Kritischer Trefferchance"],
       "cure": ["Reinigung", "Anzahl der Reinigungen"],
-      "max": ["MaxH", "Maximale Heilung (ohne Fähigkeitsname)"],
-      "maxhit": ["Max Heal", "Maximale Heilung (mit Fähigkeitsname)"]
+      "max": ["MaxH", "Maximaler Schaden (ohne Fähigkeitsname)"],
+      "maxskill": ["MaxHS", "Maximaler Schaden Fähigkeitsname"],
+      "maxhit": ["MaxHeal", "Maximaler Schaden (mit Fähigkeitsname)"]
     },
     "etc": {
       "_": "Etc",
