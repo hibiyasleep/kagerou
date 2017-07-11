@@ -67,6 +67,7 @@
 .dialog-button {
   background: none;
   padding: 0.75rem;
+  line-height: 1.25rem;
 
   color: inherit;
   cursor: pointer;
