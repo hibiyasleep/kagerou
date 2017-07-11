@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.5'
-const CODENAME = 'Moon-Viewing Recital'
+const VERSION = '0.7.6'
+const CODENAME = 'Yesterday Evening'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
