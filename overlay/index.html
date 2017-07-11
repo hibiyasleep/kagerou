@@ -39,7 +39,7 @@ Raven && Raven.setRelease(VERSION)
 // temporal ACTWebSocket fix: Newer OverlayProc doesn't allow 'downgrade'
 // security, from https to unsecured websocket, and GitHub pages forces HTTPS.
 // I know this sucks.
-if(layer && layer.type === 'ws' && location.host === 'hibiyasleep.github.io') {
+if(window.layer && layer.type === 'ws' && location.host === 'hibiyasleep.github.io') {
   location.href = 'http://kagerou.hibiya.moe/overlay' + location.search
 }
 
