@@ -91,7 +91,7 @@
       let d = parseImportedString(text)
 
       if(!d) {
-        output.textContent = '데이터가 잘못되었습니다.'
+        output.textContent = locale.get('ui.config.i/e.data-fault')
         return
       }
 
@@ -103,15 +103,17 @@
           for(let kk in d.data[k]) {
             let v = d.data[k][kk]
             let title = document.createElement('h3')
-            title.textContent = '탭: ' + v.label
+            title.textContent = 'Tab: ' + v.label
 
             output.appendChild(title)
-            output.appendChild(outputRow('게이지 기준', v.gauge))
-            output.appendChild(outputRow('정렬 기준', v.sort))
-            output.appendChild(outputRow('설정된 항목 수', v.col.length))
+            output.appendChild(outputRow(locale.get('ui.config.tab.sortby'), v.sort))
+            output.appendChild(outputRow(locale.get('ui.config.i/e.content-count'), v.col.length))
           }
         } else if(k == 'colwidth') {
-          output.insertAdjacentHTML('beforeend', '<h3> 너비 </h3>')
+          let h3 = document.createElement('h3')
+          h3.textContent = locale.get('ui.config.width._')
+          h3.setAttribute('data-locale', 'ui.config.width._')
+          output.appendChild(h3)
 
           for(let kk in d.data[k]) {
             let o = kk.substr(1).split('-')
@@ -149,13 +151,13 @@
       let d = parseImportedString(text)
 
       if(!d) {
-        output.textContent = '데이터가 잘못되었습니다.'
+        output.textContent = locale.get('ui.config.i/e.data-fault')
         return
       }
 
       new dialog('confirm', {
-        title: '이 설정값을 적용할까요?',
-        content: '되돌릴 수 없습니다.',
+        title: locale.get('ui.config.dialog.apply'),
+        content: locale.get('ui.config.dialog.undone'),
         callback: _ => {
           for(let k of ['style', 'color', 'colwidth', 'tabs']) {
             config.update(k, d.data[k])

@@ -29,6 +29,7 @@
       "execute": "Ausführen",
       "dialog": {
         "really": "Einstellungen wirklich zurücksetzen?",
+        "apply": "Wollen Sie diese Einstellung zu übernehmen?",
         "undone": "Diese Aktion kann nicht rückgängig gemacht werden",
         "yes": "Ja",
         "no": "Nein",
@@ -116,7 +117,9 @@
         "save-first": "Bitte zuerst speichern",
         "export-help": "Einige Werte können nicht exportiert werden; Standardwerte werden nie exportiert",
         "config-to-export": "Auswählen was exportiert werden soll",
-        "all": "Alles"
+        "all": "Alles",
+        "data-fault": "Die Daten falsch war.",
+        "content-count": "Anzahl der Teile"
       },
       "etc": {
         "_": "Erweitert",

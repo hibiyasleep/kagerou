@@ -29,6 +29,7 @@
       "execute": "Execute",
       "dialog": {
         "really": "Really reset these settings?",
+        "apply": "Apply this settings?",
         "undone": "This cannot be undone!",
         "yes": "Yes",
         "no": "No",
@@ -116,7 +117,9 @@
         "save-first": "Save First!!",
         "export-help": "Some values and values that are the same as the default are not exported.",
         "config-to-export": "Config to export",
-        "all": "All"
+        "all": "All",
+        "data-fault": "Data is incorrect or broken.",
+        "content-count": "Column count"
       },
       "etc": {
         "_": "More",
