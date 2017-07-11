@@ -123,7 +123,7 @@ const CONFIG_DEFAULT = {
     '_heal-cure': 2,
     '_heal-max': 2.5,
     '_heal-maxhit': 7,
-    '_heal-maxskill': 5,
+    '_heal-maxskill': 4,
     '_etc-powerdrain': 4,
     '_etc-powerheal': 4,
     '_etc-death': 2
