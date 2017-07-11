@@ -21,6 +21,9 @@ try {
 'use strict'
 
 Raven && Raven.config('https://77d763feffdf45daa9a75517878489cd@s.hibiya.moe/2', {
+  // to who plays with forked source:
+  // please do *not* report your error to me. do NOT edit this, or simply
+  // remove raven-related codes.
   whitelistUrls: [/hibiyasleep\.github\.io/, /kagerou\.hibiya\.moe/],
   dataCallback: function(data) {
     if(window.hist && window.hist.currentData) {
