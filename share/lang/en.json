@@ -133,7 +133,7 @@
           ],
           "unusual-spaces": "Name contains space, but not a pet (Korea Server Only)",
           "jobless": "Class/Job is empty",
-          "not-combatant": "Not a Discipline of War/Magic"
+          "not-combatant": "Not a Disciple of War/Magic"
         },
         "css": "CSS"
       },
