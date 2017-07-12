@@ -20,7 +20,8 @@
       "settings": "設定",
       "reload": "リロード",
       "fullscreen": "フールスクリン",
-      "screenshot": "スクリーンショット"
+      "screenshot": "スクリーンショット",
+      "donate": "寄付"
     },
     "config": {
       "_": "設定",
@@ -28,6 +29,7 @@
       "execute": "実行",
       "dialog": {
         "really": "本当にこの設定を初期化しますか？",
+        "apply": "この設定を適用しますか？",
         "undone": "元に戻すできません！",
         "yes": "はい",
         "no": "いいえ",
@@ -115,7 +117,9 @@
         "save-first": "保存先にしてください!",
         "export-help": "いくつかの個人的な設定値はエクスポートされません。",
         "config-to-export": "エクスポート設定",
-        "all": "全部"
+        "all": "全部",
+        "data-fault": "データが間違ってました。",
+        "content-count": "項目の数"
       },
       "etc": {
         "_": "その他",
@@ -233,7 +237,8 @@
       "direct": ["Direct", "*Direct Hit%"],
       "crit_direct": ["!!!", "*Critical Direct Hit% (!!!)"],
       "crittypes": ["D/!/!!!", "Critical回数まとめ (D/!/!!!)"],
-      "max": ["Max-", "Max (スキル名を除く)"],
+      "max": ["MaxD", "Maxhit (スキル名を除く)"],
+      "maxskill": ["MaxDスキル", "Maxhitのスキル名"],
       "maxhit": ["MaxDamage", "Max"],
       "last10": ["10s", "最近10秒DPS"],
       "last30": ["30s", "最近30秒DPS"],
@@ -245,7 +250,8 @@
       "damage": ["TakenD", "受けたダメージ"],
       "heal": ["TakenH", "受けたヒル"],
       "parry": ["Parry", "Parry"],
-      "block": ["Block", "Block"]
+      "block": ["Block", "Block"],
+      "threat_delta": ["Th∆", "スレットデルタ(∆)"]
     },
     "heal": {
       "_": "Heal",
@@ -256,7 +262,8 @@
       "swing": ["Swing", "詠唱回数"],
       "critical": ["HCrit", "Critical%"],
       "cure": ["Cure", "治療 (デバフ解除)"],
-      "max": ["Max+", "Max (スキル名を除く)"],
+      "max": ["MaxH", "Maxhit (スキル名を除く)"],
+      "maxskill": ["MaxHスキル", "Maxhitのスキル名"],
       "maxhit": ["MaxHeal", "Max"]
     },
     "etc": {

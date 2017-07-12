@@ -56,8 +56,8 @@
             for(let t in COLUMN_USE_LARGER) {
               let targets = COLUMN_USE_LARGER[t]
               let v
-              let v1 = pFloat(o[t])
-              let v2 = pFloat(players[owner][t])
+              let v1 = pInt(o[t])
+              let v2 = pInt(players[owner][t])
 
               if(v1 > v2 || isNaN(v2))
                 v = o

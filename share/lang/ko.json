@@ -20,7 +20,8 @@
       "settings": "설정",
       "reload": "새로고침",
       "fullscreen": "전체 화면 전환",
-      "screenshot": "스크린샷"
+      "screenshot": "스크린샷",
+      "donate": "기부"
     },
     "config": {
       "_": "설정",
@@ -28,6 +29,7 @@
       "execute": "실행",
       "dialog": {
         "really": "정말로 이 설정을 초기화하시겠습니까?",
+        "apply": "이 설정값을 적용할까요?",
         "undone": "되돌릴 수 없습니다!",
         "yes": "예",
         "no": "아니오",
@@ -115,7 +117,9 @@
         "save-first": "먼저 저장해야 합니다!",
         "export-help": "기본값인 설정과 일부 설정값은 내보내지지 않습니다.",
         "config-to-export": "내보낼 설정",
-        "all": "전부"
+        "all": "전부",
+        "data-fault": "데이터가 잘못됐습니다.",
+        "content-count": "설정된 항목 수"
       },
       "etc": {
         "_": "더 보기",
@@ -233,8 +237,9 @@
       "direct": ["DH%", "Direct Hit % (4.x)"],
       "crit_direct": ["!!!", "Critical Direct Hit % (!!!, 4.x)"],
       "crittypes": ["D/!/!!!", "극대 모아보기 (D/!/!!!, 4.x)"],
-      "max": ["Max-", "Max (스킬명 제외)"],
-      "maxhit": ["Max Damage", "Max"],
+      "max": ["MaxD", "Maxhit (스킬명 제외)"],
+      "maxskill": ["MaxD 스킬", "Maxhit (스킬명만)"],
+      "maxhit": ["MaxDamage", "Maxhit"],
       "last10": ["10초", "최근 10초 DPS"],
       "last30": ["30초", "최근 30초 DPS"],
       "last60": ["1분", "최근 1분 DPS"],
@@ -245,7 +250,8 @@
       "damage": ["받은 뎀", "받은 데미지"],
       "heal": ["받은 힐", "받은 힐"],
       "parry": ["받넘", "받아넘기기"],
-      "block": ["회피", "회피"]
+      "block": ["회피", "회피"],
+      "threat_delta": ["Th∆", "Threat Delta 값"]
     },
     "heal": {
       "_": "힐",
@@ -256,8 +262,9 @@
       "swing": ["타격", "타격 횟수"],
       "critical": ["+극대", "극대화 비율"],
       "cure": ["치료", "치료 (디버프 해제)"],
-      "max": ["Max+", "Max (스킬명 제외)"],
-      "maxhit": ["Max Heal", "Max"]
+      "max": ["MaxH", "Maxhit (스킬명 제외)"],
+      "maxskill": ["MaxH 스킬", "Maxhit (스킬명만)"],
+      "maxhit": ["MaxHeal", "Maxhit"]
     },
     "etc": {
       "_": "기타",
@@ -285,11 +292,12 @@
   },
   "skill": {
     "alias": {
-      "The Forbidden Chakra": "Forb..Chakra",
-      "Spineshatter Dive": "Spine..Dive",
+      "The Forbidden Chakra": "Forb.Chakra",
+      "Spineshatter Dive": "Spine-Dive",
       "Midare Setsugekka": "Midare",
       "Hissatsu: Guren": "Guren",
-      "Enchanted Redoublement": "E.Redoubl"
+      "Enchanted Redoublement": "E.Redoubl",
+      "Refulgent Arrow": "Ref.Arrow"
     }
   }
 }

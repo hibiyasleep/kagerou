@@ -25,7 +25,7 @@
     constructor(config) {
       this.current = 0
 
-      this.latestData = null
+      this.standby = true
       this.currentHistory = false
       this.updateConfig(config)
 
@@ -101,6 +101,11 @@
 
     update() {
       if(!window.hist.currentData) return
+
+      if(this.standby) {
+        $('body', 0).classList.remove('standby')
+        this.standby = false
+      }
 
       if(!this.currentHistory) {
         this.render(window.hist.current)

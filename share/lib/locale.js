@@ -56,7 +56,7 @@
     }
 
     skillname(n, useAlias) {
-      if(!n) return ''
+      if(!n) return [n, -1]
 
       let o = n.split('-')
       let dot = this._skill(o[0])
@@ -68,9 +68,9 @@
       }
 
       if(value) {
-        return name + (dot[1]? '*' : '') + ': ' + value
+        return [name + (dot[1]? '*' : ''), value]
       } else {
-        return name
+        return [name, -1]
       }
     }
 

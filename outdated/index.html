@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title> kagerou - Outdated Browser </title>
+    <meta name="viewport" content="width=device-width" />
+    <style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', 'Consolas', monospace, sans-serif;
+  font-weight: 200;
+}
+h1, h2, h3, h4, h5, h6, b {
+  font-weight: 500;
+}
+nav, main {
+  width: 100%;
+}
+.link {
+  word-break: break-all;
+}
+.mute {
+  color: rgba(0, 0, 0, 0.5);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+nav {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  background-color: #000;
+  color: #fff;
+
+  padding: 1rem 0;
+}
+nav > h1 {
+  font-size: 1rem;
+  margin: 0 1rem 0 0;
+}
+main {
+  margin: 0 auto;
+  max-width: 32rem;
+  padding: 0.5rem;
+}
+header {
+  text-align: right;
+  padding-bottom: 2rem;
+  margin-bottom: 4rem;
+  border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.5);
+}
+article {
+  margin-top: 4rem;
+}
+h3 {
+  margin-bottom: 1rem;
+}
+h3::after {
+  display: block;
+  content: '';
+  width: 6rem;
+  height: 0.125rem;
+  background-color: #26c6da;
+  margin-top: 1rem;
+}
+section {
+}
+section h4 {
+  border-left: 0.125rem solid #26c6da;
+  padding: 0.5rem 0 0.5rem 0.875rem;
+}
+section h4 ~ p {
+  margin-left: 1rem;
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <svg viewBox="4 0 64 20" width="4rem" height="1.25rem">
+        <path fill="#7F7F7F" fill-opacity="0.5" d="M58,20c-5.5,0-10-4.5-10-10S52.5,0,58,0s10,4.5,10,10S63.5,20,58,20zM62.2,5.8L57,9v6h1.5V9.8L63,7.1L62.2,5.8z"/>
+        <path fill="#FFFFFF" d="M34,20c-5.5,0-10-4.5-10-10S28.5,0,34,0s10,4.5,10,10S39.5,20,34,20z M38.2,5.8L33,9v6h1.5V9.8L39,7.1L38.2,5.8z"/>
+        <path fill="#FF3455" fill-opacity="0.5" d="M10,20C4.5,20,0,15.5,0,10S4.5,0,10,0s10,4.5,10,10S15.5,20,10,20zM14.2,5.8L9,9v6h1.5V9.8L15,7.1L14.2,5.8z"/>
+      </svg>
+      <h1>
+        kagerou overlay
+      </h1>
+    </nav>
+    <main>
+      <header>
+        <h2> kagerou failed to start </h2>
+        <p>
+          Your browser is outdated or not supported.
+        </p>
+      </header>
+      <article>
+        <h3> Why this happened? </h3>
+        <p> Current browser doesn't support some features that kagerou requires. </p>
+        <p> This may happen if you're in 'incognito' mode. </p>
+      </article>
+      <article>
+        <h3> What can I do? </h3>
+        <section>
+          <h4>OverlayPlugin</h4>
+          <p>
+            please update your plugin, kagerou requires v0.3.3.10 or newer.
+          </p>
+          <p>
+            Download at: <u class="link">https://github.com/hibiyasleep/OverlayPlugin/releases/latest</u>
+            <span class="mute"> (open in your browser) </span>
+          </p>
+        </section>
+        <section>
+          <h4>macOS/iOS</h4>
+          <p> iOS/Safari 9 and older not supported. </p>
+        </section>
+        <section>
+          <h4>IE</h4>
+          <p> <i>please no</i>. IE will <i>never</i> supported. </p>
+        </section>
+        <section>
+          <h4>Android 4.x</h4>
+          <p> please use Chrome, Firefox, or other newer browser. </p>
+        </section>
+      </article>
+      <article style="text-align: right">
+        <p>
+          <a href="../overlay">return to overlay</a>
+        </p>
+        <p>
+          <a href="../config">try config page</a>
+        </p>
+      </article>
+    </main>
+  </body>
+</html>

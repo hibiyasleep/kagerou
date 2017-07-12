@@ -17,43 +17,46 @@
   flex-grow: 10;
   flex-basis: 0%;
 }
-.flex-column-i-class          { width: calc(1rem * var(--_i-class)); }
-.flex-column-i-owner          { width: calc(1rem * var(--_i-owner)); }
-.flex-column-i-name           { width: calc(1rem * var(--_i-name)); }
-.flex-column-deal-total       { width: calc(1rem * var(--_deal-total)); }
-.flex-column-deal-per-second  { width: calc(1rem * var(--_deal-per_second)); }
-.flex-column-deal-pct         { width: calc(1rem * var(--_deal-pct)); }
-.flex-column-deal-failure     { width: calc(1rem * var(--_deal-failure)); }
-.flex-column-deal-accuracy    { width: calc(1rem * var(--_deal-accuracy)); }
-.flex-column-deal-swing       { width: calc(1rem * var(--_deal-swing)); }
-.flex-column-deal-miss        { width: calc(1rem * var(--_deal-miss)); }
-.flex-column-deal-hitfail     { width: calc(1rem * var(--_deal-hitfail)); }
-.flex-column-deal-critical    { width: calc(1rem * var(--_deal-critical)); }
-.flex-column-deal-direct      { width: calc(1rem * var(--_deal-direct)); }
-.flex-column-deal-crit-direct { width: calc(1rem * var(--_deal-crit_direct)); }
-.flex-column-deal-crittypes   { width: calc(1rem * var(--_deal-crittypes)); }
-.flex-column-deal-max         { width: calc(1rem * var(--_deal-max)); }
-.flex-column-deal-maxhit      { width: calc(1rem * var(--_deal-maxhit)); }
-.flex-column-deal-last10      { width: calc(1rem * var(--_deal-last10)); }
-.flex-column-deal-last30      { width: calc(1rem * var(--_deal-last30)); }
-.flex-column-deal-last60      { width: calc(1rem * var(--_deal-last60)); }
-.flex-column-deal-last180     { width: calc(1rem * var(--_deal-last180)); }
-.flex-column-tank-damage      { width: calc(1rem * var(--_tank-damage)); }
-.flex-column-tank-parry       { width: calc(1rem * var(--_tank-parry)); }
-.flex-column-tank-heal        { width: calc(1rem * var(--_tank-heal)); }
-.flex-column-tank-block       { width: calc(1rem * var(--_tank-block)); }
-.flex-column-heal-per-second  { width: calc(1rem * var(--_heal-per_second)); }
-.flex-column-heal-pct         { width: calc(1rem * var(--_heal-pct)); }
-.flex-column-heal-total       { width: calc(1rem * var(--_heal-total)); }
-.flex-column-heal-swing       { width: calc(1rem * var(--_heal-swing)); }
-.flex-column-heal-over        { width: calc(1rem * var(--_heal-over)); }
-.flex-column-heal-cure        { width: calc(1rem * var(--_heal-cure)); }
-.flex-column-heal-critical    { width: calc(1rem * var(--_heal-critical)); }
-.flex-column-heal-max         { width: calc(1rem * var(--_heal-max)); }
-.flex-column-heal-maxhit      { width: calc(1rem * var(--_heal-maxhit)); }
-.flex-column-etc-powerdrain   { width: calc(1rem * var(--_etc-powerdrain)); }
-.flex-column-etc-death        { width: calc(1rem * var(--_etc-death)); }
-.flex-column-etc-powerheal    { width: calc(1rem * var(--_etc-powerheal)); }
+.flex-column-i-class            { width: calc(1rem * var(--_i-class)); }
+.flex-column-i-owner            { width: calc(1rem * var(--_i-owner)); }
+.flex-column-i-name             { width: calc(1rem * var(--_i-name)); }
+.flex-column-deal-total         { width: calc(1rem * var(--_deal-total)); }
+.flex-column-deal-per-second    { width: calc(1rem * var(--_deal-per_second)); }
+.flex-column-deal-pct           { width: calc(1rem * var(--_deal-pct)); }
+.flex-column-deal-failure       { width: calc(1rem * var(--_deal-failure)); }
+.flex-column-deal-accuracy      { width: calc(1rem * var(--_deal-accuracy)); }
+.flex-column-deal-swing         { width: calc(1rem * var(--_deal-swing)); }
+.flex-column-deal-miss          { width: calc(1rem * var(--_deal-miss)); }
+.flex-column-deal-hitfail       { width: calc(1rem * var(--_deal-hitfail)); }
+.flex-column-deal-critical      { width: calc(1rem * var(--_deal-critical)); }
+.flex-column-deal-direct        { width: calc(1rem * var(--_deal-direct)); }
+.flex-column-deal-crit-direct   { width: calc(1rem * var(--_deal-crit_direct)); }
+.flex-column-deal-crittypes     { width: calc(1rem * var(--_deal-crittypes)); }
+.flex-column-deal-max           { width: calc(1rem * var(--_deal-max)); }
+.flex-column-deal-maxhit        { width: calc(1rem * var(--_deal-maxhit)); }
+.flex-column-deal-maxskill      { width: calc(1rem * var(--_deal-maxskill)); }
+.flex-column-deal-last10        { width: calc(1rem * var(--_deal-last10)); }
+.flex-column-deal-last30        { width: calc(1rem * var(--_deal-last30)); }
+.flex-column-deal-last60        { width: calc(1rem * var(--_deal-last60)); }
+.flex-column-deal-last180       { width: calc(1rem * var(--_deal-last180)); }
+.flex-column-tank-damage        { width: calc(1rem * var(--_tank-damage)); }
+.flex-column-tank-parry         { width: calc(1rem * var(--_tank-parry)); }
+.flex-column-tank-heal          { width: calc(1rem * var(--_tank-heal)); }
+.flex-column-tank-block         { width: calc(1rem * var(--_tank-block)); }
+.flex-column-tank-threat-delta  { width: calc(1rem * var(--_tank-threat_delta)); }
+.flex-column-heal-per-second    { width: calc(1rem * var(--_heal-per_second)); }
+.flex-column-heal-pct           { width: calc(1rem * var(--_heal-pct)); }
+.flex-column-heal-total         { width: calc(1rem * var(--_heal-total)); }
+.flex-column-heal-swing         { width: calc(1rem * var(--_heal-swing)); }
+.flex-column-heal-over          { width: calc(1rem * var(--_heal-over)); }
+.flex-column-heal-cure          { width: calc(1rem * var(--_heal-cure)); }
+.flex-column-heal-critical      { width: calc(1rem * var(--_heal-critical)); }
+.flex-column-heal-max           { width: calc(1rem * var(--_heal-max)); }
+.flex-column-heal-maxhit        { width: calc(1rem * var(--_heal-maxhit)); }
+.flex-column-heal-maxskill      { width: calc(1rem * var(--_heal-maxskill)); }
+.flex-column-etc-powerdrain     { width: calc(1rem * var(--_etc-powerdrain)); }
+.flex-column-etc-death          { width: calc(1rem * var(--_etc-death)); }
+.flex-column-etc-powerheal      { width: calc(1rem * var(--_etc-powerheal)); }
 
 .pet-merged .flex-column-i-owner {
   display: none !important;
@@ -67,6 +70,7 @@
   opacity: 0.75;
 }
 /* Position Helpers */
+.class-gld .gauge,
 .class-gla .gauge, .class-pld .gauge, .class-mrd .gauge,
 .class-war .gauge, .class-drk .gauge { /* tank; blue 500 */
   box-shadow: 0.25rem 0 0 var(--position-tank) inset;
@@ -88,6 +92,7 @@
   background: var(--gauge-default);
   opacity: var(--gauge-opacity);
 }
+.class-gld .gauge,
 .class-gla .gauge, .class-pld .gauge { background: var(--pld); }
 .class-mrd .gauge, .class-war .gauge { background: var(--war); }
 .class-drk .gauge { background: var(--drk); }
@@ -183,6 +188,47 @@ main > ul {
 }
 #patchnote p {
   padding: 0 0.5rem;
+}
+#init-menu {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  height: 3rem;
+  background: var(--header-bg) !important;
+}
+#init-menu > ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+}
+#init-menu > ul li {
+  position: relative;
+  width: 5rem;
+
+  margin: 0.25rem;
+  padding: 0 0.25rem;
+  height: calc(100% - 0.5rem);
+
+  overflow: hidden;
+}
+#init-menu > ul li.button {
+  background: var(--header-bg);
+  text-align: right;
+  cursor: pointer;
+}
+#init-menu > ul > li.text {
+  flex-grow: 1;
+  background: transparent;
+  line-height: 1.25rem;
+}
+#init-menu > ul li .icon {
+  width: 2.25rem !important;
+  height: 2.25rem !important;
+  position: absolute;
+  left: 0.25rem;
+  bottom: -0.5rem;
 }
 #header, footer {
   display: flex;
@@ -293,7 +339,9 @@ footer {
   height: var(--graph-height);
   overflow-y: hidden;
 }
-.collapsed #header, .collapsed #table > li:not(.me) {
+.collapsed #header,
+.standby #header,
+.collapsed #table > li:not(.me) {
   height: 0;
 }
 .collapsed #table[data-width='2'] > li:not(.me),

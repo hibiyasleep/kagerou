@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.2'
-const CODENAME = 'Summertime Record'
+const VERSION = '0.7.6'
+const CODENAME = 'Yesterday Evening'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
@@ -104,6 +104,7 @@ const CONFIG_DEFAULT = {
     '_deal-crittypes': 4,
     '_deal-max': 2.5,
     '_deal-maxhit': 7,
+    '_deal-maxskill': 5,
     '_deal-last10': 3.5,
     '_deal-last30': 3.5,
     '_deal-last60': 3.5,
@@ -113,6 +114,7 @@ const CONFIG_DEFAULT = {
     '_tank-heal': 4,
     '_tank-parry': 2,
     '_tank-block': 2,
+    '_tank-threat_delta': 3.5,
     '_heal-per_second': 3,
     '_heal-pct': 2,
     '_heal-total': 4,
@@ -121,6 +123,7 @@ const CONFIG_DEFAULT = {
     '_heal-cure': 2,
     '_heal-max': 2.5,
     '_heal-maxhit': 7,
+    '_heal-maxskill': 4,
     '_etc-powerdrain': 4,
     '_etc-powerheal': 4,
     '_etc-death': 2
@@ -279,6 +282,7 @@ const COLUMN_INDEX = {
       v: _ => resolveClass(_.Job, _.name)[0],
       f: _ => {
         let job = _.toLowerCase()
+        if(job === 'gld') job = 'gla'
         /*
         if('IS_APRIL_FOOL' in window
          && IS_APRIL_FOOL === true
@@ -290,7 +294,11 @@ const COLUMN_INDEX = {
       }
     },
     class: {
-      v: _ => resolveClass(_.Job, _.name)[0]
+      v: _ => {
+        let job = resolveClass(_.Job, _.name)[0]
+        if(job === 'gld') job = 'gla'
+        return job
+      }
     },
     owner: {
       v: _ => resolveClass(_.Job, _.name)[2],
@@ -332,11 +340,11 @@ const COLUMN_INDEX = {
     total: 'damage',
     failure: {
       v: _ => _.swings > 0? _.misses/_.swings * 100 : -1,
-      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy)
+      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy) + '%'
     },
     accuracy: {
       v: _ => _.swings > 0? (1 - _.misses/_.swings) * 100 : -1,
-      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy)
+      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy) + '%'
     },
     swing: 'swings',
     miss: 'misses',
@@ -347,11 +355,11 @@ const COLUMN_INDEX = {
     },
     direct: {
       v: _ => 'DirectHitCount' in _? (parseInt(_.DirectHitCount) || 0) / (parseInt(_.swings) || 1) * 100 : null,
-      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) : 'null'
+      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) + '%' : '-'
     },
     crit_direct: {
       v: _ => 'CritDirectHitCount' in _? (parseInt(_.CritDirectHitCount) || 0) / (parseInt(_.swings) || 1) * 100 : null,
-      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) : 'null'
+      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) + '%' : '-'
     },
     crittypes: {
       v: _ => [_.DirectHitCount || '-', _.crithits || '-', _.CritDirectHitCount || '-'],
@@ -360,7 +368,11 @@ const COLUMN_INDEX = {
     max: 'MAXHIT',
     maxhit: {
       v: 'maxhit',
-      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases)
+      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases).join(': ')
+    },
+    maxskill: {
+      v: 'maxhit',
+      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases)[0]
     },
     last10: {
       v: 'Last10DPS',
@@ -398,7 +410,8 @@ const COLUMN_INDEX = {
       f: _ => '+' + _
     },
     parry: 'ParryPct',
-    block: 'BlockPct'
+    block: 'BlockPct',
+    threat_delta: 'threatdelta'
   },
   // heal
   heal: {
@@ -428,7 +441,11 @@ const COLUMN_INDEX = {
     max: 'MAXHEALWARD',
     maxhit: {
       v: 'maxhealward',
-      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases)
+      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases).join(': ')
+    },
+    maxskill: {
+      v: 'maxhealward',
+      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases)[0]
     }
   },
   etc: {

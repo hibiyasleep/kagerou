@@ -20,7 +20,8 @@
       "settings": "Settings",
       "reload": "Reload overlay",
       "fullscreen": "Toggle fullscreen",
-      "screenshot": "Take screenshot"
+      "screenshot": "Take screenshot",
+      "donate": "Donate"
     },
     "config": {
       "_": "Settings",
@@ -28,6 +29,7 @@
       "execute": "Execute",
       "dialog": {
         "really": "Really reset these settings?",
+        "apply": "Apply this settings?",
         "undone": "This cannot be undone!",
         "yes": "Yes",
         "no": "No",
@@ -115,7 +117,9 @@
         "save-first": "Save First!!",
         "export-help": "Some values and values that are the same as the default are not exported.",
         "config-to-export": "Config to export",
-        "all": "All"
+        "all": "All",
+        "data-fault": "Data is incorrect or broken.",
+        "content-count": "Column count"
       },
       "etc": {
         "_": "More",
@@ -234,7 +238,8 @@
       "crit_direct": ["!!!", "Critical Direct Hit% (!!!)"],
       "crittypes": ["D/!/!!!", "Direct/Critical/!!! Count"],
       "max": ["MaxD", "Maxhit (w/o skillname)"],
-      "maxhit": ["Max Damage", "Maxhit (w/ skillname)"],
+      "maxskill": ["MaxDS", "Maxhit (skillname only)"],
+      "maxhit": ["MaxDamage", "Maxhit"],
       "last10": ["10s", "DPS for Last 10s"],
       "last30": ["30s", "DPS for Last 30s"],
       "last60": ["1m", "DPS for Last 1min"],
@@ -245,7 +250,8 @@
       "damage": ["TakenD", "Damage taken"],
       "heal": ["HealR", "Healing Received"],
       "parry": ["Parry", "Parry"],
-      "block": ["Block", "Block"]
+      "block": ["Block", "Block"],
+      "threat_delta": ["Th∆", "Threat Delta"]
     },
     "heal": {
       "_": "Heal",
@@ -257,7 +263,8 @@
       "critical": ["HCrit", "Critical%"],
       "cure": ["Cure", "Cures"],
       "max": ["MaxH", "Maxhit (w/o skillname)"],
-      "maxhit": ["Max Heal", "Maxhit (w/ skillname)"]
+      "maxskill": ["MaxHS", "Maxhit (skillname only)"],
+      "maxhit": ["MaxHeal", "Maxhit"]
     },
     "etc": {
       "_": "Etc",
@@ -271,11 +278,12 @@
   },
   "skill": {
     "alias": {
-      "The Forbidden Chakra": "Forb..Chakra",
-      "Spineshatter Dive": "Spine..Dive",
+      "The Forbidden Chakra": "Forb.Chakra",
+      "Spineshatter Dive": "Spine-Dive",
       "Midare Setsugekka": "Midare",
       "Hissatsu: Guren": "Guren",
-      "Enchanted Redoublement": "E.Redoubl"
+      "Enchanted Redoublement": "E.Redoubl",
+      "Refulgent Arrow": "Ref.Arrow"
     }
   }
 }

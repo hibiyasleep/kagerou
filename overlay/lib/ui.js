@@ -194,6 +194,17 @@
         )
       }
     }, {
+      name: 'donate',
+      callback: _ => {
+        let resize = window.config.get('style.resize-factor')
+
+        window.open(
+          'https://hibiya.moe/donate',
+          'hibiya.moe - donate',
+          `width=${800 * resize},height=${600 * resize}`
+        )
+      }
+    }, {
       name: 'fullscreen',
       toggle: 'fullscreen',
       callback: _ => {
@@ -224,13 +235,15 @@
         }
       }
     }].forEach(_ => {
-      $(`[data-button=${_.name}]`, 0).addEventListener('click', function(e) {
-        if(_.toggle) {
-          this.classList.toggle('enabled')
-          $('main', 0).classList.toggle(_.toggle)
-        }
-        if(_.callback)
-          _.callback(e)
+      [].forEach.call($(`[data-button=${_.name}]`), el => {
+        el.addEventListener('click', function(e) {
+          if(_.toggle) {
+            this.classList.toggle('enabled')
+            $('main', 0).classList.toggle(_.toggle)
+          }
+          if(_.callback)
+            _.callback(e)
+        })
       })
     })
 
