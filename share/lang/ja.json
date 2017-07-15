@@ -209,7 +209,8 @@
       },
       "myname": "名前",
       "use_short_name": "名前をイニシャルで表示",
-      "use_skill_aliases": "スキル名略称を使用"
+      "use_skill_aliases": "スキル名略称を使用",
+      "use_tailing_pct": "割合値の後ろに％記号を表示"
     }
   },
   "col": {

@@ -209,7 +209,8 @@
       },
       "myname": "Mein Name",
       "use_short_name": "Darstellung von Spielernamen",
-      "use_skill_aliases": "Benutze Alias für Fähigkeitsnamen"
+      "use_skill_aliases": "Benutze Alias für Fähigkeitsnamen",
+      "use_tailing_pct": "*Display % after percentage value"
     }
   },
   "col": {
