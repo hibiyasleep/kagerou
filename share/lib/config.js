@@ -332,7 +332,7 @@ const COLUMN_INDEX = {
     },
     pct: {
       v: _ => parseInt(_['damage%']),
-      f: _ => {
+      f: (_, conf) => {
         if(isNaN(_)) return '---'
         else if(_ >= 100) return '100'
         else return _ + (conf.format.use_tailing_pct? '%' : '')
