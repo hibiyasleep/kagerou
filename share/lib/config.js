@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.6'
-const CODENAME = 'Yesterday Evening'
+const VERSION = '0.7.7'
+const CODENAME = 'Shinigami Record'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
