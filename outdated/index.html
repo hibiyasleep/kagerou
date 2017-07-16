@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title> kagerou - Outdated Browser </title>
     <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:200,500" />
     <style>
 * { box-sizing: border-box; }
 body {
@@ -74,11 +75,31 @@ section h4 {
 section h4 ~ p {
   margin-left: 1rem;
 }
+.error {
+  color: #f33;
+}
     </style>
+    <script>
+window.addEventListener('load', function() {
+  var els = document.querySelectorAll('[data-bind]')
+  for(var i in els) {
+    var el = els[i]
+    var exp = el.getAttribute('data-bind')
+    var val = ''
+    try {
+      val = (new Function('a', exp))(1)
+    } catch(e) {
+      el.className = 'error'
+      val = e.name + ': ' + e.message
+    }
+    el.textContent = val
+  }
+})
+    </script>
   </head>
   <body>
     <nav>
-      <svg viewBox="4 0 64 20" width="4rem" height="1.25rem">
+      <svg viewBox="4 0 64 20" width="64" height="20" style="width: 4rem; height: 1.25rem">
         <path fill="#7F7F7F" fill-opacity="0.5" d="M58,20c-5.5,0-10-4.5-10-10S52.5,0,58,0s10,4.5,10,10S63.5,20,58,20zM62.2,5.8L57,9v6h1.5V9.8L63,7.1L62.2,5.8z"/>
         <path fill="#FFFFFF" d="M34,20c-5.5,0-10-4.5-10-10S28.5,0,34,0s10,4.5,10,10S39.5,20,34,20z M38.2,5.8L33,9v6h1.5V9.8L39,7.1L38.2,5.8z"/>
         <path fill="#FF3455" fill-opacity="0.5" d="M10,20C4.5,20,0,15.5,0,10S4.5,0,10,0s10,4.5,10,10S15.5,20,10,20zM14.2,5.8L9,9v6h1.5V9.8L15,7.1L14.2,5.8z"/>
@@ -123,6 +144,11 @@ section h4 ~ p {
           <h4>Android 4.x</h4>
           <p> please use Chrome, Firefox, or other newer browser. </p>
         </section>
+      </article>
+      <article>
+        <h3> More Info </h3>
+        <p> <b>User Agent</b>: <span data-bind="return navigator.userAgent">?</span></p>
+        <p> <b>Test</b>: <span data-bind="'use strict'; const b=(_=>`${_}`)(a); return b==='1'? 'pass':'fail'">?</span>
       </article>
       <article style="text-align: right">
         <p>
