@@ -14,20 +14,21 @@ const switchTab = function switchTab(target) {
   $('body', 0).classList.toggle('hide-header', target === 'info')
 }
 
+const sendMessage = function sendMessage (message) {
+  if(window.OverlayPluginApi) {
+    OverlayPluginApi.broadcastMessage(message)
+  } else if(window.opener) {
+    window.opener.postMessage(message, '*')
+  } else {
+    new dialog('error', {
+      title: window.locale.get('ui.config.dialog.manual-reload.title'),
+      content: window.locale.get('ui.config.dialog.manual-reload.content')
+    })
+  }
+}
+
 ;(function() {
 
-  let sendMessage = (message) => {
-    if(window.OverlayPluginApi) {
-      OverlayPluginApi.broadcastMessage(message)
-    } else if(window.opener) {
-      window.opener.postMessage(message, '*')
-    } else {
-      new dialog('error', {
-        title: window.locale.get('ui.config.dialog.manual-reload.title'),
-        content: window.locale.get('ui.config.dialog.manual-reload.content')
-      })
-    }
-  }
 
   window.addEventListener('load', function(e) {
 

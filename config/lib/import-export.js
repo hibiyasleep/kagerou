@@ -163,7 +163,7 @@
             config.update(k, d.data[k])
           }
           config.save()
-          OverlayPluginApi.broadcastMessage('reload')
+          sendMessage('reload')
           location.reload()
         }
       })
