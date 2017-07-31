@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.8'
-const CODENAME = 'Dead and Seek'
+const VERSION = '0.7.9'
+const CODENAME = 'Transpaent Answer'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
