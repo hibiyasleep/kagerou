@@ -90,7 +90,7 @@
       let o = UNKNOWN_ZONE_REGEX.exec(n)
 
       if(o && o[1]) {
-        let v = this.L[this.current].zone.unknown[o[1]]
+        let v = this.get(`zone.unknown.${o[1]}`)
         if(v) return v
       }
 
