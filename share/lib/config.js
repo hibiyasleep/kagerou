@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.9'
-const CODENAME = 'Transpaent Answer'
+const VERSION = '0.7.10'
+const CODENAME = 'Outer Science'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
