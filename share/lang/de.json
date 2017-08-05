@@ -275,7 +275,16 @@
     }
   },
   "zone": {
-    "unknown": { }
+    "unknown": {
+      "2b3": "Deltascape v1.0",
+      "2b4": "Deltascape v2.0",
+      "2b5": "Deltascape v3.0",
+      "2b6": "Deltascape v4.0",
+      "2b7": "Deltascape v1.0 (Savage)",
+      "2b8": "Deltascape v2.0 (Savage)",
+      "2b9": "Deltascape v3.0 (Savage)",
+      "2ba": "Deltascape v4.0 (Savage)"
+    }
   },
   "skill": {
     "alias": {
