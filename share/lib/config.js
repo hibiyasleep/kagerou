@@ -509,15 +509,14 @@ const COLUMN_INDEX = {
         o = null
       }
 
-      if(!o) { // anyway, it's empty, let's populate localStorage
-        localStorage.setItem('kagerou_config', JSON.stringify(localConfig))
-        this.config = localConfig
+      if(!o) {
+        this.init()
       } else {
         this.config = {}
 
         for(let k in localConfig) {
-          if(CONFIG_KEY_SHOULD_OVERRIDE.indexOf(k) != -1) {
-            if(k == 'tabs' && o[k].length == 0) {
+          if(CONFIG_KEY_SHOULD_OVERRIDE.indexOf(k) !== -1) {
+            if(k === 'tabs' && o[k].length === 0) {
               this.config[k] = localConfig[k]
             } else {
               this.config[k] = o[k]
@@ -531,6 +530,16 @@ const COLUMN_INDEX = {
       }
 
       return this.config
+    }
+
+    init() {
+      let localConfig = copy(CONFIG_DEFAULT)
+      this.config = localConfig
+      let lang = (navigator.language || '').split('-')[0]
+      if(['ko', 'en', 'ja', 'de'].indexOf(lang) !== -1){
+        this.set('lang', lang)
+      }
+      this.save()
     }
 
     loadStyle(path, section) {
