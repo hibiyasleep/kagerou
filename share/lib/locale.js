@@ -2,7 +2,7 @@
 
 ;(function() {
 
-  const UNKNOWN_ZONE_REGEX = /^Unknown Zone \(([0-9A-Fa-f]{3})\)$/
+  const UNKNOWN_ZONE_REGEX = /^Unknown Zone \(([0-9A-Fa-f]{2,4})\)$/
   const SKILL_REGEX = /^(.+?)( \(\*\))?$/
   const LOCALE_PATH = '../share/lang/'
 
@@ -89,8 +89,8 @@
     zone(n) {
       let o = UNKNOWN_ZONE_REGEX.exec(n)
 
-      if(o && o[1]) {
-        let v = this.get(`zone.unknown.${o[1]}`)
+      if(o && typeof o[1] === 'string') {
+        let v = this.get(`zone.unknown.${o[1].toLowerCase()}`)
         if(v) return v
       }
 
