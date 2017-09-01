@@ -190,10 +190,21 @@
         })
       })
       document.addEventListener('onLogLine', e => {
-        this.emit('logline', {
-          type: 'echo',
-          message: e.detail.message
-        })
+        let d = e.detail
+        if(d.opcode !== undefined) {
+          if(d.opcode !== 56) {
+            this.emit('logline', {
+              type: 'logline',
+              opcode: d.opcode,
+              timestamp: d.timestamp,
+              payload: d.payload
+            })
+          } else {
+            this.emit('echo', d.payload[3])
+          }
+        } else {
+          this.emit('echo', d.message)
+        }
       })
       this.connected = true
     }
