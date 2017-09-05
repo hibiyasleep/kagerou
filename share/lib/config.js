@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.10'
-const CODENAME = 'Outer Science'
+const VERSION = '0.7.11'
+const CODENAME = 'Happiness Theory of Ayano'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
