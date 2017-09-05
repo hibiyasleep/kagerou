@@ -275,6 +275,12 @@
     }
   },
   "zone": {
+    "replace": {
+      "Baelsar's Wall": "바엘사르 장성",
+      "Sohm Al (Hard)": "솜 알 (어려움)",
+      "Containment Bay Z1T9": "봉쇄구역 Z1T9",
+      "Containment Bay Z1T9 (Extreme)": "봉쇄구역 Z1T9"
+    },
     "unknown": {
       "23c": "젤파톨",
       "242": "구브라 환상도서관 (어려움)",

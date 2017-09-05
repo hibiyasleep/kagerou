@@ -89,7 +89,7 @@
     zone(n) {
       let o = UNKNOWN_ZONE_REGEX.exec(n)
 
-      if(o && typeof o[1] === 'string') {
+      if(o && typeof o[1] === 'string') { // Unknown zone matches
         let v = this.get(`zone.unknown.${o[1].toLowerCase()}`)
         if(v) return v
       }
