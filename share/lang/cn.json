@@ -286,14 +286,5 @@
       "2ba": "次元裂缝零式欧米茄：德尔塔之章4"
     }
   },
-  "skill": {
-    "alias": {
-      "The Forbidden Chakra": "斗气斩",
-      "Spineshatter Dive": "破碎冲",
-      "Midare Setsugekka": "乱雪月花",
-      "Hissatsu: Guren": "红莲",
-      "Enchanted Redoublement": "增强剑雨",
-      "Refulgent Arrow": "辉煌箭"
-    }
-  }
+  "_author": "Chihaya Gunzo"
 }
