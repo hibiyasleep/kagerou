@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.11'
-const CODENAME = 'Happiness Theory of Ayano'
+const VERSION = '0.7.12'
+const CODENAME = 'Yobanashi Deceive'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
