@@ -76,14 +76,16 @@ a {
 html.ko .lang.ko,
 html.ja .lang.ja,
 html.en .lang.en,
-html.de .lang.de {
+html.de .lang.de,
+html.cn .lang.cn {
   display: block;
 }
 
 html.ko span.lang.ko,
 html.ja span.lang.ja,
 html.en span.lang.en,
-html.de span.lang.de {
+html.de span.lang.de,
+html.cn span.lang.cn {
   display: inline;
 }
 
