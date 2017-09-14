@@ -77,6 +77,7 @@
         "element": {
           "nav": "상단 바",
           "dropdown": "드롭다운",
+          "my-row": "내 데이터",
           "header": "표 헤더",
           "table": "표",
           "cell": "항목"

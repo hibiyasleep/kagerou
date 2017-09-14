@@ -253,6 +253,9 @@ main > ul {
   z-index: 2;
   position: relative;
 }
+#table > li.me {
+  color: var(--my-row-fg);
+}
 #table[data-width='2'], #table[data-width='3'] {
   flex-direction: row;
 }
