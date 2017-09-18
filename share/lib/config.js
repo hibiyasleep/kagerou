@@ -141,7 +141,7 @@ const CONFIG_DEFAULT = {
     mnk: 'rgb(255, 152, 0)', // Orange 500
     drg: 'rgb(63, 81, 181)', // Indigo 500
     brd: 'rgb(158, 157, 36)', // Lime 800
-    nin: 'rgb(211, 47, 47)', // Red 700
+    nin: 'rgb(211, 47, 47)', // Red 700 // 와! 시바! 진성! 닌자다!
     smn: 'rgb(46, 125, 50)', // Green 800
     blm: 'rgb(126, 87, 194)', // Deep Purple 400
     mch: 'rgb(0, 151, 167)', // Cyan 700
