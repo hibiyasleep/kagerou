@@ -32,6 +32,9 @@ body::after {
   border-color: transparent rgba(127, 127, 127, 0.3) rgba(127, 127, 127, 0.3) transparent;
   background: rgba(127, 127, 127, 0.1);
 }
+body.disable-handle::after {
+  display: none;
+}
 
 /* Client Restrictors */
 body.legacy-plugin .supports-end {

@@ -103,6 +103,15 @@ window.addEventListener('load', e => {
       }
       window.renderer.update()
     })
+    layer.on('status', d => {
+      if(d.type === 'lock') {
+        console.log(`message: ${d.message}, config: ${config.get('element.resize-handle')}`)
+        document.body.classList.toggle(
+          'disable-handle',
+          d.message && config.get('element.resize-handle')
+        )
+      }
+    })
   })
 
   $map('svg', _ => {

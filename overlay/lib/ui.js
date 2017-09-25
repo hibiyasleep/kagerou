@@ -108,6 +108,11 @@
           $('body', 0).classList.add('nameblur')
         }
       }
+    }, {
+      value: 'element.resize-handle',
+      callback: _ => {
+        document.body.classList.toggle('resize-handle', !_)
+      }
     }].forEach( _ => _.callback(config.get(_.value)) )
   }
 
@@ -162,7 +167,6 @@
 
     // load configs
     loadFormatButtons()
-
 
     // Button handlers
     ;[{

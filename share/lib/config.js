@@ -174,6 +174,9 @@ const CONFIG_DEFAULT = {
     non_combatant: false,
     jobless: true
   },
+  element: {
+    'resize-handle': true
+  },
   footer: {
     rank: true,
     rdps: true,
