@@ -181,7 +181,6 @@
         this.emit('data', e.detail)
       })
       document.addEventListener('onOverlayStateUpdate', e => {
-        console.log('attached')
         this.status.locked = e.detail.isLocked
         this.emit('status', {
           type: 'lock',
