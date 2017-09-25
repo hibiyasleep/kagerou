@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.13'
-const CODENAME = 'Ultramarine Rain'
+const VERSION = '0.7.14'
+const CODENAME = 'Kisaragi Attention'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
