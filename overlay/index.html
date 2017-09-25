@@ -13,7 +13,9 @@ try {
     throw new SyntaxError
   }
 } catch(e) {
-  location.href = '../outdated'
+  if(location.hash.substring(1).split(',').indexOf('ignore-feature-test') === -1) {
+    location.href = '../outdated'
+  }
 }
     </script>
     <script src="https://cdn.ravenjs.com/3.15.0/raven.min.js"></script>
