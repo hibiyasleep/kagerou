@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.14'
-const CODENAME = 'Kisaragi Attention'
+const VERSION = '0.7.15'
+const CODENAME = 'Forest of Imagination'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',

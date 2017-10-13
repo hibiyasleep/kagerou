@@ -113,6 +113,11 @@
       callback: _ => {
         document.body.classList.toggle('resize-handle', !_)
       }
+    }, { // Temporal setting for Patch 4.1
+      value: 'filter.jobless',
+      callback: _ => {
+        $('[data-button="disable-filter-jobless"]', 0).classList.toggle('hidden', !_)
+      }
     }].forEach( _ => _.callback(config.get(_.value)) )
   }
 
@@ -237,6 +242,13 @@
         if(layer.supports('capture')) {
           setTimeout(_ => layer.request('capture'), 216)
         }
+      }
+    }, { // (temporal)
+      name: 'disable-filter-jobless',
+      callback: _ => {
+        config.set('filter.jobless', false)
+        config.save()
+        layer.emit('message', { message: 'restyle' })
       }
     }].forEach(_ => {
       [].forEach.call($(`[data-button=${_.name}]`), el => {
