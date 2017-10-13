@@ -105,7 +105,6 @@ window.addEventListener('load', e => {
     })
     layer.on('status', d => {
       if(d.type === 'lock') {
-        console.log(`message: ${d.message}, config: ${config.get('element.resize-handle')}`)
         document.body.classList.toggle(
           'disable-handle',
           d.message && config.get('element.resize-handle')
