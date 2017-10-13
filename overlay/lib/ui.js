@@ -116,7 +116,8 @@
     }, { // Temporal setting for Patch 4.1
       value: 'filter.jobless',
       callback: _ => {
-        $('[data-button="disable-filter-jobless"]', 0).classList.toggle('hidden', !_)
+        let el = $('[data-button="disable-filter-jobless"]', 0)
+        if(el) el.classList.toggle('hidden', !_)
       }
     }].forEach( _ => _.callback(config.get(_.value)) )
   }
