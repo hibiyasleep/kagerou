@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.15'
-const CODENAME = 'Forest of Imagination'
+const VERSION = '0.7.16'
+const CODENAME = 'Headphone Actor'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
