@@ -97,7 +97,7 @@
       callback: _ => {
         if(_){
           $('[data-button=merge-pet]', 0).classList.add('enabled')
-          $('body', 0).classList.add('pet-merged')
+          document.body.classList.add('pet-merged')
         }
       }
     }, {
@@ -105,7 +105,7 @@
       callback: _ => {
         if(_){
           $('[data-button=nameblur]', 0).classList.add('enabled')
-          $('body', 0).classList.add('nameblur')
+          document.body.classList.add('nameblur')
         }
       }
     }, {
@@ -243,7 +243,7 @@
         el.addEventListener('click', function(e) {
           if(_.toggle) {
             this.classList.toggle('enabled')
-            $('main', 0).classList.toggle(_.toggle)
+            document.body.classList.toggle(_.toggle)
           }
           if(_.callback)
             _.callback(e)

@@ -335,7 +335,7 @@ footer {
   border-left: 0.1rem solid rgba(255, 255, 255, 0.5);
 }
 
-.collapsed {
+.collapsed main {
   height: calc(var(--graph-height) * 2);
 }
 .collapsed #table {
