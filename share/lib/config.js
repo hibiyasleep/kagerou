@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.16'
-const CODENAME = 'Headphone Actor'
+const VERSION = '0.7.17'
+const CODENAME = 'Children Record'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
