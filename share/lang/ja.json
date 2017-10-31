@@ -1,25 +1,25 @@
 {
   "general": {
     "left": "左",
-    "center": "中",
+    "center": "中央",
     "right": "右"
   },
   "ui": {
     "header": {
       "in-develop": "開発中のバージョン",
-      "waiting-data": "データをお待ちしております",
+      "waiting-data": "データを待っています",
       "no-data-yet": "まだデータがありません。",
-      "please-do-combat": "戦闘してご確認ください。"
+      "please-do-combat": "戦闘開始後に再確認してください。"
     },
     "menu": {
       "merge-pet-on": "ペット合算 ON",
       "merge-pet-off": "ペット合算 OFF",
       "nameblur-on": "名前を隠す",
       "nameblur-off": "名前を表示する",
-      "end-encounter": "エンカウンター切る",
+      "end-encounter": "エンカウンターを切る",
       "settings": "設定",
       "reload": "リロード",
-      "fullscreen": "フールスクリン",
+      "fullscreen": "フルスクリーン",
       "screenshot": "スクリーンショット",
       "donate": "寄付"
     },
@@ -30,7 +30,7 @@
       "dialog": {
         "really": "本当にこの設定を初期化しますか？",
         "apply": "この設定を適用しますか？",
-        "undone": "元に戻すできません！",
+        "undone": "元に戻せません！",
         "yes": "はい",
         "no": "いいえ",
         "manual-reload": {
@@ -48,24 +48,24 @@
           "rank": "現在のランキング",
           "rdps": "RDPS",
           "rhps": "RHPS",
-          "recover": "総受け回復量 / 受けるダメージ 🔄"
+          "recover": "総回復量 / 受けたダメージ 🔄"
         },
-        "reset": "Re:ゼロ",
+        "reset": "リセット",
         "reset-this": "全てリセットする"
       },
       "style": {
         "_": "スタイル",
         "reset-this": "スタイルリセット",
         "css-help": [
-          "CSS値を使用できます。<br />セミコロンを付けて他の属性を追加できます。",
-          "<code>rgba(赤, 緑, 青, 透明度:0~1)</code>で半透明な色を使います。",
-          "<code>url('http(s)で始まるイメージURL')</code>で背景イメージを設定します。"
+          "CSSを使用できます。<br />セミコロンを付けて他の属性を追加できます。",
+          "<code>rgba(赤, 緑, 青, 透明度:0.0~1.0)</code>で半透明な色を使います。",
+          "<code>url('画像のURL')</code>で背景画像を設定します。"
         ],
         "image": {
-          "_": "背景イメージ",
-          "help": "*The background image takes precedence over specified background color, excpet transparent pixels. Image URL should wrapped in <code>url('http(s)で始まるイメージURL')</code>.",
+          "_": "背景画像",
+          "help": "*背景画像は指定された背景色や透明ピクセルよりも優先されます。画像のURLは<code>url('画像のURL')</code>のように囲う必要があります。",
           "color": "フィル",
-          "image": "イメージ",
+          "image": "画像",
           "opacity": "透明度",
           "filter": "CSSフィルタ (詳細設定)",
           "default": "デフォルト: "
@@ -90,13 +90,13 @@
         "position": "役割の表示",
         "position-none": "noneを使用して取り除きます。",
         "etc": "その他",
-        "pet-buddy": "ペット"
+        "pet-buddy": "ペットとバディ"
       },
       "width": {
         "_": "項目の幅",
         "reset-this": "幅リセット",
         "css-help": [
-          "16px単位であり、UIサイズ倍率に影響されます。",
+          "16px単位でUIサイズ倍率に影響されます。",
           "「名前」の幅は自動的に調整されます。"
         ]
       },
@@ -107,7 +107,7 @@
         "sortby": "ソート基準",
         "available": "使える項目",
         "configured": "設定された項目",
-        "widths": [ 0, "オフ", "2人つづ", "3人つづ" ]
+        "widths": [ 0, "オフ", "2人ずつ", "3人ずつ" ]
       },
       "i/e": {
         "_": "設定の共有",
@@ -115,11 +115,11 @@
         "export": "エクスポート",
         "copy-this": "下の値をすべてコピーしてください",
         "paste-here": "下にインポートされた値を貼り付けてください",
-        "save-first": "保存先にしてください!",
+        "save-first": "保存先にしてください！",
         "export-help": "いくつかの個人的な設定値はエクスポートされません。",
         "config-to-export": "エクスポート設定",
         "all": "全部",
-        "data-fault": "データが間違ってました。",
+        "data-fault": "データが間違っています。",
         "content-count": "項目の数"
       },
       "etc": {
@@ -129,28 +129,28 @@
           "skill-aliases-help": "'The Forbidden Chakra'のような長いスキル名に略称を使用します。",
           "filter": "フィルター",
           "filter-help": [
-            "FFXIV_Pluginが敵味方識別すらまともにできない関係で、なんとか敵を表示しないようにします。",
-            "何か異常であれば、下のすべてのオプションをオフに見てください。"
+            "FFXIV_Pluginが敵味方の識別がまともにできないので敵を表示しないようにします。",
+            "何か異常があれば、下のすべてのオプションをオフにしてみてください。"
           ],
-          "unusual-spaces": "ペットでもないのに名前に間隔がある(韓国サーバー用)",
-          "jobless": "クラス・ジョブがない",
-          "not-combatant": "戦闘職がない"
+          "unusual-spaces": "ペットでもないのに名前に間隔がある（韓国サーバー用）",
+          "jobless": "クラス・ジョブではない",
+          "not-combatant": "戦闘職ではない"
         },
         "css": "CSS"
       },
       "info": {
         "_": "情報",
-        "created-by": "作った人",
+        "created-by": "作者",
         "servers": "<del>Odin</del> Chocobo / Tonberry",
         "hibiya": "히비야 (Kuriyama Hibiya)",
         "support": "サポート",
         "license": "ライセンス",
         "icon-files": "share/img/class内のすべてのファイルに対し、",
         "privacy": {
-          "_": "Privacy Policy",
+          "_": "プライバシーポリシー",
           "list": [
             "このプログラムが動作中に問題が発生した時に、<br/>解決のための情報がサーバーに送信されることがあります。",
-            "収集される情報は問題を識別するための最小限の情報に制限されます。:",
+            "問題を識別するための最小限の情報に制限した上で収集されます。:",
             "* プログラムのバージョン<br />* 最後のエンカウンターデータ<br />* ravenjsが収集するその他の情報"
           ]
         }
@@ -179,26 +179,26 @@
       "position-tank": "Tank",
       "position-deal": "DPS",
       "position-heal": "Heal",
-      "pld": "ナイト (剣術士)",
-      "war": "戦士 (斧術士)",
+      "pld": "ナイト（剣術士）",
+      "war": "戦士（斧術士）",
       "drk": "暗黒騎士",
-      "mnk": "モンク (格闘士)",
-      "drg": "竜騎士 (槍術士)",
-      "brd": "吟遊詩人 (弓術士)",
-      "nin": "忍者 (双剣士)",
-      "smn": "召喚士 (巴術士)",
-      "blm": "黒魔道士 (呪術士)",
+      "mnk": "モンク（格闘士）",
+      "drg": "竜騎士（槍術士）",
+      "brd": "吟遊詩人（弓術士）",
+      "nin": "忍者（双剣士）",
+      "smn": "召喚士（巴術士）",
+      "blm": "黒魔道士（呪術士）",
       "mch": "機工士",
       "sam": "侍",
       "rdm": "赤魔道士",
-      "whm": "白魔道士 (幻術士)",
+      "whm": "白魔道士（幻術士）",
       "sch": "学者",
       "ast": "占星術師",
       "smn-pet": "エギ・カーバンクル",
       "sch-pet": "フェアリー",
       "mch-pet": "オートタレット",
       "chocobo": "チョコボ",
-      "limit-break": "リミットブレイズ"
+      "limit-break": "リミットブレイク"
     },
     "format": {
       "significant_digit": {
@@ -210,7 +210,7 @@
       },
       "myname": "名前",
       "use_short_name": "名前をイニシャルで表示",
-      "use_skill_aliases": "スキル名略称を使用",
+      "use_skill_aliases": "スキル名の略称を使用",
       "use_tailing_pct": "割合値の後ろに％記号を表示"
     }
   },
@@ -222,7 +222,7 @@
         "クラスアイコン"
       ],
       "class": ["Job", "クラス・"],
-      "owner": ["Owner", "主人"],
+      "owner": ["Owner", "オーナー"],
       "name": ["名前", "名前"]
     },
     "deal": {
@@ -242,15 +242,15 @@
       "max": ["MaxD", "Maxhit (スキル名を除く)"],
       "maxskill": ["MaxDスキル", "Maxhitのスキル名"],
       "maxhit": ["MaxDamage", "Max"],
-      "last10": ["10s", "最近10秒DPS"],
-      "last30": ["30s", "最近30秒DPS"],
-      "last60": ["1分", "最近1分DPS"],
-      "last180": ["3分", "最近3分DPS (β)"]
+      "last10": ["10s", "直近10秒DPS"],
+      "last30": ["30s", "直近30秒DPS"],
+      "last60": ["1分", "直近1分DPS"],
+      "last180": ["3分", "直近3分DPS (β)"]
     },
     "tank": {
       "_": "Tank",
-      "damage": ["TakenD", "受けたダメージ"],
-      "heal": ["TakenH", "受けたヒル"],
+      "damage": ["TakenD", "被ダメージ量"],
+      "heal": ["TakenH", "被ヒール量"],
       "parry": ["Parry", "Parry"],
       "block": ["Block", "Block"],
       "threat_delta": ["Th∆", "スレットデルタ(∆)"]
@@ -260,7 +260,7 @@
       "per_second": ["HPS", "HPS"],
       "pct": ["H%", "寄与率"],
       "total": ["H合", "合計"],
-      "over": ["Ovr+", "オーバーヒル"],
+      "over": ["Ovr+", "オーバーヒール"],
       "swing": ["Swing", "詠唱回数"],
       "critical": ["HCrit", "Critical%"],
       "cure": ["Cure", "治療 (デバフ解除)"],
@@ -270,8 +270,8 @@
     },
     "etc": {
       "_": "その他",
-      "powerdrain": ["P.drn", "Powerdrain"],
-      "powerheal": ["変換", "資源変換"],
+      "powerdrain": ["P.drn", "被吸収量"],
+      "powerheal": ["変換", "吸収量"],
       "death": ["死", "死亡回数"]
     }
   },
