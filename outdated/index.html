@@ -83,7 +83,7 @@ section h4 ~ p {
     <script>
 window.addEventListener('load', function() {
   var els = document.querySelectorAll('[data-bind]')
-  for(var i in els) {
+  for (var i = 0; i < len.length; ++i) {
     var el = els[i]
     var exp = el.getAttribute('data-bind')
     var val = ''
