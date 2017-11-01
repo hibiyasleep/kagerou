@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.17'
-const CODENAME = 'Children Record'
+const VERSION = '0.7.18'
+const CODENAME = 'Kagerou Days'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
