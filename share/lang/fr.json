@@ -1,0 +1,300 @@
+{
+  "general": {
+    "left": "Gauche",
+    "center": "Centre",
+    "right": "Droite"
+  },
+  "ui": {
+    "header": {
+      "in-develop": "Dévelop/Instable",
+      "waiting-data": "Attente de combat",
+      "no-data-yet": "Aucune donnée ...",
+      "please-do-combat": "Initialisez un combat"
+    },
+    "menu": {
+      "merge-pet-on": "Activer la fusion des familiers",
+      "merge-pet-off": "Désactiver la fusion des familiers",
+      "nameblur-on": "Estomper nom",
+      "nameblur-off": "Desestomper nom",
+      "end-encounter": "Séparer les rencontres",
+      "settings": "Paramètre",
+      "reload": "Recharger l'overlay",
+      "fullscreen": "Basculer en plein écran",
+      "screenshot": "Prendre une capture d'écran",
+      "donate": "Donnation"
+    },
+    "config": {
+      "_": "Paramètre",
+      "save": "Sauver",
+      "execute": "Executer",
+      "dialog": {
+        "really": "Etes vous sur de vouloir réinitialiser ces paramètres?",
+        "apply": "Appliquer ces paramètres?",
+        "undone": "Cela ne pourra être annuler!",
+        "yes": "Oui",
+        "no": "Non",
+        "manual-reload": {
+          "title": "Impossible de recharger l'overlay!",
+          "content": "Rechargez manuellement s'il vous plaît."
+        }
+      },
+      "general": {
+        "_": "Général",
+        "combine_pet": "Fusion Familier",
+        "split-by-comma": "Diviser les noms composés par ','",
+        "basic": "Basique",
+        "footer": {
+          "_": "Eléments de pied de page",
+          "rank": "Rang courant",
+          "rdps": "RDPS",
+          "rhps": "RHPS",
+          "recover": "Soins Totals Reçu / Dommages subits ??"
+        },
+        "reset": "Annuler",
+        "reset-this": "Annuler tout"
+      },
+      "style": {
+        "_": "Style",
+        "reset-this": "Réinitialiser le style",
+        "css-help": [
+          "Utilisez des valeurs CSS. Peut être étendu avec d'autres attributs avec un point-virgule.",
+          "Utilisez une couleur semi-transparente avec <code>rgba(Rouge, Vert, Bleu, Alpha)</code>. <br /> Alpha varie de 0 à 1.",
+          "Utiliser une image de fond avec<code>url('URL de l'image')</code>"
+        ],
+        "image": {
+          "_": "Image de fond",
+          "help": "L'image d'arrière-plan a priorité sur la couleur d'arrière-plan spécifiée, à l'exception des pixels transparents. L'URL de l'image doit être envcadrée <code>url('URL de l'image')</code>.",
+          "color": "Remplir",
+          "image": "Image",
+          "opacity": "Opacité",
+          "filter": "Filtre CSS (Advancé)",
+          "default": "Défaut: "
+        },
+        "layout": "Disposition",
+        "background": "Arrière plan",
+        "foreground": "Premier plan",
+        "width-applied-only": "Uniquement pour les onglets définis "Cellule par ligne" autre que 1.",
+        "element": {
+          "nav": "Barre de navigation",
+          "dropdown": "Menu déroulant",
+          "my-row": "Mes donnnées",
+          "header": "En-tête",
+          "table": "Tableau",
+          "cell": "Cellule"
+        },
+        "shadow": "Ombre"
+      },
+      "color": {
+        "_": "Couleurs",
+        "reset-this": "Reinitialiser Couleurs",
+        "position": "Aide Position",
+        "position-none": "Définissez 'aucun' pour supprimer.",
+        "etc": "Etc",
+        "pet-buddy": "Familier/Camarade"
+      },
+      "width": {
+        "_": "Largeur des Colonnes",
+        "reset-this": "Reinitialiser les largeurs",
+        "css-help": [
+          "L'unité est 16px par défaut et modifiée par l'échelle d'interface utilisateur.",
+          "La colonne "Nom" est la première à diminuer lorsque la largeur de la fenêtre diminue."
+        ]
+      },
+      "tab": {
+        "_": "Onglet",
+        "title": "Titre",
+        "width": "Cellule par ligne",
+        "sortby": "Ordre",
+        "available": "Colonnes disponnibles",
+        "configured": "Colonnes actives",
+        "widths": [ 0, 1, 2, 3 ]
+      },
+      "i/e": {
+        "_": "Import/Export",
+        "import": "Import",
+        "export": "Export",
+        "copy-this": "Copier tout ci-dessous:",
+        "paste-here": "Coller les valeur ci-dessous:",
+        "save-first": "Sauvegardez avant!!",
+        "export-help": "Certaines valeurs et valeurs identiques à la valeur par défaut ne sont pas exportées.",
+        "config-to-export": "Configuration à exporter",
+        "all": "Tout",
+        "data-fault": "Les  données sont incorrect ou corrompues.",
+        "content-count": "Nombre de colonne"
+      },
+      "etc": {
+        "_": "Plus",
+        "others": {
+          "_": "Others",
+          "skill-aliases-help": "Utilisez des abréviations plus courtes pour les noms de compétence longs tels que "Le Chakra Interdit".",
+          "filter": "Filtre",
+          "filter-help": [
+            "FFXIV_Plugin n'identifie pas d'amis ou d'ennemis, donc ces options essaieront de ne pas afficher d'ennemis de quelque façon que ce soit.",
+            "Si quelque chose ne va pas, essayez de désactiver toutes les options ci-dessous."
+          ],
+          "unusual-spaces": "Les noms contiennent des espaces, mais pas les familiers (Serveur KCoréen Seulement)",
+          "jobless": "Classe/Job vide",
+          "not-combatant": "Aucun Disciple de la Guerre/Magie"
+        },
+        "css": "CSS"
+      },
+      "info": {
+        "_": "A propos",
+        "created-by": "Créé par",
+        "servers": "<del>Odin</del> Chocobo@KR / Tonberry",
+        "hibiya": "Kuriyama Hibiya (???/???)",
+        "support": "Support",
+        "license": "Licence",
+        "icon-files": "Tout les fichiers dans share/img/class,",
+        "privacy": {
+          "_": "Politique Privée",
+          "list": [
+            "Si vous rencontrez un problème lors de l'utilisation de ce programme,<br />Les informations peuvent être envoyées au serveur.",
+            "La collection d'information se limite au minimum permettant d'identifier le problème:",
+            "* Version<br />* Dernière donnée de combat<br />* Autres informations collectées par ravenjs"
+          ]
+        }
+      }
+    }
+  },
+  "config": {
+    "style": {
+      "_": "Style",
+      "resize-factor": "Echelle d'interface",
+      "body-margin": "Marge extérieur",
+      "body-font": "Police",
+      "nav-opacity": "Opacité de barre de navigation lorsqu'elle est inactive",
+      "accent-color": "Accent",
+      "shadow-card": "Fenêtre",
+      "shadow-text": "Texte",
+      "content-align": "Alignement",
+      "font-size-small": "'Petit' Taille de la police",
+      "gauge-height": "Taille",
+      "graph-height": "Taille des lignes du tableau"
+    },
+    "color": {
+      "_": "Guage Color",
+      "gauge-default": "Defaut",
+      "gauge-opacity": "Opacité",
+      "position-tank": "Tank",
+      "position-deal": "DPS",
+      "position-heal": "Soin",
+      "pld": "Paladin (Gladiateur)",
+      "war": "Guerrier (Maraudeur)",
+      "drk": "Chevalier Noir",
+      "mnk": "Moine (Pugiliste)",
+      "drg": "Dragonier (Lancier)",
+      "brd": "Barde (Archer)",
+      "nin": "Ninja (Voleur)",
+      "smn": "Invocateur (Arcaniste)",
+      "blm": "Mage Noir (Occultiste)",
+      "mch": "Machiniste",
+      "sam": "Samurai",
+      "rdm": "Mage Rouge",
+      "whm": "Mage Blanc(Elémentaliste)",
+      "sch": "Erudit",
+      "ast": "Astromancien",
+      "smn-pet": "Egi d'Arcaniste",
+      "sch-pet": "Egi d'érudit",
+      "mch-pet": "Tourelle de machiniste",
+      "chocobo": "Chocobo",
+      "limit-break": "Limit Break"
+    },
+    "format": {
+      "significant_digit": {
+        "_": "Précision décimale",
+        "dps": "DPS",
+        "hps": "HPS",
+        "accuracy": "Echec (Raté / Esquivé)",
+        "critical": "% de critique Touché/Soins"
+      },
+      "myname": "Mon Nom",
+      "use_short_name": "Apparence des nom de joueur",
+      "use_skill_aliases": "Utiliser les alias de compétences",
+      "use_tailing_pct": "Afficher % après la valeur"
+    }
+  },
+  "col": {
+    "i": {
+      "_": "Info",
+      "icon": [
+        "<img src=\"../share/img/class/empty.png\" class=\"clsicon\"/>",
+        "Class Icon"
+      ],
+      "class": ["Cls", "Classe/Job"],
+      "owner": ["Propriétaire", "Propriétaire"],
+      "name": ["Nom", "Nom"]
+    },
+    "deal": {
+      "_": "DPS",
+      "per_second": ["DPS", "par Seconde"],
+      "pct": ["D%", "Deal %"],
+      "total": ["D.Tot", "Total"],
+      "failure": ["Fail", "Echec (Raté / Swing)"],
+      "accuracy": ["Acc.", "Précision (1 - Raté / Esquivé)"],
+      "swing": ["Toucher", "Touchés"],
+      "miss": ["Raté", "Ratés"],
+      "hitfail": ["HitF", "Hitfail"],
+      "critical": ["CH", "Critique %"],
+      "direct": ["DH", "Directe %"],
+      "crit_direct": ["!!!", "Critique Hit% (!!!)"],
+      "crittypes": ["D/!/!!!", "Direct/Critical/!!! Count"],
+      "max": ["MaxD", "Maxhit (w/o skillname)"],
+      "maxskill": ["MaxDS", "Maxhit (Nom de compétence seulement)"],
+      "maxhit": ["MaxDamage", "Maxhit"],
+      "last10": ["10s", "DPS des 10 dernières secondes"],
+      "last30": ["30s", "DPS des 30 dernières secondes"],
+      "last60": ["1m", "DPS de la dernière minute"],
+      "last180": ["3m", "DPS des 3 dernière minutes"]
+    },
+    "tank": {
+      "_": "Tank",
+      "damage": ["TakenD", "Dommage reçu"],
+      "heal": ["HealR", "Soin Reçu"],
+      "parry": ["Parrade", "Parrade"],
+      "block": ["Blockage", "Bloquer"],
+      "threat_delta": ["Th?", "Menace"]
+    },
+    "heal": {
+      "_": "Soin",
+      "per_second": ["HPS", "par Seconde"],
+      "pct": ["H%", "Soin %"],
+      "total": ["H.Tot", "Total"],
+      "over": ["OvH%", "Overheal"],
+      "swing": ["Esquive", "Esquives"],
+      "critical": ["HCrit", "Critique%"],
+      "cure": ["Cure", "Guérison"],
+      "max": ["MaxH", "Maxhit (w/o skillname)"],
+      "maxskill": ["MaxHS", "Maxhit (skillname only)"],
+      "maxhit": ["MaxHeal", "Maxhit"]
+    },
+    "etc": {
+      "_": "Etc",
+      "powerdrain": ["PDrn", "Drain de pouvoir"],
+      "powerheal": ["PHeal", "Puissance de soin"],
+      "death": ["Mort", "Nombre de mort"]
+    }
+  },
+  "zone": {
+    "unknown": {
+      "2b3": "Deltastice v1.0",
+      "2b4": "Deltastice v2.0",
+      "2b5": "Deltastice v3.0",
+      "2b6": "Deltastice v4.0",
+      "2b7": "Deltastice v1.0 (Sadique)",
+      "2b8": "Deltastice v2.0 (Sadique)",
+      "2b9": "Deltastice v3.0 (Sadique)",
+      "2ba": "Deltastice v4.0 (Sadique)"
+    }
+  },
+  "skill": {
+    "alias": {
+      "The Forbidden Chakra": "Forb.Chakra",
+      "Spineshatter Dive": "Spine-Dive",
+      "Midare Setsugekka": "Midare",
+      "Hissatsu: Guren": "Guren",
+      "Enchanted Redoublement": "E.Redoubl",
+      "Refulgent Arrow": "Ref.Arrow"
+    }
+  }
+}
