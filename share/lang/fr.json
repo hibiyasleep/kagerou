@@ -8,7 +8,7 @@
     "header": {
       "in-develop": "Dévelop/Instable",
       "waiting-data": "Attente de combat",
-      "no-data-yet": "Aucune donnée ...",
+      "no-data-yet": "Aucune donnée...",
       "please-do-combat": "Initialisez un combat"
     },
     "menu": {
@@ -73,7 +73,7 @@
         "layout": "Disposition",
         "background": "Arrière plan",
         "foreground": "Premier plan",
-        "width-applied-only": "Uniquement pour les onglets définis "Cellule par ligne" autre que 1.",
+        "width-applied-only": "Uniquement pour les onglets définis \"Cellule par ligne\" autre que 1.",
         "element": {
           "nav": "Barre de navigation",
           "dropdown": "Menu déroulant",
@@ -97,7 +97,7 @@
         "reset-this": "Reinitialiser les largeurs",
         "css-help": [
           "L'unité est 16px par défaut et modifiée par l'échelle d'interface utilisateur.",
-          "La colonne "Nom" est la première à diminuer lorsque la largeur de la fenêtre diminue."
+          "La colonne \"Nom\" est la première à diminuer lorsque la largeur de la fenêtre diminue."
         ]
       },
       "tab": {
@@ -126,7 +126,7 @@
         "_": "Plus",
         "others": {
           "_": "Others",
-          "skill-aliases-help": "Utilisez des abréviations plus courtes pour les noms de compétence longs tels que "Le Chakra Interdit".",
+          "skill-aliases-help": "Utilisez des abréviations plus courtes pour les noms de compétence longs tels que \"Le Chakra Interdit\".",
           "filter": "Filtre",
           "filter-help": [
             "FFXIV_Plugin n'identifie pas d'amis ou d'ennemis, donc ces options essaieront de ne pas afficher d'ennemis de quelque façon que ce soit.",
@@ -142,7 +142,7 @@
         "_": "A propos",
         "created-by": "Créé par",
         "servers": "<del>Odin</del> Chocobo@KR / Tonberry",
-        "hibiya": "Kuriyama Hibiya (???/???)",
+        "hibiya": "Kuriyama Hibiya (히비야/ヒビヤ)",
         "support": "Support",
         "license": "Licence",
         "icon-files": "Tout les fichiers dans share/img/class,",
@@ -217,10 +217,7 @@
   "col": {
     "i": {
       "_": "Info",
-      "icon": [
-        "<img src=\"../share/img/class/empty.png\" class=\"clsicon\"/>",
-        "Class Icon"
-      ],
+      "icon": ["", "Class Icon"],
       "class": ["Cls", "Classe/Job"],
       "owner": ["Propriétaire", "Propriétaire"],
       "name": ["Nom", "Nom"]
@@ -253,7 +250,7 @@
       "heal": ["HealR", "Soin Reçu"],
       "parry": ["Parrade", "Parrade"],
       "block": ["Blockage", "Bloquer"],
-      "threat_delta": ["Th?", "Menace"]
+      "threat_delta": ["Th∆", "Menace"]
     },
     "heal": {
       "_": "Soin",
@@ -289,12 +286,7 @@
   },
   "skill": {
     "alias": {
-      "The Forbidden Chakra": "Forb.Chakra",
-      "Spineshatter Dive": "Spine-Dive",
-      "Midare Setsugekka": "Midare",
-      "Hissatsu: Guren": "Guren",
-      "Enchanted Redoublement": "E.Redoubl",
-      "Refulgent Arrow": "Ref.Arrow"
+
     }
   }
 }
