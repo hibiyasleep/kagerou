@@ -230,8 +230,9 @@ const COLUMN_USE_LARGER = {
 }
 
 const PET_MAPPING = {
-  '카벙클 에메랄드': 'emerald',
-  '카벙클 토파즈': 'topaz',
+  '카벙클 에메랄드': 'acn-pet',
+  '카벙클 토파즈': 'acn-pet',
+  '카벙클 루비': 'acn-pet',
   '가루다 에기': 'garuda',
   '타이탄 에기': 'titan',
   '이프리트 에기': 'ifrit',
@@ -239,8 +240,9 @@ const PET_MAPPING = {
   '요정 셀레네': 'selene',
   '자동포탑 룩': 'rook',
   '자동포탑 비숍': 'bishop',
-  'Emerald Carbuncle': 'emerald',
-  'Topaz Carbuncle': 'topaz',
+  'Emerald Carbuncle': 'acn-pet',
+  'Topaz Carbuncle': 'acn-pet',
+  'Ruby Carbuncle': 'acn-pet',
   'Garuda-Egi': 'garuda',
   'Titan-Egi': 'titan',
   'Ifrit-Egi': 'ifrit',
@@ -248,8 +250,9 @@ const PET_MAPPING = {
   'Selene': 'selene',
   'Rook Autoturret': 'rook',
   'Bishop Autoturret': 'bishop',
-  'カーバンクル・エメラルド': 'emerald',
-  'カーバンクル・トパーズ': 'topaz',
+  'カーバンクル・エメラルド': 'acn-pet',
+  'カーバンクル・トパーズ': 'acn-pet',
+  'カーバンクル・ルビー': 'acn-pet',
   'ガルーダ・エギ': 'garuda',
   'タイタン・エギ': 'titan',
   'イフリート・エギ': 'ifrit',
@@ -257,6 +260,7 @@ const PET_MAPPING = {
   'フェアリー・セレネ': 'selene',
   'オートタレット・ルーク': 'rook',
   'オートタレット・ビショップ': 'bishop'
+  // TODO: add another languages
 }
 
 /*
