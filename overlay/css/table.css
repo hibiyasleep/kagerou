@@ -6,6 +6,7 @@
 .flex-column-i-icon {
   flex-grow: 0;
   flex-shrink: 0;
+  width: var(--graph-height);
 }
 .flex-column-i-name, .flex-column-i-owner {
   white-space: nowrap;
@@ -112,8 +113,8 @@
 .class-ast .gauge { background: var(--ast); }
 
 /* pets */
-.class-emerald .gauge, .class-garuda .gauge, .class-topaz .gauge,
-.class-titan .gauge, .class-ifrit .gauge { /* smn */
+.class-acn-pet .gauge,
+.class-garuda .gauge, .class-titan .gauge, .class-ifrit .gauge { /* acn/smn */
   background: var(--smn-pet);
 }
 .class-eos .gauge, .class-selene .gauge { /* sch */
@@ -243,6 +244,9 @@ main > ul {
 }
 #header {
   position: relative;
+}
+#header > .flex-column-i-icon {
+  background: none;
 }
 #table {
   padding-bottom: 1.5rem;

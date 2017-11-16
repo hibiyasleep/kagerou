@@ -217,10 +217,7 @@
   "col": {
     "i": {
       "_": "情報",
-      "icon": [
-        "<img src=\"../share/img/class/empty.png\" class=\"clsicon\"/>",
-        "クラスアイコン"
-      ],
+      "icon": [" ", "クラスアイコン"],
       "class": ["Job", "クラス・"],
       "owner": ["Owner", "オーナー"],
       "name": ["名前", "名前"]

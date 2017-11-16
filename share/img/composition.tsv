@@ -1,6 +1,6 @@
-gla	mrd	pgl	lnc	rog	arc	thm	acn	empty	cnj	
+gla	mrd	pgl	lnc	rog	arc	thm	acn		cnj	
 pld	war	mnk	drg	nin	brd	blm	smn	sch	whm	
-drk	mch	ast	sam	rdm	empty	empty	empty	empty	empty	
-acn-pet	garuda	ifrit	titan	eos	selene	rook	bishop	empty	empty	
-crp	bsm	arm	gsm	ltw	wvr	alc	cul	empty	empty	
-min	btn	fsh	empty	empty	empty	empty	error	chocobo	limit	
+drk	mch	ast	sam	rdm						
+acn-pet	garuda	ifrit	titan	eos	selene	rook	bishop		error	
+crp	bsm	arm	gsm	ltw	wvr	alc	cul		chocobo	
+min	btn	fsh							limit	

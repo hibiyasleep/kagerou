@@ -1,0 +1,58 @@
+.flex-column-i-icon /* default */    {
+  background-image: url('../img/classes.png');
+  background-size: 1100% 600%;
+  background-repeat: no-repeat;
+  background-position: 90% 60%;
+  opacity: 1 !important;
+}
+.class-gla > .flex-column-i-icon,
+.class-gld > .flex-column-i-icon     { background-position:  0%  0% }
+.class-mrd > .flex-column-i-icon     { background-position: 10%  0% }
+.class-pug > .flex-column-i-icon
+.class-pgl > .flex-column-i-icon,    { background-position: 20%  0% }
+.class-lnc > .flex-column-i-icon     { background-position: 30%  0% }
+.class-rog > .flex-column-i-icon     { background-position: 40%  0% }
+.class-arc > .flex-column-i-icon     { background-position: 50%  0% }
+.class-thm > .flex-column-i-icon     { background-position: 60%  0% }
+.class-acn > .flex-column-i-icon     { background-position: 70%  0% }
+.class-cnj > .flex-column-i-icon     { background-position: 90%  0% }
+.class-pld > .flex-column-i-icon     { background-position:  0% 20% }
+.class-war > .flex-column-i-icon     { background-position: 10% 20% }
+.class-mnk > .flex-column-i-icon     { background-position: 20% 20% }
+.class-drg > .flex-column-i-icon     { background-position: 30% 20% }
+.class-nin > .flex-column-i-icon     { background-position: 40% 20% }
+.class-brd > .flex-column-i-icon     { background-position: 50% 20% }
+.class-blm > .flex-column-i-icon     { background-position: 60% 20% }
+.class-smn > .flex-column-i-icon     { background-position: 70% 20% }
+.class-sch > .flex-column-i-icon     { background-position: 80% 20% }
+.class-whm > .flex-column-i-icon     { background-position: 90% 20% }
+.class-drk > .flex-column-i-icon     { background-position:  0% 40% }
+.class-mch > .flex-column-i-icon     { background-position: 10% 40% }
+.class-ast > .flex-column-i-icon     { background-position: 20% 40% }
+.class-sam > .flex-column-i-icon     { background-position: 30% 40% }
+.class-rdm > .flex-column-i-icon     { background-position: 40% 40% }
+.class-emerald  > .flex-column-i-icon,
+.class-topaz    > .flex-column-i-icon,
+.class-sapphire > .flex-column-i-icon,
+.class-ruby   > .flex-column-i-icon  { background-position:  0% 60% }
+.class-garuda > .flex-column-i-icon  { background-position: 10% 60% }
+.class-ifrit  > .flex-column-i-icon  { background-position: 20% 60% }
+.class-titan  > .flex-column-i-icon  { background-position: 30% 60% }
+.class-eos    > .flex-column-i-icon  { background-position: 40% 60% }
+.class-selene > .flex-column-i-icon  { background-position: 50% 60% }
+.class-rook   > .flex-column-i-icon  { background-position: 60% 60% }
+.class-bishop > .flex-column-i-icon  { background-position: 70% 60% }
+.class-crp > .flex-column-i-icon     { background-position:  0% 80% }
+.class-bsm > .flex-column-i-icon     { background-position: 10% 80% }
+.class-arm > .flex-column-i-icon     { background-position: 20% 80% }
+.class-gsm > .flex-column-i-icon     { background-position: 30% 80% }
+.class-ltw > .flex-column-i-icon     { background-position: 40% 80% }
+.class-wvr > .flex-column-i-icon     { background-position: 50% 80% }
+.class-alc > .flex-column-i-icon     { background-position: 60% 80% }
+.class-cul > .flex-column-i-icon     { background-position: 70% 80% }
+
+.class-min > .flex-column-i-icon     { background-position:  0% 100% }
+.class-btn > .flex-column-i-icon     { background-position: 10% 100% }
+.class-fsh > .flex-column-i-icon     { background-position: 20% 100% }
+.class-chocobo > .flex-column-i-icon { background-position: 90% 80% }
+.class-limit-break>.flex-column-i-icon{background-position: 90% 100% }

@@ -217,10 +217,7 @@
   "col": {
     "i": {
       "_": "信息",
-      "icon": [
-        "<img src=\"../share/img/class/empty.png\" class=\"clsicon\"/>",
-        "职业图标"
-      ],
+      "icon": [" ", "职业图标"],
       "class": ["职业", "职业/特职"],
       "owner": ["主人", "所有者"],
       "name": ["名字", "名字"]

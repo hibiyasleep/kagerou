@@ -284,6 +284,8 @@ const APRIL_FOOL_CLASS_REMAP = {
 const COLUMN_INDEX = {
   i: {
     icon: {
+      v: _ => ' '
+    }/* {
       v: _ => resolveClass(_.Job, _.name)[0],
       f: _ => {
         let job = _.toLowerCase()
@@ -294,10 +296,9 @@ const COLUMN_INDEX = {
          && job in APRIL_FOOL_CLASS_REMAP) {
           job = APRIL_FOOL_CLASS_REMAP[job]
         }
-        */
-        return `<img src="../share/img/class/${job || 'empty'}.png" class="clsicon" />`
+        /
       }
-    },
+    } */,
     class: {
       v: _ => {
         let job = resolveClass(_.Job, _.name)[0]

@@ -217,10 +217,7 @@
   "col": {
     "i": {
       "_": "Info",
-      "icon": [
-        "<img src=\"../share/img/class/empty.png\" class=\"clsicon\"/>",
-        "Class Icon"
-      ],
+      "icon": [" ", "Class Icon"],
       "class": ["Cls", "Class/Job"],
       "owner": ["Owner", "Owner"],
       "name": ["Name", "Name"]

@@ -325,8 +325,10 @@ label.input-value-style.job:before {
   margin-left: 0.125rem;
   vertical-align: 0.5rem;
 }
-label.input-value-style.job img {
-  height: 100%;
+label.input-value-style.job .flex-column-i-icon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .tabbed-section {
