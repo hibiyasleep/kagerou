@@ -47,13 +47,6 @@
           current.sort = TAB_SORTBY_MIGRATE_MAPPING[current.sort]
         }
         this.tabs[k] = new Row(this.config.tabs[k])
-
-        // Raven && Raven.captureException(e, {
-        //   extra: {
-        //     key: k,
-        //     tab_string: k in this.config.tabs? JSON.stringify(this.config.tabs[k]) : 'undefined'
-        //   }
-        // })
       }
     }
 
@@ -200,31 +193,34 @@
 
     part(c, data) {
       let el = document.createElement('span')
-      el.className = `flex-column flex-column-${sanitize(c)}`
+      let text = ''
+      let classes = `flex-column flex-column-${sanitize(c)}`
+      let locale
 
       if(!data) {
-        let content = window.l.loaded? window.l.get(`col.${c}.0`) : '...'
-        el.setAttribute('data-locale', `col.${c}.0`)
-        el.innerHTML = content
-        return el
-      }
-      const col = resolveDotIndex(COLUMN_INDEX, c)
-
-      let val
-      if(typeof col === 'string') {
-        val = data[col]
-        el.innerHTML = val
+        locale = `col.${c}.0`
+        text = window.l.loaded? window.l.get(locale) : '...'
       } else {
-        val = this._value(col.v, data)
+        const col = resolveDotIndex(COLUMN_INDEX, c)
 
-        if(typeof col.f === 'function')
-          el.innerHTML = col.f(val, window.config.get())
-        else
-          el.innerHTML = val
+        let val
+        if(typeof col === 'string') {
+          text = data[col]
+        } else {
+          text = this._value(col.v, data)
+
+          if(typeof col.f === 'function')
+            text = col.f(text, window.config.get())
+        }
+        if(text == 0 || text === '0%' || text === '---') {
+          classes += ' zero'
+        }
       }
-      if(val == 0 || val === '0%' || val === '---') {
-        el.classList.add('zero')
-      }
+
+      el.innerHTML = text
+      el.className = classes
+      if(locale) el.setAttribute('data-locale', locale)
+
       return el
     }
 

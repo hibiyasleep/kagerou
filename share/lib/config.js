@@ -322,7 +322,7 @@ const COLUMN_INDEX = {
           if((flag & 2) && typeof name[1] === 'string') // Lastname
             name[1] = name[1][0] + '.'
         }
-        return `<span class="${you? 'name-you' : ''}">${name.join(' ')}</span>`
+        return name.join(' ')
       }
     }
   },
