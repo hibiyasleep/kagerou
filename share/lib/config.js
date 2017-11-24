@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.19'
-const CODENAME = 'daze/days'
+const VERSION = '0.7.20'
+const CODENAME = 'RED'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
