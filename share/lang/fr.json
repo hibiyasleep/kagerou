@@ -132,7 +132,7 @@
             "FFXIV_Plugin n'identifie pas d'amis ou d'ennemis, donc ces options essaieront de ne pas afficher d'ennemis de quelque façon que ce soit.",
             "Si quelque chose ne va pas, essayez de désactiver toutes les options ci-dessous."
           ],
-          "unusual-spaces": "Les noms contiennent des espaces, mais pas les familiers (Serveur KCoréen Seulement)",
+          "unusual-spaces": "Les noms contiennent des espaces, mais pas les familiers (Serveur Coréen Seulement)",
           "jobless": "Classe/Job vide",
           "not-combatant": "Aucun Disciple de la Guerre/Magie"
         },
@@ -164,7 +164,7 @@
       "body-margin": "Marge extérieur",
       "body-font": "Police",
       "nav-opacity": "Opacité de barre de navigation lorsqu'elle est inactive",
-      "accent-color": "Accent",
+      "accent-color": "Accentuation",
       "shadow-card": "Fenêtre",
       "shadow-text": "Texte",
       "content-align": "Alignement",
@@ -198,18 +198,18 @@
       "sch-pet": "Egi d'érudit",
       "mch-pet": "Tourelle de machiniste",
       "chocobo": "Chocobo",
-      "limit-break": "Limit Break"
+      "limit-break": "Transcendance"
     },
     "format": {
       "significant_digit": {
         "_": "Précision décimale",
-        "dps": "DPS",
-        "hps": "HPS",
+        "dps": "Dommage par seconde (DPS)",
+        "hps": "Soin par seconde (HPS)",
         "accuracy": "Echec (Raté / Esquivé)",
-        "critical": "% de critique Touché/Soins"
+        "critical": "% de critique Touché/Soin"
       },
       "myname": "Mon Nom",
-      "use_short_name": "Apparence des nom de joueur",
+      "use_short_name": "Apparence des noms de joueur",
       "use_skill_aliases": "Utiliser les alias de compétences",
       "use_tailing_pct": "Afficher % après la valeur"
     }
@@ -224,7 +224,7 @@
     },
     "deal": {
       "_": "DPS",
-      "per_second": ["DPS", "par Seconde"],
+      "per_second": ["DPS", "Par seconde"],
       "pct": ["D%", "Deal %"],
       "total": ["D.Tot", "Total"],
       "failure": ["Fail", "Echec (Raté / Swing)"],
@@ -254,7 +254,7 @@
     },
     "heal": {
       "_": "Soin",
-      "per_second": ["HPS", "par Seconde"],
+      "per_second": ["HPS", "Par seconde"],
       "pct": ["H%", "Soin %"],
       "total": ["H.Tot", "Total"],
       "over": ["OvH%", "Overheal"],
