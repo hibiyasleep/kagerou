@@ -44,8 +44,8 @@ const CONFIG_DEFAULT = {
         'deal.pct',
         'deal.per_second',
         'deal.critical',
-        'deal.swing',
-        'deal.miss'
+        'deal.direct',
+        'deal.crit_direct'
       ]
     }, {
       id: 1,
