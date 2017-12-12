@@ -1,7 +1,7 @@
 'use strict'
 
-const VERSION = '0.7.20'
-const CODENAME = 'RED'
+const VERSION = '0.7.21'
+const CODENAME = 'Kaien Panzermast'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
