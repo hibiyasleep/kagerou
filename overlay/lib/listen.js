@@ -49,10 +49,13 @@
           if(!players[owner]) {
             players[owner] = Object.assign({}, o)
           } else {
+            let patch = {}
+
+            let keys = Object.keys(players[owner])
             for(let k of COLUMN_MERGEABLE) {
               let v1 = pFloat(o[k])
               let v2 = pFloat(players[owner][k])
-              players[owner][k] = (isNaN(v1)? 0 : v1) + (isNaN(v2)? 0 : v2)
+              patch[k] = (isNaN(v1)? 0 : v1) + (isNaN(v2)? 0 : v2)
             }
 
             for(let t in COLUMN_USE_LARGER) {
@@ -66,14 +69,15 @@
               else if(v1 <= v2 || isNaN(v1))
                 v = players[owner]
 
-              for(let k of targets)
-                players[owner][k] = v[k]
-
+              for(let k of targets) {
+                patch[k] = v[k]
+              }
             }
-            // if player: override metadata
+
             if(isUser) {
-              players[owner].name = o.name
-              players[owner].Job = o.Job
+              players[owner] = Object.assign(o, patch)
+            } else {
+              players[owner] = Object.assign(players[owner], patch)
             }
           }
         }
