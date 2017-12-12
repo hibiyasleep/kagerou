@@ -151,6 +151,12 @@
       })
     })
 
+    $('#table').addEventListener('contextmenu', event => {
+      if(event.target.classList.contains('flex-column-i-name')) {
+        $('[data-button="nameblur"]', 0).click()
+      }
+    })
+
     // dropdown menu label
 
     $map('#dropdown-more li', _ => {
