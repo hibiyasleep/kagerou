@@ -46,7 +46,9 @@
           }
           owner = owner || name
 
-          if(players[owner]) {
+          if(!players[owner]) {
+            players[owner] = Object.assign({}, o)
+          } else {
             for(let k of COLUMN_MERGEABLE) {
               let v1 = pFloat(o[k])
               let v2 = pFloat(players[owner][k])
@@ -73,9 +75,6 @@
               players[owner].name = o.name
               players[owner].Job = o.Job
             }
-
-          } else {
-            players[owner] = Object.assign({}, o)
           }
         }
         r = toArray(players)
