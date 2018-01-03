@@ -18,46 +18,46 @@
   flex-grow: 10;
   flex-basis: 0%;
 }
-.flex-column-i-class            { width: calc(1rem * var(--_i-class)); }
-.flex-column-i-owner            { width: calc(1rem * var(--_i-owner)); }
-.flex-column-i-name             { width: calc(1rem * var(--_i-name)); }
-.flex-column-deal-total         { width: calc(1rem * var(--_deal-total)); }
-.flex-column-deal-per-second    { width: calc(1rem * var(--_deal-per_second)); }
-.flex-column-deal-pct           { width: calc(1rem * var(--_deal-pct)); }
-.flex-column-deal-failure       { width: calc(1rem * var(--_deal-failure)); }
-.flex-column-deal-accuracy      { width: calc(1rem * var(--_deal-accuracy)); }
-.flex-column-deal-swing         { width: calc(1rem * var(--_deal-swing)); }
-.flex-column-deal-miss          { width: calc(1rem * var(--_deal-miss)); }
-.flex-column-deal-hitfail       { width: calc(1rem * var(--_deal-hitfail)); }
-.flex-column-deal-critical      { width: calc(1rem * var(--_deal-critical)); }
-.flex-column-deal-direct        { width: calc(1rem * var(--_deal-direct)); }
-.flex-column-deal-crit-direct   { width: calc(1rem * var(--_deal-crit_direct)); }
-.flex-column-deal-crittypes     { width: calc(1rem * var(--_deal-crittypes)); }
-.flex-column-deal-max           { width: calc(1rem * var(--_deal-max)); }
-.flex-column-deal-maxhit        { width: calc(1rem * var(--_deal-maxhit)); }
-.flex-column-deal-maxskill      { width: calc(1rem * var(--_deal-maxskill)); }
-.flex-column-deal-last10        { width: calc(1rem * var(--_deal-last10)); }
-.flex-column-deal-last30        { width: calc(1rem * var(--_deal-last30)); }
-.flex-column-deal-last60        { width: calc(1rem * var(--_deal-last60)); }
-.flex-column-deal-last180       { width: calc(1rem * var(--_deal-last180)); }
-.flex-column-tank-damage        { width: calc(1rem * var(--_tank-damage)); }
-.flex-column-tank-parry         { width: calc(1rem * var(--_tank-parry)); }
-.flex-column-tank-heal          { width: calc(1rem * var(--_tank-heal)); }
-.flex-column-tank-block         { width: calc(1rem * var(--_tank-block)); }
-.flex-column-tank-threat-delta  { width: calc(1rem * var(--_tank-threat_delta)); }
-.flex-column-heal-per-second    { width: calc(1rem * var(--_heal-per_second)); }
-.flex-column-heal-pct           { width: calc(1rem * var(--_heal-pct)); }
-.flex-column-heal-total         { width: calc(1rem * var(--_heal-total)); }
-.flex-column-heal-swing         { width: calc(1rem * var(--_heal-swing)); }
-.flex-column-heal-over          { width: calc(1rem * var(--_heal-over)); }
-.flex-column-heal-cure          { width: calc(1rem * var(--_heal-cure)); }
-.flex-column-heal-critical      { width: calc(1rem * var(--_heal-critical)); }
-.flex-column-heal-max           { width: calc(1rem * var(--_heal-max)); }
-.flex-column-heal-maxhit        { width: calc(1rem * var(--_heal-maxhit)); }
-.flex-column-heal-maxskill      { width: calc(1rem * var(--_heal-maxskill)); }
-.flex-column-etc-powerdrain     { width: calc(1rem * var(--_etc-powerdrain)); }
-.flex-column-etc-death          { width: calc(1rem * var(--_etc-death)); }
-.flex-column-etc-powerheal      { width: calc(1rem * var(--_etc-powerheal)); }
+.flex-column-i-class            { width: var(--_i-class)rem; } /* replace-hack only */
+.flex-column-i-owner            { width: var(--_i-owner)rem; }
+.flex-column-i-name             { width: var(--_i-name)rem; }
+.flex-column-deal-total         { width: var(--_deal-total)rem; }
+.flex-column-deal-per-second    { width: var(--_deal-per_second)rem; }
+.flex-column-deal-pct           { width: var(--_deal-pct)rem; }
+.flex-column-deal-failure       { width: var(--_deal-failure)rem; }
+.flex-column-deal-accuracy      { width: var(--_deal-accuracy)rem; }
+.flex-column-deal-swing         { width: var(--_deal-swing)rem; }
+.flex-column-deal-miss          { width: var(--_deal-miss)rem; }
+.flex-column-deal-hitfail       { width: var(--_deal-hitfail)rem; }
+.flex-column-deal-critical      { width: var(--_deal-critical)rem; }
+.flex-column-deal-direct        { width: var(--_deal-direct)rem; }
+.flex-column-deal-crit-direct   { width: var(--_deal-crit_direct)rem; }
+.flex-column-deal-crittypes     { width: var(--_deal-crittypes)rem; }
+.flex-column-deal-max           { width: var(--_deal-max)rem; }
+.flex-column-deal-maxhit        { width: var(--_deal-maxhit)rem; }
+.flex-column-deal-maxskill      { width: var(--_deal-maxskill)rem; }
+.flex-column-deal-last10        { width: var(--_deal-last10)rem; }
+.flex-column-deal-last30        { width: var(--_deal-last30)rem; }
+.flex-column-deal-last60        { width: var(--_deal-last60)rem; }
+.flex-column-deal-last180       { width: var(--_deal-last180)rem; }
+.flex-column-tank-damage        { width: var(--_tank-damage)rem; }
+.flex-column-tank-parry         { width: var(--_tank-parry)rem; }
+.flex-column-tank-heal          { width: var(--_tank-heal)rem; }
+.flex-column-tank-block         { width: var(--_tank-block)rem; }
+.flex-column-tank-threat-delta  { width: var(--_tank-threat_delta)rem; }
+.flex-column-heal-per-second    { width: var(--_heal-per_second)rem; }
+.flex-column-heal-pct           { width: var(--_heal-pct)rem; }
+.flex-column-heal-total         { width: var(--_heal-total)rem; }
+.flex-column-heal-swing         { width: var(--_heal-swing)rem; }
+.flex-column-heal-over          { width: var(--_heal-over)rem; }
+.flex-column-heal-cure          { width: var(--_heal-cure)rem; }
+.flex-column-heal-critical      { width: var(--_heal-critical)rem; }
+.flex-column-heal-max           { width: var(--_heal-max)rem; }
+.flex-column-heal-maxhit        { width: var(--_heal-maxhit)rem; }
+.flex-column-heal-maxskill      { width: var(--_heal-maxskill)rem; }
+.flex-column-etc-powerdrain     { width: var(--_etc-powerdrain)rem; }
+.flex-column-etc-death          { width: var(--_etc-death)rem; }
+.flex-column-etc-powerheal      { width: var(--_etc-powerheal)rem; }
 
 .pet-merged .flex-column-i-owner {
   display: none !important;
