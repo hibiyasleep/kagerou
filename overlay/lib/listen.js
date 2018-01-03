@@ -75,9 +75,9 @@
             }
 
             if(isUser) {
-              players[owner] = Object.assign(o, patch)
+              players[owner] = Object.assign({}, o, patch)
             } else {
-              players[owner] = Object.assign(players[owner], patch)
+              players[owner] = Object.assign({}, players[owner], patch)
             }
           }
         }
