@@ -171,6 +171,8 @@ class EventEmitter {
 
   emit(event/*, args...*/) {
     if(!(event in this._events)) return
-    this._events[event].forEach(_ => _.apply(this, [].slice.call(arguments, 1)))
+    for(let e of this._events[event]) {
+      e.apply(this, [].slice.call(arguments, 1))
+    }
   }
 }
