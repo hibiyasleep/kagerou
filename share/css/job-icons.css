@@ -8,8 +8,8 @@
 .class-gla > .flex-column-i-icon,
 .class-gld > .flex-column-i-icon     { background-position:  0%  0% }
 .class-mrd > .flex-column-i-icon     { background-position: 10%  0% }
-.class-pug > .flex-column-i-icon
-.class-pgl > .flex-column-i-icon,    { background-position: 20%  0% }
+.class-pug > .flex-column-i-icon,
+.class-pgl > .flex-column-i-icon     { background-position: 20%  0% }
 .class-lnc > .flex-column-i-icon     { background-position: 30%  0% }
 .class-rog > .flex-column-i-icon     { background-position: 40%  0% }
 .class-arc > .flex-column-i-icon     { background-position: 50%  0% }
