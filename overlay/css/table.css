@@ -62,10 +62,13 @@
 .pet-merged .flex-column-i-owner {
   display: none !important;
 }
-.nameblur #table li:not(.me) .flex-column-i-name,
-.nameblur #table li:not(.me) .flex-column-i-owner {
+.nameblur #table li:not(.me):not(.class-limit-break) .flex-column-i-name,
+.nameblur #table li:not(.me):not(.class-limit-break) .flex-column-i-owner {
   filter: blur(0.2rem) -webkit-blur(0.2rem);
   -webkit-filter: blur(0.2rem);
+
+  margin-left: -0.3rem;
+  padding-left: 0.3rem;
 }
 .zero {
   opacity: 0.75;
