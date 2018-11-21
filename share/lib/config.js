@@ -167,6 +167,7 @@ const CONFIG_DEFAULT = {
     myname: [],
     use_short_name: 0,
     use_skill_aliases: true,
+    switch_raid_tab: true,
     use_tailing_pct: true
   },
   filter: {
