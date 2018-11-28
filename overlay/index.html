@@ -144,8 +144,8 @@ window.addEventListener('load', e => {
     </div>
     <nav>
       <div class="container">
-        <div class="history dropdown-trigger enabled" data-dropdown="history">
-          <span class="icon-container" id="history-icon">
+        <div class="history enabled">
+          <span class="icon-container dropdown-trigger" id="history-icon" data-dropdown="history">
             <span class="icon-overflow-wrap">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="46"
                    viewBox="0 0 24 46" class="icon icon-transition"
@@ -161,10 +161,10 @@ window.addEventListener('load', e => {
               </svg>
             </span>
             <!--img id="hots" width="1.5rem" height="1.5rem" /-->
+            <mark id="history-time">
+              kagerou <span class="version"> ??? </span>
+            </mark>
           </span>
-          <mark id="history-time">
-            kagerou <span class="version"> ERROR </span>
-          </mark>
           <span id="history-mob"></span>
           <span id="history-region" class="codename"></span>
         </div>

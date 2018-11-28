@@ -38,7 +38,7 @@ nav:hover > .container {
 
 .history {
   display: inline-flex;
-  align-items: center;
+  align-items: stretch;
   align-content: stretch;
   justify-content: stretch;
   /* font-size: var(--font-size-small); */
@@ -49,13 +49,12 @@ nav:hover > .container {
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 0%;
-  line-height: 1rem;
+  line-height: 2.5rem;
   overflow-x: hidden;
 }
 
 #history-icon {
   vertical-align: top;
-  width: 2.5rem;
   margin-right: 0;
 
   fill: var(--color-accent);
@@ -70,7 +69,8 @@ nav:hover > .container {
   height: calc(100% - 1rem);
   overflow: hidden;
 }
-.history > mark, .history > span {
+.history mark, .history span {
+  vertical-align: top;
   white-space: nowrap;
   margin-top: -0.1rem;
   margin-right: 0.25rem;
