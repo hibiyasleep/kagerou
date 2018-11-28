@@ -136,9 +136,9 @@ main {
 
   position: relative;
   height: 100%;
-  max-height: calc(100% - var(--body-margin) - 2rem);
+  max-height: calc(100% - 2.5rem);
 
-  margin: 0 calc(var(--body-margin) * 1);
+  margin: 0;
 
   box-shadow: 0 -0.25rem 0 rgba(0, 0, 0, 0.01), var(--shadow-card);
   text-shadow: var(--shadow-text);
@@ -148,7 +148,7 @@ main {
   z-index: 0;
 }
 .overlay main {
-  max-height: calc(100% - (var(--body-margin) / 2) - 2.5rem);
+  max-height: calc(100% - 3rem);
 }
 
 main > ul {

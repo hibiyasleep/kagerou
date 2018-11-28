@@ -146,38 +146,30 @@ window.addEventListener('load', e => {
       <div class="container">
         <div class="history dropdown-trigger enabled" data-dropdown="history">
           <span class="icon-container" id="history-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="46"
-                 viewBox="0 0 24 46" class="icon icon-transition"
-                 style="top: -1.375rem;">
-              <path d="M15,1H9v2h6V1z M11,14h2V8h-2V14z M19,7.4L20.4,6
-              C20,5.5,19.5,5,19,4.6L17.6,6c-1.5-1.2-3.5-2-5.6-2c-5,0-9,4-9,9
-              s4,9,9,9s9-4,9-9C21,10.9,20.3,8.9,19,7.4z M12,20c-3.9,0-7-3.1-7-7
-              s3.1-7,7-7s7,3.1,7,7S15.9,20,12,20z"/>
-              <path d="M13,25c-5,0-9,4-9,9H1l3.9,3.9L5,38l4-4H6c0-3.9,3.1-7,7-7
-              s7,3.1,7,7s-3.1,7-7,7c-1.9,0-3.7-0.8-4.9-2.1l-1.4,1.4
-              C8.3,42,10.5,43,13,43c5,0,9-4,9-9S18,25,13,25z M12,30v5l4.3,2.5
-              l0.7-1.2l-3.5-2.1V30H12z"/>
-            </svg>
+            <span class="icon-overflow-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="46"
+                   viewBox="0 0 24 46" class="icon icon-transition"
+                   style="top: -1.375rem;">
+                <path d="M15,1H9v2h6V1z M11,14h2V8h-2V14z M19,7.4L20.4,6
+                C20,5.5,19.5,5,19,4.6L17.6,6c-1.5-1.2-3.5-2-5.6-2c-5,0-9,4-9,9
+                s4,9,9,9s9-4,9-9C21,10.9,20.3,8.9,19,7.4z M12,20c-3.9,0-7-3.1-7-7
+                s3.1-7,7-7s7,3.1,7,7S15.9,20,12,20z"/>
+                <path d="M13,25c-5,0-9,4-9,9H1l3.9,3.9L5,38l4-4H6c0-3.9,3.1-7,7-7
+                s7,3.1,7,7s-3.1,7-7,7c-1.9,0-3.7-0.8-4.9-2.1l-1.4,1.4
+                C8.3,42,10.5,43,13,43c5,0,9-4,9-9S18,25,13,25z M12,30v5l4.3,2.5
+                l0.7-1.2l-3.5-2.1V30H12z"/>
+              </svg>
+            </span>
             <!--img id="hots" width="1.5rem" height="1.5rem" /-->
-          </span><div class="history-label">
-            <span>
-              <mark id="history-time">
-                kagerou <span class="version"> ERROR </span>
-              </mark>
-              <span id="history-mob">
-                '<span class="codename">Unknown Release</span>'
-              </span>
-            </span>
-            <span id="history-region">
-              <span data-locale="ui.header.waiting-data">
-                데이터를 기다리는 중
-              </span>
-            </span>
-          </div>
+          </span>
+          <mark id="history-time">
+            kagerou <span class="version"> ERROR </span>
+          </mark>
+          <span id="history-mob"></span>
+          <span id="history-region" class="codename"></span>
         </div>
         <ul class="buttons">
-          <li class="seperator"> </li><!--
-       --><li class="button" data-button="toggle-detail"
+          <li class="button" data-button="toggle-detail"
               data-active-by="image">
             <span class="icon-container">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="35"
@@ -324,30 +316,10 @@ window.addEventListener('load', e => {
             </ul>
           </li>
           <li id="patchnote">
-            <h3 class="unsecure-only">
-              UNSECURE MODE over http
-              <span class="lang ko">(웹소켓 강제 호환)</span>
-            </h3>
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="416" height="128"
+            <!-- svg xmlns="http://www.w3.org/2000/svg" width="416" height="128"
                  viewBox="0 0 416 128"
                  style="max-width: 100%; max-height: 3rem; margin-top: 0.5rem">
-              <g>
-                <circle fill="rgba(255, 255, 255, 0.25)" cx="64" cy="64" r="64"/>
-                <line stroke="#000" stroke-width="6" x1="64" y1="64" x2="74.4" y2="25.4"/>
-                <line stroke="#000" stroke-width="2" x1="64" y1="112" x2="64" y2="64"/>
-              </g>
-              <g>
-                <circle fill="rgba(255, 255, 255, 0.75)" cx="208" cy="64" r="64"/>
-                <line stroke="#000" stroke-width="6" x1="208" y1="64" x2="218.4" y2="25.4"/>
-                <line stroke="#000" stroke-width="2" x1="208" y1="112" x2="208" y2="64"/>
-              </g>
-              <g>
-                <circle fill="rgba(193, 0, 245, 0.75)" cx="352" cy="64" r="64"/>
-                <line stroke="#fff" stroke-width="6" x1="352" y1="64" x2="362.4" y2="25.4"/>
-                <line stroke="#fff" stroke-width="2" x1="352" y1="112" x2="352" y2="64"/>
-              </g>
-            </svg>
+            </svg -->
 
             <h3 class="lang ko"> 0.7.22 '실상 워드' - 201<del>7</del>8/01/02 </h3>
             <h3 class="lang en de fr cn"> 0.7.22 'Never-Lost Word' - 201<del>7</del>8/01/02 </h3>
