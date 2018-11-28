@@ -51,6 +51,10 @@ nav:hover > .container {
   flex-basis: 0%;
   line-height: 2.5rem;
   overflow-x: hidden;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 #history-icon {
@@ -72,10 +76,10 @@ nav:hover > .container {
 .history mark, .history span {
   vertical-align: top;
   white-space: nowrap;
-  margin-top: -0.1rem;
   margin-right: 0.25rem;
   flex-grow: 0;
   flex-shrink: 0;
+  cursor: default;
 }
 #history-region {
   flex-grow: 1;
