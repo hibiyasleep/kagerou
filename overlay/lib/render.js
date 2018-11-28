@@ -32,8 +32,7 @@
       this.elem = {}
       this.acc = {
         rdps: config.format.significant_digit.dps,
-        rhps: config.format.significant_digit.hps,
-        recover: 0
+        rhps: config.format.significant_digit.hps
       }
     }
 
@@ -165,12 +164,7 @@
       this.updateFooter({
         rank: rank + '/' + d.length,
         rdps: data.header.encdps,
-        rhps: data.header.enchps,
-        recover: (
-          parseInt(data.header.healstaken)
-          / (parseInt(data.header.damagetaken) || 1)
-          * 100
-        ).toFixed(0)
+        rhps: data.header.enchps
       })
     }
 
