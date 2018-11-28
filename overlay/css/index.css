@@ -33,6 +33,10 @@ body::after {
   border-color: transparent rgba(127, 127, 127, 0.3) rgba(127, 127, 127, 0.3) transparent;
   background: rgba(127, 127, 127, 0.1);
 }
+body.overlay::after {
+  right: 0.25rem;
+  bottom: 0.25rem;
+}
 body.disable-handle::after {
   display: none;
 }
