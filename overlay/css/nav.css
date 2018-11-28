@@ -4,6 +4,8 @@
 }
 
 nav {
+  position: relative;
+
   width: 100%;
   height: 2.5rem;
 
@@ -157,7 +159,7 @@ nav:hover > .container {
 .dropdown {
   display: none;
   position: absolute;
-  top: calc(var(--body-margin) + 2rem);
+  top: 2.5rem;
 
   width: 10rem;
   max-width: calc(100vw - 2rem);
@@ -183,10 +185,10 @@ nav:hover > .container {
   transition: opacity 166ms ease;
 }
 .dropdown.left {
-  left: var(--body-margin);
+  left: 0;
 }
 .dropdown.right {
-  right: var(--body-margin);
+  right: 0;
 }
 .dropdown > li {
   display: block;
@@ -233,6 +235,7 @@ nav:hover > .container {
 }
 .dropdown-history li {
   padding: 0.25rem 0.5rem;
+  height: 2.5rem;
 }
 .history-current {
   box-shadow: 0.125rem 0 0 var(--color-accent) inset;
