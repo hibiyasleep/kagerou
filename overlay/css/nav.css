@@ -103,6 +103,7 @@ nav:hover > .container {
 
 .buttons > li, .buttons > li > ul {
   height: 100%;
+  cursor: pointer;
 }
 .buttons li.label {
   font-size: var(--font-size-small);
@@ -240,6 +241,7 @@ nav:hover > .container {
 .dropdown-history li {
   padding: 0.25rem 0.5rem;
   height: 2.5rem;
+  cursor: pointer;
 }
 .history-current {
   box-shadow: 0.125rem 0 0 var(--color-accent) inset;

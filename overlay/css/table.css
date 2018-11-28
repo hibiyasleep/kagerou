@@ -324,6 +324,7 @@ footer {
   display: inline-block;
   padding: 0 0.5rem;
   border-right: 0.1rem solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 .tabs span.active {
   color: var(--color-accent);
