@@ -118,6 +118,7 @@
   const setFooterVisibility = function setFooterVisibility() {
     let f = window.config.get('footer')
     Object.keys(f)
+          .filter(_ => _ !== 'recover')
           .forEach(_ => $(`.footer-${_}`, 0).classList.toggle('hidden', !f[_]))
   }
 
