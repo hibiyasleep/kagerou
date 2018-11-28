@@ -1,7 +1,8 @@
 'use strict'
 
-const VERSION = '0.7.22'
-const CODENAME = 'Never-Lost Word'
+const VERSION = '0.7.23'
+const CODENAME = 'Additional Memory'
+const DESCRIPTION = '\'友達なんかに、なりたくなかった\''
 
 const CONFIG_DEFAULT = {
   lang: 'ko',

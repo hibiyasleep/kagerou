@@ -195,10 +195,15 @@ window.addEventListener('load', e => {
       </div>
 
       <ul class="dropdown dropdown-list dropdown-history" id="dropdown-history">
-        <li>
-          <span data-locale="ui.header.no-data-yet"> </span>
+        <li class="empty">
+          <mark class="version"> ?.?.?? </mark> <span class="codename">Unknown Release</span>
           <br/>
-          <span data-locale="ui.header.please-do-combat"> </span>
+          <span class="history-region description"> - </span>
+        </li>
+        <li class="empty">
+          <mark> 0.8.0</mark>? <span> GAMBOL </span>
+          <br/>
+          <span class="history-region"> ANOTHER 12 </span>
         </li>
       </ul>
       <ul class="dropdown buttons right" id="dropdown-more">
@@ -288,16 +293,8 @@ window.addEventListener('load', e => {
         <ul id="table">
           <li id="init-menu">
             <ul>
-              <li class="text lang ko">
-                <u>@hibiyasleep</u>
-              </li>
-              <li class="text lang ja en de fr">
-                <u>/u/hibiya_</u><br />
-                <u>@hibiyasleep</u>
-              </li>
-              <li class="text lang cn">
-                <u>/u/hibiya_</u><br />
-                <u>GitHub @hibiyasleep</u>
+              <li class="text">
+                - @hibiyasleep
               </li>
               <li class="button" data-button="donate">
                 <label data-locale="ui.menu.donate">기부</label>
