@@ -77,7 +77,7 @@
     }
 
     updateFooter(d) {
-      let r = Object.keys(this.config.footer).filter(_ => this.config.footer[_])
+      let r = Object.keys(this.config.footer).filter(_ => _ !== 'recover' && this.config.footer[_])
       for(let k of r) {
         this.elem[k] = this.elem[k] || $('#' + k)
         if(k == 'rank') {
