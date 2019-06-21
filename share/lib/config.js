@@ -147,6 +147,7 @@ const CONFIG_DEFAULT = {
     blm: 'rgb(126, 87, 194)', // Deep Purple 400
     mch: 'rgb(0, 151, 167)', // Cyan 700
     rdm: 'rgb(233, 30, 99)', // Pink 500
+    blu: 'rgb(0, 185, 247)', // Light Blue 500
     sam: 'rgb(255, 202, 40)', // Amber 400
     whm: 'rgb(117, 117, 117)', // Gray 600
     sch: 'rgb(121, 134, 203)', // Indigo 300
