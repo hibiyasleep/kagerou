@@ -101,7 +101,7 @@
 .class-gla .gauge, .class-pld .gauge { background: var(--pld); }
 .class-mrd .gauge, .class-war .gauge { background: var(--war); }
 .class-drk .gauge { background: var(--drk); }
-.class-dnc .gauge { background: var(--dnc); }
+.class-gnb .gauge { background: var(--gnb); }
 
 .class-pgl .gauge, .class-mnk .gauge { background: var(--mnk); }
 .class-lnc .gauge, .class-drg .gauge { background: var(--drg); }
