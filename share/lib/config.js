@@ -201,6 +201,12 @@ const CONFIG_DEFAULT = {
 `
 }
 
+const MIGRATE_MAP = {
+  'color.gnb': { if: _ => !_, action: 'default' },
+  'color.blu': { if: _ => !_, action: 'default' },
+  'color.dnc': { if: _ => !_, action: 'default' }
+}
+
 const CONFIG_KEY_SHOULD_OVERRIDE = [
   'tabs'
 ]
@@ -542,6 +548,28 @@ const COLUMN_INDEX = {
       }
 
       return this.config
+    }
+
+    migrate() {
+      if(!this.config) { return false }
+
+      Object.keys(MIGRATE_MAP).map(k => {
+        let v = this.get(k)
+        let cond = MIGRATE_MAP[k]
+        if(cond.if(v)) {
+          let result
+          if(typeof cond.action === 'function') {
+            result = cond.action(v)
+          } else {
+            switch(cond.action) {
+              case 'default':
+                result = resolveDotIndex(CONFIG_DEFAULT, k)
+                break
+            }
+          }
+          this.set(k, result)
+        }
+      })
     }
 
     init() {
