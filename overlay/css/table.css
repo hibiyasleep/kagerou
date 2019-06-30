@@ -76,14 +76,15 @@
 /* Position Helpers */
 .class-gld .gauge,
 .class-gla .gauge, .class-pld .gauge, .class-mrd .gauge,
-.class-war .gauge, .class-drk .gauge { /* tank; blue 500 */
+.class-war .gauge, .class-drk .gauge, .class-gnb .gauge { /* tank; blue 500 */
   box-shadow: 0.25rem 0 0 var(--position-tank) inset;
 }
 .class-pgl .gauge, .class-mnk .gauge, .class-lnc .gauge,
 .class-drg .gauge, .class-arc .gauge, .class-brd .gauge,
 .class-rog .gauge, .class-nin .gauge, .class-acn .gauge,
 .class-smn .gauge, .class-thm .gauge, .class-blm .gauge,
-.class-mch .gauge, .class-sam .gauge, .class-rdm .gauge { /* deal; red 500 */
+.class-mch .gauge, .class-sam .gauge, .class-rdm .gauge,
+.class-blm .gauge, .class-dnc .gauge { /* deal; red 500 */
   box-shadow: 0.25rem 0 0 var(--position-deal) inset;
 }
 .class-cnj .gauge, .class-whm .gauge, .class-sch .gauge,
@@ -100,6 +101,7 @@
 .class-gla .gauge, .class-pld .gauge { background: var(--pld); }
 .class-mrd .gauge, .class-war .gauge { background: var(--war); }
 .class-drk .gauge { background: var(--drk); }
+.class-dnc .gauge { background: var(--dnc); }
 
 .class-pgl .gauge, .class-mnk .gauge { background: var(--mnk); }
 .class-lnc .gauge, .class-drg .gauge { background: var(--drg); }
@@ -110,6 +112,7 @@
 .class-mch .gauge { background: var(--mch); }
 .class-sam .gauge { background: var(--sam); }
 .class-rdm .gauge { background: var(--rdm); }
+.class-dnc .gauge { background: var(--dnc); }
 
 .class-cnj .gauge, .class-whm .gauge { background: var(--whm); }
 .class-sch .gauge { background: var(--sch); }
