@@ -294,7 +294,17 @@
       "Midare Setsugekka": "Midare",
       "Hissatsu: Guren": "Guren",
       "Enchanted Redoublement": "E.Redoubl",
-      "Refulgent Arrow": "Ref.Arrow"
+      "Refulgent Arrow": "Ref.Arrow",
+      "Technical Finish": "Tech.Finish",
+      "Single Technical Finish": "1 Tech.",
+      "Double Technical Finish": "2 Tech.",
+      "Triple Technical Finish": "3 Tech.",
+      "Quadruple Technical Finish": "4 Tech.",
+      "Standard Finish": "Stand.Finish",
+      "Single Standard Finish": "1 Stand.",
+      "Double Standard Finish": "2 Stand.",
+      "Reverse Cascade": "Rev.Casc.",
+      "Rising Windmill": "Ris.Wind."
     }
   }
 }
