@@ -276,16 +276,7 @@
     }
   },
   "zone": {
-    "unknown": {
-      "2b3": "Deltascape v1.0",
-      "2b4": "Deltascape v2.0",
-      "2b5": "Deltascape v3.0",
-      "2b6": "Deltascape v4.0",
-      "2b7": "Deltascape v1.0 (Savage)",
-      "2b8": "Deltascape v2.0 (Savage)",
-      "2b9": "Deltascape v3.0 (Savage)",
-      "2ba": "Deltascape v4.0 (Savage)"
-    }
+    "unknown": {}
   },
   "skill": {
     "alias": {
@@ -295,16 +286,16 @@
       "Hissatsu: Guren": "Guren",
       "Enchanted Redoublement": "E.Redoubl",
       "Refulgent Arrow": "Ref.Arrow",
-      "Technical Finish": "Tech.Finish",
-      "Single Technical Finish": "1 Tech.",
-      "Double Technical Finish": "2 Tech.",
-      "Triple Technical Finish": "3 Tech.",
-      "Quadruple Technical Finish": "4 Tech.",
-      "Standard Finish": "Stand.Finish",
-      "Single Standard Finish": "1 Stand.",
-      "Double Standard Finish": "2 Stand.",
-      "Reverse Cascade": "Rev.Casc.",
-      "Rising Windmill": "Ris.Wind."
+      "Technical Finish": "Tech Fin.",
+      "Single Technical Finish": "1x Tech Fin.",
+      "Double Technical Finish": "2x Tech Fin.",
+      "Triple Technical Finish": "3x Tech Fin.",
+      "Quadruple Technical Finish": "4x Tech Fin.",
+      "Standard Finish": "Std Fin.",
+      "Single Standard Finish": "1x Std Fin.",
+      "Double Standard Finish": "2x Std Fin.",
+      "Reverse Cascade": "Rev.Cascade",
+      "Rising Windmill": "Ris.Windmill"
     }
   }
 }
