@@ -238,6 +238,13 @@ const COLUMN_USE_LARGER = {
   'MAXHEAL': ['MAXHEAL', 'maxheal']
 }
 
+const VALID_PLAYER_JOBS = [
+  'GLA', 'GLD', 'MRD', 'PUG', 'PGL', 'LNC', 'ROG', 'ARC', 'THM', 'ACN', 'CNJ',
+  'PLD', 'WAR', 'MNK', 'DRG', 'NIN', 'BRD', 'BLM', 'SMN', 'SCH', 'WHM', 'DRK',
+  'MCH', 'AST', 'SAM', 'RDM', 'BLU', 'GNB', 'DNC',
+  'CRP', 'BSM', 'ARM', 'GSM', 'LTW', 'WVR', 'ALC', 'CUL', 'MIN', 'BTN', 'FSH'
+]
+
 const PET_MAPPING = {
   '카벙클 에메랄드': 'acn-pet',
   '카벙클 토파즈': 'acn-pet',

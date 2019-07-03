@@ -38,20 +38,23 @@
 
         for(let o of r) {
           let name = o.name
+          let job = (o.Job || '').toUpperCase()
+          let mergeable = !VALID_PLAYER_JOBS.includes(job)
           let owner = resolveOwner(name)
-          let isUser = !owner
 
           if(haveYou && window.config.get('format.myname').indexOf(owner) != -1) {
             owner = 'YOU'
           }
           owner = owner || name
 
+          let isUser = !owner && !mergeable
+
           if(!players[owner]) {
             players[owner] = Object.assign({}, o)
           } else {
             let patch = {}
 
-            let keys = Object.keys(players[owner])
+            // let keys = Object.keys(players[owner])
             for(let k of COLUMN_MERGEABLE) {
               let v1 = pFloat(o[k])
               let v2 = pFloat(players[owner][k])
