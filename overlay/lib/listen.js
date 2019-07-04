@@ -41,13 +41,12 @@
           let job = (o.Job || '').toUpperCase()
           let mergeable = !VALID_PLAYER_JOBS.includes(job)
           let owner = resolveOwner(name)
+          let isUser = !owner && !mergeable
 
           if(haveYou && window.config.get('format.myname').indexOf(owner) != -1) {
             owner = 'YOU'
           }
           owner = owner || name
-
-          let isUser = !owner && !mergeable
 
           if(!players[owner]) {
             players[owner] = Object.assign({}, o)
