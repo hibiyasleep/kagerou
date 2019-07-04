@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.7.25'
-const CODENAME = 'Remind Blue'
-const DESCRIPTION = '\'君の歌った「大人が嫌いな歌」を\''
+const VERSION = '0.7.26'
+const CODENAME = 'Lost-day Hours'
+const DESCRIPTION = '\'今日も夕ご飯のことを考える\''
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
