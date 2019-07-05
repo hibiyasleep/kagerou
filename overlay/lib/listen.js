@@ -39,7 +39,7 @@
         for(let o of r) {
           let name = o.name
           let job = (o.Job || '').toUpperCase()
-          let mergeable = !VALID_PLAYER_JOBS.includes(job)
+          let mergeable = VALID_PLAYER_JOBS.indexOf(job) === -1
           let owner = resolveOwner(name)
           let isUser = !owner && !mergeable
 
