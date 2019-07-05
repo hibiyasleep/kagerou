@@ -127,6 +127,7 @@
         "others": {
           "_": "기타",
           "skill-aliases-help": "'The Forbidden Chakra'와 같은 긴 스킬 이름에 대해 약칭을 사용합니다.",
+          "switch-raid-help": "현재 전투의 인원수에 따라 알맞은 24인 모드의 탭으로 자동 전환합니다.",
           "filter": "필터",
           "filter-help": [
             "FFXIV_Plugin이 피아식별조차 제대로 못 하는 관계로, 어떻게든 적을 표시하지 않도록 시도합니다.",
@@ -214,6 +215,7 @@
       "myname": "내 이름",
       "use_short_name": "이름을 이니셜로 표시 (글로벌 서버용)",
       "use_skill_aliases": "스킬 이름 약칭 사용 (글로벌 서버용)",
+      "switch_raid_tab": "24인 모드 탭 자동 전환",
       "use_tailing_pct": "비율 값 뒤에 % 기호를 표시"
     }
   },

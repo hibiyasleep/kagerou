@@ -24,6 +24,7 @@
 
     constructor(config) {
       this.current = 0
+      this.combatants = -1
 
       this.standby = true
       this.currentHistory = false
@@ -54,14 +55,13 @@
     switchTab(id) {
       if(!this.tabs[id]) {
         throw new ReferenceError(`Failed to switch to tab '${id}': No such tab`)
-        return
       }
       this.current = id
       this.updateHeader()
       if(window.hist.current)
         this.update()
 
-      $('#table').setAttribute('data-width', this.tabs[id].tab.width)
+      $('#table').setAttribute('data-width', this.template.tab.width)
     }
 
     browseHistory(id) {
@@ -99,11 +99,27 @@
         this.standby = false
       }
 
-      if(!this.currentHistory) {
-        this.render(window.hist.current)
-      } else {
-        this.render(window.hist.browse(this.currentHistory).data)
+      let data = this.currentHistory ?
+        window.hist.browse(this.currentHistory).data : window.hist.current
+
+      let comb = data.data.length
+      if (this.config.format.switch_raid_tab && comb !== this.combatants) {
+        this.combatants = comb
+
+        let properTab = Object.keys(this.tabs).find(k =>
+          (this.tabs[k].tab.width === '1') === (this.combatants < 24))
+
+        let properIndex = Object.keys(this.tabs).findIndex(t => t === properTab)
+
+        if(properTab) {
+          [].forEach.call($('.tabs span'), v => v.classList.remove('active'))
+          $('.tabs span', properIndex).classList.add('active')
+
+          return this.switchTab(properTab)
+        }
       }
+
+      this.render(data)
     }
 
     _testRow(data) {
