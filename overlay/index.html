@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title> kagerou overlay </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Lato">
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="../share/css/job-icons.css" />
     <script>
@@ -37,19 +37,19 @@ Raven && Raven.config('https://77d763feffdf45daa9a75517878489cd@s.hibiya.moe/2',
 }).install()
 
     </script>
-    <script src="../share/lib/util.js?v=never-lost-word"></script>
-    <script src="../share/lib/config.js?v=never-lost-word"></script>
+    <script src="../share/lib/util.js?v=remind-blue"></script>
+    <script src="../share/lib/config.js?v=remind-blue"></script>
     <script>
 'use strict'
 
 Raven && Raven.setRelease(VERSION)
 
     </script>
-    <script src="../share/lib/ws-abstract.js?v=never-lost-word"></script>
-    <script src="../share/lib/locale.js?v=never-lost-word"></script>
-    <script src="lib/render.js?v=never-lost-word"></script>
-    <script src="lib/listen.js?v=never-lost-word"></script>
-    <script src="lib/ui.js?v=never-lost-word"></script>
+    <script src="../share/lib/ws-abstract.js?v=remind-blue"></script>
+    <script src="../share/lib/locale.js?v=remind-blue"></script>
+    <script src="lib/render.js?v=remind-blue"></script>
+    <script src="lib/listen.js?v=remind-blue"></script>
+    <script src="lib/ui.js?v=remind-blue"></script>
     <script>
 'use strict'
 
@@ -66,6 +66,7 @@ if(window.layer
 window.config = new Config()
 
 config.load()
+config.migrate()
 config.setResizeFactor()
 config.attachOverlayStyle('overlay')
 
@@ -144,40 +145,32 @@ window.addEventListener('load', e => {
     </div>
     <nav>
       <div class="container">
-        <div class="history dropdown-trigger enabled" data-dropdown="history">
-          <span class="icon-container" id="history-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="46"
-                 viewBox="0 0 24 46" class="icon icon-transition"
-                 style="top: -1.375rem;">
-              <path d="M15,1H9v2h6V1z M11,14h2V8h-2V14z M19,7.4L20.4,6
-              C20,5.5,19.5,5,19,4.6L17.6,6c-1.5-1.2-3.5-2-5.6-2c-5,0-9,4-9,9
-              s4,9,9,9s9-4,9-9C21,10.9,20.3,8.9,19,7.4z M12,20c-3.9,0-7-3.1-7-7
-              s3.1-7,7-7s7,3.1,7,7S15.9,20,12,20z"/>
-              <path d="M13,25c-5,0-9,4-9,9H1l3.9,3.9L5,38l4-4H6c0-3.9,3.1-7,7-7
-              s7,3.1,7,7s-3.1,7-7,7c-1.9,0-3.7-0.8-4.9-2.1l-1.4,1.4
-              C8.3,42,10.5,43,13,43c5,0,9-4,9-9S18,25,13,25z M12,30v5l4.3,2.5
-              l0.7-1.2l-3.5-2.1V30H12z"/>
-            </svg>
+        <div class="history enabled">
+          <span class="icon-container dropdown-trigger" id="history-icon" data-dropdown="history">
+            <span class="icon-overflow-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="46"
+                   viewBox="0 0 24 46" class="icon icon-transition"
+                   style="top: -1.375rem;">
+                <path d="M15,1H9v2h6V1z M11,14h2V8h-2V14z M19,7.4L20.4,6
+                C20,5.5,19.5,5,19,4.6L17.6,6c-1.5-1.2-3.5-2-5.6-2c-5,0-9,4-9,9
+                s4,9,9,9s9-4,9-9C21,10.9,20.3,8.9,19,7.4z M12,20c-3.9,0-7-3.1-7-7
+                s3.1-7,7-7s7,3.1,7,7S15.9,20,12,20z"/>
+                <path d="M13,25c-5,0-9,4-9,9H1l3.9,3.9L5,38l4-4H6c0-3.9,3.1-7,7-7
+                s7,3.1,7,7s-3.1,7-7,7c-1.9,0-3.7-0.8-4.9-2.1l-1.4,1.4
+                C8.3,42,10.5,43,13,43c5,0,9-4,9-9S18,25,13,25z M12,30v5l4.3,2.5
+                l0.7-1.2l-3.5-2.1V30H12z"/>
+              </svg>
+            </span>
             <!--img id="hots" width="1.5rem" height="1.5rem" /-->
-          </span><div class="history-label">
-            <span>
-              <mark id="history-time">
-                kagerou <span class="version"> ERROR </span>
-              </mark>
-              <span id="history-mob">
-                '<span class="codename">Unknown Release</span>'
-              </span>
-            </span>
-            <span id="history-region">
-              <span data-locale="ui.header.waiting-data">
-                데이터를 기다리는 중
-              </span>
-            </span>
-          </div>
+            <mark id="history-time">
+              kagerou <span class="version"> ??? </span>
+            </mark>
+          </span>
+          <span id="history-mob"></span>
+          <span id="history-region" class="codename"></span>
         </div>
         <ul class="buttons">
-          <li class="seperator"> </li><!--
-       --><li class="button" data-button="toggle-detail"
+          <li class="button" data-button="toggle-detail"
               data-active-by="image">
             <span class="icon-container">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="35"
@@ -203,11 +196,26 @@ window.addEventListener('load', e => {
       </div>
 
       <ul class="dropdown dropdown-list dropdown-history" id="dropdown-history">
-        <li>
-          <span data-locale="ui.header.no-data-yet"> </span>
-          <br/>
-          <span data-locale="ui.header.please-do-combat"> </span>
+        <li class="empty">
+          <mark> 0.7.24 </mark> <span> Imaginary Reload </span>
+          <br />
+          <span class="history-region"> '何百回と繰り返してきた' </span>
         </li>
+        <li class="empty">
+          <mark> 0.7.25 </mark> <span> Remind Blue </span>
+          <br />
+          <span class="history-region"> '君の歌った「大人が嫌いな歌」を' </span>
+        </li>
+        <li class="empty">
+          <mark class="version"> ?.?.?? </mark> <span class="codename">Unknown Release</span>
+          <br/>
+          <span class="history-region description"> - </span>
+        </li>
+        <!-- <li class="empty">
+          <mark> 0.8.0</mark>? <span> GAMBOL </span>
+          <br/>
+          <span class="history-region"> ANOTHER 12 </span>
+        </li> -->
       </ul>
       <ul class="dropdown buttons right" id="dropdown-more">
         <li data-button="merge-pet" data-active-by="label"
@@ -296,16 +304,8 @@ window.addEventListener('load', e => {
         <ul id="table">
           <li id="init-menu">
             <ul>
-              <li class="text lang ko">
-                <u>@hibiyasleep</u>
-              </li>
-              <li class="text lang ja en de fr">
-                <u>/u/hibiya_</u><br />
-                <u>@hibiyasleep</u>
-              </li>
-              <li class="text lang cn">
-                <u>/u/hibiya_</u><br />
-                <u>GitHub @hibiyasleep</u>
+              <li class="text">
+                - @hibiyasleep
               </li>
               <li class="button" data-button="donate">
                 <label data-locale="ui.menu.donate">기부</label>
@@ -324,134 +324,34 @@ window.addEventListener('load', e => {
             </ul>
           </li>
           <li id="patchnote">
-            <h3 class="unsecure-only">
-              UNSECURE MODE over http
-              <span class="lang ko">(웹소켓 강제 호환)</span>
-            </h3>
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="416" height="128"
+            <!-- svg xmlns="http://www.w3.org/2000/svg" width="416" height="128"
                  viewBox="0 0 416 128"
                  style="max-width: 100%; max-height: 3rem; margin-top: 0.5rem">
-              <g>
-                <circle fill="rgba(255, 255, 255, 0.25)" cx="64" cy="64" r="64"/>
-                <line stroke="#000" stroke-width="6" x1="64" y1="64" x2="74.4" y2="25.4"/>
-                <line stroke="#000" stroke-width="2" x1="64" y1="112" x2="64" y2="64"/>
-              </g>
-              <g>
-                <circle fill="rgba(255, 255, 255, 0.75)" cx="208" cy="64" r="64"/>
-                <line stroke="#000" stroke-width="6" x1="208" y1="64" x2="218.4" y2="25.4"/>
-                <line stroke="#000" stroke-width="2" x1="208" y1="112" x2="208" y2="64"/>
-              </g>
-              <g>
-                <circle fill="rgba(193, 0, 245, 0.75)" cx="352" cy="64" r="64"/>
-                <line stroke="#fff" stroke-width="6" x1="352" y1="64" x2="362.4" y2="25.4"/>
-                <line stroke="#fff" stroke-width="2" x1="352" y1="112" x2="352" y2="64"/>
-              </g>
-            </svg>
+            </svg -->
 
-            <h3 class="lang ko"> 0.7.22 '실상 워드' - 201<del>7</del>8/01/02 </h3>
-            <h3 class="lang en de fr cn"> 0.7.22 'Never-Lost Word' - 201<del>7</del>8/01/02 </h3>
-            <h3 class="lang ja"> 0.7.22 '失想ワアド' - 201<del>7</del>8/01/02 </h3>
-            <p class="lang ko">- 펫 합산이 반복되는 문제 수정
-            <p class="lang en de fr cn">- Fixed bug: repeated pet summation </p>
-            <p class="lang ja">- ペット合算が繰り返される問題を修正 </p>
+            <h3 class="lang ko"> 0.7.26 '로스트 데이 아워' - 2019/07/01 </h3>
+            <h3 class="lang en de fr cn"> 0.7.26 'Lost-day Hours' - 2019/07/01 </h3>
+            <h3 class="lang ja"> 0.7.26 'ロストデイアワー' - 2019/07/01 </h3>
 
-            <h3 class="lang ko"> 0.7.21 '개연 팬저마스트' - 2017/12/04 </h3>
-            <h3 class="lang en de fr cn"> 0.7.21 'Kaien Panzermast' - 2017/12/04 </h3>
-            <h3 class="lang ja"> 0.7.21 'カイエンパンザマスト' - 2017/12/04 </h3>
-            <p class="lang ko">- 이름 영역에 <u>오른쪽 클릭</u>해서 이름을 가리고 보일 수 있습니다. </p>
-            <p class="lang ko">- 카벙클 아이콘이 에러로 뜨던 문제 수정 </p>
-            <p class="lang ko">- 펫 합산 시 일부 데이터가 잘못 합쳐지는 문제 수정 </p>
-            <p class="lang en de cn fr">- <u>Right-click</u> on 'Name' section will toggle name blur. </p>
-            <p class="lang en de cn fr">- Fixed 'Carbuncle' icon displaying as 'Error' </p>
-            <p class="lang en de cn fr">- Fixed death count got merged/overrided </p>
-            <p class="lang ja">- 名前を<u>右クリック</u>して名前の表示を切り替えができます </p>
-            <p class="lang ja">- カーバンクルがエラーで出てくる問題を修正 </p>
-            <p class="lang ja">- ペットのDeathcountが含まれる問題を修正</p>
+            <p class="lang ko"> 무희의 스킬명 약칭을 추가 </p>
+            <p class="lang en"> Added DNC skill name abbreviation </p>
+            <!-- <p class="lang ja"> 踊り子のスキル名略称を追加 </p> -->
 
-            <h3> 0.7.20 'RED' - 2017/11/24 </h3>
-            <p class="lang ko">- 이름 가리기가 작동하지 않는 문제 수정 </p>
-            <p class="lang en de cn fr ja">- Fixed 'Blur Name' not working </p>
+            <p class="lang ko"> 직업이 있는 경우 소환수로 취급하지 않음 </p>
+            <p class="lang en de fr cn"> Will not merge 'pets' if it has valid job </p>
+            <p class="lang ja"> ジョブがある場合、召喚獣ではないものとして取り扱う </p>
 
-            <h3> 0.7.19 'daze/days' - 2017/11/17 </h3>
-            <p class="lang ko">- 프랑스어 번역이 추가되어 (by @Xaoimoon) 총 6개 국어를 지원합니다. </p>
-            <p class="lang ko">- 직업 이미지 로딩 개선 </p>
-            <p class="lang en de cn fr">- Added French translation (by @Xaoimoon) </p>
-            <p class="lang en de cn fr">- Improved loading of job icons </p>
-            <p class="lang ja">- フランス語の翻訳を追加 (by @Xaoimoon) </p>
-            <p class="lang ja">- アイコンのロード改善 </p>
+            <h3 class="lang ko"> 0.7.25 '리마인드 블루' - 2019/07/01 </h3>
+            <h3 class="lang en de fr cn"> 0.7.25 'Remind Blue' - 2019/07/01 </h3>
+            <h3 class="lang ja"> 0.7.25 'リマインドブルー' - 2019/07/01 </h3>
 
-            <h3 class="lang ko"> 0.7.18 '아지랑이 데이즈' - 2017/11/02 </h3>
-            <h3 class="lang en de fr cn"> 0.7.18 'Kagerou Days' - 2017/11/02 </h3>
-            <h3 class="lang ja"> 0.7.18 'カゲロウデイズ' - 2017/11/02 </h3>
-            <p class="lang ko">- 일본어 번역 개선 (by @ykzts)</p>
-            <p class="lang ko">- 오타 수정 </p>
-            <p class="lang en de fr">- Enhanced japanese translation (by @ykzts)</p>
-            <p class="lang en de fr">- fix typo </p>
-            <p class="lang ja">- 日本語編訳の改善 (by @ykzts)</p>
-            <p class="lang ja">- タイプミスを修正 </p>
-            <p class="lang cn">- 改进日语翻译 (by @ykzts)</p>
-            <p class="lang cn">- 修正笔误 </p>
+            <p> GNB / DNC </p>
 
-            <h3 class="lang ko"> 0.7.17 '칠드런 레코드' - 2017/10/23 </h3>
-            <h3 class="lang en de fr cn"> 0.7.17 'Children Record' - 2017/10/23 </h3>
-            <h3 class="lang ja"> 0.7.17 'チルドレンレコード' - 2017/10/23 </h3>
-            <p class="lang ko">(팬 페스티벌 의자에서 작업함)</p>
-            <p class="lang ko">- "차원의 틈새" → "차원의 틈"</p>
-            <p class="lang ko">
-              - <code>collapsed, nameblur</code> 클래스 위치 변경
-            </p>
-            <p class="lang en de fr">(Worked while Fan Festival)</p>
-            <p class="lang en de fr">- Fix korean translation</p>
-            <p class="lang en de fr">
-              - Relocated <code>collapsed, nameblur</code> class
-            </p>
-            <p class="lang ja">(ファンフェスの中の作業しました)</p>
-            <p class="lang ja">- 韓国語の編訳を修正する</p>
-            <p class="lang ja">
-              - CSSクラス <code>collapsed, nameblur</code>を移動
-            </p>
-            <p class="lang cn">(韩国粉丝节期间工作)</p>
-            <p class="lang cn">- 修正韩语翻译</p>
-            <p class="lang cn">
-              - 移动了 <code>collapsed, nameblur</code> 类的位置
-            </p>
+            <h3 class="lang ko"> 0.7.24 '이매지너리 리로드' - 2019/06/22 </h3>
+            <h3 class="lang en de fr cn"> 0.7.24 'Imaginary Reload' - 2019/06/22 </h3>
+            <h3 class="lang ja"> 0.7.24 'イマジナリーリロード' - 2019/06/22 </h3>
 
-            <h3 class="lang ko"> 0.7.16 '헤드폰 액터' - 2017/10/14 </h3>
-            <h3 class="lang en de fr cn"> 0.7.16 'Headphone Actor' - 2017/10/14 </h3>
-            <h3 class="lang ja"> 0.7.16 'ヘッドフォンアクター' - 2017/10/14 </h3>
-            <p class="lang ko">- 오타 수정</p>
-            <p class="lang en de fr">- Fix non-critical typo on code</p>
-            <p class="lang ja">- 入力ミスを修正</p>
-            <p class="lang cn">- 修正笔误</p>
-
-            <h3 class="lang ko"> 0.7.15 '상상 포레스트' - 2017/10/13 </h3>
-            <h3 class="lang en de fr cn"> 0.7.15 'Forest of Imagination' - 2017/10/13 </h3>
-            <h3 class="lang ja"> 0.7.15 '想像フォレスト' - 2017/10/13 </h3>
-            <p class="lang ko">- 4.1 관련 긴급 공지</p>
-            <p class="lang en de fr">- Important notice about 4.1</p>
-            <p class="lang ja">- パッチ4.1の緊急告知</p>
-            <p class="lang cn">- 4.1版本紧急通知</p>
-
-            <h3 class="lang ko"> 0.7.14 '키사라기 어텐션' - 2017/09/25 </h3>
-            <h3 class="lang en de fr cn"> 0.7.14 'Kisaragi Attention' - 2017/09/25 </h3>
-            <h3 class="lang ja"> 0.7.14 '如月アテンション' - 2017/09/25 </h3>
-            <p class="lang ko">- (OP) 조절 불가능할 때 크기 조절 핸들을 자동으로 숨기는 기능 추가 </p>
-            <p class="lang en de fr">- Update CH/DH column header</p>
-            <p class="lang en de fr ja">- Hide resize handle when unavailable</p>
-            <p class="lang cn">- 当不可用时隐藏调整大小按钮</p>
-
-            <h3 class="lang ko"> 0.7.13 '군청 레인' - 2017/09/15 </h3>
-            <h3 class="lang en de fr cn"> 0.7.13 'Ultramarine Rain' - 2017/09/15 </h3>
-            <h3 class="lang ja"> 0.7.13 '群青レイン' - 2017/09/15 </h3>
-            <p class="lang ko">- 중국어 (간체) 번역 수정</p>
-            <p class="lang en de fr">- Update translation of Chinese (Simplified)</p>
-            <p class="lang ja">- 中国語の翻訳を修正</p>
-            <p class="lang cn">- 改进中文翻译</p>
-            <p class="lang ko">- 내 데이터를 강조하는 기능 추가</p>
-            <p class="lang en de fr">- Added hightlight color of 'My name'</p>
-            <p class="lang ja">- 自分のデータを強調する機能を追加</p>
-            <p class="lang cn">- 增加了强调自己数据的功能</p>
+            <p> BLU support </p>
 
           </li>
         </ul>
@@ -469,9 +369,6 @@ window.addEventListener('load', e => {
           </span><!--
        --><span class="footer-rhps">
             <span id="rhps">0</span>hps
-          </span><!--
-       --><span class="footer-recover">
-            🔄 <span id="recover">0</span>%
           </span>
         </span>
       </footer>

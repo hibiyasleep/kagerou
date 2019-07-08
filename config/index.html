@@ -380,15 +380,6 @@ document.addEventListener('DOMContentLoaded', _ => {
                    data-type="boolean"
                    data-config-key="footer.rhps" />
           </p>
-          <p class="control">
-            <label for="input-footer-recover"
-                   data-locale="ui.config.general.footer.recover">
-              총 받은 힐 / 받은 대미지 🔄
-            </label>
-            <input type="checkbox" id="input-footer-recover"
-                   data-type="boolean"
-                   data-config-key="footer.recover" />
-          </p>
         </article>
         <article>
           <h3 data-locale="ui.config.general.reset"> Re:제로 </h3>
@@ -531,22 +522,6 @@ document.addEventListener('DOMContentLoaded', _ => {
                      data-config-key="style.gauge-height"
                      data-unit="%"
                      min="0" step="5" max="100"/>
-            </span>
-          </p>
-          <p class="control">
-            <label for="input-style-body-margin"
-                   data-locale="config.style.body-margin">
-              바깥쪽 여백
-            </label>
-            <span class="input-group">
-              <label class="input-value-style" for="input-style-body-margin"
-                     style="background: #333; vertical-align: -0.25rem;">
-              </label>
-              <input type="range" id="input-style-body-margin"
-                     data-config-key="style.body-margin"
-                     data-style="width"
-                     data-unit="rem"
-                     min="0" step="0.125" max="0.5" />
             </span>
           </p>
         </article>
@@ -856,6 +831,19 @@ document.addEventListener('DOMContentLoaded', _ => {
                      data-style="background" />
             </span>
           </p>
+          <p class="control">
+            <label for="input-color-gnb" data-locale="config.color.gnb">
+              건브레이커
+            </label>
+            <span class="input-group">
+              <label class="input-value-style job class-gnb" for="input-color-gnb">
+                <span class="flex-column-i-icon"></span>
+              </label>
+              <input type="text" id="input-color-gnb" style="width: 10rem"
+                     data-config-key="color.gnb"
+                     data-style="background" />
+            </span>
+          </p>
         </article>
         <article>
           <h3 data-locale="config.color.position-deal">
@@ -966,7 +954,7 @@ document.addEventListener('DOMContentLoaded', _ => {
             </span>
           </p>
           <p class="control">
-            <label for="input-color-smn" data-locale="config.color.rdm">
+            <label for="input-color-rdm" data-locale="config.color.rdm">
               적마도사
             </label>
             <span class="input-group">
@@ -975,6 +963,32 @@ document.addEventListener('DOMContentLoaded', _ => {
               </label>
               <input type="text" id="input-color-rdm" style="width: 10rem"
                      data-config-key="color.rdm"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-blu" data-locale="config.color.blu">
+              청마도사
+            </label>
+            <span class="input-group">
+              <label class="input-value-style job class-blu" for="input-color-blu">
+                <span class="flex-column-i-icon"></span>
+              </label>
+              <input type="text" id="input-color-blu" style="width: 10rem"
+                     data-config-key="color.blu"
+                     data-style="background" />
+            </span>
+          </p>
+          <p class="control">
+            <label for="input-color-dnc" data-locale="config.color.dnc">
+              무희
+            </label>
+            <span class="input-group">
+              <label class="input-value-style job class-dnc" for="input-color-dnc">
+                <span class="flex-column-i-icon"></span>
+              </label>
+              <input type="text" id="input-color-dnc" style="width: 10rem"
+                     data-config-key="color.dnc"
                      data-style="background" />
             </span>
           </p>
@@ -1351,14 +1365,14 @@ document.addEventListener('DOMContentLoaded', _ => {
             '<span class="codename">Unknown Release</span>'
           </p>
           <p>
-            copyright © 2016-2017 kuriyama hibiya
+            copyright © 2016-2018 kuriyama hibiya
           </p>
         </article>
         <article>
           <h3 data-locale="ui.config.info.created-by"> 만든 사람 </h3>
           <p>
             <span class="text-muted" data-locale="ui.config.info.servers">
-              <del>오딘</del> 초코보 / Tonberry
+              카벙클 / 초코보
             </span>
             <span data-locale="ui.config.info.hibiya">
               히비야
@@ -1443,6 +1457,7 @@ MIT License
           <p> Jmikeydarby (EN translation improvements) </p>
           <p> Andrycism (中文翻译) </p>
           <p> @ykzts (日本語編訳) </p>
+          <p> @ChalkPE </p>
           <p> <br /> </p>
           <p> <br /> </p>
           <p> and YOU </p>

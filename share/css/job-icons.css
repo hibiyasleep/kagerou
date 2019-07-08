@@ -8,8 +8,8 @@
 .class-gla > .flex-column-i-icon,
 .class-gld > .flex-column-i-icon     { background-position:  0%  0% }
 .class-mrd > .flex-column-i-icon     { background-position: 10%  0% }
-.class-pug > .flex-column-i-icon
-.class-pgl > .flex-column-i-icon,    { background-position: 20%  0% }
+.class-pug > .flex-column-i-icon,
+.class-pgl > .flex-column-i-icon     { background-position: 20%  0% }
 .class-lnc > .flex-column-i-icon     { background-position: 30%  0% }
 .class-rog > .flex-column-i-icon     { background-position: 40%  0% }
 .class-arc > .flex-column-i-icon     { background-position: 50%  0% }
@@ -31,6 +31,9 @@
 .class-ast > .flex-column-i-icon     { background-position: 20% 40% }
 .class-sam > .flex-column-i-icon     { background-position: 30% 40% }
 .class-rdm > .flex-column-i-icon     { background-position: 40% 40% }
+.class-blu > .flex-column-i-icon     { background-position: 50% 40% }
+.class-gnb > .flex-column-i-icon     { background-position: 60% 40% }
+.class-dnc > .flex-column-i-icon     { background-position: 70% 40% }
 .class-acn-pet > .flex-column-i-icon { background-position:  0% 60% }
 .class-garuda > .flex-column-i-icon  { background-position: 10% 60% }
 .class-ifrit  > .flex-column-i-icon  { background-position: 20% 60% }

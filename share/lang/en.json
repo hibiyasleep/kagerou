@@ -141,8 +141,8 @@
       "info": {
         "_": "About",
         "created-by": "Created by",
-        "servers": "<del>Odin</del> Chocobo@KR / Tonberry",
-        "hibiya": "Kuriyama Hibiya (히비야/ヒビヤ)",
+        "servers": "Carbuncle@KR Chocobo@KR",
+        "hibiya": "kuriyama hibiya",
         "support": "Support",
         "license": "License",
         "icon-files": "All files under share/img/class,",
@@ -182,6 +182,7 @@
       "pld": "Paladin (Gladiator)",
       "war": "Warrior (Marauder)",
       "drk": "Dark Knight",
+      "gnb": "Gunbreaker",
       "mnk": "Monk (Pugilist)",
       "drg": "Dragoon (Lancer)",
       "brd": "Bard (Archer)",
@@ -191,6 +192,8 @@
       "mch": "Machinist",
       "sam": "Samurai",
       "rdm": "Red Mage",
+      "blu": "Blue Mage",
+      "dnc": "Dancer",
       "whm": "White Mage (Conjurer)",
       "sch": "Scholar",
       "ast": "Astrologian",
@@ -273,16 +276,7 @@
     }
   },
   "zone": {
-    "unknown": {
-      "2b3": "Deltascape v1.0",
-      "2b4": "Deltascape v2.0",
-      "2b5": "Deltascape v3.0",
-      "2b6": "Deltascape v4.0",
-      "2b7": "Deltascape v1.0 (Savage)",
-      "2b8": "Deltascape v2.0 (Savage)",
-      "2b9": "Deltascape v3.0 (Savage)",
-      "2ba": "Deltascape v4.0 (Savage)"
-    }
+    "unknown": {}
   },
   "skill": {
     "alias": {
@@ -291,7 +285,17 @@
       "Midare Setsugekka": "Midare",
       "Hissatsu: Guren": "Guren",
       "Enchanted Redoublement": "E.Redoubl",
-      "Refulgent Arrow": "Ref.Arrow"
+      "Refulgent Arrow": "Ref.Arrow",
+      "Technical Finish": "Tech Fin",
+      "Single Technical Finish": "1x Tech Fin",
+      "Double Technical Finish": "2x Tech Fin",
+      "Triple Technical Finish": "3x Tech Fin",
+      "Quadruple Technical Finish": "4x Tech Fin",
+      "Standard Finish": "Std Fin",
+      "Single Standard Finish": "1x Std Fin",
+      "Double Standard Finish": "2x Std Fin",
+      "Reverse Cascade": "Rev.Cascade",
+      "Rising Windmill": "Ris.Wndmill"
     }
   }
 }

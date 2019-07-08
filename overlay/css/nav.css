@@ -4,8 +4,10 @@
 }
 
 nav {
+  position: relative;
+
   width: 100%;
-  height: 2rem;
+  height: 2.5rem;
 
   line-height: 0.9375rem;
 
@@ -35,37 +37,54 @@ nav:hover > .container {
 }
 
 .history {
-  display: inline-block;
-  font-size: var(--font-size-small);
+  display: inline-flex;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: stretch;
+  /* font-size: var(--font-size-small); */
 
+  margin-right: 0.25rem;
   height: 100%;
 
   flex-grow: 1;
   flex-shrink: 0;
   flex-basis: 0%;
+  line-height: 2.5rem;
+  overflow-x: hidden;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 #history-icon {
   vertical-align: top;
-  margin: 0.25rem;
-  width: 1.5rem;
-  height: calc(100% - 0.5rem);
+  margin-right: 0;
 
   fill: var(--color-accent);
 }
-.history-label {
-  display: inline-block;
-  width: calc(100% - 2rem);
+#history-icon:hover {
+  cursor: pointer;
+  background: rgba(127, 127, 127, 0.5);
 }
-.history-label > span {
-  width: 100%;
+.icon-overflow-wrap {
   display: inline-block;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  margin: 0.5rem;
+  height: calc(100% - 1rem);
   overflow: hidden;
 }
+.history mark, .history span {
+  vertical-align: top;
+  white-space: nowrap;
+  margin-right: 0.25rem;
+  flex-grow: 0;
+  flex-shrink: 0;
+  cursor: default;
+}
 #history-region {
-  margin-top: -0.5rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  text-align: right;
 }
 
 .buttons {
@@ -84,6 +103,7 @@ nav:hover > .container {
 
 .buttons > li, .buttons > li > ul {
   height: 100%;
+  cursor: pointer;
 }
 .buttons li.label {
   font-size: var(--font-size-small);
@@ -96,7 +116,7 @@ nav:hover > .container {
 }
 .buttons li.button {
   height: 100%;
-  padding: 0.25rem;
+  padding: 0.5rem 0.25rem;
 
   line-height: 0;
 
@@ -119,6 +139,7 @@ nav:hover > .container {
   display: inline-block;
   height: 100%;
   overflow: hidden;
+  transition: background-color 200ms ease;
 }
 .icon {
   position: relative;
@@ -143,7 +164,7 @@ nav:hover > .container {
 .dropdown {
   display: none;
   position: absolute;
-  top: calc(var(--body-margin) + 2rem);
+  top: 2.5rem;
 
   width: 10rem;
   max-width: calc(100vw - 2rem);
@@ -169,10 +190,10 @@ nav:hover > .container {
   transition: opacity 166ms ease;
 }
 .dropdown.left {
-  left: var(--body-margin);
+  left: 0;
 }
 .dropdown.right {
-  right: var(--body-margin);
+  right: 0;
 }
 .dropdown > li {
   display: block;
@@ -214,11 +235,13 @@ nav:hover > .container {
   font-size: 0.75rem;
   width: 14rem;
 
-  top: 0.25rem;
-  left: calc(var(--body-margin) + 1.5rem);
+  top: 0;
+  left: 2.5rem;
 }
 .dropdown-history li {
   padding: 0.25rem 0.5rem;
+  height: 2.5rem;
+  cursor: pointer;
 }
 .history-current {
   box-shadow: 0.125rem 0 0 var(--color-accent) inset;

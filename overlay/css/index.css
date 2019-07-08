@@ -7,14 +7,15 @@ html {
 }
 body {
   font-family: var(--body-font);
-  margin: var(--body-margin) !important; /* for shadow */
-  height: calc(100% - var(--body-margin) * 2);
+  margin: 0 !important;
+  height: 100%;
 
   user-select: none;
   -webkit-user-select: none;
 }
 body.overlay {
-  margin-top: 0.5rem !important;
+  margin: 0.5rem 0.25rem 0.25rem 0.25rem !important;
+  height: calc(100% - 0.25rem) !important;
 }
 /* Resize handle */
 body::after {
@@ -81,7 +82,7 @@ html.ja .lang.ja,
 html.en .lang.en,
 html.de .lang.de,
 html.cn .lang.cn,
-html.fr .lang.cn {
+html.fr .lang.fr {
   display: block;
 }
 

@@ -77,7 +77,6 @@
         <span class="history-mob">${histdata.title}</span>
         <br />
         <span class="history-region">${window.l.zone(histdata.region)}</span>
-        |
         <span class="history-dps">${parseFloat(histdata.dps).toFixed(2)}</span>`
 
       elem.addEventListener('click', e => {
@@ -119,6 +118,7 @@
   const setFooterVisibility = function setFooterVisibility() {
     let f = window.config.get('footer')
     Object.keys(f)
+          .filter(_ => _ !== 'recover')
           .forEach(_ => $(`.footer-${_}`, 0).classList.toggle('hidden', !f[_]))
   }
 
@@ -128,9 +128,10 @@
 
     $map('.dropdown-trigger', button => {
       let target = button.getAttribute('data-dropdown')
+      let el = $(`#dropdown-${target}`)
 
       button.addEventListener('click', function(e) {
-        let l = $(`#dropdown-${target}`).classList
+        let l = el.classList
 
         if(l.contains('opened')) {
           l.remove('opened')
@@ -143,7 +144,12 @@
         }
       })
 
-      $(`#dropdown-${target}`).addEventListener('click', function(e) {
+      if(el.getAttribute('data-event-attached') !== null) {
+        return
+      } else {
+        el.setAttribute('data-event-attached', '')
+      }
+      el.addEventListener('click', function(e) {
         this.classList.remove('opened')
         this.classList.add('closed')
         this.classList.add('closing')

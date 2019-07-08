@@ -32,8 +32,7 @@
       this.elem = {}
       this.acc = {
         rdps: config.format.significant_digit.dps,
-        rhps: config.format.significant_digit.hps,
-        recover: 0
+        rhps: config.format.significant_digit.hps
       }
     }
 
@@ -78,7 +77,7 @@
     }
 
     updateFooter(d) {
-      let r = Object.keys(this.config.footer).filter(_ => this.config.footer[_])
+      let r = Object.keys(this.config.footer).filter(_ => _ !== 'recover' && this.config.footer[_])
       for(let k of r) {
         this.elem[k] = this.elem[k] || $('#' + k)
         if(k == 'rank') {
@@ -165,12 +164,7 @@
       this.updateFooter({
         rank: rank + '/' + d.length,
         rdps: data.header.encdps,
-        rhps: data.header.enchps,
-        recover: (
-          parseInt(data.header.healstaken)
-          / (parseInt(data.header.damagetaken) || 1)
-          * 100
-        ).toFixed(0)
+        rhps: data.header.enchps
       })
     }
 
