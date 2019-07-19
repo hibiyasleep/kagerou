@@ -204,6 +204,7 @@
       "limit-break": "Limit Break"
     },
     "format": {
+      "language": "Language",
       "significant_digit": {
         "_": "Decimal accuracy",
         "dps": "DPS",
