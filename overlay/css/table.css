@@ -156,6 +156,12 @@ main {
 .overlay main {
   max-height: calc(100% - 3rem);
 }
+.narrow-nav main {
+  max-height: calc(100% - 1.75rem);
+}
+.overlay.narrow-nav main {
+  max-height: calc(100% - 2.25rem);
+}
 
 main > ul {
   height: 100%;

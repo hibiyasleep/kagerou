@@ -180,7 +180,8 @@ const CONFIG_DEFAULT = {
     jobless: true
   },
   element: {
-    'resize-handle': true
+    'resize-handle': true,
+    'narrow-nav': false
   },
   footer: {
     rank: true,

@@ -217,6 +217,9 @@
       "use_skill_aliases": "使用技能名缩写",
       "use_tailing_pct": "在百分比数值后显示百分号",
       "small_lower_numbers": "*Smaller font for under-k digits of DPS"
+    },
+    "element": {
+      "narrow_nav": "*Narrower Top navigation bar"
     }
   },
   "col": {

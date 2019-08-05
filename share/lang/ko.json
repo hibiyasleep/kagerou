@@ -217,6 +217,9 @@
       "use_skill_aliases": "스킬 이름 약칭 사용 (글로벌 서버용)",
       "use_tailing_pct": "비율 값 뒤에 % 기호를 표시",
       "small_lower_numbers": "DPS 값의 1000 미만을 작게 표시"
+    },
+    "element": {
+      "narrow_nav": "상단바를 얇게"
     }
   },
   "col": {

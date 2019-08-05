@@ -112,6 +112,11 @@
       callback: _ => {
         document.body.classList.toggle('resize-handle', !_)
       }
+    }, {
+      value: 'element.narrow-nav',
+      callback: _ => {
+        document.body.classList.toggle('narrow-nav', _)
+      }
     }].forEach( _ => _.callback(config.get(_.value)) )
   }
 
