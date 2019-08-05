@@ -204,6 +204,7 @@
       "limit-break": "리밋 브레이크"
     },
     "format": {
+      "language": "Language",
       "significant_digit": {
         "_": "소수점 정확도",
         "dps": "DPS",

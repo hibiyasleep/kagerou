@@ -204,6 +204,7 @@
       "limit-break": "リミットブレイク"
     },
     "format": {
+      "language": "Language",
       "significant_digit": {
         "_": "小数点精度",
         "dps": "DPS",
