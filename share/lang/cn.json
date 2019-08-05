@@ -204,6 +204,7 @@
       "limit-break": "极限技"
     },
     "format": {
+      "language": "Language",
       "significant_digit": {
         "_": "小数点精度",
         "dps": "DPS",
