@@ -162,16 +162,17 @@ const CONFIG_DEFAULT = {
   },
   format: {
     significant_digit: {
-      dps: 2,
-      hps: 2,
-      accuracy: 2,
+      dps: 0,
+      hps: 0,
+      accuracy: 0,
       critical: 0
     },
     merge_pet: true,
     myname: [],
     use_short_name: 0,
     use_skill_aliases: true,
-    use_tailing_pct: true
+    use_tailing_pct: true,
+    small_lower_numbers: false
   },
   filter: {
     unusual_spaces: false,
@@ -352,7 +353,17 @@ const COLUMN_INDEX = {
       v: 'encdps',
       f: (_, conf) => {
         _ = pFloat(_)
-        return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
+        if(isNaN(_)) {
+          return '---'
+        }
+        const decimals = +conf.format.significant_digit.dps
+        let v = _.toFixed()
+        if(conf.format.small_lower_numbers) {
+          let sliceAt = -(3 * conf.format.small_lower_numbers + !!decimals + decimals)
+          return v.slice(0, sliceAt) + '<small>' + v.slice(sliceAt) + '</small>'
+        } else {
+          return v
+        }
       }
     },
     pct: {
@@ -360,32 +371,32 @@ const COLUMN_INDEX = {
       f: (_, conf) => {
         if(isNaN(_)) return '---'
         else if(_ >= 100) return '100'
-        else return _ + (conf.format.use_tailing_pct? '%' : '')
+        else return _ + (conf.format.use_tailing_pct? '<small>%</small>' : '')
       }
     },
     total: 'damage',
     failure: {
       v: _ => _.swings > 0? _.misses/_.swings * 100 : -1,
-      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy) + (conf.format.use_tailing_pct? '%' : '')
+      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
     },
     accuracy: {
       v: _ => _.swings > 0? (1 - _.misses/_.swings) * 100 : -1,
-      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy) + (conf.format.use_tailing_pct? '%' : '')
+      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
     },
     swing: 'swings',
     miss: 'misses',
     hitfail: 'hitfailed',
     critical: {
       v: _ => (parseInt(_.crithits) || 0) / (parseInt(_.swings) || 1) * 100,
-      f: (_, conf) => _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '%' : '')
+      f: (_, conf) => _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
     },
     direct: {
       v: _ => 'DirectHitCount' in _? (parseInt(_.DirectHitCount) || 0) / (parseInt(_.swings) || 1) * 100 : null,
-      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '%' : '') : '-'
+      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '<small>%</small>' : '') : '-'
     },
     crit_direct: {
       v: _ => 'CritDirectHitCount' in _? (parseInt(_.CritDirectHitCount) || 0) / (parseInt(_.swings) || 1) * 100 : null,
-      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '%' : '') : '-'
+      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '<small>%</small>' : '') : '-'
     },
     crittypes: {
       v: _ => [_.DirectHitCount || '-', _.crithits || '-', _.CritDirectHitCount || '-'],
@@ -394,7 +405,10 @@ const COLUMN_INDEX = {
     max: 'MAXHIT',
     maxhit: {
       v: 'maxhit',
-      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases).join(': ')
+      f: (_, conf) => {
+        let map = l.skillname(_, conf.format.use_skill_aliases)
+        return `${map[1]} <small>${map[0]}</small>`
+      }
     },
     maxskill: {
       v: 'maxhit',
@@ -453,15 +467,18 @@ const COLUMN_INDEX = {
       f: _ => {
         if(isNaN(_)) return '---'
         else if(_ >= 100) return '100'
-        else return _ + '%'
+        else return _ + '<small>%</small>'
       }
     },
     total: 'healed',
-    over: 'OverHealPct',
+    over: {
+      v: _ => _['OverHealPct'],
+      f: _ => _.replace('%', '<small>%</small>')
+    },
     swing: 'heals',
     critical: {
       v: _ => (parseInt(_.critheals) || 0) / (parseInt(_.heals) || 1) * 100,
-      f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '%' : '')
+      f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
     },
     cure: 'cures',
     max: 'MAXHEALWARD',

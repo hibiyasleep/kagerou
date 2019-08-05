@@ -215,7 +215,8 @@
       "myname": "내 이름",
       "use_short_name": "이름을 이니셜로 표시 (글로벌 서버용)",
       "use_skill_aliases": "스킬 이름 약칭 사용 (글로벌 서버용)",
-      "use_tailing_pct": "비율 값 뒤에 % 기호를 표시"
+      "use_tailing_pct": "비율 값 뒤에 % 기호를 표시",
+      "small_lower_numbers": "DPS 값의 1000 미만을 작게 표시"
     }
   },
   "col": {

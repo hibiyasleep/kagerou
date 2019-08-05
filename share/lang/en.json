@@ -215,7 +215,8 @@
       "myname": "My name",
       "use_short_name": "Player Name Appearance",
       "use_skill_aliases": "Use skillname aliases",
-      "use_tailing_pct": "Display % after percentage value"
+      "use_tailing_pct": "Display % after percentage value",
+      "small_lower_numbers": "Smaller font for under-k digits of DPS"
     }
   },
   "col": {
