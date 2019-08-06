@@ -73,9 +73,13 @@
 .zero {
   opacity: 0.75;
 }
-.flex-column > small {
+.flex-column > small, .smaller-lower-numbers .flex-column > small.dps {
   font-size: 0.75em;
 }
+.flex-column > small.dps {
+  font-size: 1em;
+}
+
 /* Position Helpers */
 .class-gld .gauge,
 .class-gla .gauge, .class-pld .gauge, .class-mrd .gauge,

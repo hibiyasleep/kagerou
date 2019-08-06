@@ -150,6 +150,22 @@ const pInt = function parseLocaledInteger(string) {
   else return parseInt(string.replace(/[,.]/g, ''))
 }
 
+const formatDps = function formatDPSNumberWithSmalls(number, decimals, type) {
+  decimals = decimals == null? 2 : +decimals
+  type = type || 'dps'
+  if(typeof number === 'string') {
+    number = pFloat(number).toFixed(decimals)
+  } else {
+    number = number.toFixed(decimals)
+  }
+
+  const decimalLength = ((decimals > 0) + decimals)
+  const natural1 = number.slice(0, -decimalLength - 3)
+  const natural2 = '<small class="' + type + '">' + number.slice(-decimalLength - 3, -decimalLength || undefined) + '</small>'
+  const decimal = '<small>' + number.slice(-decimalLength) + '</small>'
+  return natural1 + natural2 + (decimalLength? decimal : '')
+}
+
 const sanitize = _ => _.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-')
 
 class EventEmitter {

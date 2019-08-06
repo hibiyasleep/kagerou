@@ -146,6 +146,13 @@
       let d = got[0].filter(_ => this._testRow(_))
       let max = got[1]
 
+      document
+        .body
+        .classList
+        .toggle('smaller-lower-numbers',
+          max['deal.per_second'] >= 1000 &&
+          window.config.get('format.small_lower_numbers'))
+
       let rank = 0
 
       let table = $('#table')

@@ -358,13 +358,7 @@ const COLUMN_INDEX = {
           return '---'
         }
         const decimals = +conf.format.significant_digit.dps
-        let v = _.toFixed()
-        if(conf.format.small_lower_numbers) {
-          let sliceAt = -(3 * conf.format.small_lower_numbers + !!decimals + decimals)
-          return v.slice(0, sliceAt) + '<small>' + v.slice(sliceAt) + '</small>'
-        } else {
-          return v
-        }
+        return formatDps(_, decimals)
       }
     },
     pct: {
@@ -403,12 +397,15 @@ const COLUMN_INDEX = {
       v: _ => [_.DirectHitCount || '-', _.crithits || '-', _.CritDirectHitCount || '-'],
       f: _ => _.join('/')
     },
-    max: 'MAXHIT',
+    max: {
+      v: 'MAXHIT',
+      f: _ => formatDps(_, 0)
+    },
     maxhit: {
       v: 'maxhit',
       f: (_, conf) => {
         let map = l.skillname(_, conf.format.use_skill_aliases)
-        return `${map[1]} <small>${map[0]}</small>`
+        return `${formatDps(map[1], 0)} <small>${map[0]}</small>`
       }
     },
     maxskill: {
@@ -418,22 +415,19 @@ const COLUMN_INDEX = {
     last10: {
       v: 'Last10DPS',
       f: (_, conf) => {
-        _ = pFloat(_)
-        return isNaN(_)? '0' : +_.toFixed(conf.format.significant_digit.dps)
+        return isNaN(_)? '0' : formatDps(_, conf.format.significant_digit.dps)
       }
     },
     last30: {
       v: 'Last30DPS',
       f: (_, conf) => {
-        _ = pFloat(_)
-        return isNaN(_)? '0' : +_.toFixed(conf.format.significant_digit.dps)
+        return isNaN(_)? '0' : formatDps(_, conf.format.significant_digit.dps)
       }
     },
     last60: {
       v: 'Last60DPS',
       f: (_, conf) => {
-        _ = pFloat(_)
-        return isNaN(_)? '0' : +_.toFixed(conf.format.significant_digit.dps)
+        return isNaN(_)? '0' : formatDps(_, conf.format.significant_digit.dps)
       }
     }/*,
     last180: {
@@ -460,7 +454,7 @@ const COLUMN_INDEX = {
       v: 'enchps',
       f: (_, conf) => {
         _ = pFloat(_)
-        return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.hps)
+        return isNaN(_)? '0' : formatDps(_, conf.format.significant_digit.hps)
       }
     },
     pct: {
