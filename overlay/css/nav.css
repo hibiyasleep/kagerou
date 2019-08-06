@@ -211,6 +211,9 @@ nav:hover > .container {
 
   overflow-y: auto;
 }
+.narrow-nav .dropdown {
+  top: 1.75rem;
+}
 .dropdown.opened {
   display: block;
   animation: 166ms dropdown-appear;
@@ -234,9 +237,9 @@ nav:hover > .container {
 .dropdown > li:hover {
   background: rgba(127, 127, 127, 0.25);
 }
-.dropdown > li > .icon {
+/* .dropdown > li > .icon {
   margin: 0 0.25rem;
-}
+} */
 
 .dropdown .title {
   font-size: 0.75rem;
@@ -264,10 +267,13 @@ nav:hover > .container {
 
 .dropdown-history {
   font-size: 0.75rem;
-  width: 14rem;
+  width: 16rem;
 
   top: 0;
   left: 2.5rem;
+}
+.narrow-nav .dropdown-history {
+  left: 1.5rem;
 }
 .dropdown-history li {
   padding: 0.25rem 0.5rem;
