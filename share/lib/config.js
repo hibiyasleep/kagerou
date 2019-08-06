@@ -515,7 +515,6 @@ const COLUMN_INDEX = {
     }
 
     for(let k in variables) {
-      let v = variables[k]? variables[k] : 'none'
       css = css.replace(new RegExp(`var\\(--${k}\\)`, 'g'), variables[k])
     }
 
@@ -602,8 +601,6 @@ const COLUMN_INDEX = {
     }
 
     loadStyle(path, section) {
-      let variables = copy(this.config.style)
-
       if(!Array.isArray(path)) {
         path = [path]
       }

@@ -204,7 +204,6 @@
       } else {
         const col = resolveDotIndex(COLUMN_INDEX, c)
 
-        let val
         if(typeof col === 'string') {
           text = data[col]
         } else {
