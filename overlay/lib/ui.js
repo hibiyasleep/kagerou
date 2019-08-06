@@ -31,6 +31,8 @@
 
       $('.tabs span', 0).classList.add('active')
       renderer.switchTab(firstTab)
+
+      return window.renderer.tabs.length
     }
   }
 
@@ -122,9 +124,11 @@
 
   const setFooterVisibility = function setFooterVisibility() {
     let f = window.config.get('footer')
-    Object.keys(f)
-          .filter(_ => _ !== 'recover')
-          .forEach(_ => $(`.footer-${_}`, 0).classList.toggle('hidden', !f[_]))
+    let k = Object.keys(f)
+    k
+      .filter(_ => _ !== 'recover')
+      .forEach(_ => $(`.footer-${_}`, 0).classList.toggle('hidden', !f[_]))
+    return k.filter(_ => f[_]).length
   }
 
   window.addEventListener('load', () => {
@@ -294,12 +298,17 @@
         config.setResizeFactor()
         config.attachOverlayStyle()
         window.l.setLang(config.get('lang'))
-        setFooterVisibility()
 
         window.renderer = new Renderer(window.config.get())
         if(!window.tabdisplay)
           window.tabdisplay = new TabDisplay()
-        window.tabdisplay.render()
+
+        const count = {
+          footer: setFooterVisibility(),
+          tab: window.tabdisplay.render()
+        }
+
+        $('footer', 0).classList.toggle('hidden', count.footer === 0 && count.tab === 1)
 
         loadFormatButtons()
         return
