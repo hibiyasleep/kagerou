@@ -54,7 +54,6 @@
     switchTab(id) {
       if(!this.tabs[id]) {
         throw new ReferenceError(`Failed to switch to tab '${id}': No such tab`)
-        return
       }
       this.current = id
       this.updateHeader()
