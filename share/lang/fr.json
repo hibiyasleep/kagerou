@@ -6,10 +6,10 @@
   },
   "ui": {
     "header": {
-      "in-develop": "Dévelop/Instable",
-      "waiting-data": "Attente de combat",
+      "in-develop": "En cours de développement/Instable",
+      "waiting-data": "En attente de données",
       "no-data-yet": "Aucune donnée...",
-      "please-do-combat": "Initialisez un combat"
+      "please-do-combat": "Lancez un combat"
     },
     "menu": {
       "merge-pet-on": "Activer la fusion des familiers",
@@ -21,26 +21,26 @@
       "reload": "Recharger l'overlay",
       "fullscreen": "Basculer en plein écran",
       "screenshot": "Prendre une capture d'écran",
-      "donate": "Donnation"
+      "donate": "Donation"
     },
     "config": {
       "_": "Paramètre",
       "save": "Sauver",
-      "execute": "Executer",
+      "execute": "Exécuter",
       "dialog": {
-        "really": "Etes vous sur de vouloir réinitialiser ces paramètres?",
-        "apply": "Appliquer ces paramètres?",
-        "undone": "Cela ne pourra être annuler!",
+        "really": "Êtes-vous sûr de vouloir réinitialiser ces paramètres ?",
+        "apply": "Appliquer ces paramètres ?",
+        "undone": "Cela ne pourra être annulé !",
         "yes": "Oui",
         "no": "Non",
         "manual-reload": {
-          "title": "Impossible de recharger l'overlay!",
+          "title": "Impossible de recharger l'overlay !",
           "content": "Rechargez manuellement s'il vous plaît."
         }
       },
       "general": {
         "_": "Général",
-        "combine_pet": "Fusion Familier",
+        "combine_pet": "Fusion familier",
         "split-by-comma": "Diviser les noms composés par ','",
         "basic": "Basique",
         "footer": {
@@ -48,7 +48,7 @@
           "rank": "Rang courant",
           "rdps": "RDPS",
           "rhps": "RHPS",
-          "recover": "Soins Totals Reçu / Dommages subits ??"
+          "recover": "Soins totaux reçus / Dommages subis"
         },
         "reset": "Annuler",
         "reset-this": "Annuler tout"
@@ -63,12 +63,12 @@
         ],
         "image": {
           "_": "Image de fond",
-          "help": "L'image d'arrière-plan a priorité sur la couleur d'arrière-plan spécifiée, à l'exception des pixels transparents. L'URL de l'image doit être envcadrée <code>url('URL de l'image')</code>.",
+          "help": "L'image d'arrière-plan a priorité sur la couleur d'arrière-plan spécifiée, à l'exception des pixels transparents. L'URL de l'image doit être entourée par <code>url('URL de l'image')</code>.",
           "color": "Remplir",
           "image": "Image",
           "opacity": "Opacité",
-          "filter": "Filtre CSS (Advancé)",
-          "default": "Défaut: "
+          "filter": "Filtre CSS (Avancé)",
+          "default": "Défaut : "
         },
         "layout": "Disposition",
         "background": "Arrière plan",
@@ -86,17 +86,17 @@
       },
       "color": {
         "_": "Couleurs",
-        "reset-this": "Reinitialiser Couleurs",
-        "position": "Aide Position",
+        "reset-this": "Reinitialiser les couleurs",
+        "position": "Aide position",
         "position-none": "Définissez 'aucun' pour supprimer.",
         "etc": "Etc",
-        "pet-buddy": "Familier/Camarade"
+        "pet-buddy": "Familiers/Camarades"
       },
       "width": {
-        "_": "Largeur des Colonnes",
-        "reset-this": "Reinitialiser les largeurs",
+        "_": "Largeur des colonnes",
+        "reset-this": "Réinitialiser les largeurs",
         "css-help": [
-          "L'unité est 16px par défaut et modifiée par l'échelle d'interface utilisateur.",
+          "L'unité est 16px par défaut et est modifiée par l'échelle d'interface utilisateur.",
           "La colonne \"Nom\" est la première à diminuer lorsque la largeur de la fenêtre diminue."
         ]
       },
@@ -105,7 +105,7 @@
         "title": "Titre",
         "width": "Cellule par ligne",
         "sortby": "Ordre",
-        "available": "Colonnes disponnibles",
+        "available": "Colonnes disponibles",
         "configured": "Colonnes actives",
         "widths": [ 0, 1, 2, 3 ]
       },
@@ -113,44 +113,44 @@
         "_": "Import/Export",
         "import": "Import",
         "export": "Export",
-        "copy-this": "Copier tout ci-dessous:",
-        "paste-here": "Coller les valeur ci-dessous:",
-        "save-first": "Sauvegardez avant!!",
-        "export-help": "Certaines valeurs et valeurs identiques à la valeur par défaut ne sont pas exportées.",
+        "copy-this": "Copier tout ci-dessous :",
+        "paste-here": "Coller les valeurs ci-dessous :",
+        "save-first": "Sauvegardez avant !",
+        "export-help": "Certaines valeurs identiques à la valeur par défaut ne sont pas exportées.",
         "config-to-export": "Configuration à exporter",
         "all": "Tout",
-        "data-fault": "Les  données sont incorrect ou corrompues.",
-        "content-count": "Nombre de colonne"
+        "data-fault": "Les  données sont incorrectes ou corrompues.",
+        "content-count": "Nombre de colonnes"
       },
       "etc": {
         "_": "Plus",
         "others": {
-          "_": "Others",
-          "skill-aliases-help": "Utilisez des abréviations plus courtes pour les noms de compétence longs tels que \"Le Chakra Interdit\".",
+          "_": "Autres",
+          "skill-aliases-help": "Utilisez des abréviations plus courtes pour les noms longs de compétences tels que \"Le Chakra Interdit\".",
           "filter": "Filtre",
           "filter-help": [
-            "FFXIV_Plugin n'identifie pas d'amis ou d'ennemis, donc ces options essaieront de ne pas afficher d'ennemis de quelque façon que ce soit.",
+            "FFXIV_Plugin n'identifie pas d'amis ou d'ennemis, donc ces options essayeront de ne pas afficher d'ennemis de quelque façon que ce soit.",
             "Si quelque chose ne va pas, essayez de désactiver toutes les options ci-dessous."
           ],
-          "unusual-spaces": "Les noms contiennent des espaces, mais pas les familiers (Serveur Coréen Seulement)",
+          "unusual-spaces": "Les noms contiennent des espaces, mais pas les familiers (Serveur coréen seulement)",
           "jobless": "Classe/Job vide",
-          "not-combatant": "Aucun Disciple de la Guerre/Magie"
+          "not-combatant": "Aucun disciple de la guerre/magie"
         },
         "css": "CSS"
       },
       "info": {
-        "_": "A propos",
+        "_": "À propos",
         "created-by": "Créé par",
-        "servers": "Carbuncle@KR Chocobo@KR",
-        "hibiya": "kuriyama hibiya",
+        "servers": "Rhamu @ Elemental / Carbuncle @ KR / Chocobo @ KR",
+        "hibiya": "hibiya inemuri / kuriyama hibiya",
         "support": "Support",
         "license": "Licence",
-        "icon-files": "Tout les fichiers dans share/img/class,",
+        "icon-files": "Tous les fichiers dans share/img/class,",
         "privacy": {
-          "_": "Politique Privée",
+          "_": "Politique privée",
           "list": [
             "Si vous rencontrez un problème lors de l'utilisation de ce programme,<br />Les informations peuvent être envoyées au serveur.",
-            "La collection d'information se limite au minimum permettant d'identifier le problème:",
+            "La collection d'informations se limite au minimum permettant d'identifier le problème :",
             "* Version<br />* Dernière donnée de combat<br />* Autres informations collectées par ravenjs"
           ]
         }
@@ -160,7 +160,7 @@
   "config": {
     "style": {
       "_": "Style",
-      "resize-factor": "Echelle d'interface",
+      "resize-factor": "Échelle d'interface",
       "body-margin": "Marge extérieur",
       "body-font": "Police",
       "nav-opacity": "Opacité de barre de navigation lorsqu'elle est inactive",
@@ -168,53 +168,58 @@
       "shadow-card": "Fenêtre",
       "shadow-text": "Texte",
       "content-align": "Alignement",
-      "font-size-small": "'Petit' Taille de la police",
+      "font-size-small": "'Petit' taille de la police",
       "gauge-height": "Taille",
       "graph-height": "Taille des lignes du tableau"
     },
     "color": {
-      "_": "Guage Color",
-      "gauge-default": "Defaut",
+      "_": "Jauge des couleurs",
+      "gauge-default": "Défaut",
       "gauge-opacity": "Opacité",
       "position-tank": "Tank",
       "position-deal": "DPS",
       "position-heal": "Soin",
       "pld": "Paladin (Gladiateur)",
       "war": "Guerrier (Maraudeur)",
-      "drk": "Chevalier Noir",
+      "drk": "Chevalier noir",
       "gnb": "Pistosabreur",
       "mnk": "Moine (Pugiliste)",
-      "drg": "Dragonier (Lancier)",
+      "drg": "Chevalier dragon (Maître d'hast)",
       "brd": "Barde (Archer)",
-      "nin": "Ninja (Voleur)",
+      "nin": "Ninja (Surineur)",
       "smn": "Invocateur (Arcaniste)",
-      "blm": "Mage Noir (Occultiste)",
+      "blm": "Mage noir (Occultiste)",
       "mch": "Machiniste",
-      "sam": "Samurai",
-      "rdm": "Mage Rouge",
-      "blu": "Mage Bleu",
+      "sam": "Samouraï",
+      "rdm": "Mage rouge",
+      "blu": "Mage bleu",
       "dnc": "Danseur",
-      "whm": "Mage Blanc(Elémentaliste)",
-      "sch": "Erudit",
+      "whm": "Mage blanc (Élémentaliste)",
+      "sch": "Érudit",
       "ast": "Astromancien",
-      "smn-pet": "Egi d'Arcaniste",
+      "smn-pet": "Egi d'arcaniste",
       "sch-pet": "Egi d'érudit",
       "mch-pet": "Tourelle de machiniste",
       "chocobo": "Chocobo",
       "limit-break": "Transcendance"
     },
     "format": {
+      "language": "Langue",
       "significant_digit": {
         "_": "Précision décimale",
-        "dps": "Dommage par seconde (DPS)",
-        "hps": "Soin par seconde (HPS)",
-        "accuracy": "Echec (Raté / Esquivé)",
+        "dps": "Dommages par seconde (DPS)",
+        "hps": "Soins par seconde (HPS)",
+        "accuracy": "Échec (Raté / Esquivé)",
         "critical": "% de critique Touché/Soin"
       },
-      "myname": "Mon Nom",
-      "use_short_name": "Apparence des noms de joueur",
+      "myname": "Mon nom",
+      "use_short_name": "Apparence des noms des joueurs",
       "use_skill_aliases": "Utiliser les alias de compétences",
-      "use_tailing_pct": "Afficher % après la valeur"
+      "use_tailing_pct": "Afficher % après la valeur",
+      "small_lower_numbers": "*Smaller font for under-k digits of DPS"
+    },
+    "element": {
+      "narrow_nav": "*Narrower Top navigation bar"
     }
   },
   "col": {
@@ -230,7 +235,7 @@
       "per_second": ["DPS", "Par seconde"],
       "pct": ["D%", "Deal %"],
       "total": ["D.Tot", "Total"],
-      "failure": ["Fail", "Echec (Raté / Swing)"],
+      "failure": ["Fail", "Échec (Raté / Swing)"],
       "accuracy": ["Acc.", "Précision (1 - Raté / Esquivé)"],
       "swing": ["Toucher", "Touchés"],
       "miss": ["Raté", "Ratés"],
@@ -245,14 +250,14 @@
       "last10": ["10s", "DPS des 10 dernières secondes"],
       "last30": ["30s", "DPS des 30 dernières secondes"],
       "last60": ["1m", "DPS de la dernière minute"],
-      "last180": ["3m", "DPS des 3 dernière minutes"]
+      "last180": ["3m", "DPS des 3 dernières minutes"]
     },
     "tank": {
       "_": "Tank",
       "damage": ["TakenD", "Dommage reçu"],
-      "heal": ["HealR", "Soin Reçu"],
-      "parry": ["Parrade", "Parrade"],
-      "block": ["Blockage", "Bloquer"],
+      "heal": ["HealR", "Soin reçu"],
+      "parry": ["Parrade", "Parade"],
+      "block": ["Blockage", "Bloquage"],
       "threat_delta": ["Th∆", "Menace"]
     },
     "heal": {

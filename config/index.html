@@ -5,19 +5,19 @@
     <title> kagerou - Settings </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,700">
-    <link rel="stylesheet" href="../overlay/css/reset.css?v=daze-days" />
-    <link rel="stylesheet" href="index.css?v=daze-days" />
-    <link rel="stylesheet" href="media.css?v=daze-days" />
-    <link rel="stylesheet" href="dialog.css?v=daze-days" />
-    <link rel="stylesheet" href="../share/css/job-icons.css?v=daze-days" />
+    <link rel="stylesheet" href="../overlay/css/reset.css?v=Fireworks-In-The-Summer-End" />
+    <link rel="stylesheet" href="index.css?v=Fireworks-In-The-Summer-End" />
+    <link rel="stylesheet" href="media.css?v=Fireworks-In-The-Summer-End" />
+    <link rel="stylesheet" href="dialog.css?v=Fireworks-In-The-Summer-End" />
+    <link rel="stylesheet" href="../share/css/job-icons.css?v=Fireworks-In-The-Summer-End" />
     <script src="lib/sortable-1.7.0-min.js"> </script>
-    <script src="../share/lib/util.js?v=daze-days"> </script>
-    <script src="../share/lib/locale.js?v=daze-days"> </script>
-    <script src="../share/lib/config.js?v=daze-days"> </script>
-    <script src="lib/dialog.js?v=daze-days"> </script>
-    <script src="lib/ui.js?v=daze-days"> </script>
-    <script src="lib/tabconfig.js?v=daze-days"> </script>
-    <script src="lib/import-export.js?v=daze-days"> </script>
+    <script src="../share/lib/util.js?v=Fireworks-In-The-Summer-End"> </script>
+    <script src="../share/lib/locale.js?v=Fireworks-In-The-Summer-End"> </script>
+    <script src="../share/lib/config.js?v=Fireworks-In-The-Summer-End"> </script>
+    <script src="lib/dialog.js?v=Fireworks-In-The-Summer-End"> </script>
+    <script src="lib/ui.js?v=Fireworks-In-The-Summer-End"> </script>
+    <script src="lib/tabconfig.js?v=Fireworks-In-The-Summer-End"> </script>
+    <script src="lib/import-export.js?v=Fireworks-In-The-Summer-End"> </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js"> </script>
 
     <template id="template-tab">
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', _ => {
       <section data-page="general" class="active">
         <article>
           <p class="control">
-            <label for="input-lang">
+            <label for="input-lang" data-locale="config.format.language">
               Language
             </label>
             <select id="input-lang"
@@ -284,6 +284,24 @@ document.addEventListener('DOMContentLoaded', _ => {
             <input type="checkbox" id="input-format-use_tailing_pct"
                    data-type="boolean"
                    data-config-key="format.use_tailing_pct" />
+          </p>
+          <p class="control">
+            <label for="input-format-small-lower-numbers"
+                   data-locale="config.format.small_lower_numbers">
+              DPS 값의 1000 미만을 작게 표시
+            </label>
+            <input type="checkbox" id="input-format-small-lower-numbers"
+                   data-type="boolean"
+                   data-config-key="format.small_lower_numbers" />
+          </p>
+          <p class="control">
+            <label for="input-element-narrow-nav"
+                   data-locale="config.element.narrow_nav">
+              상단바를 얇게
+            </label>
+            <input type="checkbox" id="input-element-narrow-nav"
+                   data-type="boolean"
+                   data-config-key="element.narrow-nav" />
           </p>
         </article>
         <article>
@@ -1365,7 +1383,7 @@ document.addEventListener('DOMContentLoaded', _ => {
             '<span class="codename">Unknown Release</span>'
           </p>
           <p>
-            copyright © 2016-2018 kuriyama hibiya
+            copyright © 2016-2019 kuriyama hibiya
           </p>
         </article>
         <article>
@@ -1374,6 +1392,7 @@ document.addEventListener('DOMContentLoaded', _ => {
             <span class="text-muted" data-locale="ui.config.info.servers">
               카벙클 / 초코보
             </span>
+            <br />
             <span data-locale="ui.config.info.hibiya">
               히비야
             </span>

@@ -35,6 +35,12 @@ nav > .container {
 nav:hover > .container {
   opacity: 1;
 }
+.narrow-nav nav {
+  height: 1.75rem;
+/* }
+.narrow-nav nav > .container { */
+  font-size: 0.875rem;
+}
 
 .history {
   display: inline-flex;
@@ -56,6 +62,9 @@ nav:hover > .container {
   -moz-user-select: none;
   -webkit-user-select: none;
 }
+.narrow-nav .history {
+  line-height: 1.75rem;
+}
 
 #history-icon {
   vertical-align: top;
@@ -73,6 +82,15 @@ nav:hover > .container {
   height: calc(100% - 1rem);
   overflow: hidden;
 }
+.narrow-nav .icon-overflow-wrap {
+  margin: 0.25rem 0.125rem 0.25rem 0.25rem;
+  height: calc(100% - 0.5rem);
+}
+.narrow-nav .icon-overflow-wrap svg {
+  width: 1.25rem !important;
+  transform: translateY(-0.02rem);
+}
+
 .history mark, .history span {
   vertical-align: top;
   white-space: nowrap;
@@ -134,6 +152,19 @@ nav:hover > .container {
   color: var(--color-accent);
 }
 
+.narrow-nav .buttons li {
+  padding: 0.5rem;
+}
+.narrow-nav .buttons > li.dropdown-wrapper {
+  width: 2rem;
+}
+.narrow-nav .buttons > li.dropdown-wrapper > svg {
+  transform: rotate(90deg) translate(-0.375rem, -0rem);
+}
+.narrow-nav .buttons > li.button[data-button="toggle-detail"] svg {
+  transform: translateY(-0.72rem);
+}
+
 /* Icon transitions */
 .icon-container {
   display: inline-block;
@@ -180,6 +211,9 @@ nav:hover > .container {
 
   overflow-y: auto;
 }
+.narrow-nav .dropdown {
+  top: 1.75rem;
+}
 .dropdown.opened {
   display: block;
   animation: 166ms dropdown-appear;
@@ -203,9 +237,9 @@ nav:hover > .container {
 .dropdown > li:hover {
   background: rgba(127, 127, 127, 0.25);
 }
-.dropdown > li > .icon {
+/* .dropdown > li > .icon {
   margin: 0 0.25rem;
-}
+} */
 
 .dropdown .title {
   font-size: 0.75rem;
@@ -233,10 +267,13 @@ nav:hover > .container {
 
 .dropdown-history {
   font-size: 0.75rem;
-  width: 14rem;
+  width: 16rem;
 
   top: 0;
   left: 2.5rem;
+}
+.narrow-nav .dropdown-history {
+  left: 1.5rem;
 }
 .dropdown-history li {
   padding: 0.25rem 0.5rem;

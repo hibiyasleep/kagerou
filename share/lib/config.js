@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.7.26'
-const CODENAME = 'Lost-day Hours'
-const DESCRIPTION = '\'今日も夕ご飯のことを考える\''
+const VERSION = '0.8.0'
+const CODENAME = 'Fireworks In The Summer End'
+const DESCRIPTION = '\'遠回りの先　これが最後の話\''
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
@@ -162,16 +162,17 @@ const CONFIG_DEFAULT = {
   },
   format: {
     significant_digit: {
-      dps: 2,
-      hps: 2,
-      accuracy: 2,
+      dps: 0,
+      hps: 0,
+      accuracy: 0,
       critical: 0
     },
     merge_pet: true,
     myname: [],
     use_short_name: 0,
     use_skill_aliases: true,
-    use_tailing_pct: true
+    use_tailing_pct: true,
+    small_lower_numbers: false
   },
   filter: {
     unusual_spaces: false,
@@ -179,7 +180,8 @@ const CONFIG_DEFAULT = {
     jobless: true
   },
   element: {
-    'resize-handle': true
+    'resize-handle': true,
+    'narrow-nav': false
   },
   footer: {
     rank: true,
@@ -352,7 +354,11 @@ const COLUMN_INDEX = {
       v: 'encdps',
       f: (_, conf) => {
         _ = pFloat(_)
-        return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.dps)
+        if(isNaN(_)) {
+          return '---'
+        }
+        const decimals = +conf.format.significant_digit.dps
+        return formatDps(_, decimals)
       }
     },
     pct: {
@@ -360,41 +366,47 @@ const COLUMN_INDEX = {
       f: (_, conf) => {
         if(isNaN(_)) return '---'
         else if(_ >= 100) return '100'
-        else return _ + (conf.format.use_tailing_pct? '%' : '')
+        else return _ + (conf.format.use_tailing_pct? '<small>%</small>' : '')
       }
     },
     total: 'damage',
     failure: {
       v: _ => _.swings > 0? _.misses/_.swings * 100 : -1,
-      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy) + (conf.format.use_tailing_pct? '%' : '')
+      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
     },
     accuracy: {
       v: _ => _.swings > 0? (1 - _.misses/_.swings) * 100 : -1,
-      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy) + (conf.format.use_tailing_pct? '%' : '')
+      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
     },
     swing: 'swings',
     miss: 'misses',
     hitfail: 'hitfailed',
     critical: {
       v: _ => (parseInt(_.crithits) || 0) / (parseInt(_.swings) || 1) * 100,
-      f: (_, conf) => _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '%' : '')
+      f: (_, conf) => _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
     },
     direct: {
       v: _ => 'DirectHitCount' in _? (parseInt(_.DirectHitCount) || 0) / (parseInt(_.swings) || 1) * 100 : null,
-      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '%' : '') : '-'
+      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '<small>%</small>' : '') : '-'
     },
     crit_direct: {
       v: _ => 'CritDirectHitCount' in _? (parseInt(_.CritDirectHitCount) || 0) / (parseInt(_.swings) || 1) * 100 : null,
-      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '%' : '') : '-'
+      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '<small>%</small>' : '') : '-'
     },
     crittypes: {
       v: _ => [_.DirectHitCount || '-', _.crithits || '-', _.CritDirectHitCount || '-'],
       f: _ => _.join('/')
     },
-    max: 'MAXHIT',
+    max: {
+      v: 'MAXHIT',
+      f: _ => formatDps(_, 0)
+    },
     maxhit: {
       v: 'maxhit',
-      f: (_, conf) => l.skillname(_, conf.format.use_skill_aliases).join(': ')
+      f: (_, conf) => {
+        let map = l.skillname(_, conf.format.use_skill_aliases)
+        return `${formatDps(map[1], 0)} <small>${map[0]}</small>`
+      }
     },
     maxskill: {
       v: 'maxhit',
@@ -403,22 +415,19 @@ const COLUMN_INDEX = {
     last10: {
       v: 'Last10DPS',
       f: (_, conf) => {
-        _ = pFloat(_)
-        return isNaN(_)? '0' : +_.toFixed(conf.format.significant_digit.dps)
+        return isNaN(_)? '0' : formatDps(_, conf.format.significant_digit.dps)
       }
     },
     last30: {
       v: 'Last30DPS',
       f: (_, conf) => {
-        _ = pFloat(_)
-        return isNaN(_)? '0' : +_.toFixed(conf.format.significant_digit.dps)
+        return isNaN(_)? '0' : formatDps(_, conf.format.significant_digit.dps)
       }
     },
     last60: {
       v: 'Last60DPS',
       f: (_, conf) => {
-        _ = pFloat(_)
-        return isNaN(_)? '0' : +_.toFixed(conf.format.significant_digit.dps)
+        return isNaN(_)? '0' : formatDps(_, conf.format.significant_digit.dps)
       }
     }/*,
     last180: {
@@ -445,7 +454,7 @@ const COLUMN_INDEX = {
       v: 'enchps',
       f: (_, conf) => {
         _ = pFloat(_)
-        return isNaN(_)? '0' : _.toFixed(conf.format.significant_digit.hps)
+        return isNaN(_)? '0' : formatDps(_, conf.format.significant_digit.hps)
       }
     },
     pct: {
@@ -453,15 +462,18 @@ const COLUMN_INDEX = {
       f: _ => {
         if(isNaN(_)) return '---'
         else if(_ >= 100) return '100'
-        else return _ + '%'
+        else return _ + '<small>%</small>'
       }
     },
     total: 'healed',
-    over: 'OverHealPct',
+    over: {
+      v: _ => _['OverHealPct'],
+      f: _ => _.replace('%', '<small>%</small>')
+    },
     swing: 'heals',
     critical: {
       v: _ => (parseInt(_.critheals) || 0) / (parseInt(_.heals) || 1) * 100,
-      f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '%' : '')
+      f: (_, conf) => (_).toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
     },
     cure: 'cures',
     max: 'MAXHEALWARD',
@@ -503,7 +515,6 @@ const COLUMN_INDEX = {
     }
 
     for(let k in variables) {
-      let v = variables[k]? variables[k] : 'none'
       css = css.replace(new RegExp(`var\\(--${k}\\)`, 'g'), variables[k])
     }
 
@@ -590,8 +601,6 @@ const COLUMN_INDEX = {
     }
 
     loadStyle(path, section) {
-      let variables = copy(this.config.style)
-
       if(!Array.isArray(path)) {
         path = [path]
       }

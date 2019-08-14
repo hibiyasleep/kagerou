@@ -141,8 +141,8 @@
       "info": {
         "_": "정보",
         "created-by": "만든 사람",
-        "servers": "카벙클 / 초코보",
-        "hibiya": "히비야 (kuriyama hibiya)",
+        "servers": "라무 @ Elemental / 카벙클 / 초코보",
+        "hibiya": "쿠리야마 '이네무리' 히비야",
         "support": "지원 / 문제 해결",
         "license": "라이센스",
         "icon-files": "share/img/class 안의 모든 파일에 대하여,",
@@ -204,6 +204,7 @@
       "limit-break": "리밋 브레이크"
     },
     "format": {
+      "language": "Language",
       "significant_digit": {
         "_": "소수점 정확도",
         "dps": "DPS",
@@ -214,7 +215,11 @@
       "myname": "내 이름",
       "use_short_name": "이름을 이니셜로 표시 (글로벌 서버용)",
       "use_skill_aliases": "스킬 이름 약칭 사용 (글로벌 서버용)",
-      "use_tailing_pct": "비율 값 뒤에 % 기호를 표시"
+      "use_tailing_pct": "비율 값 뒤에 % 기호를 표시",
+      "small_lower_numbers": "DPS 값의 1000 미만을 작게 표시"
+    },
+    "element": {
+      "narrow_nav": "상단바를 얇게"
     }
   },
   "col": {

@@ -81,20 +81,19 @@ const resolveDotIndex = function resolveDotIndex(o, p, v) {
 const resolveClass = function resolveJobFromName(_job, _name) {
   _job = _job || ''
 
-  let o = /^(.+?) \((.+?)\)$/.exec(_name)
+  const o = /^(.+?) \((.+?)\)$/.exec(_name)
   if(!o) {
     if(_name === 'Limit Break' || _name === '리미트 브레이크') {
-      return ['limit break', 'Limit Break', '']
+      return ['limit-break', 'Limit Break', false]
     } else {
-      return [_job.toLowerCase(), _name, '']
+      return [_job.toLowerCase(), _name, false]
     }
+  } else if(_job) {
+    return [_job.toLowerCase(), o[1], false]
+  } else {
+    o[0] = PET_MAPPING[o[1]] || 'chocobo'
+    return o
   }
-
-  let name = o[1]
-  let owner = o[2]
-
-  // TODO: make this localizable again
-  return [PET_MAPPING[name] || 'chocobo', name, owner]
 }
 
 const resolveOwner = function resolveOwner(_) {
@@ -149,6 +148,22 @@ const pFloat = function parseLocaledFloat(string) {
 const pInt = function parseLocaledInteger(string) {
   if(typeof string !== 'string') return string
   else return parseInt(string.replace(/[,.]/g, ''))
+}
+
+const formatDps = function formatDPSNumberWithSmalls(number, decimals, type) {
+  decimals = decimals == null? 2 : +decimals
+  type = type || 'dps'
+  if(typeof number === 'string') {
+    number = pFloat(number).toFixed(decimals)
+  } else {
+    number = number.toFixed(decimals)
+  }
+
+  const decimalLength = ((decimals > 0) + decimals)
+  const natural1 = number.slice(0, -decimalLength - 3)
+  const natural2 = '<small class="' + type + '">' + number.slice(-decimalLength - 3, -decimalLength || undefined) + '</small>'
+  const decimal = '<small>' + number.slice(-decimalLength) + '</small>'
+  return natural1 + natural2 + (decimalLength? decimal : '')
 }
 
 const sanitize = _ => _.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-')

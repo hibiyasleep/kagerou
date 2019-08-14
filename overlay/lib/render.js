@@ -54,7 +54,6 @@
     switchTab(id) {
       if(!this.tabs[id]) {
         throw new ReferenceError(`Failed to switch to tab '${id}': No such tab`)
-        return
       }
       this.current = id
       this.updateHeader()
@@ -146,6 +145,13 @@
       let d = got[0].filter(_ => this._testRow(_))
       let max = got[1]
 
+      document
+        .body
+        .classList
+        .toggle('smaller-lower-numbers',
+          max['deal.per_second'] >= 1000 &&
+          window.config.get('format.small_lower_numbers'))
+
       let rank = 0
 
       let table = $('#table')
@@ -197,7 +203,6 @@
       } else {
         const col = resolveDotIndex(COLUMN_INDEX, c)
 
-        let val
         if(typeof col === 'string') {
           text = data[col]
         } else {
