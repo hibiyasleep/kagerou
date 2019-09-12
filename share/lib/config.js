@@ -5,7 +5,7 @@ const CODENAME = 'Fireworks In The Summer End'
 const DESCRIPTION = '\'遠回りの先　これが最後の話\''
 
 const CONFIG_DEFAULT = {
-  lang: 'ko',
+  lang: 'cn',
   style: {
     // body
     'resize-factor': 1,
