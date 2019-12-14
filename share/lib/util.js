@@ -158,6 +158,9 @@ const formatDps = function formatDPSNumberWithSmalls(number, decimals, type) {
   } else {
     number = number.toFixed(decimals)
   }
+  if(isNaN(number)) {
+    number = 0
+  }
 
   if(number >= 1000) {
     type += ' with-larger-digits'
