@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.8.0'
-const CODENAME = 'Fireworks In The Summer End'
-const DESCRIPTION = '\'遠回りの先　これが最後の話\''
+const VERSION = '0.8.1'
+const CODENAME = 'end of world'
+const DESCRIPTION = 'FRENZY HOUSE'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
