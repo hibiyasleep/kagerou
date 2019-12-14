@@ -169,8 +169,8 @@
 
       this.updateFooter({
         rank: rank + '/' + d.length,
-        rdps: data.header.encdps,
-        rhps: data.header.enchps
+        rdps: formatDps(data.header.encdps, this.config.format.significant_digit.dps),
+        rhps: formatDps(data.header.enchps, this.config.format.significant_digit.hps)
       })
     }
 

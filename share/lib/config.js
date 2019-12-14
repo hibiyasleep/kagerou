@@ -357,8 +357,7 @@ const COLUMN_INDEX = {
         if(isNaN(_)) {
           return '---'
         }
-        const decimals = +conf.format.significant_digit.dps
-        return formatDps(_, decimals)
+        return formatDps(_, +conf.format.significant_digit.dps)
       }
     },
     pct: {
@@ -371,27 +370,38 @@ const COLUMN_INDEX = {
     },
     total: 'damage',
     failure: {
-      v: _ => _.swings > 0? _.misses/_.swings * 100 : -1,
-      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
+      v: _ => _.swings > 0? _.misses / _.swings * 100 : -1,
+      f: (_, conf) =>
+        _ < 0?
+          '-' : _.toFixed(conf.format.significant_digit.accuracy) +
+          (conf.format.use_tailing_pct? '<small>%</small>' : '')
     },
     accuracy: {
       v: _ => _.swings > 0? (1 - _.misses/_.swings) * 100 : -1,
-      f: (_, conf) => _ < 0? '-' :  _.toFixed(conf.format.significant_digit.accuracy) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
+      f: (_, conf) =>
+        _ < 0?
+          '-' :  _.toFixed(conf.format.significant_digit.accuracy) +
+          (conf.format.use_tailing_pct? '<small>%</small>' : '')
     },
     swing: 'swings',
     miss: 'misses',
     hitfail: 'hitfailed',
     critical: {
       v: _ => (parseInt(_.crithits) || 0) / (parseInt(_.swings) || 1) * 100,
-      f: (_, conf) => _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
+      f: (_, conf) => _.toFixed(conf.format.significant_digit.critical) +
+                      (conf.format.use_tailing_pct? '<small>%</small>' : '')
     },
     direct: {
       v: _ => 'DirectHitCount' in _? (parseInt(_.DirectHitCount) || 0) / (parseInt(_.swings) || 1) * 100 : null,
-      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '<small>%</small>' : '') : '-'
+      f: (_, conf) => _ !== null?
+        _.toFixed(conf.format.significant_digit.critical) +
+        (conf.format.use_tailing_pct? '<small>%</small>' : '') : '-'
     },
     crit_direct: {
       v: _ => 'CritDirectHitCount' in _? (parseInt(_.CritDirectHitCount) || 0) / (parseInt(_.swings) || 1) * 100 : null,
-      f: (_, conf) => _ !== null? _.toFixed(conf.format.significant_digit.critical) + (conf.format.use_tailing_pct? '<small>%</small>' : '') : '-'
+      f: (_, conf) => _ !== null?
+        _.toFixed(conf.format.significant_digit.critical) +
+        (conf.format.use_tailing_pct? '<small>%</small>' : '') : '-'
     },
     crittypes: {
       v: _ => [_.DirectHitCount || '-', _.crithits || '-', _.CritDirectHitCount || '-'],
