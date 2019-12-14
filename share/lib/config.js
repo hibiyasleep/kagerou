@@ -5,7 +5,7 @@ const CODENAME = 'Fireworks In The Summer End'
 const DESCRIPTION = '\'遠回りの先　これが最後の話\''
 
 const CONFIG_DEFAULT = {
-  lang: 'ko',
+  lang: 'cn',
   style: {
     // body
     'resize-factor': 1,
@@ -274,7 +274,17 @@ const PET_MAPPING = {
   'フェアリー・エオス': 'eos',
   'フェアリー・セレネ': 'selene',
   'オートタレット・ルーク': 'rook',
-  'オートタレット・ビショップ': 'bishop'
+  'オートタレット・ビショップ': 'bishop',
+  '蓝宝石兽': 'acn-pet',
+  '黄宝石兽': 'acn-pet',
+  '红宝石兽': 'acn-pet',
+  '迦楼罗之灵': 'garuda',
+  '泰坦之灵': 'titan',
+  '伊芙利特之灵': 'ifrit',
+  '朝日小仙女': 'eos',
+  '夕月小仙女': 'selene',
+  '车式浮空炮塔': 'rook',
+  '象式浮空炮塔': 'bishop',
   // TODO: add another languages
 }
 
