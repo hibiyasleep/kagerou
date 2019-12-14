@@ -80,12 +80,11 @@
       for(let k of r) {
         this.elem[k] = this.elem[k] || $('#' + k)
         if(k == 'rank') {
-          this.elem[k].textContent = d[k]
+          let el = this.elem[k]
+          el.firstChild.textContent = d.rank
+          el.lastChild.textContent = '/' + d.total
         } else {
-          animateNumber(this.elem[k], pFloat(d[k]) || 0, {
-            timeout: 266,
-            digit: this.acc[k]
-          })
+          this.elem[k].innerHTML = d[k]
         }
       }
     }
@@ -168,7 +167,8 @@
       // footer (rdps, rhps)
 
       this.updateFooter({
-        rank: rank + '/' + d.length,
+        rank: rank,
+        total: d.length,
         rdps: formatDps(data.header.encdps, this.config.format.significant_digit.dps),
         rhps: formatDps(data.header.enchps, this.config.format.significant_digit.hps)
       })

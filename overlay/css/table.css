@@ -358,6 +358,13 @@ footer {
   padding: 0 0.25rem;
   border-left: 0.1rem solid rgba(255, 255, 255, 0.5);
 }
+.footer-stat small,
+body.smaller-lower-numbers .footer-stat small.with-larger-digits {
+  font-size: 0.75em;
+}
+.footer-stat.dps {
+  font-size: 1em;
+}
 
 .collapsed main {
   height: calc(var(--graph-height) * 2);
