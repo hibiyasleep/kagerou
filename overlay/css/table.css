@@ -80,25 +80,6 @@
   font-size: 1em;
 }
 
-/* Position Helpers */
-.class-gld .gauge,
-.class-gla .gauge, .class-pld .gauge, .class-mrd .gauge,
-.class-war .gauge, .class-drk .gauge, .class-gnb .gauge { /* tank; blue 500 */
-  box-shadow: 0.25rem 0 0 var(--position-tank) inset;
-}
-.class-pgl .gauge, .class-mnk .gauge, .class-lnc .gauge,
-.class-drg .gauge, .class-arc .gauge, .class-brd .gauge,
-.class-rog .gauge, .class-nin .gauge, .class-acn .gauge,
-.class-smn .gauge, .class-thm .gauge, .class-blm .gauge,
-.class-mch .gauge, .class-sam .gauge, .class-rdm .gauge,
-.class-blm .gauge, .class-dnc .gauge { /* deal; red 500 */
-  box-shadow: 0.25rem 0 0 var(--position-deal) inset;
-}
-.class-cnj .gauge, .class-whm .gauge, .class-sch .gauge,
-.class-ast .gauge { /* heal; light green 500 */
-  box-shadow: 0.25rem 0 0 var(--position-heal) inset;
-}
-
 /* Colors */
 .gauge {
   background: var(--gauge-default);

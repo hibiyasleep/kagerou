@@ -87,8 +87,6 @@
       "color": {
         "_": "Gauge Colors",
         "reset-this": "Reset Colors",
-        "position": "Position Helpers",
-        "position-none": "Set 'none' to remove.",
         "etc": "Etc",
         "pet-buddy": "Pet/Buddy"
       },

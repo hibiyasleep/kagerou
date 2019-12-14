@@ -87,8 +87,6 @@
       "color": {
         "_": "Couleurs",
         "reset-this": "Reinitialiser les couleurs",
-        "position": "Aide position",
-        "position-none": "Définissez 'aucun' pour supprimer.",
         "etc": "Etc",
         "pet-buddy": "Familiers/Camarades"
       },

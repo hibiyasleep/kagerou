@@ -87,8 +87,6 @@
       "color": {
         "_": "Balkenfarben",
         "reset-this": "Farben zurücksetzen",
-        "position": "Rollen-Farbe",
-        "position-none": "Ausblenden mit 'none'",
         "etc": "Sonstiges",
         "pet-buddy": "Begleiter"
       },

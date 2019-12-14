@@ -87,8 +87,6 @@
       "color": {
         "_": "게이지 색상",
         "reset-this": "색상 초기화",
-        "position": "역할 표시",
-        "position-none": "없애려면 none으로 설정하세요.",
         "etc": "기타",
         "pet-buddy": "소환수/버디"
       },

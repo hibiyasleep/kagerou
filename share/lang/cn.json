@@ -87,8 +87,6 @@
       "color": {
         "_": "计量条颜色",
         "reset-this": "重置颜色",
-        "position": "滚轮颜色",
-        "position-none": "设置为'none'以隐藏",
         "etc": "其他",
         "pet-buddy": "宠物/伙伴"
       },

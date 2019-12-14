@@ -87,8 +87,6 @@
       "color": {
         "_": "ゲージ色",
         "reset-this": "色リセット",
-        "position": "役割の表示",
-        "position-none": "noneを使用して取り除きます。",
         "etc": "その他",
         "pet-buddy": "ペットとバディ"
       },
