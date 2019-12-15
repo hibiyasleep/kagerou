@@ -79,18 +79,10 @@ window.addEventListener('load', e => {
     window.renderer = new Renderer(window.config.get())
     window.renderer.updateHeader()
 
-    try {
-      window.tabdisplay = new TabDisplay()
-      tabdisplay.render()
-    } catch(e) {
-      setTimeout(_ => {
-        window.tabdisplay = new TabDisplay()
-        tabdisplay.render()
-      }, 200)
-    }
-
+    window.tabdisplay = new TabDisplay()
     window.historyUI = new HistoryUI()
 
+    window.tabdisplay.render()
     $('.history', 0).addEventListener('click', e => {
       window.historyUI.updateList()
     })
@@ -99,11 +91,9 @@ window.addEventListener('load', e => {
     layer.connect()
     layer.on('data', d => {
       window.hist.push(d)
-      if(!window.renderer) { // why why
-        window.renderer = new Renderer(window.config.get())
-        window.renderer.updateHeader()
+      if(window.renderer) {
+        window.renderer.update()
       }
-      window.renderer.update()
     })
     layer.on('status', d => {
       if(d.type === 'lock') {
@@ -113,6 +103,7 @@ window.addEventListener('load', e => {
         )
       }
     })
+    layer.emit('restyle')
   })
 
   $map('svg', _ => {
@@ -165,9 +156,10 @@ window.addEventListener('load', e => {
             <mark id="history-time">
               kagerou <span class="version"> ??? </span>
             </mark>
+            <span class="codename"></span>
           </span>
           <span id="history-mob"></span>
-          <span id="history-region" class="codename"></span>
+          <span id="history-region"></span>
         </div>
         <ul class="buttons">
           <li class="button" data-button="toggle-detail"

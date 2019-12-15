@@ -312,6 +312,9 @@ footer {
   position: absolute;
   bottom: 0;
 }
+.hide-footer footer {
+  display: none;
+}
 .tabs {
   padding: 0 !important;
   flex-grow: 0 !important;
@@ -349,6 +352,9 @@ body.smaller-lower-numbers .footer-stat small.with-larger-digits {
 
 .collapsed main {
   height: calc(var(--graph-height) * 2);
+}
+.hide-footer.collapsed main {
+  height: var(--graph-height);
 }
 .collapsed #table {
   height: var(--graph-height);
