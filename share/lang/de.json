@@ -43,8 +43,14 @@
         "combine_pet": "Begleiter zusammenfassen",
         "split-by-comma": "Mehrfache Namen mit ',' trennen",
         "basic": "Allgemeine Einstellungen",
-        "footer": {
+        "footer-visibility": {
           "_": "Fußzeile",
+          "show": "*Show as normal",
+          "use-header-instead": "*Oben anzeigen",
+          "hide": "*Nicht zeigen"
+        },
+        "footer": {
+          "_": "Fußzeilenelemente",
           "rank": "Derzeitiger Rang",
           "rdps": "Raid DPS",
           "rhps": "Raid HPS",

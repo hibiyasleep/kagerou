@@ -43,6 +43,12 @@
         "combine_pet": "ペット合算",
         "split-by-comma": "半角コンマ（,）で区切ります。",
         "basic": "基本",
+        "footer-visibility": {
+          "_": "下部バー",
+          "show": "表示する",
+          "use-header-instead": "項目を上に表示する",
+          "hide": "表示しない"
+        },
         "footer": {
           "_": "下部バーの項目",
           "rank": "現在のランキング",

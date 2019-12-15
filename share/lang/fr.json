@@ -43,6 +43,12 @@
         "combine_pet": "Fusion familier",
         "split-by-comma": "Diviser les noms composés par ','",
         "basic": "Basique",
+        "footer-visibility": {
+          "_": "Pied de page",
+          "show": "*Show as normal",
+          "use-header-instead": "*Use header, for elements instead",
+          "hide": "*Hide"
+        },
         "footer": {
           "_": "Eléments de pied de page",
           "rank": "Rang courant",

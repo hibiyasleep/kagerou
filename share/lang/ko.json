@@ -43,6 +43,12 @@
         "combine_pet": "펫 합산",
         "split-by-comma": "쉼표(,)로 구분합니다.",
         "basic": "기본",
+        "footer-visibility": {
+          "_": "하단 바",
+          "show": "표시",
+          "use-header-instead": "항목을 상단 바에 대신 표시",
+          "hide": "표시 안 함"
+        },
         "footer": {
           "_": "하단 바 항목",
           "rank": "현재 순위",

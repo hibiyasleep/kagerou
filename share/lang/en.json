@@ -43,6 +43,12 @@
         "combine_pet": "Pet merging",
         "split-by-comma": "Divide multiple names by ','",
         "basic": "Basic",
+        "footer-visibility": {
+          "_": "Footer",
+          "show": "Show as normal",
+          "use-header-instead": "Use header, for elements instead",
+          "hide": "Hide"
+        },
         "footer": {
           "_": "Footer elements",
           "rank": "Current rank",

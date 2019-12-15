@@ -43,6 +43,12 @@
         "combine_pet": "宠物合并",
         "split-by-comma": "用半角逗号','分隔多个名字",
         "basic": "基本",
+        "footer-visibility": {
+          "_": "页脚",
+          "show": "显示",
+          "use-header-instead": "在顶部显示",
+          "hide": "不显示"
+        },
         "footer": {
           "_": "页脚元素",
           "rank": "我的排名",

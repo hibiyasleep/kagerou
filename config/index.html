@@ -370,6 +370,39 @@ document.addEventListener('DOMContentLoaded', _ => {
           </p>
         </article>
         <article>
+          <h3 data-locale="ui.config.general.footer-visibility._">
+            하단 바
+          </h3>
+          <p class="control">
+            <label for="input-footer-visibility-none"
+                   data-locale="ui.config.general.footer-visibility.show">
+              표시
+            </label>
+            <input type="radio" name="footer-visibility"
+                   id="input-footer-visibility-none"
+                   checked />
+          </p>
+          <p class="control">
+            <label for="input-footer-visibility-instead"
+                   data-locale="ui.config.general.footer-visibility.use-header-instead">
+              항목을 상단 바에 대신 표시
+            </label>
+            <input type="radio" name="footer-visibility"
+                   id="input-footer-visibility-instead"
+                   data-type="boolean"
+                   data-config-key="element.use-header-instead" />
+          </p>
+          <p class="control">
+            <label for="input-footer-visibility-hide"
+                   data-locale="ui.config.general.footer-visibility.hide">
+              표시 안 함
+            </label>
+            <input type="radio" name="footer-visibility"
+                   id="input-footer-visibility-hide"
+                   data-type="boolean"
+                   data-config-key="element.hide-footer" />
+          </p>
+        <article>
           <h3 data-locale="ui.config.general.footer._"> 하단 바 항목 </h3>
           <p class="control">
             <label for="input-footer-rank"

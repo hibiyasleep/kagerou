@@ -178,7 +178,9 @@ const CONFIG_DEFAULT = {
   },
   element: {
     'resize-handle': true,
-    'narrow-nav': false
+    'narrow-nav': false,
+    'hide-footer': false,
+    'use-header-instead': false
   },
   footer: {
     rank: true,

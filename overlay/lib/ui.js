@@ -123,12 +123,12 @@
   }
 
   const setFooterVisibility = function setFooterVisibility() {
-    let f = window.config.get('footer')
-    let k = Object.keys(f)
-    k
+    const f = window.config.get('footer')
+    return Object.keys(f)
       .filter(_ => _ !== 'recover')
       .forEach(_ => $(`.footer-${_}`, 0).classList.toggle('hidden', !f[_]))
-    return k.filter(_ => f[_]).length
+      .filter(_ => f[_])
+      .length
   }
 
   window.addEventListener('load', () => {
@@ -308,7 +308,11 @@
           tab: window.tabdisplay.render()
         }
 
-        $('footer', 0).classList.toggle('hidden', count.footer === 0 && count.tab === 1)
+        $('footer', 0).classList.toggle('hidden',
+          count.footer === 0 &&
+          count.tab === 1 ||
+          window.config.get('element.hide-footer')
+        )
 
         loadFormatButtons()
         return
