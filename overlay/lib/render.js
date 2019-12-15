@@ -63,6 +63,8 @@
         $map('.footer-stat > span', el => {
           el.classList.add('hidden')
         })
+      } else {
+        $('#history-region').innerHTML = ''
       }
 
       for(let i in this.config.footer) {

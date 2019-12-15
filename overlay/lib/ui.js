@@ -315,16 +315,15 @@
         window.l.setLang(config.get('lang'))
 
         window.renderer = new Renderer(window.config.get())
-        renderer.render()
+        if(hist.currentData) renderer.render(hist.currentData)
 
-        if(!window.tabdisplay)
-          window.tabdisplay = new TabDisplay()
+        window.tabdisplay = new TabDisplay()
 
         $('footer', 0).classList.toggle('hidden',
           window.config.get('element.hide-footer') ||
-          window.tabdisplay.render() === 1 &&
-          window.config.get('element.use-header-instead') ||
-          setFooterVisibility() === 0
+         (window.config.get('element.use-header-instead') ||
+          setFooterVisibility() === 0) &&
+          window.tabdisplay.render() === 1
         )
 
         loadFormatButtons()

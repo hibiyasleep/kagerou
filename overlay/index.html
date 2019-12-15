@@ -103,7 +103,7 @@ window.addEventListener('load', e => {
         )
       }
     })
-    layer.emit('restyle')
+    // layer.emit('restyle')
   })
 
   $map('svg', _ => {
@@ -156,9 +156,8 @@ window.addEventListener('load', e => {
             <mark id="history-time">
               kagerou <span class="version"> ??? </span>
             </mark>
-            <span class="codename"></span>
           </span>
-          <span id="history-mob"></span>
+          <span id="history-mob" class="codename"></span>
           <span id="history-region"></span>
         </div>
         <ul class="buttons">

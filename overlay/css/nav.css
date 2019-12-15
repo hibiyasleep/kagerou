@@ -68,8 +68,7 @@ nav:hover > .container {
 
 #history-icon {
   vertical-align: top;
-  padding-right: 0.5rem;
-  margin-right: 0;
+  margin-right: 0.25rem;
 
   fill: var(--color-accent);
 }
@@ -81,9 +80,10 @@ nav:hover > .container {
   margin-right: 0;
 }
 #history-region > span {
-  margin-left: 0.5rem;
+  margin-left: 0.25rem;
 }
-#history-region > span > small {
+#history-region > span > small,
+.smaller-lower-numbers #history-region .with-larger-digits {
   font-size: 0.8em;
 }
 .icon-overflow-wrap {
