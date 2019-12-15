@@ -155,10 +155,9 @@ const formatDps = function formatDPSNumberWithSmalls(number, decimals, type) {
   type = (type || 'dps') + ' lower'
   if(typeof number === 'string') {
     number = pFloat(number).toFixed(decimals)
-  } else {
+  } else if(typeof number === 'number') {
     number = number.toFixed(decimals)
-  }
-  if(number === 'NaN') {
+  } else {
     number = (0).toFixed(decimals)
   }
 
