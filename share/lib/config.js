@@ -485,7 +485,7 @@ const COLUMN_INDEX = {
     total: 'healed',
     over: {
       v: _ => _['OverHealPct'],
-      f: _ => _ != null? _.replace('%', '<small>%</small>') : '---'
+      f: _ => _ && _.replace? _.replace('%', '<small>%</small>') : '---'
     },
     swing: 'heals',
     critical: {
