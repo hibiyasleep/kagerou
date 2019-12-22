@@ -251,6 +251,9 @@ main > ul {
 #table {
   padding-bottom: 1.5rem;
 }
+.hide-footer #table {
+  padding-bottom: 0.2rem;
+}
 #table > li {
   display: flex;
   flex-direction: row;
@@ -354,7 +357,7 @@ body.smaller-lower-numbers .footer-stat small.with-larger-digits {
   height: calc(var(--graph-height) * 2);
 }
 .hide-footer.collapsed main {
-  height: var(--graph-height);
+  height: calc(var(--graph-height) + 0.2rem);
 }
 .collapsed #table {
   height: var(--graph-height);
