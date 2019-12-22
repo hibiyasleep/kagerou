@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.8.1'
-const CODENAME = 'end of world'
-const DESCRIPTION = 'FRENZY HOUSE'
+const VERSION = '0.8.2'
+const CODENAME = 'point zero'
+const DESCRIPTION = '「ゼロからスタートする」'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',

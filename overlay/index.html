@@ -188,9 +188,9 @@ window.addEventListener('load', e => {
 
       <ul class="dropdown dropdown-list dropdown-history" id="dropdown-history">
         <li class="empty">
-          <mark> 0.8.0 </mark> <span> Fireworks In The Summer End </span>
+          <mark> 0.8.1 </mark> <span> end of world </span>
           <br />
-          <span class="history-region"> '君の歌った「大人が嫌いな歌」を' </span>
+          <span class="history-region"> FRENZY HOUSE </span>
         </li>
         <li class="empty">
           <mark class="version"> ?.?.? </mark> <span class="codename">Unknown Release</span>
@@ -314,6 +314,23 @@ window.addEventListener('load', e => {
                  viewBox="0 0 416 128"
                  style="max-width: 100%; max-height: 3rem; margin-top: 0.5rem">
             </svg -->
+            <h3> 0.8.2 'point zero' - 2019/12/14 </h3>
+
+            <p>
+              <span class="lang ko">푸터를 숨길 수 있습니다</span>
+              <span class="lang en de fr cn">Added option to hide footer</span>
+              <span class="lang ja">下部の黒い棒を非表示するができます。</span>
+              (<u onclick="config.toggle('element.hide-footer'); config.save(); layer.emit('message', { message: 'restyle' })">test</u>)
+            </p>
+
+            <p>
+              <span class="lang ko">rdps를 위쪽에 띄울 수 있습니다</span>
+              <span class="lang en de fr cn">...and display RDPS on top</span>
+              <span class="lang ja">右下のrdpsや1/nのようなことを上に表示するができます</span>
+
+              (<u onclick="config.toggle('element.use-header-instead'); config.save(); layer.emit('message', { message: 'restyle' })">test</u>)
+            </p>
+
             <h3> 0.8.1 'end of world' - 2019/12/14 </h3>
 
             <p class="lang ko">
