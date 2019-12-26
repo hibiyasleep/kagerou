@@ -100,6 +100,7 @@
 .class-mch .gauge { background: var(--mch); }
 .class-sam .gauge { background: var(--sam); }
 .class-rdm .gauge { background: var(--rdm); }
+.class-blu .gauge { background: var(--blu); }
 .class-dnc .gauge { background: var(--dnc); }
 
 .class-cnj .gauge, .class-whm .gauge { background: var(--whm); }
