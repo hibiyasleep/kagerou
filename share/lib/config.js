@@ -177,8 +177,8 @@ const CONFIG_DEFAULT = {
     jobless: true
   },
   element: {
-    'resize-handle': true,
-    'narrow-nav': false,
+    'resize-handle': false,
+    'narrow-nav': true,
     'hide-footer': false,
     'use-header-instead': false
   },
