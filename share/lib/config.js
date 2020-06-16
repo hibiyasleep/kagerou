@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.8.2'
-const CODENAME = 'point zero'
-const DESCRIPTION = '「ゼロからスタートする」'
+const VERSION = '0.8.3'
+const CODENAME = 'tears proof masquerade'
+const DESCRIPTION = localStorage._? '偽りなき技巧が挑戦への扉を開く' : '1271045608451661824'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
