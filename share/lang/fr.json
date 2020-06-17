@@ -248,6 +248,7 @@
       "direct": ["DH", "Directe %"],
       "crit_direct": ["!!!", "Critique Hit% (!!!)"],
       "crittypes": ["D/!/!!!", "Direct/Critical/!!! Count"],
+      "critpcts": ["Crits%", "Direct/Critical/!!! %"],
       "max": ["Max", "Maxhit (w/o skillname)"],
       "maxskill": ["Max", "Maxhit (Nom de compétence seulement)"],
       "maxhit": ["Maxhit", "Maxhit"],

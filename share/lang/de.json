@@ -248,6 +248,7 @@
       "direct": ["DH", "*Direct Hit%"],
       "crit_direct": ["!!!", "*Critical Direct Hit% (!!!)"],
       "crittypes": ["D/!/!!!", "*Direct/Critical/!!! Count"],
+      "critpcts": ["Crits%", "*Direct/Critical/!!! %"],
       "max": ["Max", "Maximaler Schaden (ohne Fähigkeitsname)"],
       "maxskill": ["Max", "Maximaler Schaden Fähigkeitsname"],
       "maxhit": ["MaxSchaden", "Maximaler Schaden (mit Fähigkeitsname)"],

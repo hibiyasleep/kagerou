@@ -248,6 +248,7 @@
       "direct": ["DH%", "직격 비율"],
       "crit_direct": ["!!!", "극대+직격 비율 (!!!)"],
       "crittypes": ["D/!/!!!", "극대 모아보기 (D/!/!!!)"],
+      "critpcts": ["Crits%", "극대 비율 모아보기 (D/!/!!!)"],
       "max": ["Max", "Maxhit (스킬명 제외)"],
       "maxskill": ["Max", "Maxhit (스킬명만)"],
       "maxhit": ["Maxhit", "Maxhit"],

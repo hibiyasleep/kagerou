@@ -33,6 +33,7 @@
 .flex-column-deal-direct        { width: var(--_deal-direct)rem; }
 .flex-column-deal-crit-direct   { width: var(--_deal-crit_direct)rem; }
 .flex-column-deal-crittypes     { width: var(--_deal-crittypes)rem; }
+.flex-column-deal-critpcts      { width: var(--_deal-critpcts)rem; }
 .flex-column-deal-max           { width: var(--_deal-max)rem; }
 .flex-column-deal-maxhit        { width: var(--_deal-maxhit)rem; }
 .flex-column-deal-maxskill      { width: var(--_deal-maxskill)rem; }

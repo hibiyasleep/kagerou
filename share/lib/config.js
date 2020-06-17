@@ -104,6 +104,7 @@ const CONFIG_DEFAULT = {
     '_deal-direct': 2.5,
     '_deal-crit_direct': 2.5,
     '_deal-crittypes': 4,
+    '_deal-critpcts': 4,
     '_deal-max': 2.5,
     '_deal-maxhit': 7,
     '_deal-maxskill': 5,
@@ -414,6 +415,17 @@ const COLUMN_INDEX = {
     crittypes: {
       v: _ => [_.DirectHitCount || '-', _.crithits || '-', _.CritDirectHitCount || '-'],
       f: _ => _.join('/')
+    },
+    critpcts: {
+      v: _ => [_.DirectHitCountPct || '-', _['crithit%'] || '-', _.CritDirectHitCountPct || '-'],
+      f: (_, conf) => {
+        _ = _.map(__ => __.replace('%', ''))
+        if(conf.format.use_tailing_pct) {
+          return _.map(__ => __ + '<small>%</small> ').join('')
+        } else {
+          return _.join('/')
+        }
+      }
     },
     max: {
       v: 'MAXHIT',
