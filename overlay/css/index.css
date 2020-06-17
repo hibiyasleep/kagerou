@@ -18,7 +18,7 @@ body.overlay {
   height: calc(100% - 0.25rem) !important;
 }
 /* Resize handle */
-body::after {
+body.overlay::after {
   display: block;
   content: '';
 
@@ -26,15 +26,13 @@ body::after {
   right: 0;
   bottom: 0;
 
-  width: 0;
-  height: 0;
+  width: 8px; // OverlayPlugin decide this
+  height: 8px;
 
-  border: 8px solid; /* Resize handle size is controlled by plugin; no ctrl */
-  border-color: transparent rgba(127, 127, 127, 0.3) rgba(127, 127, 127, 0.3) transparent;
-  background: rgba(127, 127, 127, 0.1);
+  background: rgba(0, 0, 0, 0.001);
 }
-body.disable-handle::after {
-  display: none;
+body.collapsed::after {
+  display: none !important;
 }
 
 /* Client Restrictors */

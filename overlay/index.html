@@ -95,14 +95,7 @@ window.addEventListener('load', e => {
         window.renderer.update()
       }
     })
-    layer.on('status', d => {
-      if(d.type === 'lock') {
-        document.body.classList.toggle(
-          'disable-handle',
-          d.message && config.get('element.resize-handle')
-        )
-      }
-    })
+    // layer.on('status')
     // layer.emit('restyle')
   })
 

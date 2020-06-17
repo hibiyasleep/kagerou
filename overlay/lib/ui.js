@@ -110,11 +110,6 @@
         }
       }
     }, {
-      value: 'element.resize-handle',
-      callback: _ => {
-        document.body.classList.toggle('resize-handle', !_)
-      }
-    }, {
       value: 'element.narrow-nav',
       callback: _ => {
         document.body.classList.toggle('narrow-nav', _)
