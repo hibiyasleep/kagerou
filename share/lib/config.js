@@ -43,48 +43,9 @@ const CONFIG_DEFAULT = {
         'i.icon',
         'i.name',
         'deal.pct',
+        'deal.last60',
         'deal.per_second',
-        'deal.critical',
-        'deal.direct',
-        'deal.crit_direct'
-      ]
-    }, {
-      id: 1,
-      label: 'Tank',
-      width: 1,
-      sort: 'tank.damage',
-      col: [
-        'i.icon',
-        'i.name',
-        'deal.per_second',
-        'tank.damage',
-        'tank.heal',
         'etc.death'
-      ]
-    }, {
-      id: 2,
-      label: 'Heal',
-      width: 1,
-      sort: 'heal.total',
-      col: [
-        'i.icon',
-        'i.name',
-        'heal.pct',
-        'heal.per_second',
-        'heal.total',
-        'heal.over',
-        'heal.swing'
-      ]
-    }, {
-      id: 3,
-      label: '24',
-      width: 3,
-      sort: 'deal.total',
-      col: [
-        'i.icon',
-        'i.name',
-        'deal.per_second',
-        'deal.swing'
       ]
     }
   ],
@@ -178,11 +139,11 @@ const CONFIG_DEFAULT = {
   },
   element: {
     'narrow-nav': true,
-    'hide-footer': false,
-    'use-header-instead': false
+    'hide-footer': true,
+    'use-header-instead': true
   },
   footer: {
-    rank: true,
+    rank: false,
     rdps: true,
     rhps: false
   },
