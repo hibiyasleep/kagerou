@@ -2,7 +2,7 @@
 
 const VERSION = '0.8.4'
 const CODENAME = 'tears proof masquerade'
-const DESCRIPTION = Date.now() > 15959e8? '偽りなき技巧が挑戦への扉を開く' : 'rest in peace, rt-karen.'
+const DESCRIPTION = '偽りなき技巧が挑戦への扉を開く'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
