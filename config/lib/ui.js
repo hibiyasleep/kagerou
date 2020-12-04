@@ -189,8 +189,8 @@ const sendMessage = function sendMessage (message) {
         return clone
       }
 
+      // mimics dragend
       document.addEventListener('mousedown', _ => {
-        console.log('mousedown, dragging:', dragging, ', event:', _)
         if(dragging) {
           dragging = false
           e = copyEvent('dragend', _)

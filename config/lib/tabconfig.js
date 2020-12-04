@@ -16,6 +16,9 @@
     'healed': 'heal.total',
   }
 
+  const forceFallback = navigator.userAgent.indexOf('QtWebEngine') !== -1
+                     || 'obsstudio' in window
+
   class Tabconfig {
 
     constructor() {
@@ -59,7 +62,8 @@
       this.sortable = Sortable.create(this.container.tab, {
         group: 'tab',
         animation: 166,
-        draggable: '.draggable'
+        draggable: '.draggable',
+        forceFallback: forceFallback
       })
     }
 
@@ -132,8 +136,14 @@
         listLeft.insertAdjacentHTML('beforeend', liRender(_, locale))
       })
 
-      Sortable.create(listLeft, { group: 'g' + o.id, animation: 150 })
-      Sortable.create(listRight, { group: 'g' + o.id, animation: 150 })
+      const commonOptions = {
+        group: 'g' + o.id,
+        animation: 150,
+        forceFallback: forceFallback
+      }
+
+      Sortable.create(listLeft, commonOptions)
+      Sortable.create(listRight, commonOptions)
 
       let title = $(pane, '[data-render="title.input"]', 0)
       let width = $(pane, '[data-render="width.input"]', 0)
