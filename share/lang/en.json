@@ -124,7 +124,8 @@
         "config-to-export": "Config to export",
         "all": "All",
         "data-fault": "Data is incorrect or broken.",
-        "content-count": "Column count"
+        "content-count": "Column count",
+        "open-prompt": "Use prompt()"
       },
       "etc": {
         "_": "More",

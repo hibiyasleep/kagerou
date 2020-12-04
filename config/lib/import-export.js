@@ -140,7 +140,10 @@
       }
     })
 
-    $('#import-button').addEventListener('click', function() {
+    $('#import-with-prompt').addEventListener('click', _ => {
+      $('#import-text').value = prompt(locale.get('ui.config.i/e.paste-here'))
+    })
+    $('#import-button').addEventListener('click', _ => {
       let text = $('#import-text').value.trim()
       let output = $('#import-data')
 
@@ -169,7 +172,14 @@
       })
     })
 
-    $('#export-confirm').addEventListener('click', _ => {
+    $('#export-with-prompt').addEventListener('click', _ => {
+      $('#export-button').click()
+      setTimeout(_ => {
+        prompt(locale.get('ui.config.i/e.copy-this'), $('#export-text').value)
+      }, 10)
+    })
+
+    $('#export-button').addEventListener('click', _ => {
       $('#export-text').value = getExportedValue($('#export-column').value)
     })
   })

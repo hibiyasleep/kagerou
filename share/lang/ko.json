@@ -124,7 +124,8 @@
         "config-to-export": "내보낼 설정",
         "all": "전부",
         "data-fault": "데이터가 잘못됐습니다.",
-        "content-count": "설정된 항목 수"
+        "content-count": "설정된 항목 수",
+        "open-prompt": "입력 창 열기"
       },
       "etc": {
         "_": "더 보기",

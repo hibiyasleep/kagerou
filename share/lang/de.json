@@ -124,7 +124,8 @@
         "config-to-export": "Auswählen was exportiert werden soll",
         "all": "Alles",
         "data-fault": "Die Daten falsch war.",
-        "content-count": "Anzahl der Teile"
+        "content-count": "Anzahl der Teile",
+        "open-prompt": "Öffnen Eingabefenster"
       },
       "etc": {
         "_": "Erweitert",

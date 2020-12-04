@@ -124,7 +124,8 @@
         "config-to-export": "エクスポート設定",
         "all": "全部",
         "data-fault": "データが間違っています。",
-        "content-count": "項目の数"
+        "content-count": "項目の数",
+        "open-prompt": "プロンプトで入力"
       },
       "etc": {
         "_": "その他",

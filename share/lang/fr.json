@@ -124,7 +124,8 @@
         "config-to-export": "Configuration à exporter",
         "all": "Tout",
         "data-fault": "Les  données sont incorrectes ou corrompues.",
-        "content-count": "Nombre de colonnes"
+        "content-count": "Nombre de colonnes",
+        "open-prompt": "Ouvrir une dialogue"
       },
       "etc": {
         "_": "Plus",

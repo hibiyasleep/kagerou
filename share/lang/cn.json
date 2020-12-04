@@ -124,7 +124,8 @@
         "config-to-export": "配置导出",
         "all": "全部",
         "data-fault": "数据不正确或损坏。",
-        "content-count": "列数"
+        "content-count": "列数",
+        "open-prompt": "打开提示"
       },
       "etc": {
         "_": "更多",

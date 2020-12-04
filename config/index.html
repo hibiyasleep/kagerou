@@ -1186,6 +1186,11 @@ document.addEventListener('DOMContentLoaded', _ => {
                 <input type="text" id="import-text" class="text-center" />
               </p>
               <p class="control text-right">
+                <button style="color: inherit;"
+                        id="import-with-prompt"
+                        data-locale="ui.config.i/e.open-prompt">
+                  입력 창 열기
+                </button>
                 <button id="import-button"
                         data-locale="ui.config.i/e.import">
                   가져오기
@@ -1238,7 +1243,12 @@ document.addEventListener('DOMContentLoaded', _ => {
                 </select>
               </p>
               <p class="control text-right">
-                <button id="export-confirm"
+                <button style="color: inherit;"
+                        id="export-with-prompt"
+                        data-locale="ui.config.i/e.open-prompt">
+                  입력 창 열기
+                </button>
+                <button id="export-button"
                         data-locale="ui.config.i/e.export">
                   내보내기
                 </button>
@@ -1246,8 +1256,10 @@ document.addEventListener('DOMContentLoaded', _ => {
             </article>
             <div class="tabconfig-content text-center"
                  style="height: calc(100% - 12.375rem);">
-              <p data-locale="ui.config.i/e.copy-this">
-                아래의 값을 전부 복사하세요:
+              <p>
+                <span data-locale="ui.config.i/e.copy-this">
+                  아래의 값을 전부 복사하세요:
+                </span>
               </p>
               <p>
                 <input type="text" id="export-text" class="text-center" />
