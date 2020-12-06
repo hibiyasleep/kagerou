@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.8.4'
-const CODENAME = 'tears proof masquerade'
-const DESCRIPTION = '偽りなき技巧が挑戦への扉を開く'
+const VERSION = '0.8.5'
+const CODENAME = 'phantasmagoria'
+const DESCRIPTION = '長き道夫振り返り　小さな光へ歩き出す'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
