@@ -170,7 +170,8 @@ const CONFIG_DEFAULT = {
     use_short_name: 0,
     use_skill_aliases: true,
     use_tailing_pct: true,
-    small_lower_numbers: false
+    small_lower_numbers: false,
+    number_abbreviation: true
   },
   filter: {
     unusual_spaces: false,
@@ -366,7 +367,10 @@ const COLUMN_INDEX = {
         if(isNaN(_)) {
           return '---'
         }
-        return formatDps(_, +conf.format.significant_digit.dps)
+        return formatDps(_,
+          +conf.format.significant_digit.dps,
+          conf.format.number_abbreviation
+        )
       }
     },
     pct: {
@@ -447,19 +451,25 @@ const COLUMN_INDEX = {
     last10: {
       v: 'Last10DPS',
       f: (_, conf) => {
-        return isNaN(_)? '0' : formatDps(_, conf.format.significant_digit.dps)
+        return isNaN(_)?
+          '0'
+        : formatDps(_, conf.format.significant_digit.dps, conf.format.number_abbreviation)
       }
     },
     last30: {
       v: 'Last30DPS',
       f: (_, conf) => {
-        return isNaN(_)? '0' : formatDps(_, conf.format.significant_digit.dps)
+        return isNaN(_)?
+          '0'
+        : formatDps(_, conf.format.significant_digit.dps, conf.format.number_abbreviation)
       }
     },
     last60: {
       v: 'Last60DPS',
       f: (_, conf) => {
-        return isNaN(_)? '0' : formatDps(_, conf.format.significant_digit.dps)
+        return isNaN(_)?
+          '0'
+        : formatDps(_, conf.format.significant_digit.dps, conf.format.number_abbreviation)
       }
     }/*,
     last180: {
@@ -486,7 +496,9 @@ const COLUMN_INDEX = {
       v: 'enchps',
       f: (_, conf) => {
         _ = pFloat(_)
-        return isNaN(_)? '0' : formatDps(_, conf.format.significant_digit.hps)
+        return isNaN(_)?
+          '0'
+        : formatDps(_, conf.format.significant_digit.hps, conf.format.number_abbreviation)
       }
     },
     pct: {

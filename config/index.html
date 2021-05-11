@@ -309,6 +309,15 @@ document.addEventListener('DOMContentLoaded', _ => {
             소수점 정확도
           </h3>
           <p class="control">
+            <label for="input-format-number_abbreviation"
+                   data-locale="config.format.number_abbreviation">
+              천 단위 생략 사용
+            </label>
+            <input type="checkbox" id="input-format-number_abbreviation"
+                   data-type="boolean"
+                   data-config-key="format.number_abbreviation" />
+          </p>
+          <p class="control">
             <label for="input-format-significant_digit-dps"
                    data-locale="config.format.significant_digit.dps">
               DPS

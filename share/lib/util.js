@@ -150,9 +150,18 @@ const pInt = function parseLocaledInteger(string) {
   else return parseInt(string.replace(/[,.]/g, ''))
 }
 
-const formatDps = function formatDPSNumberWithSmalls(number, decimals, type) {
+const ABBREVIATION_SUFFIXES = ['', 'k', 'M', 'G', 'T']
+
+const formatDps = function formatDPSNumberWithSmalls(number, decimals, abbr, type) {
+  number = number || 0
   decimals = decimals == null? 2 : +decimals
   type = (type || 'dps') + ' lower'
+
+  const exponential = Math.floor(Math.log10(number))
+  const abbrUnit = abbr? Math.max(0, Math.min(4, Math.floor((exponential - 1) / 3))) : 0
+  const suffix = ABBREVIATION_SUFFIXES[abbrUnit]
+  number /= Math.pow(10, abbrUnit * 3)
+
   if(typeof number === 'string') {
     number = pFloat(number).toFixed(decimals)
   } else if(typeof number === 'number') {
@@ -161,19 +170,23 @@ const formatDps = function formatDPSNumberWithSmalls(number, decimals, type) {
     number = (0).toFixed(decimals)
   }
 
-  if(number >= 1000) {
+  if(number >= 1000 || abbrUnit) {
     type += ' with-larger-digits'
   }
 
   const decimalLength = ((decimals > 0) + decimals)
-  const natural1 = number.slice(0, -decimalLength - 3)
-  const natural2 = '<small class="' + type + '">'
-    + number.slice(-decimalLength - 3, -decimalLength || undefined)
-    + '</small>'
-  const decimal = '<small>'
-    + number.slice(-decimalLength)
-    + '</small>'
-  return natural1 + natural2 + (decimalLength? decimal : '')
+
+  let upper, lower, tail
+  const upperEndsAt = Math.max(0, number.length - decimalLength - (abbrUnit? 0 : 3))
+  const lowerEndsAt = (abbrUnit? 0 : -decimalLength) || undefined
+
+  upper = number.slice(0, upperEndsAt)
+  lower = number.slice(upperEndsAt, lowerEndsAt)
+  tail = lowerEndsAt? number.slice(lowerEndsAt) : suffix
+
+  const wrappedLower = '<small class="' + type + '">' + lower + '</small>'
+  const wrappedTail = '<small>' + tail + '</small>'
+  return upper + wrappedLower + (tail? wrappedTail : '')
 }
 
 const sanitize = _ => _.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-')

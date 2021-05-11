@@ -221,7 +221,8 @@
       "use_short_name": "Apparence des noms des joueurs",
       "use_skill_aliases": "Utiliser les alias de compétences",
       "use_tailing_pct": "Afficher % après la valeur",
-      "small_lower_numbers": "*Smaller font for under-k digits of DPS"
+      "small_lower_numbers": "*Smaller font for under-k digits of DPS",
+      "number_abbreviation": "Omettez le nombre en unités de 1000"
     },
     "element": {
       "narrow_nav": "*Narrower Top navigation bar"
