@@ -171,7 +171,7 @@ const CONFIG_DEFAULT = {
     use_skill_aliases: true,
     use_tailing_pct: true,
     small_lower_numbers: false,
-    number_abbreviation: true
+    number_abbreviation: false
   },
   filter: {
     unusual_spaces: false,
