@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.8.5'
-const CODENAME = 'phantasmagoria'
-const DESCRIPTION = '長き道夫振り返り　小さな光へ歩き出す'
+const VERSION = '0.8.6'
+const CODENAME = 'Deprived World'
+const DESCRIPTION = '…この儚くも美しい　「奪われた世界」を'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
