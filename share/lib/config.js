@@ -1,6 +1,6 @@
 'use strict'
 
-const VERSION = '0.8.7'
+const VERSION = '0.8.8'
 const CODENAME = 'Deprived World'
 const DESCRIPTION = '…この儚くも美しい　「奪われた世界」を'
 
