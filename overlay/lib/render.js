@@ -188,7 +188,7 @@
         if(this.config.footer.rdps) {
           this.elem.rdps.innerHTML =
             formatDps(
-              rdps,
+              pFloat(rdps),
               this.config.format.significant_digit.dps,
               this.config.format.number_abbreviation
             )
@@ -196,7 +196,7 @@
         if(this.config.footer.rhps) {
           this.elem.rhps.innerHTML =
             formatDps(
-              rhps,
+              pFloat(rhps),
               this.config.format.significant_digit.hps,
               this.config.format.number_abbreviation
             )
