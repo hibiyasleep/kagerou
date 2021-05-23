@@ -54,7 +54,7 @@
           "rank": "Rang courant",
           "rdps": "RDPS",
           "rhps": "RHPS",
-          "recover": "Soins totaux reçus / Dommages subis"
+          "recover": "Soins reçus / Dégâts subis"
         },
         "reset": "Annuler",
         "reset-this": "Annuler tout"
@@ -212,10 +212,10 @@
       "language": "Langue",
       "significant_digit": {
         "_": "Précision décimale",
-        "dps": "Dommages par seconde (DPS)",
+        "dps": "Dégâts par seconde (DPS)",
         "hps": "Soins par seconde (HPS)",
-        "accuracy": "Échec (Raté / Esquivé)",
-        "critical": "% de critique Touché/Soin"
+        "accuracy": "Taux de précision",
+        "critical": "Taux de critique"
       },
       "myname": "Mon nom",
       "use_short_name": "Apparence des noms des joueurs",
