@@ -213,6 +213,7 @@
       "significant_digit": {
         "_": "Précision décimale",
         "dps": "Dégâts par seconde (DPS)",
+        "damage": "Dégâts totaux",
         "hps": "Soins par seconde (HPS)",
         "accuracy": "Taux de précision",
         "critical": "Taux de critique"

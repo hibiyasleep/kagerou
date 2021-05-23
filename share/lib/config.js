@@ -161,6 +161,7 @@ const CONFIG_DEFAULT = {
   format: {
     significant_digit: {
       dps: 0,
+      damage: 0,
       hps: 0,
       accuracy: 0,
       critical: 0
@@ -381,7 +382,15 @@ const COLUMN_INDEX = {
         else return _ + (conf.format.use_tailing_pct? '<small>%</small>' : '')
       }
     },
-    total: 'damage',
+    total: {
+      v: 'damage',
+      f: (damage, conf) => {
+        return formatDps(damage,
+          conf.format.significant_digit.damage,
+          conf.format.number_abbreviation
+        )
+      }
+    },
     failure: {
       v: _ => _.swings > 0? _.misses / _.swings * 100 : -1,
       f: (_, conf) =>

@@ -213,6 +213,7 @@
       "significant_digit": {
         "_": "Decimal accuracy",
         "dps": "DPS",
+        "damage": "Damage",
         "hps": "HPS",
         "accuracy": "Failure (Miss / Swing)",
         "critical": "% of Critical hits/heals"

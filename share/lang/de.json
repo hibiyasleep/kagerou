@@ -213,6 +213,7 @@
       "significant_digit": {
         "_": "Anzahl der Nachkommastellen",
         "dps": "DPS",
+        "damage": "Damage",
         "hps": "HPS",
         "accuracy": "Fehlschlag (Verfehlt / Angriffe)",
         "critical": "% der kritischen Treffer/Heilungen"

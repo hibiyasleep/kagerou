@@ -213,6 +213,7 @@
       "significant_digit": {
         "_": "小数点精度",
         "dps": "DPS",
+        "damage": "Damage",
         "hps": "HPS",
         "accuracy": "命中率",
         "critical": "伤害和治疗百分比"
