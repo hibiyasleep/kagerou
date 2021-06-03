@@ -162,13 +162,10 @@ const formatDps = function formatDPSNumberWithSmalls(number, decimals, abbr, typ
   const suffix = ABBREVIATION_SUFFIXES[abbrUnit]
   number /= Math.pow(10, abbrUnit * 3)
 
-  if(typeof number === 'string') {
-    number = pFloat(number).toFixed(decimals)
-  } else if(typeof number === 'number') {
-    number = number.toFixed(decimals)
-  } else {
-    number = (0).toFixed(decimals)
-  }
+  number = (
+    typeof number === 'string'? pFloat(number)
+  : typeof number === 'number'? number
+  : 0).toFixed(decimals).replace(/\.0+$/, '')
 
   if(number >= 1000 || abbrUnit) {
     type += ' with-larger-digits'
