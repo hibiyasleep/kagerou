@@ -213,8 +213,8 @@
       "significant_digit": {
         "_": "소수점 정확도",
         "dps": "DPS",
-        "damage": "Damage",
         "hps": "HPS",
+        "damage": "대미지 값",
         "accuracy": "실패율 (미스 수 / 타격 수)",
         "critical": "극대화 비율"
       },

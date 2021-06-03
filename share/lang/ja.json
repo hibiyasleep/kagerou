@@ -213,8 +213,8 @@
       "significant_digit": {
         "_": "小数点精度",
         "dps": "DPS",
-        "damage": "Damage Total",
         "hps": "HPS",
+        "damage": "ダメージ値",
         "accuracy": "命中率",
         "critical": "クリティカル"
       },

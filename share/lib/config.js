@@ -384,8 +384,8 @@ const COLUMN_INDEX = {
     },
     total: {
       v: 'damage',
-      f: (damage, conf) => {
-        return formatDps(damage,
+      f: (_, conf) => {
+        return formatDps(_,
           conf.format.significant_digit.damage,
           conf.format.number_abbreviation
         )
