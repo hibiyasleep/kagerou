@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.8.8'
-const CODENAME = 'Deprived World'
-const DESCRIPTION = '…この儚くも美しい　「奪われた世界」を'
+const VERSION = '0.8.9'
+const CODENAME = 'Northern Cross'
+const DESCRIPTION = '燦然とピアノを照らす もうひとつの十字星'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
