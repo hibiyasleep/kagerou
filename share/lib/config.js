@@ -387,7 +387,9 @@ const COLUMN_INDEX = {
       f: (_, conf) => formatDps(
         _,
         conf.format.significant_digit.damage,
-        conf.format.number_abbreviation
+        conf.format.number_abbreviation,
+        '',
+        true
       )
     },
     failure: {
@@ -495,7 +497,9 @@ const COLUMN_INDEX = {
       f: (_, conf) => '-' + formatDps(
         _,
         conf.format.significant_digit.damage,
-        conf.format.number_abbreviation
+        conf.format.number_abbreviation,
+        '',
+        true
       )
     },
     heal: {
@@ -503,7 +507,9 @@ const COLUMN_INDEX = {
       f: (_, conf) => '+' + formatDps(
         _,
         conf.format.significant_digit.damage,
-        conf.format.number_abbreviation
+        conf.format.number_abbreviation,
+        '',
+        true
       )
     },
     parry: 'ParryPct',
@@ -538,7 +544,9 @@ const COLUMN_INDEX = {
       f: (_, conf) => formatDps(
         _,
         conf.format.significant_digit.damage,
-        conf.format.number_abbreviation
+        conf.format.number_abbreviation,
+        '',
+        true
       )
     },
     over: {

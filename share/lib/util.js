@@ -152,7 +152,7 @@ const pInt = function parseLocaledInteger(string) {
 
 const ABBREVIATION_SUFFIXES = ['', 'k', 'M', 'G', 'T']
 
-const formatDps = function formatDPSNumberWithSmalls(number, decimals, abbr, type) {
+const formatDps = function formatDPSNumberWithSmalls(number, decimals, abbr, type, forceInt) {
   number = number || 0
   decimals = decimals == null? 2 : +decimals
   type = (type || 'dps') + ' lower'
@@ -165,7 +165,7 @@ const formatDps = function formatDPSNumberWithSmalls(number, decimals, abbr, typ
   number = (
     typeof number === 'string'? pFloat(number)
   : typeof number === 'number'? number
-  : 0).toFixed(decimals).replace(/\.0+$/, '')
+  : 0).toFixed((forceInt && !abbrUnit)? 0 : decimals)
 
   if(number >= 1000 || abbrUnit) {
     type += ' with-larger-digits'
