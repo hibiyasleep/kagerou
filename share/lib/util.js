@@ -167,7 +167,7 @@ const formatDps = function formatDPSNumberWithSmalls(number, decimals, abbr, typ
   number = (
     typeof number === 'string'? pFloat(number)
   : typeof number === 'number'? number
-  : 0).toFixed(decimals)
+  : 0).toLocaleString()
 
   if(number >= 1000 || abbrUnit) {
     type += ' with-larger-digits'
