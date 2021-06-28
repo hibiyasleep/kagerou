@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.8.9'
-const CODENAME = 'Northern Cross'
-const DESCRIPTION = '燦然とピアノを照らす もうひとつの十字星'
+const VERSION = '0.8.10'
+const CODENAME = 'City of Mirrors'
+const DESCRIPTION = 'なんびとの心も映す鏡の如きヴォカリーズ曲'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
