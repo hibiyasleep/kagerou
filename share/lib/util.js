@@ -160,12 +160,14 @@ const formatDps = function formatDPSNumberWithSmalls(number, decimals, abbr, typ
   const exponential = Math.floor(Math.log10(number))
   const abbrUnit = abbr? Math.max(0, Math.min(4, Math.floor((exponential - 1) / 3))) : 0
   const suffix = ABBREVIATION_SUFFIXES[abbrUnit]
+
   number /= Math.pow(10, abbrUnit * 3)
+  decimals = (forceInt && !abbrUnit)? 0 : decimals
 
   number = (
     typeof number === 'string'? pFloat(number)
   : typeof number === 'number'? number
-  : 0).toFixed((forceInt && !abbrUnit)? 0 : decimals)
+  : 0).toFixed(decimals)
 
   if(number >= 1000 || abbrUnit) {
     type += ' with-larger-digits'
