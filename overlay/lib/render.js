@@ -19,7 +19,7 @@
     '+healed': 'heal.total',
     '-healed': 'heal.total',
     '-deaths': 'etc.death',
-    '+deaths': 'etc.death',
+    '+deaths': 'etc.death'
   }
 
   class Renderer {
