@@ -17,7 +17,9 @@
     '+enchps': 'heal.per_second',
     '-enchps': 'heal.per_second',
     '+healed': 'heal.total',
-    '-healed': 'heal.total'
+    '-healed': 'heal.total',
+    '-deaths': 'etc.death',
+    '+deaths': 'etc.death',
   }
 
   class Renderer {
