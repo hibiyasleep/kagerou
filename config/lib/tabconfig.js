@@ -14,6 +14,7 @@
     'damagetaken': 'tank.damage',
     'enchps': 'heal.per_second',
     'healed': 'heal.total',
+    'deaths': 'etc.death'
   }
 
   const forceFallback = navigator.userAgent.indexOf('QtWebEngine') !== -1
