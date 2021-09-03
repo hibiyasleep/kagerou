@@ -225,7 +225,8 @@ const COLUMN_SORTABLE = [
   'tank.damage',
   'tank.heal',
   'heal.per_second',
-  'heal.total'
+  'heal.total',
+  '-etc.death'
 ]
 const COLUMN_MERGEABLE = [
   'encdps', 'damage', 'damage%',

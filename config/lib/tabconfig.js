@@ -41,7 +41,8 @@
       this.selections = COLUMN_SORTABLE.map(_ => {
         // let head = `<span data-locale="col.${_.split('.')[0]}._">...</span>`
         // let label = `<span data-locale="col.${_}.1">...</span>`
-        return `<option value="${_}" data-locale="col.${_.split('.')[0]}._+: +col.${_}.1"></option>`
+        let k = _.substr('+-'.indexOf(_[0]) >= 0)
+        return `<option value="${_}" data-locale="col.${k.split('.')[0]}._+: +col.${k}.1"></option>`
       }).join('')
 
       this.columns = []

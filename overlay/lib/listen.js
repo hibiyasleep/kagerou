@@ -7,9 +7,10 @@
   const toArray = o => Object.keys(o).map(_ => o[_])
   const SORTABLE = {}
 
-  COLUMN_SORTABLE.map(_ => {
-    let o = resolveDotIndex(COLUMN_INDEX, _)
-    SORTABLE[_] = o.v || o
+  COLUMN_SORTABLE.forEach(_ => {
+    let k = _.substr('+-'.indexOf(_[0]) >= 0)
+    let o = resolveDotIndex(COLUMN_INDEX, k)
+    SORTABLE[k] = o.v || o
   })
 
   class Data {
@@ -93,7 +94,7 @@
 
     sort(key, target) {
       let d = (('+-'.indexOf(key[0]))+1 || 1) * 2 - 3
-      let k = SORTABLE[key]
+      let k = SORTABLE[key.substr('+-'.indexOf(key[0]) >= 0)]
       ;(target || this.data).sort((a, b) => (pFloat(a[k]) - pFloat(b[k])) * d)
 
       if(target) return target
