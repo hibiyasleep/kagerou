@@ -235,7 +235,8 @@
         locale = `col.${c}.0`
         text = window.l.loaded? window.l.get(locale) : '...'
       } else {
-        const col = resolveDotIndex(COLUMN_INDEX, c)
+        let k = c.substr('+-'.indexOf(c[0]) >= 0)
+        const col = resolveDotIndex(COLUMN_INDEX, k)
 
         if(typeof col === 'string') {
           text = data[col]
@@ -259,7 +260,8 @@
 
     render(data, max) {
       let el = document.createElement('li')
-      let gaugeBy = resolveDotIndex(COLUMN_INDEX, this.tab.sort)
+      let k = this.tab.sort.substr('+-'.indexOf(this.tab.sort[0]) >= 0)
+      let gaugeBy = resolveDotIndex(COLUMN_INDEX, k)
       // this.tab.gauge) <- deprecated
 
       if(gaugeBy.v) {
