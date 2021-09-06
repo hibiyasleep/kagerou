@@ -10,7 +10,7 @@ Modern, Material Design, easily configurable, cloud-hosted and always up-to-date
 
 If you are using older version, settings WILL NOT saved!
 
-If there's 2 buttons: you are on legacy. Get [Latest](https://github.com/hibiyasleep/OverlayPlugin/releases/latest) here.
+If there's 2 buttons: you are on legacy. Get [Latest](https://github.com/ngld/OverlayPlugin/releases/latest) here.
    There should be 3 buttons, named like this: `Copy`, `Open DevTools`, `Reload`. See screenshots below.
 
 ---
@@ -70,7 +70,7 @@ Use the DevTools to find the CSS selectors that you wish to modify.
 
 ### If you are not developer
 
-Since I only play on korean server, I need your feedback and suggestion for
+Since I only play on Korean server, I need your feedback and suggestion for
 Global server support.
 
 Pending features:
