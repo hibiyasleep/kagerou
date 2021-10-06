@@ -233,6 +233,7 @@
     "i": {
       "_": "Info",
       "icon": [" ", "Class Icon"],
+      "rank": ["Rank", "Rank"],
       "class": ["Job", "Klasse/Job"],
       "owner": ["Besitzer", "Besitzer"],
       "name": ["Name", "Name"]

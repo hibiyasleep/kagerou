@@ -90,6 +90,7 @@ const CONFIG_DEFAULT = {
   ],
   colwidth: {
     '_i-class': 2,
+    '_i-rank': 2,
     '_i-owner': 6,
     '_i-name': 6,
     '_deal-total': 4.5,
@@ -339,6 +340,10 @@ const COLUMN_INDEX = {
         if(job === 'gld') job = 'gla'
         return job
       }
+    },
+    rank: {
+      v: _ => _.rank,
+      f: _ => `#${_}`
     },
     owner: {
       v: _ => resolveClass(_.Job, _.name)[2],
