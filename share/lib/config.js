@@ -451,7 +451,13 @@ const COLUMN_INDEX = {
     },
     max: {
       v: 'MAXHIT',
-      f: _ => formatDps(_, 0)
+      f: (_, conf) => formatDps(
+        _,
+        conf.format.significant_digit.damage,
+        conf.format.number_abbreviation,
+        '',
+        true
+      )
     },
     maxhit: {
       v: 'maxhit',
@@ -460,7 +466,9 @@ const COLUMN_INDEX = {
         return `${formatDps(
           map[1],
           conf.format.significant_digit.damage,
-          conf.format.number_abbreviation
+          conf.format.number_abbreviation,
+          '',
+          true
         )} <small>${map[0]}</small>`
       }
     },
