@@ -233,6 +233,7 @@
     "i": {
       "_": "情報",
       "icon": [" ", "クラスアイコン"],
+      "rank": ["#", "ランク"],
       "class": ["Job", "クラス・"],
       "owner": ["Owner", "オーナー"],
       "name": ["名前", "名前"]
@@ -251,7 +252,7 @@
       "direct": ["Direct", "Direct Hit%"],
       "crit_direct": ["!!!", "Critical Direct Hit% (!!!)"],
       "crittypes": ["D/!/!!!", "Critical回数まとめ (D/!/!!!)"],
-      "crittypes": ["D/!/!!!", "Critical% まとめ"],
+      "critpcts": ["D/!/!!!", "Critical% まとめ"],
       "max": ["Max", "Maxhit (スキル名を除く)"],
       "maxskill": ["Max", "Maxhitのスキル名"],
       "maxhit": ["Maxhit", "Maxhit"],

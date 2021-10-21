@@ -232,7 +232,8 @@
   "col": {
     "i": {
       "_": "Info",
-      "icon": ["", "Class Icon"],
+      "icon": [" ", "Icône de classe"],
+      "rank": ["#", "Rang"],
       "class": ["Cls", "Classe/Job"],
       "owner": ["Propriétaire", "Propriétaire"],
       "name": ["Nom", "Nom"]
