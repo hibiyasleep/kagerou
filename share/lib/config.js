@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.8.11'
-const CODENAME = 'save your tears, save your dreams'
-const DESCRIPTION = 'ささやかな幻よ、煌け！'
+const VERSION = '0.8.12'
+const CODENAME = 'Supersymmetry'
+const DESCRIPTION = '最も美しいパラドックスは対称性である。'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
