@@ -95,6 +95,8 @@
 
 .class-pgl .gauge, .class-mnk .gauge { background: var(--mnk); }
 .class-lnc .gauge, .class-drg .gauge { background: var(--drg); }
+.class-lnc .gauge, .class-rpr .gauge { background: var(--rpr); }
+.class-lnc .gauge, .class-sge .gauge { background: var(--sge); }
 .class-arc .gauge, .class-brd .gauge { background: var(--brd); }
 .class-rog .gauge, .class-nin .gauge { background: var(--nin); }
 .class-acn .gauge, .class-smn .gauge { background: var(--smn); }
