@@ -143,8 +143,7 @@ const CONFIG_DEFAULT = {
     drg: 'rgb(63, 81, 181)', // Indigo 500
     brd: 'rgb(158, 157, 36)', // Lime 800
     nin: 'rgb(211, 47, 47)', // Red 700 // 와! 시바! 진성! 닌자다!
-    rpr: 'rgb(254, 69, 69)',
-    sge: 'rgb(69, 254, 69)',
+    rpr: 'rgb(254, 179, 0)', // Amber 600
     smn: 'rgb(46, 125, 50)', // Green 800
     blm: 'rgb(126, 87, 194)', // Deep Purple 400
     mch: 'rgb(0, 151, 167)', // Cyan 700
@@ -155,6 +154,7 @@ const CONFIG_DEFAULT = {
     whm: 'rgb(117, 117, 117)', // Gray 600
     sch: 'rgb(121, 134, 203)', // Indigo 300
     ast: 'rgb(121, 85, 72)', // Brown 500
+    sge: 'rgb(79, 195, 247)', // Light Blue 300
     'smn-pet': 'rgba(46, 125, 50, 0.5)',
     'sch-pet': 'rgba(121, 134, 203, 0.5)',
     'mch-pet': 'rgba(0, 151, 167, 0.5)',
