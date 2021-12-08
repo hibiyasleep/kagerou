@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.8.12'
-const CODENAME = 'Supersymmetry'
-const DESCRIPTION = '最も美しいパラドックスは対称性である。'
+const VERSION = '0.8.13'
+const CODENAME = 'viator in vitro'
+const DESCRIPTION = 'すべての旅人たちの 記憶はここに集う'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
