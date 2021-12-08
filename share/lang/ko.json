@@ -208,7 +208,7 @@
       "sch-pet": "학자 소환수",
       "mch-pet": "기공사 포탑",
       "chocobo": "초코보",
-      "limit-break": "리밋 브레이크"
+      "limit-break": "리미트 브레이크"
     },
     "format": {
       "language": "Language",
@@ -293,7 +293,7 @@
   },
   "zone": {
     "replace": {
-      "Baelsar's Wall": "바엘사르 장성",
+      "Baelsar's Wall": "바일사르 장성",
       "Sohm Al (Hard)": "솜 알 (어려움)",
       "Containment Bay Z1T9": "봉쇄구역 Z1T9",
       "Containment Bay Z1T9 (Extreme)": "봉쇄구역 Z1T9"
