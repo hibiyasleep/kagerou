@@ -220,6 +220,13 @@
         "accuracy": "命中率",
         "critical": "伤害和治疗百分比"
       },
+      "thousands_separator": {
+        "_": "Thousands separator",
+        "none": "None",
+        "period": "Period (.)",
+        "comma": "Comma (,)",
+        "space": "Space"
+      },
       "myname": "自己的名字",
       "use_short_name": "玩家名字表示方法（国服无效）",
       "use_skill_aliases": "使用技能名缩写",

@@ -295,6 +295,20 @@ document.addEventListener('DOMContentLoaded', _ => {
                    data-config-key="format.small_lower_numbers" />
           </p>
           <p class="control">
+            <label for="input-format-thousands_separator"
+                   data-locale="config.format.thousands_separator._">
+              본문 폰트
+            </label>
+            <select id="input-format-thousands_separator"
+                    data-type="integer"
+                    data-config-key="format.thousands_separator">
+              <option value="0" data-locale="config.format.thousands_separator.none">None</option>
+              <option value="1" data-locale="config.format.thousands_separator.period">Period (.)</option>
+              <option value="2" data-locale="config.format.thousands_separator.comma">Comma (,)</option>
+              <option value="3" data-locale="config.format.thousands_separator.space">Space</option>
+            </select>
+          </p>
+          <p class="control">
             <label for="input-element-narrow-nav"
                    data-locale="config.element.narrow_nav">
               상단바를 얇게

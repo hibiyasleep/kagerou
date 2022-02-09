@@ -220,6 +220,13 @@
         "accuracy": "실패율 (미스 수 / 타격 수)",
         "critical": "극대화 비율"
       },
+      "thousands_separator": {
+        "_": "Thousands separator",
+        "none": "None",
+        "period": "Period (.)",
+        "comma": "Comma (,)",
+        "space": "Space"
+      },
       "myname": "내 이름",
       "use_short_name": "이름을 이니셜로 표시 (글로벌 서버용)",
       "use_skill_aliases": "스킬 이름 약칭 사용 (글로벌 서버용)",

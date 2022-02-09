@@ -220,6 +220,13 @@
         "accuracy": "Fehlschlag (Verfehlt / Angriffe)",
         "critical": "% der kritischen Treffer/Heilungen"
       },
+      "thousands_separator": {
+        "_": "Thousands separator",
+        "none": "None",
+        "period": "Period (.)",
+        "comma": "Comma (,)",
+        "space": "Space"
+      },
       "myname": "Mein Name",
       "use_short_name": "Darstellung von Spielernamen",
       "use_skill_aliases": "Benutze Alias für Fähigkeitsnamen",

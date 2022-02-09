@@ -191,7 +191,8 @@
             formatDps(
               pFloat(rdps),
               this.config.format.significant_digit.dps,
-              this.config.format.number_abbreviation
+              this.config.format.number_abbreviation,
+              this.config.format.thousands_separator
             )
         }
         if(this.config.footer.rhps) {
@@ -199,7 +200,8 @@
             formatDps(
               pFloat(rhps),
               this.config.format.significant_digit.hps,
-              this.config.format.number_abbreviation
+              this.config.format.number_abbreviation,
+              this.config.format.thousands_separator
             )
         }
       }

@@ -220,6 +220,13 @@
         "accuracy": "命中率",
         "critical": "クリティカル"
       },
+      "thousands_separator": {
+        "_": "Thousands separator",
+        "none": "None",
+        "period": "Period (.)",
+        "comma": "Comma (,)",
+        "space": "Space"
+      },
       "myname": "名前",
       "use_short_name": "名前をイニシャルで表示",
       "use_skill_aliases": "スキル名の略称を使用",

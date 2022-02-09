@@ -220,6 +220,13 @@
         "accuracy": "Failure (Miss / Swing)",
         "critical": "% of Critical hits/heals"
       },
+      "thousands_separator": {
+        "_": "Thousands separator",
+        "none": "None",
+        "period": "Period (.)",
+        "comma": "Comma (,)",
+        "space": "Space"
+      },
       "myname": "My name",
       "use_short_name": "Player Name Appearance",
       "use_skill_aliases": "Use skillname aliases",

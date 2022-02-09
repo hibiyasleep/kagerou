@@ -151,8 +151,9 @@ const pInt = function parseLocaledInteger(string) {
 }
 
 const ABBREVIATION_SUFFIXES = ['', 'k', 'M', 'G', 'T']
+const THOUSANDS_SEPARATORS = ['', '.', ',', ' ']
 
-const formatDps = function formatDPSNumberWithSmalls(number, decimals, abbr, type, forceInt) {
+const formatDps = function formatDPSNumberWithSmalls(number, decimals, abbr, thousands_separator, type, forceInt) {
   number = number || 0
   decimals = decimals == null? 2 : +decimals
   type = (type || 'dps') + ' lower'
@@ -182,6 +183,13 @@ const formatDps = function formatDPSNumberWithSmalls(number, decimals, abbr, typ
   upper = number.slice(0, upperEndsAt)
   lower = number.slice(upperEndsAt, lowerEndsAt)
   tail = lowerEndsAt? number.slice(lowerEndsAt) : suffix
+  const sep = THOUSANDS_SEPARATORS[thousands_separator]
+  if (sep != '') {
+    upper = upper.replace(/(?!^)(?=(?:\d{3})+($))/gm, sep);
+    if (!abbrUnit && upper) {
+      upper += sep
+    }
+  }
 
   const wrappedLower = '<small class="' + type + '">' + lower + '</small>'
   const wrappedTail = '<small>' + tail + '</small>'

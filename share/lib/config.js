@@ -169,6 +169,7 @@ const CONFIG_DEFAULT = {
       accuracy: 0,
       critical: 0
     },
+    thousands_separator: 0,
     merge_pet: true,
     myname: [],
     use_short_name: 0,
@@ -378,7 +379,8 @@ const COLUMN_INDEX = {
         }
         return formatDps(_,
           +conf.format.significant_digit.dps,
-          conf.format.number_abbreviation
+          conf.format.number_abbreviation,
+          conf.format.thousands_separator
         )
       }
     },
@@ -396,6 +398,7 @@ const COLUMN_INDEX = {
         _,
         conf.format.significant_digit.damage,
         conf.format.number_abbreviation,
+        conf.format.thousands_separator,
         '',
         true
       )
@@ -457,6 +460,7 @@ const COLUMN_INDEX = {
         _,
         conf.format.significant_digit.damage,
         conf.format.number_abbreviation,
+        conf.format.thousands_separator,
         '',
         true
       )
@@ -469,6 +473,7 @@ const COLUMN_INDEX = {
           map[1],
           conf.format.significant_digit.damage,
           conf.format.number_abbreviation,
+          conf.format.thousands_separator,
           '',
           true
         )} <small>${map[0]}</small>`
@@ -483,7 +488,7 @@ const COLUMN_INDEX = {
       f: (_, conf) => {
         return isNaN(_)?
           '0'
-        : formatDps(_, conf.format.significant_digit.dps, conf.format.number_abbreviation)
+        : formatDps(_, conf.format.significant_digit.dps, conf.format.number_abbreviation, conf.format.thousands_separator)
       }
     },
     last30: {
@@ -491,7 +496,7 @@ const COLUMN_INDEX = {
       f: (_, conf) => {
         return isNaN(_)?
           '0'
-        : formatDps(_, conf.format.significant_digit.dps, conf.format.number_abbreviation)
+        : formatDps(_, conf.format.significant_digit.dps, conf.format.number_abbreviation, conf.format.thousands_separator)
       }
     },
     last60: {
@@ -499,7 +504,7 @@ const COLUMN_INDEX = {
       f: (_, conf) => {
         return isNaN(_)?
           '0'
-        : formatDps(_, conf.format.significant_digit.dps, conf.format.number_abbreviation)
+        : formatDps(_, conf.format.significant_digit.dps, conf.format.number_abbreviation, conf.format.thousands_separator)
       }
     }/*,
     last180: {
@@ -514,6 +519,7 @@ const COLUMN_INDEX = {
         _,
         conf.format.significant_digit.damage,
         conf.format.number_abbreviation,
+        conf.format.thousands_separator,
         '',
         true
       )
@@ -524,6 +530,7 @@ const COLUMN_INDEX = {
         _,
         conf.format.significant_digit.damage,
         conf.format.number_abbreviation,
+        conf.format.thousands_separator,
         '',
         true
       )
@@ -543,7 +550,8 @@ const COLUMN_INDEX = {
         : formatDps(
           _,
           conf.format.significant_digit.hps,
-          conf.format.number_abbreviation
+          conf.format.number_abbreviation,
+          conf.format.thousands_separator
         )
       }
     },
@@ -561,6 +569,7 @@ const COLUMN_INDEX = {
         _,
         conf.format.significant_digit.damage,
         conf.format.number_abbreviation,
+        conf.format.thousands_separator,
         '',
         true
       )

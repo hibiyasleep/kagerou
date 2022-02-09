@@ -220,6 +220,13 @@
         "accuracy": "Taux de précision",
         "critical": "Taux de critique"
       },
+      "thousands_separator": {
+        "_": "Séparateur de milliers",
+        "none": "Aucun",
+        "period": "Point (.)",
+        "comma": "Virgule (,)",
+        "space": "Espace"
+      },
       "myname": "Mon nom",
       "use_short_name": "Apparence des noms des joueurs",
       "use_skill_aliases": "Utiliser les alias de compétences",
