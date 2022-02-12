@@ -179,13 +179,16 @@ const formatDps = function formatDPSNumberWithSmalls(number, decimals, abbr, tho
   const upperEndsAt = Math.max(0, number.length - decimalLength - (abbrUnit? 0 : 3))
   const lowerEndsAt = (abbrUnit? 0 : -decimalLength) || undefined
 
+  if(sep === '.') {
+    number = number.replace(/\./, ',')
+  }
   upper = number.slice(0, upperEndsAt)
   lower = number.slice(upperEndsAt, lowerEndsAt)
   tail = lowerEndsAt? number.slice(lowerEndsAt) : suffix
-  if (thousands_separator) {
+  if (sep) {
     upper = upper.replace(/(?!^)(?=(?:\d{3})+($))/gm, sep);
     if (!abbrUnit && upper) {
-      upper += (sep === '.'? ',' : '.')
+      upper += sep
     }
   }
 
