@@ -169,7 +169,7 @@ const CONFIG_DEFAULT = {
       accuracy: 0,
       critical: 0
     },
-    thousands_separator: 0,
+    thousands_separator: '',
     merge_pet: true,
     myname: [],
     use_short_name: 0,
