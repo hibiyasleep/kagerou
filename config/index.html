@@ -297,14 +297,13 @@ document.addEventListener('DOMContentLoaded', _ => {
           <p class="control">
             <label for="input-format-thousands_separator"
                    data-locale="config.format.thousands_separator._">
-              소숫점 구분자
+              천 단위 구분자
             </label>
             <select id="input-format-thousands_separator"
-                    data-type="integer"
                     data-config-key="format.thousands_separator">
               <option value="" data-locale="config.format.thousands_separator.none">없음</option>
-              <option value="." data-locale="config.format.thousands_separator.period">마침표 (.)</option>
               <option value="," data-locale="config.format.thousands_separator.comma">쉼표 (,)</option>
+              <option value="." data-locale="config.format.thousands_separator.period">마침표 (.)</option>
               <option value=" " data-locale="config.format.thousands_separator.space">띄어쓰기</option>
             </select>
           </p>

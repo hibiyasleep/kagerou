@@ -221,17 +221,17 @@
         "critical": "극대화 비율"
       },
       "thousands_separator": {
-        "_": "Thousands separator",
-        "none": "None",
-        "period": "Period (.)",
-        "comma": "Comma (,)",
-        "space": "Space"
+        "_": "천 단위 구분자",
+        "none": "없음",
+        "comma": "쉼표 (,)",
+        "period": "마침표 (.)",
+        "space": "띄어쓰기"
       },
       "myname": "내 이름",
       "use_short_name": "이름을 이니셜로 표시 (글로벌 서버용)",
       "use_skill_aliases": "스킬 이름 약칭 사용 (글로벌 서버용)",
       "use_tailing_pct": "비율 값 뒤에 % 기호를 표시",
-      "small_lower_numbers": "DPS 값의 1000 미만을 작게 표시",
+      "small_lower_numbers": "숫자값의 1000 미만을 작게 표시",
       "number_abbreviation": "천 단위 생략 사용"
     },
     "element": {

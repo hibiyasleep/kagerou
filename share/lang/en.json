@@ -223,8 +223,8 @@
       "thousands_separator": {
         "_": "Thousands separator",
         "none": "None",
-        "period": "Period (.)",
         "comma": "Comma (,)",
+        "period": "Period (.)",
         "space": "Space"
       },
       "myname": "My name",
