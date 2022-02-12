@@ -188,21 +188,11 @@
         }
         if(this.config.footer.rdps) {
           this.elem.rdps.innerHTML =
-            formatDps(
-              pFloat(rdps),
-              this.config.format.significant_digit.dps,
-              this.config.format.number_abbreviation,
-              this.config.format.thousands_separator
-            )
+            formatDps(pFloat(rdps), this.config.format, 'dps')
         }
         if(this.config.footer.rhps) {
           this.elem.rhps.innerHTML =
-            formatDps(
-              pFloat(rhps),
-              this.config.format.significant_digit.hps,
-              this.config.format.number_abbreviation,
-              this.config.format.thousands_separator
-            )
+            formatDps(pFloat(rhps), this.config.format, 'hps')
         }
       }
 

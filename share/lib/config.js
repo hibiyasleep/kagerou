@@ -377,11 +377,7 @@ const COLUMN_INDEX = {
         if(isNaN(_)) {
           return '---'
         }
-        return formatDps(_,
-          +conf.format.significant_digit.dps,
-          conf.format.number_abbreviation,
-          conf.format.thousands_separator
-        )
+        return formatDps(_, conf.format)
       }
     },
     pct: {
@@ -394,14 +390,7 @@ const COLUMN_INDEX = {
     },
     total: {
       v: 'damage',
-      f: (_, conf) => formatDps(
-        _,
-        conf.format.significant_digit.damage,
-        conf.format.number_abbreviation,
-        conf.format.thousands_separator,
-        '',
-        true
-      )
+      f: (_, conf) => formatDps(_, conf.format, 'damage', true)
     },
     failure: {
       v: _ => _.swings > 0? _.misses / _.swings * 100 : -1,
@@ -456,27 +445,13 @@ const COLUMN_INDEX = {
     },
     max: {
       v: 'MAXHIT',
-      f: (_, conf) => formatDps(
-        _,
-        conf.format.significant_digit.damage,
-        conf.format.number_abbreviation,
-        conf.format.thousands_separator,
-        '',
-        true
-      )
+      f: (_, conf) => formatDps(_, conf.format, 'damage', true)
     },
     maxhit: {
       v: 'maxhit',
       f: (_, conf) => {
         let map = l.skillname(_, conf.format.use_skill_aliases)
-        return `${formatDps(
-          map[1],
-          conf.format.significant_digit.damage,
-          conf.format.number_abbreviation,
-          conf.format.thousands_separator,
-          '',
-          true
-        )} <small>${map[0]}</small>`
+        return `${formatDps(map[1], conf.format, 'damage', true)} <small>${map[0]}</small>`
       }
     },
     maxskill: {
@@ -485,27 +460,15 @@ const COLUMN_INDEX = {
     },
     last10: {
       v: 'Last10DPS',
-      f: (_, conf) => {
-        return isNaN(_)?
-          '0'
-        : formatDps(_, conf.format.significant_digit.dps, conf.format.number_abbreviation, conf.format.thousands_separator)
-      }
+      f: (_, conf) => isNaN(_)? '0' : formatDps(_, conf.format)
     },
     last30: {
       v: 'Last30DPS',
-      f: (_, conf) => {
-        return isNaN(_)?
-          '0'
-        : formatDps(_, conf.format.significant_digit.dps, conf.format.number_abbreviation, conf.format.thousands_separator)
-      }
+      f: (_, conf) => isNaN(_)? '0' : formatDps(_, conf.format)
     },
     last60: {
       v: 'Last60DPS',
-      f: (_, conf) => {
-        return isNaN(_)?
-          '0'
-        : formatDps(_, conf.format.significant_digit.dps, conf.format.number_abbreviation, conf.format.thousands_separator)
-      }
+      f: (_, conf) => isNaN(_)? '0' : formatDps(_, conf.format)
     }/*,
     last180: {
       v: _ => 'Last180DPS' in _? _.Last180 : NaN
@@ -515,25 +478,11 @@ const COLUMN_INDEX = {
   tank: {
     damage: {
       v: 'damagetaken',
-      f: (_, conf) => '-' + formatDps(
-        _,
-        conf.format.significant_digit.damage,
-        conf.format.number_abbreviation,
-        conf.format.thousands_separator,
-        '',
-        true
-      )
+      f: (_, conf) => '-' + formatDps(_, conf.format, 'damage', true)
     },
     heal: {
       v: 'healstaken',
-      f: (_, conf) => '+' + formatDps(
-        _,
-        conf.format.significant_digit.damage,
-        conf.format.number_abbreviation,
-        conf.format.thousands_separator,
-        '',
-        true
-      )
+      f: (_, conf) => '+' + formatDps(_, conf.format, 'damage', true)
     },
     parry: 'ParryPct',
     block: 'BlockPct',
@@ -547,12 +496,7 @@ const COLUMN_INDEX = {
         _ = pFloat(_)
         return isNaN(_)?
           '0'
-        : formatDps(
-          _,
-          conf.format.significant_digit.hps,
-          conf.format.number_abbreviation,
-          conf.format.thousands_separator
-        )
+        : formatDps(_, conf.format, 'hps')
       }
     },
     pct: {
@@ -565,14 +509,7 @@ const COLUMN_INDEX = {
     },
     total: {
       v: 'healed',
-      f: (_, conf) => formatDps(
-        _,
-        conf.format.significant_digit.damage,
-        conf.format.number_abbreviation,
-        conf.format.thousands_separator,
-        '',
-        true
-      )
+      f: (_, conf) => formatDps(_, conf.format, 'damage', true)
     },
     over: {
       v: _ => _['OverHealPct'],

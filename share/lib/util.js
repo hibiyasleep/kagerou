@@ -152,9 +152,15 @@ const pInt = function parseLocaledInteger(string) {
 
 const ABBREVIATION_SUFFIXES = ['', 'k', 'M', 'G', 'T']
 
-const formatDps = function formatDPSNumberWithSmalls(number, decimals, abbr, thousands_separator, type, forceInt) {
-  number = number || 0
+const formatDps = function formatDPSNumberWithSmalls(number = 0, {
+  significant_digit = {},
+  number_abbreviation: abbr = false,
+  thousands_separator: sep = '',
+} = {}, type = 'dps', forceInt) {
+  let decimals = significant_digit[type]
+
   decimals = decimals == null? 2 : +decimals
+  number = number || 0
   type = (type || 'dps') + ' lower'
 
   const exponential = Math.floor(Math.log10(number))
