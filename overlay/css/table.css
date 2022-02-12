@@ -75,7 +75,7 @@
 .zero {
   opacity: 0.75;
 }
-.flex-column > small, .smaller-lower-numbers .flex-column > small.dps {
+.flex-column > small:not(.lower), .smaller-lower-numbers .flex-column > small.with-larger-digits {
   font-size: 0.75em;
 }
 .flex-column > small.dps {
@@ -350,7 +350,7 @@ footer {
   padding: 0 0.25rem;
   border-left: 0.1rem solid rgba(255, 255, 255, 0.5);
 }
-.footer-stat small,
+.footer-stat small:not(.lower),
 body.smaller-lower-numbers .footer-stat small.with-larger-digits {
   font-size: 0.75em;
 }
