@@ -277,6 +277,20 @@ document.addEventListener('DOMContentLoaded', _ => {
                    style="flex-grow: 50;"/>
           </p>
           <p class="control">
+            <label for="input-element-narrow-nav"
+                   data-locale="config.element.narrow_nav">
+              상단바를 얇게
+            </label>
+            <input type="checkbox" id="input-element-narrow-nav"
+                   data-type="boolean"
+                   data-config-key="element.narrow-nav" />
+          </p>
+        </article>
+        <article>
+          <h3 data-locale="config.format.numbers">
+            숫자 표현
+          </h3>
+          <p class="control">
             <label for="input-format-use_tailing_pct"
                    data-locale="config.format.use_tailing_pct">
               백분율 값 뒤에 % 기호를 표시
@@ -308,20 +322,6 @@ document.addEventListener('DOMContentLoaded', _ => {
             </select>
           </p>
           <p class="control">
-            <label for="input-element-narrow-nav"
-                   data-locale="config.element.narrow_nav">
-              상단바를 얇게
-            </label>
-            <input type="checkbox" id="input-element-narrow-nav"
-                   data-type="boolean"
-                   data-config-key="element.narrow-nav" />
-          </p>
-        </article>
-        <article>
-          <h3 data-locale="config.format.significant_digit._">
-            소수점 정확도
-          </h3>
-          <p class="control">
             <label for="input-format-number_abbreviation"
                    data-locale="config.format.number_abbreviation">
               천 단위 생략 사용
@@ -330,6 +330,11 @@ document.addEventListener('DOMContentLoaded', _ => {
                    data-type="boolean"
                    data-config-key="format.number_abbreviation" />
           </p>
+        </article>
+        <article>
+          <h3 data-locale="config.format.significant_digit._">
+            소수점 정확도
+          </h3>
           <p class="control">
             <label for="input-format-significant_digit-dps"
                    data-locale="config.format.significant_digit.dps">

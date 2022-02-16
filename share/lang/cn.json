@@ -230,6 +230,7 @@
       "myname": "自己的名字",
       "use_short_name": "玩家名字表示方法（国服无效）",
       "use_skill_aliases": "使用技能名缩写",
+      "numbers": "数字格式",
       "use_tailing_pct": "在百分比数值后显示百分号",
       "small_lower_numbers": "小于1000的数字以小字体显示",
       "number_abbreviation": "省略以1000为单位的数字"

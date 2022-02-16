@@ -230,6 +230,7 @@
       "myname": "名前",
       "use_short_name": "名前をイニシャルで表示",
       "use_skill_aliases": "スキル名の略称を使用",
+      "numbers": "数値の表示形式",
       "use_tailing_pct": "割合値の後ろに％記号を表示",
       "small_lower_numbers": "1000未満を小さく表示",
       "number_abbreviation": "1000の単位で数値を省略"
