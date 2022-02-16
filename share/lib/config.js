@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.8.13'
-const CODENAME = 'viator in vitro'
-const DESCRIPTION = 'すべての旅人たちの 記憶はここに集う'
+const VERSION = '0.8.14'
+const CODENAME = 'minne'
+const DESCRIPTION = '記憶の片隅で眠っていた いつか聴いた旋律'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
