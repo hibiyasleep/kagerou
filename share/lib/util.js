@@ -152,12 +152,12 @@ const pInt = function parseLocaledInteger(string) {
 
 const ABBREVIATION_SUFFIXES = ['', 'k', 'M', 'G', 'T']
 
-const formatDps = function formatDPSNumberWithSmalls(number = 0, {
-  significant_digit = {},
-  number_abbreviation: abbr = false,
-  thousands_separator: sep = '',
-} = {}, type = 'dps', forceInt) {
-  let decimals = significant_digit[type]
+const formatDps = function formatDPSNumberWithSmalls(number, opt, type, forceInt) {
+  const significant_digit = (opt || {}).significant_digit || {}
+  const abbr = (opt || {}).number_abbreviation || false
+  const sep = (opt || {}).thousands_separator || ''
+
+  let decimals = significant_digit[type || 'dps']
 
   decimals = decimals == null? 2 : +decimals
   number = number || 0
