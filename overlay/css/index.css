@@ -26,7 +26,7 @@ body.overlay::after {
   right: 0;
   bottom: 0;
 
-  width: 8px; // OverlayPlugin decide this
+  width: 8px; /* OverlayPlugin decide this */
   height: 8px;
 
   background: rgba(0, 0, 0, 0.001);
@@ -79,7 +79,7 @@ html.ko .lang.ko,
 html.ja .lang.ja,
 html.en .lang.en,
 html.de .lang.de,
-html.cn .lang.cn,
+html.zh .lang.zh,
 html.fr .lang.fr {
   display: block;
 }
@@ -88,7 +88,7 @@ html.ko span.lang.ko,
 html.ja span.lang.ja,
 html.en span.lang.en,
 html.de span.lang.de,
-html.cn span.lang.cn,
+html.zh span.lang.zh,
 html.fr span.lang.fr {
   display: inline;
 }
