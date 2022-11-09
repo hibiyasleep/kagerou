@@ -19,32 +19,8 @@ try {
   }
 }
     </script>
-    <script src="https://cdn.ravenjs.com/3.17.0/raven.min.js"></script>
-    <script>
-'use strict'
-
-Raven && Raven.config('https://77d763feffdf45daa9a75517878489cd@s.hibiya.moe/2', {
-  // to who plays with forked source:
-  // please do *not* report your error to me. do NOT edit this, or simply
-  // remove raven-related codes.
-  whitelistUrls: [/hibiyasleep\.github\.io/, /kagerou\.hibiya\.moe/, /idyllshi.re/],
-  dataCallback: function(data) {
-    if(window.hist && window.hist.currentData) {
-      data.extra.currentData = JSON.stringify(window.hist.currentData)
-    }
-    return data
-  }
-}).install()
-
-    </script>
     <script src="../share/lib/util.js?v=viator-in-vitro"></script>
     <script src="../share/lib/config.js?v=viator-in-vitro"></script>
-    <script>
-'use strict'
-
-Raven && Raven.setRelease(VERSION)
-
-    </script>
     <script src="../share/lib/ws-abstract.js?v=viator-in-vitro"></script>
     <script src="../share/lib/locale.js?v=viator-in-vitro"></script>
     <script src="lib/render.js?v=viator-in-vitro"></script>
