@@ -218,7 +218,9 @@
         "damage": "Damage",
         "hps": "HPS",
         "accuracy": "Fehlschlag (Verfehlt / Angriffe)",
-        "critical": "% der kritischen Treffer/Heilungen"
+        "critical": "% der kritischen Treffer/Heilungen",
+        "effective_pct": "% of total effective healing",
+        "absorb_pct": "% of total absorb healing"
       },
       "thousands_separator": {
         "_": "Thousands separator",
@@ -284,6 +286,11 @@
       "per_second": ["HPS", "Heilung pro Sekunde"],
       "pct": ["H%", "% der Gesamtheilung"],
       "total": ["H.Ges.", "Gesamtheilung"],
+      "effective_per_second" : ["Eff. HPS", "per Second effective"],
+      "effective_pct" : ["Eff. H%", "Effective healing %"],
+      "effective_total": ["Eff. H.", "Effective"],
+      "absorb_pct": ["Abs. %", "Absorption %"],
+      "absorb_total": ["Abs. H.", "Absorption"],
       "over": ["OvrH", "Overheal"],
       "swing": ["Heilungen", "Anzahl der Heilungen"],
       "critical": ["HCrit", "Kritischer Trefferchance"],

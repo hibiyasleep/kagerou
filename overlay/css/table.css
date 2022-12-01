@@ -18,48 +18,53 @@
   flex-grow: 10;
   flex-basis: 0%;
 }
-.flex-column-i-class            { width: var(--_i-class)rem; } /* replace-hack only */
-.flex-column-i-rank             { width: var(--_i-rank)rem; }
-.flex-column-i-owner            { width: var(--_i-owner)rem; }
-.flex-column-i-name             { width: var(--_i-name)rem; }
-.flex-column-deal-total         { width: var(--_deal-total)rem; }
-.flex-column-deal-per-second    { width: var(--_deal-per_second)rem; }
-.flex-column-deal-pct           { width: var(--_deal-pct)rem; }
-.flex-column-deal-failure       { width: var(--_deal-failure)rem; }
-.flex-column-deal-accuracy      { width: var(--_deal-accuracy)rem; }
-.flex-column-deal-swing         { width: var(--_deal-swing)rem; }
-.flex-column-deal-miss          { width: var(--_deal-miss)rem; }
-.flex-column-deal-hitfail       { width: var(--_deal-hitfail)rem; }
-.flex-column-deal-critical      { width: var(--_deal-critical)rem; }
-.flex-column-deal-direct        { width: var(--_deal-direct)rem; }
-.flex-column-deal-crit-direct   { width: var(--_deal-crit_direct)rem; }
-.flex-column-deal-crittypes     { width: var(--_deal-crittypes)rem; }
-.flex-column-deal-critpcts      { width: var(--_deal-critpcts)rem; }
-.flex-column-deal-max           { width: var(--_deal-max)rem; }
-.flex-column-deal-maxhit        { width: var(--_deal-maxhit)rem; }
-.flex-column-deal-maxskill      { width: var(--_deal-maxskill)rem; }
-.flex-column-deal-last10        { width: var(--_deal-last10)rem; }
-.flex-column-deal-last30        { width: var(--_deal-last30)rem; }
-.flex-column-deal-last60        { width: var(--_deal-last60)rem; }
-.flex-column-deal-last180       { width: var(--_deal-last180)rem; }
-.flex-column-tank-damage        { width: var(--_tank-damage)rem; }
-.flex-column-tank-parry         { width: var(--_tank-parry)rem; }
-.flex-column-tank-heal          { width: var(--_tank-heal)rem; }
-.flex-column-tank-block         { width: var(--_tank-block)rem; }
-.flex-column-tank-threat-delta  { width: var(--_tank-threat_delta)rem; }
-.flex-column-heal-per-second    { width: var(--_heal-per_second)rem; }
-.flex-column-heal-pct           { width: var(--_heal-pct)rem; }
-.flex-column-heal-total         { width: var(--_heal-total)rem; }
-.flex-column-heal-swing         { width: var(--_heal-swing)rem; }
-.flex-column-heal-over          { width: var(--_heal-over)rem; }
-.flex-column-heal-cure          { width: var(--_heal-cure)rem; }
-.flex-column-heal-critical      { width: var(--_heal-critical)rem; }
-.flex-column-heal-max           { width: var(--_heal-max)rem; }
-.flex-column-heal-maxhit        { width: var(--_heal-maxhit)rem; }
-.flex-column-heal-maxskill      { width: var(--_heal-maxskill)rem; }
-.flex-column-etc-powerdrain     { width: var(--_etc-powerdrain)rem; }
-.flex-column-etc-death          { width: var(--_etc-death)rem; }
-.flex-column-etc-powerheal      { width: var(--_etc-powerheal)rem; }
+.flex-column-i-class                    { width: var(--_i-class)rem; } /* replace-hack only */
+.flex-column-i-rank                     { width: var(--_i-rank)rem; }
+.flex-column-i-owner                    { width: var(--_i-owner)rem; }
+.flex-column-i-name                     { width: var(--_i-name)rem; }
+.flex-column-deal-total                 { width: var(--_deal-total)rem; }
+.flex-column-deal-per-second            { width: var(--_deal-per_second)rem; }
+.flex-column-deal-pct                   { width: var(--_deal-pct)rem; }
+.flex-column-deal-failure               { width: var(--_deal-failure)rem; }
+.flex-column-deal-accuracy              { width: var(--_deal-accuracy)rem; }
+.flex-column-deal-swing                 { width: var(--_deal-swing)rem; }
+.flex-column-deal-miss                  { width: var(--_deal-miss)rem; }
+.flex-column-deal-hitfail               { width: var(--_deal-hitfail)rem; }
+.flex-column-deal-critical              { width: var(--_deal-critical)rem; }
+.flex-column-deal-direct                { width: var(--_deal-direct)rem; }
+.flex-column-deal-crit-direct           { width: var(--_deal-crit_direct)rem; }
+.flex-column-deal-crittypes             { width: var(--_deal-crittypes)rem; }
+.flex-column-deal-critpcts              { width: var(--_deal-critpcts)rem; }
+.flex-column-deal-max                   { width: var(--_deal-max)rem; }
+.flex-column-deal-maxhit                { width: var(--_deal-maxhit)rem; }
+.flex-column-deal-maxskill              { width: var(--_deal-maxskill)rem; }
+.flex-column-deal-last10                { width: var(--_deal-last10)rem; }
+.flex-column-deal-last30                { width: var(--_deal-last30)rem; }
+.flex-column-deal-last60                { width: var(--_deal-last60)rem; }
+.flex-column-deal-last180               { width: var(--_deal-last180)rem; }
+.flex-column-tank-damage                { width: var(--_tank-damage)rem; }
+.flex-column-tank-parry                 { width: var(--_tank-parry)rem; }
+.flex-column-tank-heal                  { width: var(--_tank-heal)rem; }
+.flex-column-tank-block                 { width: var(--_tank-block)rem; }
+.flex-column-tank-threat-delta          { width: var(--_tank-threat_delta)rem; }
+.flex-column-heal-per-second            { width: var(--_heal-per_second)rem; }
+.flex-column-heal-pct                   { width: var(--_heal-pct)rem; }
+.flex-column-heal-total                 { width: var(--_heal-total)rem; }
+.flex-column-heal-effective-per-second  { width: var(--_heal-effective_per_second)rem; }
+.flex-column-heal-effective-pct         { width: var(--_heal-effective_pct)rem; }
+.flex-column-heal-effective-total       { width: var(--_heal-effective_total)rem; }
+.flex-column-heal-absorb-pct            { width: var(--_heal-absorb_pct)rem; }
+.flex-column-heal-absorb-total          { width: var(--_heal-absorb_total)rem; }
+.flex-column-heal-swing                 { width: var(--_heal-swing)rem; }
+.flex-column-heal-over                  { width: var(--_heal-over)rem; }
+.flex-column-heal-cure                  { width: var(--_heal-cure)rem; }
+.flex-column-heal-critical              { width: var(--_heal-critical)rem; }
+.flex-column-heal-max                   { width: var(--_heal-max)rem; }
+.flex-column-heal-maxhit                { width: var(--_heal-maxhit)rem; }
+.flex-column-heal-maxskill              { width: var(--_heal-maxskill)rem; }
+.flex-column-etc-powerdrain             { width: var(--_etc-powerdrain)rem; }
+.flex-column-etc-death                  { width: var(--_etc-death)rem; }
+.flex-column-etc-powerheal              { width: var(--_etc-powerheal)rem; }
 
 .pet-merged .flex-column-i-owner {
   display: none !important;

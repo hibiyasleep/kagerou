@@ -25,9 +25,9 @@
 
     update(data) {
       this.isActive = data.isActive
+      this.calculateHealingValues(data)
       this.header = data.Encounter
       this.data = toArray(data.Combatant)
-      this.calculateMax(data.Combatant)
     }
 
     get(sort, merged) {
@@ -93,21 +93,48 @@
     }
 
     sort(key, target) {
-      let d = (('+-'.indexOf(key[0]))+1 || 1) * 2 - 3
-      let k = SORTABLE[key.substr('+-'.indexOf(key[0]) >= 0)]
-      ;(target || this.data).sort((a, b) => (pFloat(a[k]) - pFloat(b[k])) * d)
+      let order = (('+-'.indexOf(key[0]))+1 || 1) * 2 - 3 // 1:asc, -1:desc
+      let sort_by = SORTABLE[key.substr('+-'.indexOf(key[0]) >= 0)]
 
+      if (typeof sort_by == "string") {
+        (target || this.data).sort((a, b) => (pFloat(a[sort_by]) - pFloat(b[sort_by])) * order)
+      } else if (typeof sort_by == "function") {
+        (target || this.data).sort((a, b) => (sort_by(a) - sort_by(b)) * order)
+      }
       if(target) return target
+    }
+
+    // Calculate additional healing values and store them in the Combatant or Encounter
+    calculateHealingValues(data) {
+      let rhealing_effective = 0;
+      let rabsorb_healing = 0;
+      for (let i in data.Combatant) {
+        let player = data.Combatant[i];
+        let effective = parseInt(player.healed) - parseInt(player.overHeal);
+        // Inject the calculated effective healing into the player data, while we're at it
+        player.effective_healing = effective;
+        rhealing_effective += effective;
+        rabsorb_healing += parseInt(player.absorbHeal)
+      }
+      // Inject into the Encounter data for later use
+      data.Encounter.rhealing_effective = rhealing_effective
+      data.Encounter.rabsorb_healing = rabsorb_healing
+      // Calculate the pct now that we have the total values
+      for (let i in data.Combatant) {
+        let player = data.Combatant[i];
+        player.effective_pct = player.effective_healing / rhealing_effective * 100
+        player.absorb_pct = player.absorbHeal / rabsorb_healing * 100
+      }
     }
 
     calculateMax(combatant) {
       let max = {}
-
       for(let k in SORTABLE) {
         let v = SORTABLE[k]
-        max[k] = Math.max.apply(
-          Math, Object.keys(combatant).map(_ => combatant[_][v])
-        )
+        if (typeof v == "string")
+          max[k] = Math.max.apply(Math, Object.keys(combatant).map(_ => combatant[_][v]))
+        else if (typeof v == "function")
+          max[k] = Math.max.apply(Math, combatant.map(_ => v(_)))
       }
 
       return max
