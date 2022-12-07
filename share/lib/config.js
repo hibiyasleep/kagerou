@@ -5,7 +5,7 @@ const CODENAME = 'minne'
 const DESCRIPTION = '記憶の片隅で眠っていた いつか聴いた旋律'
 
 const CONFIG_DEFAULT = {
-  lang: 'ko',
+  lang: 'en',
   style: {
     // body
     'resize-factor': 1,
@@ -208,10 +208,13 @@ const CONFIG_DEFAULT = {
 `
 }
 
+const LOCALE_MAPPING = { cn: 'zh' }
+
 const MIGRATE_MAP = {
   'color.gnb': { if: _ => !_, action: 'default' },
   'color.blu': { if: _ => !_, action: 'default' },
-  'color.dnc': { if: _ => !_, action: 'default' }
+  'color.dnc': { if: _ => !_, action: 'default' },
+  'lang': { if: _ => _ in LOCALE_MAPPING, action: _ => LOCALE_MAPPING[_] }
 }
 
 const CONFIG_KEY_SHOULD_OVERRIDE = [
@@ -633,13 +636,15 @@ const COLUMN_INDEX = {
           this.set(k, result)
         }
       })
+
+      this.save()
     }
 
     init() {
       let localConfig = copy(CONFIG_DEFAULT)
       this.config = localConfig
       let lang = (navigator.language || '').split('-')[0]
-      if(['ko', 'en', 'ja', 'de'].indexOf(lang) !== -1){
+      if(['ko', 'en', 'ja', 'de', 'zh', 'fr'].indexOf(lang) !== -1){
         this.set('lang', lang)
       }
       this.save()

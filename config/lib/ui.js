@@ -3,8 +3,6 @@
 const switchTab = function switchTab(target) {
   $('section.active', 0).classList.remove('active')
   $(`section[data-page='${target}']`, 0).classList.add('active')
-  let targetLi = $(`li[data-page='${target}']`, 0)
-
   $('header h2', 0).textContent = $(`li[data-page='${target}']`, 0).textContent
   $('header h2', 0).setAttribute(
     'data-locale',

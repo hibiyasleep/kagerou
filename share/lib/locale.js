@@ -10,7 +10,7 @@
 
     constructor(lang, callback) {
       this.L = {}
-      this.current = lang || CONFIG_DEFAULT.locale || 'en'
+      this.current = lang || CONFIG_DEFAULT.lang || 'en'
       this.load(this.current, callback || (_ => this.localizeAll()) )
     }
 
@@ -138,18 +138,6 @@
             _.innerHTML = value
         })
       })
-    }
-
-    get locale() {
-      return Object.keys(this.L)
-    }
-
-    set locale(v) {
-      if(this.available(v)) {
-        this.current = v
-      } else {
-        return false
-      }
     }
 
   }
