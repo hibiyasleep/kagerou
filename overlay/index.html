@@ -19,8 +19,32 @@ try {
   }
 }
     </script>
+    <script src="https://cdn.ravenjs.com/3.17.0/raven.min.js"></script>
+    <script>
+'use strict'
+
+Raven && Raven.config('https://77d763feffdf45daa9a75517878489cd@s.hibiya.moe/2', {
+  // to who plays with forked source:
+  // please do *not* report your error to me. do NOT edit this, or simply
+  // remove raven-related codes.
+  whitelistUrls: [/hibiyasleep\.github\.io/, /kagerou\.hibiya\.moe/, /idyllshi.re/],
+  dataCallback: function(data) {
+    if(window.hist && window.hist.currentData) {
+      data.extra.currentData = JSON.stringify(window.hist.currentData)
+    }
+    return data
+  }
+}).install()
+
+    </script>
     <script src="../share/lib/util.js?v=viator-in-vitro"></script>
     <script src="../share/lib/config.js?v=viator-in-vitro"></script>
+    <script>
+'use strict'
+
+Raven && Raven.setRelease(VERSION)
+
+    </script>
     <script src="../share/lib/ws-abstract.js?v=viator-in-vitro"></script>
     <script src="../share/lib/locale.js?v=viator-in-vitro"></script>
     <script src="lib/render.js?v=viator-in-vitro"></script>
@@ -308,26 +332,18 @@ window.addEventListener('load', e => {
             <p class="lang ja">- オプション「千単位の区切り文字」を追加</p>
             <p> fixed by @Sundava </p>
 
-            <div id="old_plugin_warning">
-              <script>
-                try {
-                  null?.a
-                  old_plugin_warning.parentNode.removeChild(old_plugin_warning)
-                } catch(e) {}
-              </script>
+            <br />
+            <p class="lang ko">
+              - OverlayPlugin 0.3, 예전 방식 웹소켓 오버레이는 더 이상 지원하지 않습니다.
               <br />
-              <p class="lang ko">
-                - OverlayPlugin 0.3, 예전 방식 웹소켓 오버레이는 더 이상 지원하지 않습니다.
-                <br />
-                ngld/OverlayPlugin으로 교체해 주십시오.
-              </p>
-              <p class="lang en fr de ja">
-                - Old OverlayPlugin (aka 'hibiyasleep version') is no longer supported!!
-                <br />
-                please get update from github.com/ngld/OverlayPlugin .
-              </p>
+              ngld/OverlayPlugin으로 교체해 주십시오.
+            </p>
+            <p class="lang en fr de ja">
+              - Old OverlayPlugin (aka 'hibiyasleep version') is no longer supported!!
               <br />
-            </div>
+              please get update from github.com/ngld/OverlayPlugin .
+            </p>
+            <br />
 
             <h3> 0.8.13 'viator in vitro' - 2021/12/08 </h3>
 
