@@ -1,8 +1,8 @@
 'use strict'
 
-const VERSION = '0.8.14'
-const CODENAME = 'minne'
-const DESCRIPTION = '記憶の片隅で眠っていた いつか聴いた旋律'
+const VERSION = '0.8.15'
+const CODENAME = 'Audite Nostalgia'
+const DESCRIPTION = 'その旋律は紡がれ受け継がれていく'
 
 const CONFIG_DEFAULT = {
   lang: 'ko',
