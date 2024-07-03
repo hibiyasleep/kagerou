@@ -95,6 +95,9 @@
         if(v) return v
       }
 
+      let r = this.get(`zone.replace.${n}`)
+      if(r) return r
+
       return n
     }
 
