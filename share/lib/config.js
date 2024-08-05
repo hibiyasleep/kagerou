@@ -122,6 +122,11 @@ const CONFIG_DEFAULT = {
     '_heal-per_second': 3,
     '_heal-pct': 2,
     '_heal-total': 4,
+    '_heal-effective_per_second': 3,
+    '_heal-effective_pct': 3,
+    '_heal-effective_total': 4,
+    '_heal-absorb_pct': 3,
+    '_heal-absorb_total': 4,
     '_heal-swing': 2,
     '_heal-over': 2,
     '_heal-cure': 2,
@@ -169,7 +174,9 @@ const CONFIG_DEFAULT = {
       damage: 0,
       hps: 0,
       accuracy: 0,
-      critical: 0
+      critical: 0,
+      effective_pct: 0,
+      absorb_pct: 0
     },
     thousands_separator: '',
     merge_pet: true,
@@ -232,6 +239,9 @@ const COLUMN_SORTABLE = [
   'tank.heal',
   'heal.per_second',
   'heal.total',
+  'heal.effective_per_second',
+  'heal.effective_total',
+  'heal.absorb_total',
   '-etc.death'
 ]
 const COLUMN_MERGEABLE = [
@@ -516,6 +526,41 @@ const COLUMN_INDEX = {
     over: {
       v: _ => _['OverHealPct'],
       f: _ => _ && _.replace? _.replace('%', '<small>%</small>') : '---'
+    },
+    effective_per_second: {
+      v: _ => {
+        return _['enchps'] * (1 - parseInt(_['OverHealPct']) / 100)
+      },
+      f: (_, conf) => {
+        _ = pFloat(_)
+        return isNaN(_)?
+          '0'
+        : formatDps(_, conf.format, 'hps')
+      }
+    },
+    effective_pct: {
+      v: 'effective_pct',
+      f: (_, conf) => {
+        if(isNaN(_)) return '---'
+        else if(_ >= 100) return '100'
+        else return (_).toFixed(conf.format.significant_digit.effective_pct) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
+      }
+    },
+    effective_total: {
+      v: 'effective_healing', // Calculated and injected Data.update()
+      f: (_, conf) => formatDps(_, conf.format, 'damage', true)
+    },
+    absorb_pct: {
+      v: 'absorb_pct',
+      f: (_, conf) => {
+        if(isNaN(_)) return '---'
+        else if(_ >= 100) return '100'
+        else return (_).toFixed(conf.format.significant_digit.absorb_pct) + (conf.format.use_tailing_pct? '<small>%</small>' : '')
+      }
+    },
+    absorb_total: {
+      v: 'absorbHeal',
+      f:(_, conf) => formatDps(_, conf.format, 'damage', true)
     },
     swing: 'heals',
     critical: {
