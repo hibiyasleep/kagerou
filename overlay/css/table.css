@@ -99,6 +99,7 @@
 .class-sge .gauge { background: var(--sge); }
 .class-vpr .gauge { background: var(--vpr); }
 .class-pct .gauge { background: var(--pct); }
+.class-bst .gauge { background: var(--bst); }
 .class-arc .gauge, .class-brd .gauge { background: var(--brd); }
 .class-rog .gauge, .class-nin .gauge { background: var(--nin); }
 .class-acn .gauge, .class-smn .gauge { background: var(--smn); }

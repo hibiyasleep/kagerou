@@ -145,6 +145,7 @@ const CONFIG_DEFAULT = {
     nin: 'rgb(211, 47, 47)', // Red 700
     rpr: 'rgb(254, 179, 0)', // Amber 600
     vpr: 'rgb(216, 67, 21)', // Deep Orange 800
+    bst: 'rgb(50, 50, 50)',
     smn: 'rgb(46, 125, 50)', // Green 800
     blm: 'rgb(126, 87, 194)', // Deep Purple 400
     mch: 'rgb(0, 151, 167)', // Cyan 700
@@ -250,7 +251,7 @@ const COLUMN_USE_LARGER = {
 
 const VALID_PLAYER_JOBS = [
   'GLA', 'GLD', 'MRD', 'PUG', 'PGL', 'LNC', 'ROG', 'ARC', 'THM', 'ACN', 'CNJ',
-  'PLD', 'WAR', 'MNK', 'DRG', 'NIN', 'RPR', 'VPR', 'BRD', 'BLM', 'SMN', 'SCH', 'WHM',
+  'PLD', 'WAR', 'MNK', 'DRG', 'NIN', 'RPR', 'VPR', 'BST', 'BRD', 'BLM', 'SMN', 'SCH', 'WHM',
   'DRK', 'MCH', 'AST', 'SGE', 'SAM', 'RDM', 'PCT', 'BLU', 'GNB', 'DNC',
   'CRP', 'BSM', 'ARM', 'GSM', 'LTW', 'WVR', 'ALC', 'CUL', 'MIN', 'BTN', 'FSH'
 ]
