@@ -220,7 +220,9 @@
         "damage": "Dégâts totaux",
         "hps": "Soins par seconde (HPS)",
         "accuracy": "Taux de précision",
-        "critical": "Taux de critique"
+        "critical": "Taux de critique",
+        "effective_pct": "% des soins effectifs",
+        "absorb_pct": "% d'absorption"
       },
       "thousands_separator": {
         "_": "Séparateur de milliers",
@@ -284,8 +286,13 @@
     "heal": {
       "_": "Soin",
       "per_second": ["HPS", "Par seconde"],
-      "pct": ["H%", "Soin %"],
+      "pct": ["H%", "% des soins"],
       "total": ["H.Tot", "Total"],
+      "effective_per_second" : ["Eff. HPS", "Par seconde effectif"],
+      "effective_pct" : ["Eff. H%", "% des soins effectifs"],
+      "effective_total": ["Eff. H.", "Effectif"],
+      "absorb_pct": ["Abs. %", "% d'absorption"],
+      "absorb_total": ["Abs. H.", "Absorption"],
       "over": ["OvH%", "Overheal"],
       "swing": ["Esquive", "Esquives"],
       "critical": ["HCrit", "Critique%"],

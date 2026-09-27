@@ -220,7 +220,9 @@
         "damage": "Damage",
         "hps": "HPS",
         "accuracy": "命中率",
-        "critical": "伤害和治疗百分比"
+        "critical": "伤害和治疗百分比",
+        "effective_pct": "% of total effective healing",
+        "absorb_pct": "% of total absorb healing"
       },
       "thousands_separator": {
         "_": "Thousands separator",
@@ -286,6 +288,11 @@
       "per_second": ["HPS", "每秒治疗量"],
       "pct": ["H%", "治疗比率%"],
       "total": ["总治疗", "总治疗量"],
+      "effective_per_second" : ["Eff. HPS", "per Second effective"],
+      "effective_pct" : ["Eff. H%", "Effective healing %"],
+      "effective_total": ["Eff. H.", "Effective"],
+      "absorb_pct": ["Abs. %", "Absorption %"],
+      "absorb_total": ["Abs. H.", "Absorption"],
       "over": ["过量%", "过量治疗"],
       "swing": ["次数", "治疗次数"],
       "critical": ["H暴%", "治疗暴击率%"],
